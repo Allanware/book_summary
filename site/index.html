@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Empire of Cotton - Argument Atlas</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Empire of Cotton</h1>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="chapters">
+      <div class="section-header">
+        <h2>Chapter Argument Mindmap</h2>
+        <p>
+          Expand a chapter to reveal its main argument and the evidence that supports it.
+          Use the recurring threads to spotlight themes across the book.
+        </p>
+      </div>
+
+      <div class="controls">
+        <button class="btn" id="expandAll" type="button">Expand all</button>
+        <button class="btn" id="collapseAll" type="button">Collapse all</button>
+        <button class="btn ghost" id="clearFilters" type="button">Clear highlights</button>
+      </div>
+
+      <div class="mindmap-layout">
+        <div class="mindmap" id="chapterMindmap"></div>
+        <aside class="side-panel">
+          <h3>Recurring Threads</h3>
+          <p class="muted">
+            Click a thread to highlight where it appears in both the chapter map and the book flow.
+          </p>
+          <div class="thread-grid" id="threadGrid"></div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="synthesis">
+      <div class="section-header">
+        <h2>Book Synthesis Flow</h2>
+        <p id="coreArgument"></p>
+      </div>
+
+      <div class="flow-layout">
+        <div class="flow" id="bookFlow"></div>
+        <div class="flow-detail" id="flowDetail"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

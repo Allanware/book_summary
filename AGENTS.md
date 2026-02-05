@@ -1,4 +1,4 @@
-# Empire of Cotton summarization rules
+# Summarization rules
 
 Use this file when updating chapter content in `site/script.js`.
 These rules are organized by the three website sections: Chapter Argument Mindmap, Recurring Threads, and Book Synthesis Flow.
@@ -7,7 +7,7 @@ These rules are organized by the three website sections: Chapter Argument Mindma
 ### Content goals
 - Read the full chapter text from `Empire of Cotton.pdf` and cover the entire page range.
 - Build paragraph-level notes first, then synthesize them into structured argument steps so no part of the chapter is skipped.
-- Subarguments and their supporting evidence do not need to be introduced in strict page order; group evidence by mechanism/actors and merge overlapping subarguments even when the supporting pages are far apart.
+- **Subarguments and their supporting evidence do not need to be introduced in strict page order; group evidence by mechanism/actors and merge overlapping subarguments even when the supporting pages are far apart.**
 - Build a concrete, evidence-led logical progression for each chapter (no generic language unless immediately tied to specific evidence).
 - Each claim should be anchored to specific evidence with page numbers like `(p. 34)`.
 - Prefer paraphrase plus page numbers, not long quotes.

@@ -1,15 +1,345 @@
 const BOOK_DATA = {
   title: "Empire of Cotton",
   coreArgument:
-    "Cotton was the engine of modern capitalism. The book argues that global cotton networks were remade by war capitalism (state power, violence, and long-distance trade tools), then amplified by industrialization, repeatedly reorganizing labor, land, and markets. Each chapter traces how this empire shifted geographies, survived crises, and reappeared in new centers, leaving a persistent pattern of violence and forced labor even as production moved around the world.",
+    "From premodern household cotton worlds—often spun by women and traded as currency—to today’s retailer-led supply chains, the book argues cotton repeatedly reorganized labor, land, and state power to build modern capitalism. European “war capitalism” (chartered companies, armed trade, colonial seizure, and slavery) redirected cotton into Atlantic circuits and pushed plantation frontiers to supply mechanized mills. Industrial capitalism then scaled the system through factory discipline and merchant-finance hubs that standardized grades, prices, credit, and information; after the U.S. Civil War’s cotton famine, empires rebuilt supply through colonial law, infrastructure, and coercive rural credit regimes. In the twentieth and twenty-first centuries, production and manufacturing shifted toward Asia and other low-wage regions, while states still subsidize growers and police labor—so coercion persists alongside dramatic productivity gains.",
   themes: [
     {
-      id: "thread-placeholder",
-      label: "Keyword (Placeholder)",
-      description: "Placeholder keyword content removed.",
+      id: "labor-regimes",
+      label: "Labor Regimes",
+      description:
+        "How cotton organized work in households, plantations, and factories.",
       definition:
-        "Placeholder definition for the keywords section.",
-      applications: []
+        "Systems that mobilize cotton labor across time and place—household spinning and weaving, enslaved plantation gangs, factory wage labor, and coerced tenancy or colonial work—organized by households, planters, employers, and states through gendered roles, contracts, surveillance, and violence.",
+      applications: [
+        {
+          chapter: 1,
+          setting: "Pacific-coast villages in the Aztec Empire",
+          time: "1518",
+          point:
+            "Household labor and tribute obligations organized cotton work, with villagers processing cotton by hand for elite payments.",
+          evidence: [
+            "In 1518, twelve Pacific-coast villages delivered 800 bales plus thousands of cloths to Moctezuma II as annual tribute. (p. 24)",
+            "Villagers processed cotton by hand from seed removal through spinning and backstrap-loom weaving inside their huts. (p. 24)"
+          ]
+        },
+        {
+          chapter: 2,
+          setting: "Gold Coast and Atlantic plantation zones",
+          time: "1500s-1700s",
+          point:
+            "Atlantic plantation labor was secured through slave trading in which textiles bought captives, producing massive forced migration.",
+          evidence: [
+            "European powers built coastal forts and over 8 million Africans were transported to the Americas after 1500. (p. 58-59)",
+            "In Richard Miles's 1772-1780 barters on the Gold Coast, textiles made up more than half the value used to buy enslaved people. (p. 59)"
+          ]
+        },
+        {
+          chapter: 3,
+          setting: "Manchester-Lancashire mills (Quarry Bank)",
+          time: "1780s-1830s",
+          point:
+            "Factory labor regimes centralized production and relied on women and children working for wages, including poorhouse apprentices.",
+          evidence: [
+            "In 1784 Samuel Greg gathered children from poorhouses to work alongside water frames at Quarry Bank Mill. (p. 82-83)",
+            "The chapter notes that most mill workers were women and children and that most labor was waged. (p. 98)"
+          ]
+        },
+        {
+          chapter: 4,
+          setting: "Saint-Domingue and Caribbean cotton frontier",
+          time: "1780s-1791",
+          point:
+            "Caribbean cotton expansion depended on enslaved labor mobilized through violent supervision for effort-intensive plantation work.",
+          evidence: [
+            "In 1791 Saint-Domingue exported 6.8 million pounds of cotton while importing about a quarter million enslaved Africans between 1784 and 1791. (p. 121)",
+            "The chapter ties cotton's rise to slavery-enabled rapid labor mobilization and violent supervision for an effort-intensive crop. (p. 121)"
+          ]
+        },
+        {
+          chapter: 5,
+          setting: "U.S. Deep South plantations",
+          time: "1790s-1860",
+          point:
+            "The U.S. cotton boom relied on slave markets and forced migration that concentrated enslaved labor on large plantations.",
+          evidence: [
+            "Declining tobacco profits in the upper South pushed enslaved people south; by 1830 about 1 million people grew cotton, most of them enslaved. (p. 144)",
+            "The internal slave trade ultimately moved up to a million enslaved people to the Deep South to grow cotton. (p. 144)"
+          ]
+        },
+        {
+          chapter: 7,
+          setting: "Lancashire and European mills",
+          time: "1830s-1850s",
+          point:
+            "Industrial cotton depended on child-heavy, long-hour factory labor enforced through harsh discipline.",
+          evidence: [
+            "In 1833, 10-year-old Ellen Hootton reported 14.5-hour days and beatings at Eccles Spinning Mill. (p. 223-224)",
+            "In 1833, 36 percent of Lancashire cotton workers were under 16. (p. 240)"
+          ]
+        },
+        {
+          chapter: 9,
+          setting: "Manchester and Liverpool cotton circles",
+          time: "1860s Civil War",
+          point:
+            "After emancipation threatened slave labor, manufacturers argued that disciplined labor was the key constraint and sought new coercive systems.",
+          evidence: [
+            "The Manchester Cotton Supply Association argued that land and climate were abundant but labor was the first requisite. (p. 336)",
+            "The Economist called for organized labor under European supervision to replace slavery's coercive order. (p. 337-338)"
+          ]
+        },
+        {
+          chapter: 10,
+          setting: "Mississippi Delta plantations",
+          time: "1867-1900",
+          point:
+            "Sharecropping and high-interest credit locked freedpeople into cotton production under a new labor regime.",
+          evidence: [
+            "Sharecropping spread rapidly; by 1900 more than three-quarters of Black farmers in multiple Deep South states were croppers or renters. (p. 352)",
+            "On Mississippi's Runnymede plantation, croppers paid 25 percent interest for food and 35 percent for clothing. (p. 353)"
+          ]
+        },
+        {
+          chapter: 12,
+          setting: "German Togo and Belgian Congo",
+          time: "1911-1914",
+          point:
+            "Colonial cotton schemes enforced labor through mandatory cultivation, controlled buying stations, and corporal punishment.",
+          evidence: [
+            "By 1911-1914 German Togo used authorized buying stations and corporal punishment while relying on forced labor for cotton handling and roads. (p. 457-458)",
+            "In the Belgian Congo cotton became a mandatory culture obligatoire enforced with penalties and whippings. (p. 459)"
+          ]
+        },
+        {
+          chapter: 13,
+          setting: "Japanese spinning mills",
+          time: "1890s-1930s",
+          point:
+            "Japan's export surge rested on a low-wage female labor regime with long shifts and dormitory control.",
+          evidence: [
+            "In 1897, 79 percent of workers were female and 15 percent were under fourteen, often in twelve-hour two-shift systems. (p. 498-499)",
+            "Factory protections were delayed until 1920 as Japan expanded cloth exports. (p. 499-500)"
+          ]
+        },
+        {
+          chapter: 14,
+          setting: "Uzbekistan and India cotton farming",
+          time: "2000s",
+          point:
+            "Modern cotton farming still uses coercion and debt, from forced cultivation to crisis-driven farmer suicides.",
+          evidence: [
+            "Uzbekistan forces farmers to grow cotton, and Tajik farmers incur debt through costly GMO seed systems. (p. 530)",
+            "In India, a 2005 season of weak rains led hundreds of indebted cotton farmers to commit suicide. (p. 530)"
+          ]
+        }
+      ]
+    },
+    {
+      id: "state-power",
+      label: "State Power",
+      description:
+        "Laws, coercion, and infrastructure that reshaped cotton.",
+      definition:
+        "State institutions (chartered companies, colonial administrations, and national governments) used law, coercion, infrastructure, and protectionism to seize land, discipline labor, and structure cotton markets across empires and nations.",
+      applications: [
+        {
+          chapter: 2,
+          setting: "Bengal under East India Company rule",
+          time: "1765-1790s",
+          point:
+            "Company territorial rule imposed exclusive contracts and coercive inspections to control weaving in Bengal.",
+          evidence: [
+            "After 1765 the East India Company ruled Bengal and sought to force weavers into exclusive supply. (p. 67-68)",
+            "Weavers were inspected on the loom and punished for selling elsewhere; agents used flogging and public humiliation. (p. 69)"
+          ]
+        },
+        {
+          chapter: 3,
+          setting: "Britain",
+          time: "1786-1830s",
+          point:
+            "The British state protected industrial advantage by banning machine exports and enforcing trade and contract protections that sustained exports.",
+          evidence: [
+            "The state banned textile machine exports after 1786 to protect British advantage. (p. 96)",
+            "Export growth depended on the navy, bills of lading, and contract enforcement, with legislative protection. (p. 106-107)"
+          ]
+        },
+        {
+          chapter: 4,
+          setting: "British Caribbean colonies",
+          time: "1768-1780s",
+          point:
+            "British institutions used tariffs and incentives to push plantation cotton expansion, linking state policy to second-slavery frontiers.",
+          evidence: [
+            "The Royal Society of Arts offered a gold medal (1768) and Britain levied a tariff on cotton imported on foreign boats (1780). (p. 122)",
+            "Colonial governors promised incentives including free land for cotton cultivation. (p. 122)"
+          ]
+        },
+        {
+          chapter: 6,
+          setting: "Continental Europe and the United States",
+          time: "1806-1840s",
+          point:
+            "States launched mechanized cotton by subsidies, blockades, and tariffs that created protected markets for new mills.",
+          evidence: [
+            "French, Saxon, Russian, and Danish governments issued loans, subsidies, or monopolies to early mills. (p. 199-200)",
+            "The continental blockade and U.S. embargo protected markets, with U.S. spindles rising from 8,000 in 1807 to 130,000 by 1815. (p. 200-202)"
+          ]
+        },
+        {
+          chapter: 7,
+          setting: "Britain and Prussia",
+          time: "1823-1845",
+          point:
+            "States enforced factory wage labor through criminal penalties for contract breach.",
+          evidence: [
+            "Britain's 1823 Master and Servant Act allowed imprisonment for breach, with about 10,000 prosecutions per year in 1857-1875. (p. 230)",
+            "Prussia's 1845 Gewerbeordnung imposed fines and prison for workers who left jobs without permission. (p. 231)"
+          ]
+        },
+        {
+          chapter: 8,
+          setting: "British India and Liverpool merchant lobbying",
+          time: "1850s-1870s",
+          point:
+            "Merchant lobbying translated into state-built infrastructure and formal cotton-market rules in colonial India.",
+          evidence: [
+            "Merchants lobbied for docks, storage, railways, waterways, and enforceable commercial law to speed trade. (p. 296)",
+            "British cotton legislation in India formalized market rules at the intersection of merchant lobbying and state power. (p. 297)"
+          ]
+        },
+        {
+          chapter: 9,
+          setting: "Confederate States and Union blockade",
+          time: "1861-1863",
+          point:
+            "War-state actions (export embargo and blockade) collapsed cotton exports and made supply a legislative security issue.",
+          evidence: [
+            "Exports to Europe fell from 3.8 million bales in 1860 to virtually none by 1862 after the Confederate embargo and Union blockade. (p. 308)",
+            "Cotton was debated in British and French legislatures; Palmerston argued England must have cotton to prevent mass suffering. (p. 312-313)"
+          ]
+        },
+        {
+          chapter: 10,
+          setting: "Berar, colonial India",
+          time: "1853-1880s",
+          point:
+            "Colonial rule remade land and infrastructure to turn Berar into an export cotton monoculture.",
+          evidence: [
+            "Britain assumed control of Berar in 1853 and completed the Khamgaon railroad in 1870, linking cotton to Bombay and Europe. (p. 363-364)",
+            "Cotton acreage in Berar doubled from 1861 to 1865 and doubled again by the 1880s. (p. 367)"
+          ]
+        },
+        {
+          chapter: 11,
+          setting: "Ottoman Empire and China",
+          time: "1838-1900",
+          point:
+            "Imperial treaties and colonial tariffs opened markets to European cloth and dismantled local textile industries.",
+          evidence: [
+            "The 1838 imposition of free trade on the Ottoman Empire and the 1842 Treaty of Nanking opened markets to European cloth with devastating effects on local producers. (p. 400)",
+            "Colonial governments imposed tariffs and excise duties against indigenous producers and built infrastructure for global market access. (p. 402)"
+          ]
+        },
+        {
+          chapter: 12,
+          setting: "Korea under Japanese colonial rule",
+          time: "1904-1920",
+          point:
+            "Japanese colonial authorities used directives, credit institutions, and seed programs to redirect Korean farming toward cotton exports.",
+          evidence: [
+            "After 1904 the Association for the Cultivation of Cotton in Korea introduced American strains and built a gin, and in 1906 the Korean Cotton Corporation loaned against mortgaged crops. (p. 420)",
+            "After the 1910 occupation, the Governor-General ordered upland cotton planting and exports to Japan jumped to 165 million pounds by 1916-20. (p. 421)"
+          ]
+        }
+      ]
+    },
+    {
+      id: "market-infrastructure",
+      label: "Market Infrastructure",
+      description:
+        "Trade, finance, and standards that connected cotton globally.",
+      definition:
+        "Merchant and financial systems that connect cotton across distance—trade routes, credit and factoring, exchanges and grading standards, price information, and retailer-led supply chains—linking growers, manufacturers, and consumers.",
+      applications: [
+        {
+          chapter: 1,
+          setting: "Indian Ocean trade routes",
+          time: "first millennium CE-1500s",
+          point:
+            "Cotton cloth functioned as currency and moved through Indian Ocean trade networks linking India to Africa and Southeast Asia.",
+          evidence: [
+            "Cotton cloth functioned as tax payment and currency across China, Africa, Southeast Asia, and Mesoamerica. (p. 37)",
+            "Indian cotton moved by dhows, caravans, and junks to Egypt, the Middle East, East Africa, and Southeast Asia. (p. 39)"
+          ]
+        },
+        {
+          chapter: 5,
+          setting: "Charleston, Memphis, New Orleans, and Liverpool",
+          time: "1820s-1850s",
+          point:
+            "Transatlantic merchant networks and slave-mortgage credit integrated U.S. cotton exports with European finance.",
+          evidence: [
+            "European import merchants stationed agents in Charleston, Memphis, and New Orleans and built dense shipping connections. (p. 149)",
+            "In Louisiana 88 percent of loans and in South Carolina 82 percent used enslaved people as collateral. (p. 150)"
+          ]
+        },
+        {
+          chapter: 6,
+          setting: "Chemnitz and Swiss putting-out regions",
+          time: "1790s-1830s",
+          point:
+            "Merchants advanced raw cotton and coordinated household spinning through putting-out networks before shifting workers into factories.",
+          evidence: [
+            "Around Chemnitz, merchants advanced raw cotton and by 1799 about 15,000 people spun in their homes. (p. 182-183)",
+            "In Switzerland, merchants shifted spinners into factories as they brought wage workers into mechanized mills. (p. 183-184)"
+          ]
+        },
+        {
+          chapter: 8,
+          setting: "Liverpool Cotton Exchange",
+          time: "1809-1860s",
+          point:
+            "Liverpool's exchange and brokers standardized grades and prices, creating a global signal system for cotton.",
+          evidence: [
+            "Liverpool price quotations were tracked from Bombay to the U.S. South and guided investment decisions. (p. 255)",
+            "Brokers introduced buying by sample and grade categories that standardized cotton for machine production. (p. 264-265)"
+          ]
+        },
+        {
+          chapter: 11,
+          setting: "Global cotton exchanges",
+          time: "1869-1910s",
+          point:
+            "Exchanges and futures trading standardized cotton and produced a single world price accessible everywhere.",
+          evidence: [
+            "Cotton exchanges spread globally after 1869, enabled by telegraphy and standardized grades. (p. 394)",
+            "Futures volumes soon dwarfed physical harvests and produced a single world price. (p. 396)"
+          ]
+        },
+        {
+          chapter: 13,
+          setting: "Ahmedabad",
+          time: "1860s-1918",
+          point:
+            "Merchant capital from long-distance trade and moneylending was reinvested into mills, building Ahmedabad's industrial cluster.",
+          evidence: [
+            "Ahmedabad merchants long dominated cotton trade and finance and shifted into manufacturing in the 1870s. (p. 467)",
+            "Shapur Mill expanded quickly from 2,500 spindles to 10,000 by 1865, showing trade capital reinvested in industry. (p. 466)"
+          ]
+        },
+        {
+          chapter: 14,
+          setting: "Global apparel supply chains",
+          time: "late 20th century-present",
+          point:
+            "Retailers coordinate multi-country supply chains that link growers, spinners, and garment factories across the global South.",
+          evidence: [
+            "A typical shirt could be grown in China, India, Uzbekistan, or Senegal, spun in China, Turkey, or Pakistan, and sewn in Bangladesh or Vietnam. (p. 526-527)",
+            "About 98 percent of garments sold in the United States are made abroad. (p. 528)"
+          ]
+        }
+      ]
     }
   ],
   chapters: [
@@ -176,7 +506,7 @@ const BOOK_DATA = {
           ]
         }
       ],
-      themes: ["thread-placeholder"]
+      themes: ["labor-regimes", "market-infrastructure"]
     },
     {
       id: 2,
@@ -386,7 +716,7 @@ const BOOK_DATA = {
           ]
         }
       ],
-      themes: ["thread-placeholder"]
+      themes: ["labor-regimes", "state-power"]
     },
     {
       id: 3,
@@ -601,7 +931,7 @@ const BOOK_DATA = {
           ]
         }
       ],
-      themes: ["thread-placeholder"]
+      themes: ["labor-regimes", "state-power"]
     },
     {
       id: 4,
@@ -766,7 +1096,7 @@ const BOOK_DATA = {
           ]
         }
       ],
-      themes: ["thread-placeholder"]
+      themes: ["labor-regimes", "state-power"]
     },
     {
       id: 5,
@@ -1013,7 +1343,7 @@ const BOOK_DATA = {
           ]
         }
       ],
-      themes: ["thread-placeholder"]
+      themes: ["labor-regimes", "market-infrastructure"]
     },
     {
       id: 6,
@@ -1305,7 +1635,7 @@ const BOOK_DATA = {
           ]
         }
       ],
-      themes: ["thread-placeholder"]
+      themes: ["state-power", "market-infrastructure"]
     },
     {
       id: 7,
@@ -1534,7 +1864,7 @@ const BOOK_DATA = {
           ]
         }
       ],
-      themes: ["thread-placeholder"]
+      themes: ["labor-regimes", "state-power"]
     },
     {
       id: 8,
@@ -1769,7 +2099,7 @@ const BOOK_DATA = {
           ]
         }
       ],
-      themes: ["thread-placeholder"]
+      themes: ["state-power", "market-infrastructure"]
     },
     {
       id: 9,
@@ -2021,7 +2351,7 @@ const BOOK_DATA = {
           ]
         }
       ],
-      themes: ["thread-placeholder"]
+      themes: ["labor-regimes", "state-power"]
     },
     {
       id: 10,
@@ -2231,7 +2561,7 @@ const BOOK_DATA = {
           ]
         }
       ],
-      themes: ["thread-placeholder"]
+      themes: ["labor-regimes", "state-power"]
     },
     {
       id: 11,
@@ -2492,7 +2822,7 @@ const BOOK_DATA = {
           ]
         }
       ],
-      themes: ["thread-placeholder"]
+      themes: ["state-power", "market-infrastructure"]
     },
     {
       id: 12,
@@ -2687,7 +3017,7 @@ const BOOK_DATA = {
           ]
         }
       ],
-      themes: ["thread-placeholder"]
+      themes: ["labor-regimes", "state-power"]
     },
     {
       id: 13,
@@ -2904,7 +3234,7 @@ const BOOK_DATA = {
           ]
         }
       ],
-      themes: ["thread-placeholder"]
+      themes: ["labor-regimes", "market-infrastructure"]
     },
     {
       id: 14,
@@ -3059,7 +3389,7 @@ const BOOK_DATA = {
           ]
         }
       ],
-      themes: ["thread-placeholder"]
+      themes: ["labor-regimes", "market-infrastructure"]
     }
   ],
   flow: [
@@ -3071,7 +3401,7 @@ const BOOK_DATA = {
       mechanism: "Household cultivation, gendered spinning, and regional exchange",
       period: "5000 BCE-1500s",
       chapters: [1],
-      themes: ["thread-placeholder"],
+      themes: ["labor-regimes", "market-infrastructure"],
       thesisLinks: [
         {
           chapter: 1,
@@ -3092,7 +3422,7 @@ const BOOK_DATA = {
       mechanism: "State-backed violence, slavery, and commodity frontiers",
       period: "late 1400s-1850s",
       chapters: [2, 3, 4, 5],
-      themes: ["thread-placeholder"],
+      themes: ["labor-regimes", "state-power", "market-infrastructure"],
       thesisLinks: [
         {
           chapter: 2,
@@ -3140,7 +3470,7 @@ const BOOK_DATA = {
       mechanism: "Mechanization, wage-labor discipline, and merchant-finance networks",
       period: "1780s-1860s",
       chapters: [6, 7, 8],
-      themes: ["thread-placeholder"],
+      themes: ["labor-regimes", "state-power", "market-infrastructure"],
       thesisLinks: [
         {
           chapter: 6,
@@ -3179,7 +3509,7 @@ const BOOK_DATA = {
       mechanism: "War disruption, state reconstruction, and imperial market-making",
       period: "1860s-1910s",
       chapters: [9, 10, 11],
-      themes: ["thread-placeholder"],
+      themes: ["labor-regimes", "state-power", "market-infrastructure"],
       thesisLinks: [
         {
           chapter: 9,
@@ -3218,7 +3548,7 @@ const BOOK_DATA = {
       mechanism: "Colonial cotton programs, cost competition, and nationalist industrialization",
       period: "1900s-1930s (into mid-century)",
       chapters: [12, 13],
-      themes: ["thread-placeholder"],
+      themes: ["labor-regimes", "state-power", "market-infrastructure"],
       thesisLinks: [
         {
           chapter: 12,
@@ -3248,7 +3578,7 @@ const BOOK_DATA = {
       mechanism: "Global supply chains, state subsidies, and capital mobility",
       period: "1950s-2010s",
       chapters: [14],
-      themes: ["thread-placeholder"],
+      themes: ["labor-regimes", "market-infrastructure"],
       thesisLinks: [
         {
           chapter: 14,
@@ -3588,7 +3918,7 @@ function bindControls() {
 }
 
 function init() {
-document.getElementById("coreArgument").textContent = "Subtitle placeholder.";
+  document.getElementById("coreArgument").textContent = BOOK_DATA.coreArgument;
 
   renderChapters();
   renderThreads();

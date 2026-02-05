@@ -543,4 +543,94 @@ main {
   .mindmap {
     padding: 18px;
   }
+
+  .subtitle {
+    font-size: 16px;
+  }
+
+  .controls {
+    gap: 10px;
+  }
+
+  .btn {
+    padding: 8px 14px;
+  }
+
+  .flow-detail {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 15px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  .hero {
+    padding: 32px 5vw;
+  }
+
+  .meta span {
+    font-size: 11px;
+    padding: 5px 10px;
+  }
+
+  .mindmap {
+    padding: 16px;
+  }
+
+  .node summary {
+    gap: 8px;
+    padding: 6px 8px;
+  }
+
+  .node-body {
+    margin: 10px 0 14px 10px;
+    padding: 12px;
+  }
+
+  .node-body ul,
+  .node-body .flow-list,
+  .node-body .evidence-list,
+  .flow-detail ul {
+    margin-left: 16px;
+  }
+
+  .side-panel {
+    padding: 16px;
+  }
+
+  .thread {
+    padding: 10px 12px;
+  }
+
+  .thread .desc {
+    font-size: 12px;
+  }
+
+  .flow {
+    grid-auto-flow: row;
+    grid-auto-columns: minmax(0, 1fr);
+  }
+
+  .flow-item {
+    gap: 10px;
+  }
+
+  .flow-node {
+    padding: 12px 14px;
+    min-height: 70px;
+  }
+
+  .flow-detail {
+    min-height: auto;
+  }
 }

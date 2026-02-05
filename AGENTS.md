@@ -1,7 +1,7 @@
 # Summarization rules
 
 Use this file when updating chapter content in `site/script.js`.
-These rules are organized by the three website sections: Chapter Argument Mindmap, Recurring Threads, and Book Synthesis Flow.
+These rules are organized by the three website sections: Chapter Argument Mindmap, Keywords, and Book Synthesis Flow.
 
 ## Chapter Argument Mindmap
 ### Content goals
@@ -36,24 +36,32 @@ These rules are organized by the three website sections: Chapter Argument Mindma
 - Ensure no step is a duplicate of another step; each should add a new part of the argument.
 - Co-design check: the thesis should cite most flow sections (ideally all). If there are too many sections to cite cleanly, merge sections until the thesis can reference them without bloating (target ~4-7 sections unless the chapter absolutely requires more).
 
-## Recurring Threads
+## Keywords
 ### Content goals
-- Each thread needs a concrete definition that names the actor(s), mechanism(s), and scope (where/when it applies).
-- For every chapter that lists a theme id in `chapter.themes`, add one `applications[]` entry for that theme.
+- Find recurring keywords (abstract terms repeated across chapters) and show their lineage by placing **each unique context where they occur** into `applications[]`.
+- The goal is to define keywords by use: track how meanings shift or stretch across time and place by naming actors, mechanisms, and settings each time the keyword appears in a distinct context.
+- Each keyword needs a concrete definition that names the actor(s), mechanism(s), and scope (where/when it applies).
+- For every chapter that lists a theme id in `chapter.themes`, add one or more `applications[]` entries for that keyword when the contexts differ (including multiple entries within the same chapter if needed).
 - Each `applications[]` entry must include:
   - `chapter`: chapter number.
   - `setting`: specific place or institutional context.
   - `time`: specific period or dated marker.
-  - `point`: one concrete sentence tying the thread to chapter evidence.
+  - `point`: one concrete sentence tying the keyword to chapter evidence.
   - `evidence[]`: paraphrased facts with page citations like `(p. 34)`.
 
+### Discovery workflow
+- Scan each chapter for abstract terms that recur; canonicalize minor variants (plural/hyphenation).
+- Prefer terms that appear across multiple chapters (default threshold: ≥3 chapters, or fewer if central to the core argument).
+
 ### Structure in `site/script.js`
-- Extend each item in `BOOK_DATA.themes[]` with:
+- Extend each item in `BOOK_DATA.themes[]` (keywords) with:
   - `definition`: string.
   - `applications[]`: array of `{ chapter, setting, time, point, evidence[] }`.
+- Keywords are stored in `BOOK_DATA.themes[]` and referenced via `chapter.themes` (reader-facing term is "keyword").
 
 ### Quality checks
-- Every chapter that includes a theme id must be represented once in that theme’s `applications[]`.
+- Every chapter that includes a theme id must be represented at least once in that keyword’s `applications[]`.
+- Add multiple entries per chapter when the keyword appears in distinct contexts (different setting/time/actors/mechanism).
 - Do not repeat the same application across chapters; each entry must add new evidence.
 - Each `applications[]` entry must specify setting and time explicitly.
 - Avoid vague terms; if used, immediately define them with concrete actors, mechanisms, and evidence.

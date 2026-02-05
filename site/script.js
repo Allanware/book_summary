@@ -5,10 +5,10 @@ const BOOK_DATA = {
   themes: [
     {
       id: "thread-placeholder",
-      label: "Recurring Thread (Placeholder)",
-      description: "Placeholder thread content removed.",
+      label: "Keyword (Placeholder)",
+      description: "Placeholder keyword content removed.",
       definition:
-        "Placeholder definition for the recurring threads section.",
+        "Placeholder definition for the keywords section.",
       applications: []
     }
   ],

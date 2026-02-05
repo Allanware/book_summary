@@ -1,3 +1,4 @@
 *.pdf
 tmp/
 .codex/
+.DS_Store

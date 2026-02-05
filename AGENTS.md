@@ -7,6 +7,7 @@ These rules are organized by the three website sections: Chapter Argument Mindma
 ### Content goals
 - Read the full chapter text from `Empire of Cotton.pdf` and cover the entire page range.
 - Build paragraph-level notes first, then synthesize them into structured argument steps so no part of the chapter is skipped.
+- Subarguments and their supporting evidence do not need to be introduced in strict page order; group evidence by mechanism/actors and merge overlapping subarguments even when the supporting pages are far apart.
 - Build a concrete, evidence-led logical progression for each chapter (no generic language unless immediately tied to specific evidence).
 - Each claim should be anchored to specific evidence with page numbers like `(p. 34)`.
 - Prefer paraphrase plus page numbers, not long quotes.
@@ -16,7 +17,8 @@ These rules are organized by the three website sections: Chapter Argument Mindma
 ### Structure in `site/script.js`
 - Use `thesis` and `flowSections` for updated chapters.
 - `thesis` must be concrete and specific (time, place, actors, mechanisms, and outcomes where applicable).
-- Add citation hyperlinks in each `thesis`, drawn from the subarguments' evidence; link to the PDF page (e.g., `(p. 82)` as `<a href="Empire%20of%20Cotton.pdf#page=82">(p. 82)</a>`).
+- Add hyperlink(s) in each `thesis` that point to the relevant subarguments below (flow sections) using in-page anchors.
+- Use superscript numeric links (e.g., `<sup><a href="#chapter-1-section-1">1</a></sup>`) and keep a small space between adjacent superscripts (via CSS or a literal space).
 - If a subargument cannot fit in the thesis without bloating it, keep it only in the steps (it is too detailed for the thesis).
 - `flowSections` is an array of grouped subsections to make the argument structure explicit:
   - `title`: short, descriptive label of the subsection.
@@ -32,6 +34,7 @@ These rules are organized by the three website sections: Chapter Argument Mindma
 - Make sure the flow spans the whole chapter, including early, middle, and late pages.
 - Keep the number of steps proportional to the chapter length.
 - Ensure no step is a duplicate of another step; each should add a new part of the argument.
+- Co-design check: the thesis should cite most flow sections (ideally all). If there are too many sections to cite cleanly, merge sections until the thesis can reference them without bloating (target ~4-7 sections unless the chapter absolutely requires more).
 
 ## Recurring Threads
 ### Content goals

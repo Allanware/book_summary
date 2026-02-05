@@ -228,6 +228,11 @@ main {
   color: var(--ink);
 }
 
+.node-body sup + sup,
+.flow-detail sup + sup {
+  margin-left: 0.25em;
+}
+
 .node-body .flow-list {
   margin: 8px 0 0 18px;
   padding: 0;

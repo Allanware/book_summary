@@ -50,7 +50,7 @@ These rules are organized by the three website sections: Chapter Argument Mindma
   - `evidence[]`: paraphrased facts with page citations like `(p. 34)`.
 
 ### Discovery workflow
-- Scan each chapter for abstract terms that recur; canonicalize minor variants (plural/hyphenation).
+- Scan each chapter for abstract terms that recur (maybe build a frequency counter for abstract words related to the book's themes and arguments); canonicalize minor variants (plural/hyphenation).
 - Prefer terms that appear across multiple chapters (default threshold: ≥3 chapters, or fewer if central to the core argument).
 
 ### Structure in `site/script.js`

@@ -323,6 +323,51 @@ main {
   margin: 16px 0 24px;
 }
 
+.thread-group {
+  display: grid;
+  gap: 10px;
+}
+
+.thread-group.is-hidden {
+  display: none;
+}
+
+.thread-group-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+  padding: 8px 10px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.thread-group-title {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  color: var(--accent-dark);
+}
+
+.thread-group-toggle-meta {
+  font-size: 11px;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.thread-group-list {
+  display: grid;
+  gap: 10px;
+}
+
+.thread-group.is-collapsed .thread-group-list {
+  display: none;
+}
+
 .thread-grid.has-active-theme .thread:not(.active) {
   display: none;
 }
@@ -406,6 +451,11 @@ main {
 
 .theme-app-title {
   font-weight: 600;
+}
+
+.theme-app-title sup {
+  margin-left: 0.2em;
+  font-size: 0.72em;
 }
 
 .theme-app-meta {

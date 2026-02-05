@@ -42,6 +42,12 @@ const state = {
   activeFlow: null
 };
 
+const THEME_GROUPS = [
+  { id: "mechanisms", label: "Mechanisms" },
+  { id: "institutions-actors", label: "Institutions & Actors" },
+  { id: "places-regions", label: "Places & Regions" }
+];
+
 const chapterElements = new Map();
 const flowElements = new Map();
 const threadGrid = document.getElementById("threadGrid");
@@ -220,19 +226,62 @@ document.addEventListener("click", (event) => {
 
 function renderThreads() {
   threadGrid.innerHTML = "";
+  const groupedThemes = new Map(
+    THEME_GROUPS.map((group) => [group.id, []])
+  );
 
   BOOK_DATA.themes.forEach((theme) => {
-    const button = document.createElement("button");
-    button.type = "button";
-    button.className = "thread";
-    button.dataset.theme = theme.id;
-    button.innerHTML = `
-      <div class="label">${theme.label}</div>
-      <div class="desc">${theme.description}</div>
-    `;
-    button.addEventListener("click", () => toggleTheme(theme.id));
-    threadGrid.appendChild(button);
+    if (!groupedThemes.has(theme.group)) {
+      groupedThemes.set(theme.group, []);
+    }
+    groupedThemes.get(theme.group).push(theme);
   });
+
+  THEME_GROUPS.forEach((group) => {
+    const themes = groupedThemes.get(group.id) || [];
+    if (!themes.length) {
+      return;
+    }
+
+    const section = document.createElement("section");
+    section.className = "thread-group";
+    section.dataset.group = group.id;
+
+    const heading = document.createElement("button");
+    heading.type = "button";
+    heading.className = "thread-group-toggle";
+    heading.innerHTML = `
+      <span class="thread-group-title">${group.label}</span>
+      <span class="thread-group-toggle-meta">Show keywords</span>
+    `;
+    heading.addEventListener("click", () => {
+      const collapsed = section.classList.contains("is-collapsed");
+      setThreadGroupCollapsed(section, !collapsed);
+    });
+    section.appendChild(heading);
+
+    const list = document.createElement("div");
+    list.className = "thread-group-list";
+
+    themes.forEach((theme) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "thread";
+      button.dataset.theme = theme.id;
+      button.innerHTML = `
+        <div class="label">${theme.label}</div>
+        <div class="desc">${theme.description}</div>
+      `;
+      button.addEventListener("click", () => toggleTheme(theme.id));
+      list.appendChild(button);
+    });
+
+    section.appendChild(list);
+    threadGrid.appendChild(section);
+  });
+
+  collapseAllThreadGroups();
+  updateThreadGroupVisibility();
 }
 
 function renderFlow() {
@@ -313,12 +362,9 @@ function updateThemeDetail(theme) {
   const applicationBlocks = applications.length
     ? applications
         .map((application) => {
-          const chapter = BOOK_DATA.chapters.find(
-            (item) => item.id === application.chapter
-          );
-          const chapterLabel = chapter
-            ? `Ch ${chapter.id}: ${chapter.title}`
-            : `Ch ${application.chapter}`;
+          const chapterSup = Number.isInteger(application.chapter)
+            ? `<sup>${application.chapter}</sup>`
+            : "";
           const evidenceItems = Array.isArray(application.evidence)
             ? application.evidence
             : [];
@@ -330,7 +376,7 @@ function updateThemeDetail(theme) {
           return `
             <div class="theme-app">
               <div class="theme-app-header">
-                <div class="theme-app-title">${chapterLabel}</div>
+                <div class="theme-app-title">Context${chapterSup}</div>
                 <div class="theme-app-meta">${application.setting} • ${application.time}</div>
               </div>
               <div class="theme-app-point">${application.point}</div>
@@ -376,6 +422,7 @@ function toggleTheme(themeId) {
   });
 
   threadGrid.classList.toggle("has-active-theme", Boolean(state.activeTheme));
+  updateThreadGroupVisibility();
 
   const theme = state.activeTheme
     ? BOOK_DATA.themes.find((item) => item.id === state.activeTheme)
@@ -409,6 +456,38 @@ function updateHighlights() {
   });
 }
 
+function updateThreadGroupVisibility() {
+  const hasActiveTheme = Boolean(state.activeTheme);
+  document.querySelectorAll(".thread-group").forEach((group) => {
+    if (!hasActiveTheme) {
+      group.classList.remove("is-hidden");
+      return;
+    }
+    const activeThread = group.querySelector(".thread.active");
+    group.classList.toggle("is-hidden", !activeThread);
+    if (activeThread) {
+      setThreadGroupCollapsed(group, false);
+    }
+  });
+}
+
+function setThreadGroupCollapsed(group, collapsed) {
+  if (!group) {
+    return;
+  }
+  group.classList.toggle("is-collapsed", collapsed);
+  const toggleMeta = group.querySelector(".thread-group-toggle-meta");
+  if (toggleMeta) {
+    toggleMeta.textContent = collapsed ? "Show keywords" : "Hide keywords";
+  }
+}
+
+function collapseAllThreadGroups() {
+  document.querySelectorAll(".thread-group").forEach((group) => {
+    setThreadGroupCollapsed(group, true);
+  });
+}
+
 function bindControls() {
   const toggleAllBtn = document.getElementById("toggleAll");
   
@@ -432,6 +511,8 @@ function bindControls() {
     });
 
     threadGrid.classList.remove("has-active-theme");
+    collapseAllThreadGroups();
+    updateThreadGroupVisibility();
     updateThemeDetail(null);
 
     flowElements.forEach((node) => {

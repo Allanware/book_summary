@@ -1,6 +1,6 @@
 # Summarization rules
 
-Use this file when updating chapter content in `site/script.js`.
+Use this file when updating chapter content in `chapters/chapter-XX.js` and book-level data in `book-data.js`.
 These rules are organized by the three website sections: Chapter Argument Mindmap, Keywords, and Book Synthesis Flow.
 
 ## Chapter Argument Mindmap
@@ -14,7 +14,9 @@ These rules are organized by the three website sections: Chapter Argument Mindma
 - Avoid vague words (for example: "important," "significant," "major," "big") unless you immediately show what that means with evidence.
 - Avoid abstract nouns without concrete definition (for example: "coercion," "credit," "reconfiguration") unless you immediately specify the concrete mechanism, actor, and evidence that define the term in that context.
 
-### Structure in `site/script.js`
+### Structure in `chapters/chapter-XX.js`
+- Each chapter summary must live in its own standalone module: `chapters/chapter-01.js` ... `chapters/chapter-14.js`.
+- Do not add or edit chapter summaries in `script.js` (UI logic only) or inline inside `book-data.js`.
 - Use `thesis` and `flowSections` for updated chapters.
 - `thesis` must be concrete and specific (time, place, actors, mechanisms, and outcomes where applicable).
 - Add hyperlink(s) in each `thesis` that point to the relevant subarguments below (flow sections) using in-page anchors.
@@ -53,7 +55,7 @@ These rules are organized by the three website sections: Chapter Argument Mindma
 - Scan each chapter for abstract terms that recur (maybe build a frequency counter for abstract words related to the book's themes and arguments); canonicalize minor variants (plural/hyphenation).
 - Prefer terms that appear across multiple chapters (default threshold: ≥3 chapters, or fewer if central to the core argument).
 
-### Structure in `site/script.js`
+### Structure in `book-data.js`
 - Extend each item in `BOOK_DATA.themes[]` (keywords) with:
   - `definition`: string.
   - `applications[]`: array of `{ chapter, setting, time, point, evidence[] }`.
@@ -68,11 +70,13 @@ These rules are organized by the three website sections: Chapter Argument Mindma
 
 ## Book Synthesis Flow
 ### Content goals
+- The Book Synthesis Flow subtitle (the text under the "Book Synthesis Flow" heading) must state the book’s **main argument** and provide a **whole-book summary** in evidence-led sentences (actors + mechanisms + chronology; no chapter-by-chapter list).
 - Each flow step must synthesize the main arguments from the chapter theses it covers, naming actors, mechanisms, and chronology explicitly.
 - Use page-cited evidence drawn from those chapters’ theses and flow steps.
 - Avoid generic summaries; every sentence should tie to concrete evidence.
 
-### Structure in `site/script.js`
+### Structure in `book-data.js`
+- Store the Book Synthesis Flow subtitle in `BOOK_DATA.coreArgument` (rendered into the `#coreArgument` element by `script.js`).
 - Extend each item in `BOOK_DATA.flow[]` with:
   - `thesisLinks[]`: array of `{ chapter, point, evidence[] }`.
 
@@ -83,5 +87,5 @@ These rules are organized by the three website sections: Chapter Argument Mindma
 - Flow steps must remain non-overlapping and chronologically ordered.
 
 ## Context handling
-- After a chapter summary is complete, write it into `site/script.js` and do not paste the full summary into the response.
-- Do not keep intermediate notes or draft summaries in ongoing context; once written to `site/script.js`, avoid repeating the chapter summary in chat.
+- After a chapter summary is complete, write it into the appropriate `chapters/chapter-XX.js` file and do not paste the full summary into the response.
+- Do not keep intermediate notes or draft summaries in ongoing context; once written to the chapter file, avoid repeating the chapter summary in chat.

@@ -61,6 +61,11 @@ These rules are organized by the three website sections: Chapter Argument Mindma
   - `applications[]`: array of `{ chapter, setting, time, point, evidence[] }`.
 - Keywords are stored in `BOOK_DATA.themes[]` and referenced via `chapter.themes` (reader-facing term is "keyword").
 
+### UI behavior
+- Clicking a keyword should render a large keyword detail card below the keyword list and hide other keyword tiles.
+- The keyword detail card should display the keyword label, description/definition, and all `applications[]` entries (including setting, time, point, and evidence).
+- Clicking a keyword should also highlight the relevant chapters.
+
 ### Quality checks
 - Every chapter that includes a theme id must be represented at least once in that keyword’s `applications[]`.
 - Add multiple entries per chapter when the keyword appears in distinct contexts (different setting/time/actors/mechanism).

@@ -44,6 +44,28 @@ const state = {
 
 const chapterElements = new Map();
 const flowElements = new Map();
+const threadGrid = document.getElementById("threadGrid");
+const chapterThemeIndex = buildChapterThemeIndex();
+
+function buildChapterThemeIndex() {
+  const index = new Map();
+  BOOK_DATA.themes.forEach((theme) => {
+    const applications = Array.isArray(theme.applications)
+      ? theme.applications
+      : [];
+    applications.forEach((application) => {
+      const chapterId = application.chapter;
+      if (!Number.isInteger(chapterId)) {
+        return;
+      }
+      if (!index.has(chapterId)) {
+        index.set(chapterId, new Set());
+      }
+      index.get(chapterId).add(theme.id);
+    });
+  });
+  return index;
+}
 
 function renderChapters() {
   const container = document.getElementById("chapterMindmap");
@@ -64,7 +86,10 @@ function renderChapters() {
     const node = document.createElement("details");
     node.className = "node chapter";
     node.dataset.id = chapter.id;
-    node.dataset.themes = chapter.themes.join(" ");
+    const baseThemes = Array.isArray(chapter.themes) ? chapter.themes : [];
+    const extraThemes = chapterThemeIndex.get(chapter.id) || new Set();
+    const allThemes = new Set([...baseThemes, ...extraThemes]);
+    node.dataset.themes = Array.from(allThemes).join(" ");
 
     const nodeSummary = document.createElement("summary");
     nodeSummary.innerHTML = `<span class="chip">Ch ${chapter.id}</span><span>${chapter.title}</span>`;
@@ -194,8 +219,7 @@ document.addEventListener("click", (event) => {
 });
 
 function renderThreads() {
-  const grid = document.getElementById("threadGrid");
-  grid.innerHTML = "";
+  threadGrid.innerHTML = "";
 
   BOOK_DATA.themes.forEach((theme) => {
     const button = document.createElement("button");
@@ -207,7 +231,7 @@ function renderThreads() {
       <div class="desc">${theme.description}</div>
     `;
     button.addEventListener("click", () => toggleTheme(theme.id));
-    grid.appendChild(button);
+    threadGrid.appendChild(button);
   });
 }
 
@@ -224,7 +248,15 @@ function renderFlow() {
     node.className = "flow-node";
     node.dataset.id = step.id;
     node.dataset.chapters = step.chapters.join(",");
-    node.dataset.themes = step.themes.join(" ");
+    const baseThemes = Array.isArray(step.themes) ? step.themes : [];
+    const flowThemes = new Set(baseThemes);
+    step.chapters.forEach((chapterId) => {
+      const extraThemes = chapterThemeIndex.get(chapterId);
+      if (extraThemes) {
+        extraThemes.forEach((themeId) => flowThemes.add(themeId));
+      }
+    });
+    node.dataset.themes = Array.from(flowThemes).join(" ");
     node.innerHTML = `
       <div>${step.title}</div>
       <div class="muted" style="font-size:12px; margin-top:6px;">${step.mechanism}</div>
@@ -263,6 +295,64 @@ function updateFlowDetail(step) {
   `;
 }
 
+function updateThemeDetail(theme) {
+  const detail = document.getElementById("themeDetail");
+  if (!detail) {
+    return;
+  }
+  if (!theme) {
+    detail.classList.remove("is-visible");
+    detail.style.display = "none";
+    detail.innerHTML = `
+      <p class="muted">Select a keyword to see its definition and applications.</p>
+    `;
+    return;
+  }
+
+  const applications = Array.isArray(theme.applications) ? theme.applications : [];
+  const applicationBlocks = applications.length
+    ? applications
+        .map((application) => {
+          const chapter = BOOK_DATA.chapters.find(
+            (item) => item.id === application.chapter
+          );
+          const chapterLabel = chapter
+            ? `Ch ${chapter.id}: ${chapter.title}`
+            : `Ch ${application.chapter}`;
+          const evidenceItems = Array.isArray(application.evidence)
+            ? application.evidence
+            : [];
+          const evidenceBlock = evidenceItems.length
+            ? `<ul class="evidence-list">${evidenceItems
+                .map((item) => `<li>${item}</li>`)
+                .join("")}</ul>`
+            : "";
+          return `
+            <div class="theme-app">
+              <div class="theme-app-header">
+                <div class="theme-app-title">${chapterLabel}</div>
+                <div class="theme-app-meta">${application.setting} • ${application.time}</div>
+              </div>
+              <div class="theme-app-point">${application.point}</div>
+              ${evidenceBlock}
+            </div>
+          `;
+        })
+        .join("")
+    : `<p class="muted">No applications listed yet.</p>`;
+
+  detail.classList.add("is-visible");
+  detail.style.display = "block";
+  detail.innerHTML = `
+    <div class="theme-title">${theme.label}</div>
+    <p class="theme-definition">${theme.definition}</p>
+    <div class="theme-applications">
+      <div class="theme-applications-title">Applications</div>
+      ${applicationBlocks}
+    </div>
+  `;
+}
+
 function setActiveFlow(flowId) {
   state.activeFlow = flowId;
 
@@ -284,6 +374,13 @@ function toggleTheme(themeId) {
   document.querySelectorAll(".thread").forEach((thread) => {
     thread.classList.toggle("active", thread.dataset.theme === state.activeTheme);
   });
+
+  threadGrid.classList.toggle("has-active-theme", Boolean(state.activeTheme));
+
+  const theme = state.activeTheme
+    ? BOOK_DATA.themes.find((item) => item.id === state.activeTheme)
+    : null;
+  updateThemeDetail(theme);
 
   updateHighlights();
 }
@@ -334,6 +431,9 @@ function bindControls() {
       thread.classList.remove("active");
     });
 
+    threadGrid.classList.remove("has-active-theme");
+    updateThemeDetail(null);
+
     flowElements.forEach((node) => {
       node.classList.remove("active", "is-dimmed");
     });
@@ -349,6 +449,7 @@ function init() {
   renderThreads();
   renderFlow();
   bindControls();
+  updateThemeDetail(null);
 
   const firstStep = BOOK_DATA.flow[0];
   updateFlowDetail(firstStep);

@@ -53,6 +53,137 @@ const flowElements = new Map();
 const threadGrid = document.getElementById("threadGrid");
 const chapterThemeIndex = buildChapterThemeIndex();
 
+function normalizeText(value) {
+  return String(value || "").replace(/\s+/g, " ").trim();
+}
+
+function ensureSentence(value) {
+  const text = normalizeText(value);
+  if (!text) {
+    return "";
+  }
+  return /[.!?]$/.test(text) ? text : `${text}.`;
+}
+
+function compactApplicationPoint(point) {
+  const source = normalizeText(point);
+  if (!source) {
+    return "";
+  }
+
+  const marker = /\bis visible as\b/i;
+  const markerMatch = marker.exec(source);
+  let compact = markerMatch
+    ? source.slice(markerMatch.index + markerMatch[0].length).trim()
+    : source;
+
+  compact = compact.replace(/\s*\([^)]*\)\.?$/, "").trim();
+  compact = compact.replace(/^[,;:\-\s]+/, "").trim();
+  return ensureSentence(compact || source);
+}
+
+function summarizeApplication(application) {
+  const point = compactApplicationPoint(application.point);
+  const evidence = Array.isArray(application.evidence) && application.evidence.length
+    ? ensureSentence(application.evidence[0])
+    : "";
+
+  if (point && evidence && point.toLowerCase() === evidence.toLowerCase()) {
+    return point;
+  }
+
+  return [point, evidence].filter(Boolean).join(" ");
+}
+
+function joinWithAnd(items) {
+  if (!items.length) {
+    return "";
+  }
+  if (items.length === 1) {
+    return items[0];
+  }
+  if (items.length === 2) {
+    return `${items[0]} and ${items[1]}`;
+  }
+  return `${items.slice(0, -1).join(", ")}, and ${items[items.length - 1]}`;
+}
+
+function buildThemeCitation(themeId, index) {
+  return `<sup><a href="#theme-${themeId}-application-${index + 1}">${index + 1}</a></sup>`;
+}
+
+function buildDefinitionApplicationClause(themeId, application, index) {
+  const compactPoint = compactApplicationPoint(application.point).replace(/[.!?]$/, "");
+  const context = [normalizeText(application.setting), normalizeText(application.time)]
+    .filter(Boolean)
+    .join(", ");
+  const citation = buildThemeCitation(themeId, index);
+
+  if (compactPoint && context) {
+    return `${compactPoint} (${context})${citation}`;
+  }
+  if (compactPoint) {
+    return `${compactPoint}${citation}`;
+  }
+  if (context) {
+    return `${context}${citation}`;
+  }
+  return `documented application${citation}`;
+}
+
+function buildThemeDefinition(theme, applications) {
+  const baseDefinition = String(theme.definition || "").trim();
+  if (!baseDefinition) {
+    return "";
+  }
+
+  const hasEmbeddedLinks = /href=["']#theme-[^"']+-application-\d+["']/.test(baseDefinition);
+  if (hasEmbeddedLinks || !applications.length) {
+    return baseDefinition;
+  }
+
+  const clauses = applications
+    .map((application, index) =>
+      buildDefinitionApplicationClause(theme.id, application, index)
+    )
+    .filter(Boolean);
+
+  if (!clauses.length) {
+    return baseDefinition;
+  }
+
+  const chunkSize = 3;
+  const supportSentences = [];
+  for (let i = 0; i < clauses.length; i += chunkSize) {
+    const chunk = clauses.slice(i, i + chunkSize);
+    const intro = i === 0 ? "It appears in" : "It also appears in";
+    supportSentences.push(`${intro} ${joinWithAnd(chunk)}.`);
+  }
+
+  const punctuatedBase = /[.!?](\s*<\/[^>]+>\s*)*$/.test(baseDefinition)
+    ? baseDefinition
+    : `${baseDefinition}.`;
+
+  return `${punctuatedBase} ${supportSentences.join(" ")}`.trim();
+}
+
+function bindSectionToggles(container) {
+  if (!container) {
+    return;
+  }
+
+  container.querySelectorAll(".section-toggle").forEach((toggle) => {
+    toggle.addEventListener("click", () => {
+      const section = toggle.closest(".flow-section");
+      if (!section) {
+        return;
+      }
+      const collapsed = section.classList.toggle("is-collapsed");
+      toggle.textContent = collapsed ? "Show details" : "Hide details";
+    });
+  });
+}
+
 function buildChapterThemeIndex() {
   const index = new Map();
   BOOK_DATA.themes.forEach((theme) => {
@@ -181,23 +312,14 @@ function renderChapters() {
 
     chapterElements.set(chapter.id, node);
 
-    body.querySelectorAll(".section-toggle").forEach((toggle) => {
-      toggle.addEventListener("click", () => {
-        const section = toggle.closest(".flow-section");
-        if (!section) {
-          return;
-        }
-        const collapsed = section.classList.toggle("is-collapsed");
-        toggle.textContent = collapsed ? "Show details" : "Hide details";
-      });
-    });
+    bindSectionToggles(body);
   });
 
   root.appendChild(branch);
   container.appendChild(root);
 }
 
-function expandFlowSectionById(sectionId) {
+function expandSectionById(sectionId) {
   const section = document.getElementById(sectionId);
   if (!section) {
     return;
@@ -212,7 +334,7 @@ function expandFlowSectionById(sectionId) {
 }
 
 document.addEventListener("click", (event) => {
-  const link = event.target.closest("a[href^='#chapter-'][href*='-section-']");
+  const link = event.target.closest("a[href^='#']");
   if (!link) {
     return;
   }
@@ -221,7 +343,12 @@ document.addEventListener("click", (event) => {
     return;
   }
   const sectionId = href.slice(1);
-  expandFlowSectionById(sectionId);
+  if (
+    /^chapter-\d+-section-\d+$/.test(sectionId) ||
+    /^theme-[a-z0-9-]+-application-\d+$/.test(sectionId)
+  ) {
+    expandSectionById(sectionId);
+  }
 });
 
 function renderThreads() {
@@ -351,7 +478,6 @@ function updateThemeDetail(theme) {
   }
   if (!theme) {
     detail.classList.remove("is-visible");
-    detail.style.display = "none";
     detail.innerHTML = `
       <p class="muted">Select a keyword to see its definition and applications.</p>
     `;
@@ -359,28 +485,31 @@ function updateThemeDetail(theme) {
   }
 
   const applications = Array.isArray(theme.applications) ? theme.applications : [];
+  const definition = buildThemeDefinition(theme, applications);
+
   const applicationBlocks = applications.length
     ? applications
-        .map((application) => {
+        .map((application, index) => {
+          const appId = `theme-${theme.id}-application-${index + 1}`;
           const chapterSup = Number.isInteger(application.chapter)
             ? `<sup>${application.chapter}</sup>`
             : "";
-          const evidenceItems = Array.isArray(application.evidence)
-            ? application.evidence
-            : [];
-          const evidenceBlock = evidenceItems.length
-            ? `<ul class="evidence-list">${evidenceItems
-                .map((item) => `<li>${item}</li>`)
-                .join("")}</ul>`
-            : "";
+          const context = [normalizeText(application.setting), normalizeText(application.time)]
+            .filter(Boolean)
+            .join(" • ");
+          const summary = summarizeApplication(application);
           return `
-            <div class="theme-app">
-              <div class="theme-app-header">
-                <div class="theme-app-title">Context${chapterSup}</div>
-                <div class="theme-app-meta">${application.setting} • ${application.time}</div>
+            <div class="flow-section is-collapsed" id="${appId}">
+              <div class="flow-section-header">
+                <div class="flow-section-title">Application${chapterSup}</div>
+                <button class="section-toggle" type="button">Show details</button>
               </div>
-              <div class="theme-app-point">${application.point}</div>
-              ${evidenceBlock}
+              ${context ? `<div class="flow-section-note">${context}</div>` : ""}
+              <ol class="flow-list">
+                <li>
+                  <div class="flow-point">${summary}</div>
+                </li>
+              </ol>
             </div>
           `;
         })
@@ -388,15 +517,17 @@ function updateThemeDetail(theme) {
     : `<p class="muted">No applications listed yet.</p>`;
 
   detail.classList.add("is-visible");
-  detail.style.display = "block";
   detail.innerHTML = `
-    <div class="theme-title">${theme.label}</div>
-    <p class="theme-definition">${theme.definition}</p>
-    <div class="theme-applications">
-      <div class="theme-applications-title">Applications</div>
-      ${applicationBlocks}
+    <div class="node-body">
+      <p class="theme-definition">${definition}</p>
+      <h4>Applications</h4>
+      <div class="flow-sections">
+        ${applicationBlocks}
+      </div>
     </div>
   `;
+
+  bindSectionToggles(detail);
 }
 
 function setActiveFlow(flowId) {

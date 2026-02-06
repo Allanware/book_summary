@@ -43,6 +43,9 @@ These rules are organized by the three website sections: Chapter Argument Mindma
 - Find recurring keywords (abstract terms repeated across chapters) and show their lineage by placing **each unique context where they occur** into `applications[]`.
 - The goal is to define keywords by use: track how meanings shift or stretch across time and place by naming actors, mechanisms, and settings each time the keyword appears in a distinct context.
 - Each keyword needs a concrete definition that names the actor(s), mechanism(s), and scope (where/when it applies).
+- Write each keyword definition as a compact argument sentence (or short set of sentences) with superscript citation links embedded at the relevant clauses, not appended as a separate citation block.
+- Place each citation immediately after the clause it supports (for example, after a specific actor-mechanism-time claim), not as a trailing list of superscripts at the end of the definition.
+- Author definition citations directly in `book-data.js` `definition` strings; do not rely on runtime UI logic to auto-generate or append definition citations.
 - For every chapter that lists a theme id in `chapter.themes`, add one or more `applications[]` entries for that keyword when the contexts differ (including multiple entries within the same chapter if needed).
 - Each `applications[]` entry must include:
   - `chapter`: chapter number.
@@ -50,6 +53,7 @@ These rules are organized by the three website sections: Chapter Argument Mindma
   - `time`: specific period or dated marker.
   - `point`: one concrete sentence tying the keyword to chapter evidence.
   - `evidence[]`: paraphrased facts with page citations like `(p. 34)`.
+- Write each application so it can be rendered as a compact 1-2 sentence evidence-led summary (claim plus supporting evidence), not a long paragraph.
 
 ### Discovery workflow
 - Scan each chapter for abstract terms that recur (maybe build a frequency counter for abstract words related to the book's themes and arguments); canonicalize minor variants (plural/hyphenation).
@@ -57,21 +61,46 @@ These rules are organized by the three website sections: Chapter Argument Mindma
 
 ### Structure in `book-data.js`
 - Extend each item in `BOOK_DATA.themes[]` (keywords) with:
-  - `definition`: string.
+  - `id`: stable keyword id.
+  - `label`: display label.
+  - `description`: short card description.
+  - `definition`: string (may include inline `<sup><a href="#theme-...-application-...">n</a></sup>` links embedded at the exact clause they cite).
+  - `group`: one of `"mechanisms"`, `"institutions-actors"`, `"places-regions"`.
+  - `aliases[]`: canonicalized variants when duplicates are merged.
   - `applications[]`: array of `{ chapter, setting, time, point, evidence[] }`.
+- Keep `applications[].chapter` as an integer chapter number (used for highlighting logic).
 - Keywords are stored in `BOOK_DATA.themes[]` and referenced via `chapter.themes` (reader-facing term is "keyword").
 
 ### UI behavior
+- Render keyword tiles in grouped sections in this order:
+  - `Mechanisms`
+  - `Institutions & Actors`
+  - `Places & Regions`
+- Within each keyword group, render keyword tiles in a two-column grid (2 keywords per row).
+- Each keyword group must be collapsible with its own show/hide toggle.
+- All keyword groups should be collapsed by default on initial load.
+- Clicking a keyword should auto-expand the active keyword’s group.
 - Clicking a keyword should render a large keyword detail card below the keyword list and hide other keyword tiles.
-- The keyword detail card should display the keyword label, description/definition, and all `applications[]` entries (including setting, time, point, and evidence).
+- The keyword detail card should follow the chapter-summary interaction pattern, but **do not show a `Thesis` heading for keywords**.
+- Render the keyword `definition` directly, with superscript numeric citation links embedded inline at the relevant phrases (for example, `... crop-liens<sup><a href="#theme-credit-application-3">3</a></sup> ...`).
+- Do not append synthetic citation sentences or end-loaded citation strings to the definition in the UI.
+- Render applications as numbered/cited subsections with independent show/hide toggles (no single global toggle for all applications).
+- In each keyword application header, show chapter citation as superscript only (for example, `Application<sup>8</sup>`); do not show chapter names.
+- Each expanded application body should be one or two short sentences that summarize the application and include evidence with page citation(s).
 - Clicking a keyword should also highlight the relevant chapters.
 
 ### Quality checks
+- Ensure every candidate keyword is represented either as a primary `label` or via `aliases[]`.
+- Canonicalize only strict duplicates you explicitly decide to merge (for current rules: merge `slave labor` into `slavery` via alias).
 - Every chapter that includes a theme id must be represented at least once in that keyword’s `applications[]`.
 - Add multiple entries per chapter when the keyword appears in distinct contexts (different setting/time/actors/mechanism).
 - Do not repeat the same application across chapters; each entry must add new evidence.
 - Each `applications[]` entry must specify setting and time explicitly.
 - Avoid vague terms; if used, immediately define them with concrete actors, mechanisms, and evidence.
+- Ensure every application is cited at least once from the keyword definition; if an application cannot be cited cleanly, either remove that application or expand/rewrite the definition so it can absorb and cite it.
+- Ensure definition citation links map 1:1 to application sections (no broken or missing anchors).
+- Ensure citation placement is local: each superscript must sit next to the specific clause it evidences, not only at sentence ends when multiple claims are present.
+- Ensure each application summary remains within 1-2 sentences while preserving concrete evidence.
 
 ## Book Synthesis Flow
 ### Content goals

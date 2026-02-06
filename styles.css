@@ -361,6 +361,7 @@ main {
 
 .thread-group-list {
   display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 10px;
 }
 
@@ -404,78 +405,36 @@ main {
 
 .theme-detail {
   display: none;
-  background: #fff;
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  padding: 16px;
-  box-shadow: var(--shadow);
 }
 
 .theme-detail.is-visible {
   display: block;
 }
 
-.theme-title {
-  font-weight: 700;
-  font-size: 18px;
-  margin-bottom: 6px;
+.theme-detail .node-body {
+  margin: 0;
 }
 
 .theme-definition {
   color: var(--ink);
 }
 
-.theme-applications-title {
-  font-size: 13px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+.theme-definition sup + sup {
+  margin-left: 0.25em;
+}
+
+.theme-definition sup a {
   color: var(--accent-dark);
-  margin: 16px 0 10px;
-  font-weight: 600;
+  text-decoration: none;
+  font-weight: 700;
 }
 
-.theme-app {
-  border: 1px dashed var(--line);
-  border-radius: 12px;
-  padding: 12px;
-  background: rgba(255, 249, 241, 0.6);
-  margin-bottom: 12px;
+.theme-definition sup a:hover {
+  text-decoration: underline;
 }
 
-.theme-app-header {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  margin-bottom: 8px;
-}
-
-.theme-app-title {
-  font-weight: 600;
-}
-
-.theme-app-title sup {
-  margin-left: 0.2em;
-  font-size: 0.72em;
-}
-
-.theme-app-meta {
-  font-size: 12px;
-  color: var(--muted);
-}
-
-.theme-app-point {
-  font-weight: 600;
-  margin-bottom: 6px;
-}
-
-.theme-detail .evidence-list {
-  margin: 0 0 0 18px;
-  padding: 0;
-}
-
-.theme-detail .evidence-list li {
-  margin-bottom: 6px;
-  color: var(--muted);
+.theme-detail .flow-point {
+  font-weight: 500;
 }
 
 .legend {
@@ -731,6 +690,10 @@ main {
 
   .side-panel {
     padding: 16px;
+  }
+
+  .thread-group-list {
+    grid-template-columns: 1fr;
   }
 
   .thread {

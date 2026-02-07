@@ -3,159 +3,167 @@ export default {
   title: "The Rise of a Global Commodity",
   pages: "23-50",
   thesis:
-    "From roughly 5000 BCE through the 1500s, cotton production developed independently in South Asia, the Americas, and Africa within a climate band of about 32-35 degrees south to 37 degrees north.<sup><a href='#chapter-1-section-1'>1</a></sup><sup><a href='#chapter-1-section-2'>2</a></sup> Households interplanted cotton with food crops, women did most spinning, and cloth served as tribute and currency while India anchored long-distance trade and Asia supplied key processing technologies.<sup><a href='#chapter-1-section-1'>1</a></sup><sup><a href='#chapter-1-section-3'>3</a></sup> Europe entered late through Islamic Mediterranean routes, built northern Italian and southern German industries on imported cotton and borrowed tools, and those industries declined under Ottoman control and German rural cost advantages, pushing Europeans toward Atlantic, state-backed strategies by the late sixteenth century.<sup><a href='#chapter-1-section-4'>4</a></sup>",
+    "Before industrial mechanization, cotton became a global commodity through household-based production systems that developed independently across South Asia, the Americas, and Africa inside a shared subtropical ecological band, then fed tribute and regional exchange networks rather than plantation monoculture.<sup><a href=\"#chapter-1-section-1\">1</a></sup> <sup><a href=\"#chapter-1-section-2\">2</a></sup> Merchants linked selected cotton zones into long-distance circuits, but production remained organized through rural households, gendered labor, and putting-out finance, which expanded output without fully transforming social relations.<sup><a href=\"#chapter-1-section-3\">3</a></sup> <sup><a href=\"#chapter-1-section-4\">4</a></sup> Europe's first cotton industries depended on Islamic trade routes, imported fiber, and borrowed technologies; when Ottoman state power and supply-chain shocks hit those routes, Europeans turned toward Atlantic strategies that tied cotton success to coercive state projection.<sup><a href=\"#chapter-1-section-5\">5</a></sup>",
   flowSections: [
     {
-      title: "1. Ecology and household foundations",
+      title: "1. Ecology, domestication, and regional centers",
       note:
-        "establishes where cotton could grow and how early production worked inside households.",
+        "defines where cotton could grow and how multiple centers built distinct but connected cotton worlds.",
       steps: [
         {
           point:
-            "Cotton already functioned as a high-value household crop in Mesoamerica, integrated with subsistence farming and tribute.",
+            "Cotton production emerged inside a specific climate envelope that allowed parallel development across continents, not diffusion from a single origin.",
           evidence: [
-            "In 1518, twelve Pacific-coast villages delivered 800 bales (115 lb each) plus 3,200 colored and 4,800 white cloths to Moctezuma II as annual tribute. (p. 24)",
-            "Villagers processed cotton by hand from seed removal through spinning and backstrap-loom weaving inside their huts. (p. 24)"
+            "The chapter places major cotton-growing regions in a band from roughly 32-35 degrees south to 37 degrees north, with frost-free seasons and rainfall patterns suited to cotton maturation. (p. 25)",
+            "It specifies roughly 200 frost-free days and 160-200 days to crop maturity, explaining why cotton cultivation concentrated in comparable ecological zones worldwide. (p. 25)"
           ]
         },
         {
           point:
-            "Cotton's biology and climate requirements place it in a specific global band, explaining parallel cultivation on multiple continents.",
+            "Domestication and textile production took shape independently in South Asia, the Americas, and Africa over long time horizons.",
           evidence: [
-            "The chapter locates cotton's growing zone roughly between 32-35 degrees south and 37 degrees north latitude. (p. 25)",
-            "It specifies roughly 200 frost-free days, 20-25 inches of rain, and 160-200 days to maturity. (p. 25)"
+            "Archaeological finds in the Indus region include cotton textiles from Mohenjo-Daro (3250-2750 BCE) and cottonseeds at Mehrgarh dated to 5000 BCE. (p. 28)",
+            "The chapter also cites early cotton evidence in Peru (nets from 2400 BCE, textile fragments from 1600-1500 BCE) and later expansion of spinning/weaving across West and Northeast Africa. (p. 29-31)"
           ]
         },
         {
           point:
-            "By roughly a millennium ago, cotton textiles formed the world's largest manufacturing industry, organized in household production with mostly local and some regional trade.",
+            "The Indian subcontinent became the most durable center of high-skill cotton manufacturing and long-distance cotton circulation.",
           evidence: [
-            "The text states that as early as a thousand years ago cotton textile production in Asia, Africa, and the Americas was the world's largest manufacturing industry. (p. 25)",
-            "It also notes trade networks that connected growers, spinners, weavers, and consumers, mostly local with some regional links. (p. 25)"
+            "From ancient references through early modern travel accounts, the text repeatedly identifies Indian cloth quality and production scale as benchmark-setting. (p. 28-29)",
+            "Indian cotton moved through Red Sea, Persian Gulf, Nile, and Indian Ocean routes to Egypt, East Africa, the Arab world, and Europe for many centuries. (p. 39)"
           ]
         }
       ]
     },
     {
-      title: "2. Independent domestication and early centers",
+      title: "2. Household labor regime and social organization",
       note:
-        "shows how cotton spread as a fiber and where the main centers of skill and output formed.",
+        "shows how family farming, tribute demands, and gendered labor governed preindustrial cotton work.",
       steps: [
         {
           point:
-            "Cotton domestication began independently in South Asia, the Americas, and Africa, with early archaeological evidence in each region.",
+            "Cotton usually stayed embedded in diversified household farming systems rather than specialized monoculture, even where tribute extraction was strong.",
           evidence: [
-            "Indus Valley sites show cotton textiles dated 3250-2750 BCE and cottonseeds at Mehrgarh dated to 5000 BCE. (p. 28)",
-            "Peru yields cotton nets dated to 2400 BCE and textiles from 1600-1500 BCE; eastern Africa developed spinning and weaving a few thousand years later. (p. 29, p. 26)"
+            "Aztec coastal villages combined subsistence crops with cotton, then delivered large quantities of raw and woven cotton as tribute to imperial authorities. (p. 24)",
+            "Across Africa, South Asia, and Central America, households balanced food and fiber production under tribute obligations, and the chapter states monoculture remained rare before the eighteenth century. (p. 35)"
           ]
         },
         {
           point:
-            "The Indian subcontinent became the longest-running center of cotton manufacturing, with detailed processing techniques and globally recognized cloth quality.",
+            "A gendered labor structure made women central to spinning across most regions, while weaving roles varied by locale.",
           evidence: [
-            "The chapter states that the Indian subcontinent led global cotton manufacturing from the earliest period until well into the nineteenth century. (p. 28)",
-            "It describes roller gins, bows, distaffs, spindles, and tree-hung looms used by South Asian peasants. (p. 28)",
-            "Travel accounts from Marco Polo and later Edward Baines describe exceptionally fine Indian cottons, indicating high-quality production. (p. 29)"
+            "The chapter describes spinning as overwhelmingly women's work across most societies because it could be combined with childcare and domestic tasks. (p. 36)",
+            "It also notes that weaving was more variable: men dominated in places such as India and southeast Africa, while women wove in many Southeast Asian, Chinese, and African contexts. (p. 36)"
           ]
         },
         {
           point:
-            "In the Americas and Africa, cotton production scaled beyond clothing into tribute systems, exchange, and large outputs.",
+            "Cotton cloth functioned not only as clothing but as fiscal and exchange infrastructure in many premodern polities.",
           evidence: [
-            "Pre-Columbian Mexico is estimated at 116 million pounds of annual cotton production, used for offerings, gifts, exchange, and tribute. (p. 30)",
-            "The text notes cotton's presence in West African tribute systems and the spread of spinning and weaving across West Africa by the eleventh century. (p. 31)"
+            "The text describes cotton cloth as tribute and tax-like payment in multiple regions, including Mesoamerica and parts of Africa and Asia. (p. 24, p. 37)",
+            "It also documents cotton cloth as medium-of-exchange material in long-distance and regional markets before modern monetary integration. (p. 37)"
           ]
         }
       ]
     },
     {
-      title: "3. Premodern production structure and exchange",
+      title: "3. Merchant integration without industrial rupture",
       note:
-        "explains how cotton was grown, processed, and traded before industrialization.",
+        "links rural household production to regional and interregional trade through merchant coordination and finance.",
       steps: [
         {
           point:
-            "Premodern cultivation and manufacturing stayed tied to mixed farming households, with gendered labor and slow productivity growth.",
+            "Raw-cotton transport constraints kept much spinning and weaving near growing zones, even when trade expanded.",
           evidence: [
-            "Examples from Veracruz, Yucatan, West Africa, Gujarat, Central Asia, and Korea show cotton interplanted with food crops; the chapter says no significant monoculture appeared before the eighteenth century. (p. 35)",
-            "Spinning was largely women's work across societies, while weaving roles varied by region. (p. 36)",
-            "A Southeast Asian spinner could take a month to spin a pound of cotton and another month to weave ten yards. (p. 36)"
+            "The chapter notes that moving raw cotton over land was costly and often short-range; in the Aztec case transport to highland manufacturing ran only about one hundred miles. (p. 37)",
+            "River and coastal shipping extended reach, but most raw cotton was still processed relatively close to where it was grown until much later. (p. 37)"
           ]
         },
         {
           point:
-            "Constraints on moving raw cotton kept most spinning and weaving close to where it was grown.",
+            "Merchant networks stitched local producers into long-distance circuits, with India as the principal textile exporter for centuries.",
           evidence: [
-            "In the Aztec Empire, raw cotton moved perhaps a hundred miles to highland manufacturers, indicating short-range transport. (p. 37)",
-            "Even with river transport on the Yangtze and Ganges, the chapter says most raw cotton was spun and woven within a few miles of where it grew until the nineteenth century. (p. 37)"
+            "Indian cottons moved by caravan and sea to Egypt, the Middle East, East Africa, and Southeast Asia, making Indian textiles a recurrent presence across major markets. (p. 39)",
+            "The chapter explicitly frames cotton as part of connected trade systems that linked growers, spinners, weavers, merchants, and consumers. (p. 25, p. 39)"
           ]
         },
         {
           point:
-            "Cotton cloth functioned as a store of value and medium of exchange, enabling long-distance trade networks centered on India.",
+            "Workshop concentration and putting-out systems coexisted: merchant capital coordinated production while many producers remained rural and tool-owning.",
           evidence: [
-            "The text describes cotton cloth as a tax payment and currency across China, Africa, Southeast Asia, and Mesoamerica. (p. 37)",
-            "Indian cotton moved by dhows, caravans, and junks to Egypt, the Middle East, East Africa, and Southeast Asia; Indian cloth dominated many markets. (p. 39)"
-          ]
-        },
-        {
-          point:
-            "Workshops and putting-out networks expanded under merchant cash advances while production often remained rural and home-based.",
-          evidence: [
-            "Dhaka weavers produced muslins for the Mughal court under tight supervision, and multi-loom workshops are reported in fifteenth-century Andhra Pradesh. (p. 40)",
-            "Urban loom houses in Ming China employed many thousands; Timbuktu had twenty-six workshops with fifty or more workers each in the 1590s. (p. 40)",
-            "The chapter describes putting-out networks in which merchants advanced cotton or yarn and controlled production stages, especially in China and the Ottoman Empire. (p. 41)"
-          ]
-        },
-        {
-          point:
-            "Technological innovation and plant domestication were centered in Asia, but overall productivity gains before the Industrial Revolution remained limited.",
-          evidence: [
-            "The roller gin, bow, spinning wheel, and treadle loom originated in Asia, and the spinning wheel tripled output when adopted. (p. 42)",
-            "Despite domestication and irrigation improvements, the chapter concludes that productivity gains before the Industrial Revolution were small and expansion came from more labor. (p. 42-43)"
+            "Examples include supervised muslin production in Dhaka, multi-loom workshops in South Asia, very large weaving concentrations in late-Ming China, and major workshop clusters in Timbuktu. (p. 40)",
+            "Putting-out arrangements gave merchants control over inputs, advances, and sales while spinners and weavers often continued to work in households. (p. 41)"
           ]
         }
       ]
     },
     {
-      title: "4. Europe's late entry and Mediterranean limits",
+      title: "4. Technology leadership and productivity ceiling",
       note:
-        "traces Europe's entry through Islamic networks and explains why those early industries declined.",
+        "distinguishes important technical advances from the limits of preindustrial accumulation.",
       steps: [
         {
           point:
-            "Islamic Mediterranean routes introduced cotton manufacturing to Europe and even shaped European cotton vocabulary.",
+            "Key cotton-processing innovations were concentrated in Asia before Europe's rise in cotton manufacturing.",
           evidence: [
-            "By 950 CE, cotton was manufactured in Islamic cities such as Seville, Cordoba, Granada, and Barcelona, and European words for cotton derive from Arabic. (p. 44)"
+            "The chapter attributes major advances such as the roller gin, bow, spinning wheel, and loom improvements to Asian innovation centers. (p. 42)",
+            "It presents these tools as foundational to later expansions in cotton output and quality across multiple regions. (p. 42)"
           ]
         },
         {
           point:
-            "Northern Italy built a cotton industry on imported Mediterranean fiber and early trade links.",
+            "Technical gains raised output locally but did not overturn household-centered production structures on their own.",
           evidence: [
-            "Northern Italy's cotton industry employed about 6,000 workers in Milan by 1450 and depended on eastern Mediterranean cotton; raw cotton imports are documented in 1125. (p. 45-46)"
+            "The text describes faster spinning from improved tools, yet still emphasizes labor-intensive production routines across most regions. (p. 42)",
+            "It concludes that cotton networks expanded while preserving older household and merchant-centered organization. (p. 43)"
           ]
         },
         {
           point:
-            "European producers adopted spinning and weaving tools from the Islamic world, which raised output and textile quality.",
+            "Before the late eighteenth century, system-wide productivity growth remained limited and expansion relied heavily on more labor time.",
           evidence: [
-            "European manufacturers adopted the spinning wheel and treadle loom from the Islamic world, which raised output and enabled finer textiles. (p. 46-47)"
+            "The chapter states that over long periods, cotton output grew largely because more people spent more time growing, spinning, and weaving. (p. 43)",
+            "It characterizes productivity increases before the Industrial Revolution as modest despite centuries of incremental change. (p. 43)"
+          ]
+        }
+      ]
+    },
+    {
+      title: "5. Europe's first cotton cycle and Atlantic pivot",
+      note:
+        "explains Europe's dependent Mediterranean rise, structural vulnerability, and later turn to state-backed Atlantic strategies.",
+      steps: [
+        {
+          point:
+            "Europe entered cotton manufacturing through Islamic Mediterranean transmission of crops, techniques, and commercial knowledge.",
+          evidence: [
+            "The chapter documents cotton manufacturing in Islamic Iberian and Mediterranean cities and notes that many European terms for cotton derive from Arabic roots. (p. 44)",
+            "It links Europe's reentry to Crusade-era access and subsequent northern Italian industry formation despite limited local cotton-growing conditions. (p. 45)"
           ]
         },
         {
           point:
-            "German producers undercut Italian producers using rural labor and putting-out systems.",
+            "Early European centers depended on imported fiber and borrowed technologies, creating durable supply vulnerabilities.",
           evidence: [
-            "German producers used cheaper rural labor to capture Italian markets; in Ulm, about 2,000 city workers depended on 18,000 rural workers in the hinterland. (p. 49)"
+            "Northern Italian production relied on imported eastern Mediterranean cotton routed through trading entrepots such as Venice. (p. 46)",
+            "European producers adopted key spinning and weaving tools through Islamic transmission rather than inventing an autonomous cotton technology base. (p. 47)"
           ]
         },
         {
           point:
-            "Ottoman control of Mediterranean trade and rising Atlantic power weakened early European cotton centers and pushed a turn toward state-backed expansion.",
+            "German rural putting-out systems could undercut Italian producers, but both remained exposed to geopolitical control over cotton flows.",
           evidence: [
-            "Ottoman control of Mediterranean trade and restrictions on raw cotton exports weakened Italian and German industries; British privileges in Izmir in 1589 signaled shifting power. (p. 50)",
-            "The chapter concludes that early European producers failed in part because they did not subjugate suppliers, and a new Atlantic-focused industry assumed state power was required. (p. 50)"
+            "In Ulm, the chapter reports a small urban core and a much larger hinterland labor force, showing how rural labor arbitrage supported competitive expansion. (p. 49)",
+            "Ottoman consolidation and restrictions on Mediterranean cotton trade damaged Italian and German industries, while English privileges in Ottoman ports signaled an Atlantic shift. (p. 50)"
+          ]
+        },
+        {
+          point:
+            "The end-of-chapter lesson is strategic: future European cotton projects linked commercial success to coercive control and state projection.",
+          evidence: [
+            "The chapter argues that early European producers' failure was tied to lack of control over suppliers. (p. 50)",
+            "It closes by stating that late sixteenth-century Atlantic-oriented cotton strategies assumed state power was necessary for durable success. (p. 50)"
           ]
         }
       ]

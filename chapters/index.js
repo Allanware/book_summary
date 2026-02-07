@@ -1,17 +1,17 @@
-import chapter01 from "./chapter-01.js";
-import chapter02 from "./chapter-02.js";
-import chapter03 from "./chapter-03.js";
-import chapter04 from "./chapter-04.js";
-import chapter05 from "./chapter-05.js";
-import chapter06 from "./chapter-06.js";
-import chapter07 from "./chapter-07.js";
-import chapter08 from "./chapter-08.js";
-import chapter09 from "./chapter-09.js";
-import chapter10 from "./chapter-10.js";
-import chapter11 from "./chapter-11.js";
-import chapter12 from "./chapter-12.js";
-import chapter13 from "./chapter-13.js";
-import chapter14 from "./chapter-14.js";
+import chapter01 from "./chapter-01.js?v=4";
+import chapter02 from "./chapter-02.js?v=4";
+import chapter03 from "./chapter-03.js?v=4";
+import chapter04 from "./chapter-04.js?v=4";
+import chapter05 from "./chapter-05.js?v=4";
+import chapter06 from "./chapter-06.js?v=4";
+import chapter07 from "./chapter-07.js?v=4";
+import chapter08 from "./chapter-08.js?v=4";
+import chapter09 from "./chapter-09.js?v=4";
+import chapter10 from "./chapter-10.js?v=4";
+import chapter11 from "./chapter-11.js?v=4";
+import chapter12 from "./chapter-12.js?v=4";
+import chapter13 from "./chapter-13.js?v=4";
+import chapter14 from "./chapter-14.js?v=4";
 
 export const chapters = [
   chapter01,

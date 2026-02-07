@@ -3,204 +3,214 @@ export default {
   title: "Building War Capitalism",
   pages: "51-81",
   thesis:
-    "Between the late 1400s and late 1700s, European states and chartered companies used oceanic routes, armed shipping, and colonial conquest to redirect Indian cotton textiles into a three-continent trade that purchased enslaved Africans for American plantations.<sup><a href=\"#chapter-2-section-1\">1</a></sup><sup><a href=\"#chapter-2-section-3\">3</a></sup> Company rule in India replaced independent brokers with company agents who advanced cash, imposed exclusive contracts, and enforced production through inspections, penalties, and violence, while European governments blocked Indian textiles and copied Indian dyeing and printing techniques.<sup><a href=\"#chapter-2-section-2\">2</a></sup><sup><a href=\"#chapter-2-section-4\">4</a></sup> These moves shifted cotton trade toward Atlantic ports, expanded export markets in Africa and the Americas, and supplied cash advances and ships that put Britain at the center of global cotton networks by 1780.<sup><a href=\"#chapter-2-section-5\">5</a></sup><sup><a href=\"#chapter-2-section-6\">6</a></sup>",
+    "Between 1492 and 1780, Europeans reshaped the global cotton industry not through technological superiority but through armed oceanic expansion, colonial land seizure, and the mass deportation of Africans—forging a system Beckert calls ‘war capitalism,’ in which privatized violence, state-chartered companies, and slavery divided the world into a lawful metropolitan ‘inside’ and a coercive imperial ‘outside.’<sup><a href=\"#chapter-2-section-1\">1</a></sup> <sup><a href=\"#chapter-2-section-2\">2</a></sup> <sup><a href=\"#chapter-2-section-3\">3</a></sup> European chartered companies inserted themselves into Indian textile networks, first as dependent coastal traders relying on local brokers and then as territorial rulers who imposed exclusive contracts, replaced independent banias with salaried agents, and used inspections and corporal punishment to collapse weavers’ incomes.<sup><a href=\"#chapter-2-section-4\">4</a></sup> Simultaneously, protectionist legislation blocked Indian cloth from European markets, systematic industrial espionage transferred Asian printing and dyeing techniques to European workshops, and slave-trade profits financed a domestic putting-out industry whose export markets in Africa and the Americas made Britain the hub of global cotton networks by 1780—setting the preconditions for the Industrial Revolution.<sup><a href=\"#chapter-2-section-5\">5</a></sup> <sup><a href=\"#chapter-2-section-6\">6</a></sup>",
   flowSections: [
     {
-      title: "1. Baseline and entry, 1450-1600",
+      title: "1. Europe’s marginal baseline and the two maritime pivots",
       note:
-        "starts with a marginal Europe; access comes from sea routes and conquest rather than new machinery.",
+        "establishes that Europe entered the global cotton trade from a position of dependence, propelled by armed oceanic force rather than technical advantage.",
       steps: [
         {
           point:
-            "Europe's cotton output was small and technically behind Asia; Europeans depended on imported fiber and mostly wore linen or wool in 1600.",
+            "As of 1600, European cotton output was small and technically inferior to Asian production; most Europeans still wore linen and wool, and their industry depended on imported fiber from regions beyond their control.",
           evidence: [
-            "The chapter states world production centered on India and China, and European output did not match Asian technology or quality. (p. 51-52)",
-            "It adds that Europeans relied on raw cotton imports and that in 1600 most Europeans still dressed in linen and wool. (p. 52)"
+            "The chapter states that world production still centered on India and China, with ‘no significant technological or organizational departures’ characterizing the European industry; ‘Asian producers remained at the cutting edge of textile technology.’ (p. 51–52)",
+            "Europeans depended on raw cotton imports ‘from distant regions of the world—regions over which they enjoyed little control,’ and in 1600 ‘most Europeans continued to clothe themselves in linens and woolens.’ (p. 52)"
           ]
         },
         {
           point:
-            "Europe's rise in cotton trade came from the ability to project armed force and cash across oceans, not from superior technology.",
+            "The transformation of the global cotton industry came not from technical innovation but from Europeans’ willingness to project capital and armed force across oceans.",
           evidence: [
-            "The text says the recasting of cotton came from Europeans inserting themselves, often violently, into global trade networks rather than from technical advantages. (p. 52)"
+            "Beckert states the change derived ‘not at first from technical advances, nor from organizational advantages, but instead from a far simpler source: the ability and willingness to project capital and power across vast oceans.’ (p. 52)",
+            "Europeans became important to cotton ‘not because of new inventions or superior technologies, but because of their ability to reshape and then dominate global cotton networks.’ (p. 52–53)"
           ]
         },
         {
           point:
-            "Two late-1400s routes anchored the shift: Columbus opened American conquest, and da Gama opened direct access to Indian textiles.",
+            "Columbus’s 1492 landing and da Gama’s 1497 sea route to India opened the two axes—American land seizure and direct access to Indian textiles—that anchored all subsequent transformation of the cotton world.",
           evidence: [
-            "After 1492, Spanish, Portuguese, French, and English colonies expanded across the Americas; Jamestown was founded in 1607. (p. 53-54)",
-            "In 1497-1498, da Gama's sea route to India enabled direct European access to Indian textiles; Portuguese outposts and later Dutch and British chartered companies followed. (p. 54-55)"
+            "Columbus set off ‘the world’s greatest land grab’; by mid-sixteenth century Spain, Portugal, France, and England had claimed territories from Brazil and Virginia to Saint-Domingue, enabling eventual monocultural cotton growing. (p. 53–54)",
+            "Da Gama’s route around the Cape let Europeans access Indian weavers without overland middlemen; Portuguese outposts on India’s west coast were followed by the British East India Company (1600), the Dutch VOC (1602), and the Danish Kompagni (1616). (p. 54–55)"
           ]
         }
       ]
     },
     {
-      title: "2. Chartered-company trade in India, 1600s-1700s",
+      title: "2. The three-continent cotton–slave–plantation circuit",
       note:
-        "factories rely on Indian brokers at first, then naval power displaces older traders.",
+        "shows how Indian textiles, African captives, and American plantations were locked into a single, unprecedented commercial loop.",
       steps: [
         {
           point:
-            "Chartered companies bought Indian textiles for Europe, Southeast Asia, and Africa; volumes rose quickly.",
+            "European chartered companies purchased Indian textiles for European consumption, the Southeast Asian spice trade, and—most critically—the African slave trade, creating an unprecedented globe-spanning commercial system.",
           evidence: [
-            "The East India Company imported about 50,000 pieces into Britain in 1621; the number increased fivefold within forty years. (p. 55)",
-            "By 1766, cotton cloth made up more than 75 percent of the East India Company's exports. (p. 56)"
+            "The East India Company imported an estimated 50,000 pieces of cotton into Britain by 1621; forty years later the number had quintupled, and by 1766 cloth constituted more than 75 percent of the company’s total exports. (p. 55–56)",
+            "Cotton textiles ‘for the first time ever, became entangled in a three-continent-spanning trading system’; European and African consumers hungered for ‘the beautiful chintzes, muslins, and calicoes’ spun and woven by South Asian householders. (p. 55)"
           ]
         },
         {
           point:
-            "The coastal factory system depended on Indian banias and weavers who kept control of tools, timing, and sales.",
+            "Cotton textiles—not guns or trinkets—were the primary medium of exchange for enslaved Africans; more than 8 million people were deported from Africa to the Americas after 1500.",
           evidence: [
-            "Factories in Madras, Surat, Dhaka, Cossimbazar, and Calicut ordered cloth through banias who advanced cash to weavers. (p. 56)",
-            "Weavers could sell to multiple buyers, and Europeans held only about one-third of Dhaka's cloth trade as late as the 1700s. (p. 57)"
+            "In 1,308 barters by British merchant Richard Miles (1772–1780) for 2,218 Gold Coast slaves, textiles constituted over half the total traded value; Portuguese imports to Luanda similarly show woven goods near 60 percent. (p. 59)",
+            "Over 8 million slaves were transported after 1500, with more than 5 million in the eighteenth century alone, mostly from west-central Africa, the Bight of Benin, the Gold Coast, and the Bight of Biafra. (p. 59)"
           ]
         },
         {
           point:
-            "European naval power shifted long-distance trade away from Indian and Arab merchants.",
+            "African consumers demanded highly specific textile types and colors, forcing European traders to place meticulous orders with Indian suppliers to match local tastes.",
           evidence: [
-            "The chapter notes that larger, faster ships and superior firepower pushed older Indian-Levant routes aside, with the Ottoman Empire losing ground. (p. 58)",
-            "Surat declined while British Bombay rose, making western Indian merchants more dependent on British power. (p. 58)"
+            "The slave ship Diligent (1731) carried a carefully assembled assortment of Indian textiles for the Guinea coast; one European traveler noted that African tastes were ‘most varied and capricious’ and that ‘scarcely two villages concur in their canons of taste.’ (p. 59)",
+            "Richard Miles sent precise instructions on preferred colors and manufacturers, noting that certain English makes were ‘by no means equal’ to others ‘in the eyes of the Black traders here, & it is them that are to be pleased.’ (p. 59)"
           ]
         }
       ]
     },
     {
-      title: "3. Cotton cloth as currency for enslaved labor",
+      title: "3. War capitalism: armed trade, expropriation, and the inside/outside divide",
       note:
-        "textiles purchase captives for plantations, linking India, Africa, and the Americas.",
+        "defines the chapter’s central concept—a system where privatized violence, slavery, and state-backed expropriation operated outside European legal norms.",
       steps: [
         {
           point:
-            "Plantation agriculture in the Americas drove a large-scale forced migration from Africa.",
+            "European capitalists and rulers assembled a package of coercive tools—armed trade, military-fiscal states, financial instruments, colonial alliances, land expropriation, and mass enslavement—that the chapter identifies as the first steps toward the Industrial Revolution.",
           evidence: [
-            "European powers built coastal forts and traded for captives; over 8 million Africans were transported to the Americas after 1500. (p. 58-59)",
-            "More than 5 million were deported in the eighteenth century alone, largely from west-central Africa and the Bight of Benin and Biafra. (p. 59)"
+            "The chapter lists these elements explicitly as the means through which Europeans ‘altered global networks,’ calling them ‘the first steps toward the Industrial Revolution’ that preceded per capita divergence by centuries. (p. 52–53)",
+            "It frames the ‘great divergence’ as initially a divergence of state power and ‘a peculiar relationship between these states and capital owners,’ not a divergence of technology or productivity. (p. 53)"
           ]
         },
         {
           point:
-            "Cotton textiles were the main payment for enslaved people, not weapons or trinkets.",
+            "War capitalism divided the world into an ‘inside’—where state-enforced law and property rights ruled—and an ‘outside’ where imperial domination, privatized violence, and expropriation remade markets without effective state oversight.",
           evidence: [
-            "In 1,308 barters by merchant Richard Miles (1772-1780), textiles made up more than half the traded value for 2,218 Gold Coast slaves. (p. 59)",
-            "Portuguese imports to Luanda in the late eighteenth and early nineteenth centuries show woven goods near 60 percent of imports. (p. 59)"
+            "The ‘inside’ encompassed ‘the laws, institutions, and customs of the mother country,’ while the ‘outside’ was characterized by ‘imperial domination, the expropriation of vast territories, decimation of indigenous peoples, theft of their resources, enslavement.’ (p. 61)",
+            "In imperial dependencies, ‘masters trumped states, violence defied the law, and bold physical coercion by private actors remade markets’; state-chartered companies like the East India Company ‘asserted sovereignty over land and people.’ (p. 60–61)"
           ]
         },
         {
           point:
-            "African demand forced Europeans to order specific cloth types and colors from India.",
+            "The structural result was a shift from a multipolar, horizontal cotton world to a unipolar, hierarchical empire centered on European capitalists and states, as Atlantic powers replaced Mediterranean ones.",
           evidence: [
-            "The French slave ship Diligent (1731) carried a carefully selected assortment of Indian textiles for Guinea. (p. 59)",
-            "Richard Miles gave detailed instructions on colors and manufacturers preferred by Gold Coast traders. (p. 59)"
+            "‘A multipolar world increasingly became unipolar. Power long spread across multiple continents and through numerous networks increasingly became centralized through a single node, dominated by European capitalists and European states.’ (p. 62)",
+            "Atlantic powers—the Netherlands, Great Britain, and France—replaced erstwhile powerhouses like Venice; cities with Atlantic links rose in cotton manufacturing as ‘Atlantic trade superseded Mediterranean trade.’ (p. 62)"
           ]
         }
       ]
     },
     {
-      title: "4. Company rule and enforced production in India",
+      title: "4. From coastal factory dependence to coercive monopoly in India",
       note:
-        "monopoly contracts, cash advances, inspections, penalties, and violence reshape weaving after 1765.",
+        "traces how European power in India evolved from reliance on local brokers to territorial rule that subordinated weavers through exclusive contracts, salaried agents, and violence.",
       steps: [
         {
           point:
-            "European companies sought exclusive contracts to lower prices, and territorial rule made this possible.",
+            "European coastal factories initially depended on Indian banias who controlled credit networks and relationships with inland weavers; European power barely extended beyond port cities and fort walls.",
           evidence: [
-            "Company officials complained that weavers sold to multiple buyers and argued profits required forcing exclusive supply. (p. 67)",
-            "After 1765 the East India Company ruled Bengal and expanded its territorial control, combining trade with political power. (p. 67-68)"
+            "In Dhaka (1676), English merchants subcontracted cloth procurement to banias eight to ten months before ships arrived, who advanced cash to village middlemen and individual weavers; weavers ‘owned their tools’ and ‘retained the right to sell their products to whomever they pleased.’ (p. 56)",
+            "As late as the 1700s, Europeans acquired only about one-third of Dhaka’s cloth trade; ‘the trading capacity of Europeans in India remained dependent on South Asian bankers and merchants who financed cotton growing and manufacturing.’ (p. 57)"
           ]
         },
         {
           point:
-            "The agency system replaced independent brokers with company agents who advanced cash and set terms directly.",
+            "Armed European shipping progressively displaced Indian and Arab merchants from intercontinental routes, while territorial expansion—culminating in the East India Company’s 1765 rule over Bengal—gave Europeans direct political authority over production zones.",
           evidence: [
-            "The Board of Trade (1795) criticized contractor systems and pushed a company-run agency structure. (p. 68)",
-            "Company agents advanced funds directly to weavers and even tried relocating weavers to Bombay for tighter supervision. (p. 68-69)"
+            "With bigger, faster ships and heavier firepower, ‘the old pattern of the Indian-Levant trade as the principal artery for world exchange underwent a complete structural change,’ with ‘the Ottoman Empire…the chief loser’; on both sides of the Indian Ocean, European dominance grew. (p. 57–58)",
+            "By 1765 the East India Company—a group of merchants—ruled Bengal; territorial control expanded further as British merchants invested in the raw cotton trade between India and China, hoping to integrate western Indian cotton tracts into company territories. (p. 67)"
           ]
         },
         {
           point:
-            "Enforcement used inspections, penalties, and violence; wages fell while output rose.",
+            "Under territorial rule, the company replaced independent banias with salaried agents, imposed exclusive contracts, inspected cloth on the loom, and used corporal punishment to bind weavers to company service.",
           evidence: [
-            "Weavers were inspected on the loom, bound by regulations, and punished for selling elsewhere; company agents used flogging and public humiliation. (p. 69)",
-            "Weavers' share of cloth prices fell from up to one-third in the late 1600s to about 6 percent by the late 1700s, and the company reported high mortality in 1795. (p. 69-70)",
-            "Exports rose from about 30 million yards in 1727 to about 80 million annually in the 1790s; Dhaka and Surat counted tens of thousands of spinners, weavers, and looms. (p. 70)"
+            "The Board of Trade pushed the ‘grand Fundamental principle of the Agency System,’ bypassing independent banias by making direct advances to weavers, sending agents ‘deep into the manufacturing centres in the countryside near Dhaka’ who ‘increasingly set the terms of production.’ (p. 67–68)",
+            "A weaver caught working for a private merchant was ‘flogged severely, [his] face painted black and white, tied his hands behind his back and marched him through the town escorted by seapoys, announcing any weaver found working for private merchants should receive similar punishment.’ (p. 69)"
+          ]
+        },
+        {
+          point:
+            "Weavers’ income collapsed from roughly one-third of cloth price to about 6 percent; resistance—flight, secret production, collective petitions—had limited effect as European cloth exports from India surged from 30 million to 80 million yards annually.",
+          evidence: [
+            "By the late eighteenth century, weavers’ share of cloth prices had fallen to about 6 percent (from up to one-third); the company reported ‘unprecedented mortality among the Weavers’ in 1795, while a Saliya lullaby ‘spoke longingly of a mystical time when their looms contained a silver plank.’ (p. 69–70)",
+            "Some weavers fled company territories, others secretly produced for competitors or collectively petitioned the company, yet European cloth exports from India rose from about 30 million yards in 1727 to some 80 million yards annually by the 1790s. (p. 70)"
           ]
         }
       ]
     },
     {
-      title: "5. European manufacturing and state protection",
+      title: "5. Domestic manufacturing: putting-out, protectionism, and technology appropriation",
       note:
-        "atlantic markets, trade limits, and technology copying expand domestic capacity.",
+        "explains how Atlantic markets, import bans, and systematic copying of Indian techniques built Europe’s still-small but strategically positioned cotton industry.",
       steps: [
         {
           point:
-            "Atlantic trade shifted manufacturing toward northern Europe, especially England.",
+            "Cotton manufacturing shifted to Atlantic-facing cities; in England, Flemish refugees and Lancashire merchants built a putting-out system in which workers—unlike their Indian counterparts—had no independent access to raw materials or markets.",
           evidence: [
-            "Bruges (1513) and Leiden (1574) expanded cotton production, and France began new ventures in the late 1500s. (p. 62)",
-            "In England, Flemish refugees wove cotton by 1600; a Bolton weaver is recorded in 1601; exports began by 1620; Lancashire benefited from weak guild control and proximity to Liverpool. (p. 63)"
+            "Flemish refugees began weaving cotton in English towns by 1600; the earliest Bolton record dates to 1601. By 1620 English cotton exports reached France, Spain, Holland, and Germany; Lancashire thrived thanks to weak guild control and proximity to Liverpool, a major slaving port. (p. 62–63)",
+            "English merchants advanced raw cotton to rural households who spun and wove seasonally; ‘unlike Indian cotton spinners and weavers, the growing class of English cotton workers had no independent access to raw materials or to markets. They were entirely subordinated to the merchants.’ (p. 63)"
           ]
         },
         {
           point:
-            "Domestic production used a putting-out system funded by merchant advances, while raw cotton supply remained limited.",
+            "Raw cotton supply remained constrained and scattered—mainly Ottoman territories and small West Indian crops—keeping European manufacturing growth slow: it took sixty-seven years for Britain’s raw cotton consumption to double.",
           evidence: [
-            "English merchants advanced raw cotton to rural households, who spun and wove seasonally before returning cloth to merchants. (p. 63)",
-            "Ottoman cotton provided about one-quarter of British imports between 1700 and 1745, while other sources were small and scattered. (p. 64-65)"
+            "Ottoman cotton from Izmir and Thessaloniki supplied about one-quarter of British imports between 1700 and 1745; in 1753, twenty-six ships arrived in Liverpool from Jamaica, of which twenty-four carried fewer than fifty bags each. (p. 64–65)",
+            "It took sixty-seven years for raw cotton worked into thread and cloth to approximately double, reaching 3.87 million pounds—‘the amount of cotton used in an entire year. By 1858, in contrast, the United States would export this amount of cotton on average on a single day.’ (p. 64)"
           ]
         },
         {
           point:
-            "Protectionist laws blocked Indian textiles and pushed domestic output.",
+            "Protectionist legislation in Britain and France blocked Indian cloth from domestic markets—criminalizing even its possession—while inadvertently spurring domestic cotton manufacturing.",
           evidence: [
-            "England imposed duties in 1685 and 1690, banned printed cottons in 1701, restricted wearing in 1721, and required cotton sold in 1774 to be spun and woven in England. (p. 73)",
-            "France outlawed cottons in 1686 and reaffirmed bans in 1755 and 1785 with severe penalties; other European states issued similar bans. (p. 73-74)"
+            "England imposed duties in 1685 and 1690, banned printed cottons in 1701, restricted wearing of Indian cloth in 1721, and in 1774 required cotton sold in England to be spun and woven domestically; Robert Gardiner was jailed in 1772 for harboring Indian muslins. (p. 72–73)",
+            "France outlawed the manufacture, use, and sale of cottons in 1686; over seventy years, two royal edicts and eighty rulings reissued bans, with 20,000 guards deployed and up to 50,000 violators sentenced to galley labor—while explicitly exempting textiles destined for the Guinée slave trade. (p. 73)"
           ]
         },
         {
           point:
-            "European manufacturers copied Indian dyeing and printing methods.",
+            "European manufacturers systematically copied Indian dyeing, printing, and weaving techniques through what the chapter calls one of history’s most dramatic instances of industrial espionage.",
           evidence: [
-            "French observers documented Indian techniques in Ahmedabad (1678) and Pondicherry (1731), enabling French producers to copy most Indian textiles by 1743. (p. 75)",
-            "Later reports such as Legoux de Flaix (1807) still treated Indian methods as the quality benchmark. (p. 75)"
-          ]
-        },
-        {
-          point:
-            "Export markets in Africa and the Americas became the main outlet for European cotton output.",
-          evidence: [
-            "Glasgow manufacturers petitioned in 1780 for export access to keep their machinery operating. (p. 76)",
-            "Britain exported about one-third of its cotton cloth in 1760 and about two-thirds by the late 1700s; 94 percent went to Africa and the Americas. (p. 77)"
+            "French agents documented Indian woodblock printing in Ahmedabad (Roques, 1678) and chintz production at Pondicherry (Beaulieu, 1731); by 1743 French manufacturers could copy all but the very finest Indian textiles. (p. 75)",
+            "Legoux de Flaix in 1807 still treated Indian methods as the quality benchmark, advising that ‘all the weaving combs in France should be made according to the model used in Bengal’ to equal Indian muslin; English cotton printers likewise ‘collected and then copied Indian designs.’ (p. 75–76)"
           ]
         }
       ]
     },
     {
-      title: "6. Capital formation and global dominance by 1780",
+      title: "6. Export markets, capital formation, and Britain as cotton hub by 1780",
       note:
-        "slave-trade profits and state-backed commerce finance manufacturing and centralize trade.",
+        "shows how slave-trade profits, massive export markets in Africa and the Americas, and secondary-sector growth made Britain the center of global cotton networks on the eve of industrialization.",
       steps: [
         {
           point:
-            "Profits from slavery and commerce financed manufacturing through merchant advances and cash for raw cotton and wages.",
+            "Africa and the Americas—markets first opened through re-exports of Indian cloth—became the dominant outlet for European-produced cotton; by century’s end, 94 percent of British cotton cloth exports went to those two regions.",
           evidence: [
-            "Liverpool merchants, enriched by slavery, advanced funds to cotton manufacturers, and London merchants supplied cash for raw cotton and wages to Lancashire producers. (p. 78)"
+            "Britain exported about one-third of its cotton cloth production in 1760 and about two-thirds by the end of the century; 94 percent of all cotton cloth exports went to Africa and the Americas. (p. 77)",
+            "Glasgow manufacturers petitioned the government in 1780 for export access, citing ‘a surplus of Goods which the Home Consumption cannot exhaust’ and the need to ‘keep alive the Industry of the People.’ (p. 76)"
           ]
         },
         {
           point:
-            "War-era commerce expanded shipping, finance, and insurance that fed into the cotton industry.",
+            "Profits from slavery and long-distance trade were recycled into manufacturing capital: Liverpool merchants financed the cotton industry while London merchants advanced working capital to Lancashire producers.",
           evidence: [
-            "The chapter links the growth of insurance, loans, and shipping to war-capitalism trade and to the later rise of the cotton industry. (p. 78)"
+            "Liverpool, ‘which derived its wealth largely from slavery, became an important source of capital for the emerging cotton industry’; London merchants advanced credit to Lancashire manufacturers, creating ‘a flow of capital inwards from commerce.’ (p. 78)",
+            "Francis Baring of the East India Company concluded in 1793 that from Bengal ‘an astonishing Mass of Wealth has flowed…into the Lap of Great Britain.’ (p. 71)"
           ]
         },
         {
           point:
-            "By the late 1700s Europeans controlled transoceanic cotton trade while limiting Indian cloth in Europe.",
+            "War capitalism also nourished secondary sectors—insurance, finance, shipping, government credit—that became critical infrastructure for the cotton industry’s later industrial expansion.",
           evidence: [
-            "The chapter says Europeans directed global cotton networks, used prohibitions to keep Asian cloth out of Europe, and traded Indian textiles in Africa and elsewhere. (p. 79)",
-            "It concludes that by 1780 Europe, especially Britain, had become a hub of world cotton networks. (p. 81)"
+            "The chapter attributes the growth of insurance, finance, and shipping to war capitalism, noting that ‘advanced industrial techniques and commercial practices migrated from export businesses into the domestic economy.’ (p. 78)",
+            "These institutions, along with national defense and government credit, ‘originated in the world of war capitalism’ and became ‘exceedingly important to the emergence of the British cotton industry.’ (p. 78)"
+          ]
+        },
+        {
+          point:
+            "By 1780, Europeans controlled transoceanic cotton trade, barred Asian cloth from their own markets, and had transformed a multipolar world of cotton into a centralized empire—setting the preconditions for the Industrial Revolution.",
+          evidence: [
+            "Europeans gained ‘the paradoxical ability to direct the global trade in Indian textiles while at the same time keeping Asian cloth increasingly out of Europe, instead trading the products in Africa and elsewhere beyond Europe’s shores.’ (p. 79)",
+            "The chapter concludes that ‘this early embrace of war capitalism was the precondition for the Industrial Revolution’ and that by 1780, ‘Europe in general, and Britain in particular, had become a hub of the world’s cotton networks.’ (p. 80–81)"
           ]
         }
       ]

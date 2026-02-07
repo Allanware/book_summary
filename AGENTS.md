@@ -43,6 +43,8 @@ This spec is synced to the current implementation in `index.html`, `script.js`, 
   - `English + one second language` (user-selected; not required to be Chinese)
 - Do not assume bilingual output by default for a new book.
 - For this current repo, the implemented second language is Chinese (`*.zh.*` files); for a different second language in a new project, use the same schema/parity rules with that language's file set.
+- When producing translations, use the latest ChatGPT/Claude model for the translation pass.
+- When writing chapter summaries, use a model with high reasoning capability.
 
 ### 2.5 Parallel multi-agent execution rule (required)
 - After Stage A, run chapter summary extraction (Stage B) and keyword candidate discovery (Stage C) in parallel.

@@ -1,5 +1,5 @@
-import { chapters as chaptersEn } from "./chapters/index.js";
-import { chapters as chaptersZh } from "./chapters/index.zh.js";
+import { chapters as chaptersEn } from "./chapters/index.js?v=4";
+import { chapters as chaptersZh } from "./chapters/index.zh.js?v=4";
 import bookDataEn from "./book-data.js";
 import bookDataZh from "./book-data.zh.js";
 
@@ -309,14 +309,18 @@ function buildChapterThemeIndex(bookData) {
       ? theme.applications
       : [];
     applications.forEach((application) => {
-      const chapterId = application.chapter;
-      if (!Number.isInteger(chapterId)) {
-        return;
-      }
-      if (!index.has(chapterId)) {
-        index.set(chapterId, new Set());
-      }
-      index.get(chapterId).add(theme.id);
+      const chapters = Array.isArray(application.chapters)
+        ? application.chapters
+        : [];
+      chapters.forEach((chapterId) => {
+        if (!Number.isInteger(chapterId)) {
+          return;
+        }
+        if (!index.has(chapterId)) {
+          index.set(chapterId, new Set());
+        }
+        index.get(chapterId).add(theme.id);
+      });
     });
   });
   return index;
@@ -644,10 +648,15 @@ function updateThemeDetail(theme) {
     ? applications
         .map((application, index) => {
           const appId = `theme-${theme.id}-application-${index + 1}`;
-          const chapterLabel = Number.isInteger(application.chapter)
+          const chapters = Array.isArray(application.chapters)
+            ? application.chapters
+            : [];
+          const chapterLabel = chapters.length
             ? state.language === "zh"
-              ? `第${application.chapter}章`
-              : `Chapter ${application.chapter}`
+              ? chapters.map((c) => `第${c}章`).join("、")
+              : chapters.length === 1
+                ? `Chapter ${chapters[0]}`
+                : `Chapters ${chapters.join(", ")}`
             : ui.applicationLabel;
           const context = [normalizeText(application.setting), normalizeText(application.time)]
             .filter(Boolean)

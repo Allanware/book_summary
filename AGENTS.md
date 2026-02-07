@@ -1,125 +1,230 @@
-# Summarization rules
+# Book Website Spec (Current Structure + Reusable Pipeline)
 
-Use this file when updating chapter content in `chapters/chapter-XX.js` and book-level data in `book-data.js`.
-These rules are organized by the three website sections: Chapter Argument Mindmap, Keywords, and Book Synthesis Flow.
+Use this file when updating chapter content, keyword data, or synthesis flow for this site.
+This spec is synced to the current implementation in `index.html`, `script.js`, `styles.css`, chapter modules, and book data modules.
 
-## Chapter Argument Mindmap
-### Content goals
-- Read the full chapter text from `Empire of Cotton.pdf` and cover the entire page range.
-- Build paragraph-level notes first, then synthesize them into structured argument steps so no part of the chapter is skipped.
-- **Subarguments and their supporting evidence do not need to be introduced in strict page order; group evidence by mechanism/actors and merge overlapping subarguments even when the supporting pages are far apart.**
-- Build a concrete, evidence-led logical progression for each chapter (no generic language unless immediately tied to specific evidence).
-- Each claim should be anchored to specific evidence with page numbers like `(p. 34)`.
-- Prefer paraphrase plus page numbers, not long quotes.
-- Avoid vague words (for example: "important," "significant," "major," "big") unless you immediately show what that means with evidence.
-- Avoid abstract nouns without concrete definition (for example: "coercion," "credit," "reconfiguration") unless you immediately specify the concrete mechanism, actor, and evidence that define the term in that context.
+## 1 Source of truth
 
-### Structure in `chapters/chapter-XX.js`
-- Each chapter summary must live in its own standalone module: `chapters/chapter-01.js` ... `chapters/chapter-14.js`.
-- Do not add or edit chapter summaries in `script.js` (UI logic only) or inline inside `book-data.js`.
-- Use `thesis` and `flowSections` for updated chapters.
-- `thesis` must be concrete and specific (time, place, actors, mechanisms, and outcomes where applicable).
-- Add hyperlink(s) in each `thesis` that point to the relevant subarguments below (flow sections) using in-page anchors.
-- Use superscript numeric links (e.g., `<sup><a href="#chapter-1-section-1">1</a></sup>`) and keep a small space between adjacent superscripts (via CSS or a literal space).
-- If a subargument cannot fit in the thesis without bloating it, keep it only in the steps (it is too detailed for the thesis).
-- `flowSections` is an array of grouped subsections to make the argument structure explicit:
-  - `title`: short, descriptive label of the subsection.
-  - `note`: one-sentence subtitle explaining the relationship among the steps in that subsection; write it as a lowercase fragment (do not start with "This section...").
-  - `steps`: ordered list of points; each step includes `point` and `evidence[]`.
-- Keep subsection titles informative by combining `title` + `note` in the UI.
+### 1.1 UI and rendering files
+- `index.html`: page structure and language switch controls.
+- `script.js`: all runtime rendering, interactions, filtering, and language switching.
+- `styles.css`: layout and interaction styling (including keyword group collapse behavior and section toggles).
 
-### UI behavior
-- Each subsection has its own show/hide toggle for its steps.
-- Do not use a single global toggle for the entire chapter.
+### 1.2 Data files
+- English book data: `book-data.js`
+- Current second-language book data (Chinese in this repo): `book-data.zh.js`
+- English chapter modules: `chapters/chapter-XX.js`
+- Current second-language chapter modules (Chinese in this repo): `chapters/chapter-XX.zh.js`
+- English chapter index: `chapters/index.js`
+- Current second-language chapter index (Chinese in this repo): `chapters/index.zh.js`
 
-### Quality checks
-- Make sure the flow spans the whole chapter, including early, middle, and late pages.
-- Keep the number of steps proportional to the chapter length.
-- Ensure no step is a duplicate of another step; each should add a new part of the argument.
-- Co-design check: the thesis should cite most flow sections (ideally all). If there are too many sections to cite cleanly, merge sections until the thesis can reference them without bloating (target ~4-7 sections unless the chapter absolutely requires more).
+## 2 Operating principles
 
-## Keywords
-### Content goals
-- Find recurring keywords (abstract terms repeated across chapters) and show their lineage by placing **each unique context where they occur** into `applications[]`.
-- The goal is to define keywords by use: track how meanings shift or stretch across time and place by naming actors, mechanisms, and settings each time the keyword appears in a distinct context.
-- Each keyword needs a concrete definition that names the actor(s), mechanism(s), and scope (where/when it applies).
-- Write each keyword definition as a compact argument sentence (or short set of sentences) with superscript citation links embedded at the relevant clauses, not appended as a separate citation block.
-- Place each citation immediately after the clause it supports (for example, after a specific actor-mechanism-time claim), not as a trailing list of superscripts at the end of the definition.
-- Author definition citations directly in `book-data.js` `definition` strings; do not rely on runtime UI logic to auto-generate or append definition citations.
-- For every chapter that lists a theme id in `chapter.themes`, add one or more `applications[]` entries for that keyword when the contexts differ (including multiple entries within the same chapter if needed).
-- Each `applications[]` entry must include:
-  - `chapter`: chapter number.
-  - `setting`: specific place or institutional context.
-  - `time`: specific period or dated marker.
-  - `point`: one concrete sentence tying the keyword to chapter evidence.
-  - `evidence[]`: paraphrased facts with page citations like `(p. 34)`.
-- Write each application so it can be rendered as a compact 1-2 sentence evidence-led summary (claim plus supporting evidence), not a long paragraph.
+### 2.1 Priority order
+1. Evidence fidelity to source pages.
+2. Full chapter-range coverage.
+3. Schema/UI compatibility with current renderer.
+4. Concise, concrete argument writing.
 
-### Discovery workflow
-- Scan each chapter for abstract terms that recur (maybe build a frequency counter for abstract words related to the book's themes and arguments); canonicalize minor variants (plural/hyphenation).
-- Prefer terms that appear across multiple chapters (default threshold: ≥3 chapters, or fewer if central to the core argument).
+### 2.2 Cross-book portability rule (hard requirement)
+- Do not hardcode book-specific theme lists, actor lists, place lists, or chapter-name lists in workflow logic.
+- Use corpus-derived discovery first (frequency, spread across chapters, context diversity), then human review/merge.
+- If any script contains lexical heuristics, keep them language-level and generic (for example, tokenization, stopwords, suffix patterns), not title/book dependent.
+- Manual reviewer decisions must be captured in data outputs (`book-data*.js`), not buried as hidden constants in scripts.
 
-### Structure in `book-data.js`
-- Extend each item in `BOOK_DATA.themes[]` (keywords) with:
-  - `id`: stable keyword id.
-  - `label`: display label.
-  - `description`: short card description.
-  - `definition`: string (may include inline `<sup><a href="#theme-...-application-...">n</a></sup>` links embedded at the exact clause they cite).
-  - `group`: one of `"mechanisms"`, `"institutions-actors"`, `"places-regions"`.
-  - `aliases[]`: canonicalized variants when duplicates are merged.
-  - `applications[]`: array of `{ chapter, setting, time, point, evidence[] }`.
-- Keep `applications[].chapter` as an integer chapter number (used for highlighting logic).
-- Keywords are stored in `BOOK_DATA.themes[]` and referenced via `chapter.themes` (reader-facing term is "keyword").
+### 2.3 Script role
+- Scripts are helpers, not the source of truth.
+- Final source of truth is the data modules consumed by `script.js`.
+- If helper-script output conflicts with chapter evidence, chapter evidence wins.
 
-### UI behavior
-- Render keyword tiles in grouped sections in this order:
-  - `Mechanisms`
-  - `Institutions & Actors`
-  - `Places & Regions`
-- Within each keyword group, render keyword tiles in a two-column grid (2 keywords per row).
-- Each keyword group must be collapsible with its own show/hide toggle.
-- All keyword groups should be collapsed by default on initial load.
-- Clicking a keyword should auto-expand the active keyword’s group.
-- Clicking a keyword should render a large keyword detail card below the keyword list and hide other keyword tiles.
-- The keyword detail card should follow the chapter-summary interaction pattern, but **do not show a `Thesis` heading for keywords**.
-- Render the keyword `definition` directly, with superscript numeric citation links embedded inline at the relevant phrases (for example, `... crop-liens<sup><a href="#theme-credit-application-3">3</a></sup> ...`).
-- Do not append synthetic citation sentences or end-loaded citation strings to the definition in the UI.
-- Render applications as numbered/cited subsections with independent show/hide toggles (no single global toggle for all applications).
-- In each keyword application header, show chapter citation as superscript only (for example, `Application<sup>8</sup>`); do not show chapter names.
-- Each expanded application body should be one or two short sentences that summarize the application and include evidence with page citation(s).
-- Clicking a keyword should also highlight the relevant chapters.
+### 2.4 Language-scope decision (required)
+- Before running the pipeline, explicitly ask the user which language mode they want:
+  - `English only`
+  - `English + one second language` (user-selected; not required to be Chinese)
+- Do not assume bilingual output by default for a new book.
+- For this current repo, the implemented second language is Chinese (`*.zh.*` files); for a different second language in a new project, use the same schema/parity rules with that language's file set.
 
-### Quality checks
-- Ensure every candidate keyword is represented either as a primary `label` or via `aliases[]`.
-- Canonicalize only strict duplicates you explicitly decide to merge (for current rules: merge `slave labor` into `slavery` via alias).
-- Every chapter that includes a theme id must be represented at least once in that keyword’s `applications[]`.
-- Add multiple entries per chapter when the keyword appears in distinct contexts (different setting/time/actors/mechanism).
-- Do not repeat the same application across chapters; each entry must add new evidence.
-- Each `applications[]` entry must specify setting and time explicitly.
-- Avoid vague terms; if used, immediately define them with concrete actors, mechanisms, and evidence.
-- Ensure every application is cited at least once from the keyword definition; if an application cannot be cited cleanly, either remove that application or expand/rewrite the definition so it can absorb and cite it.
-- Ensure definition citation links map 1:1 to application sections (no broken or missing anchors).
-- Ensure citation placement is local: each superscript must sit next to the specific clause it evidences, not only at sentence ends when multiple claims are present.
-- Ensure each application summary remains within 1-2 sentences while preserving concrete evidence.
+## 3 Reusable book pipeline
 
-## Book Synthesis Flow
-### Content goals
-- The Book Synthesis Flow subtitle (the text under the "Book Synthesis Flow" heading) must state the book’s **main argument** and provide a **whole-book summary** in evidence-led sentences (actors + mechanisms + chronology; no chapter-by-chapter list).
-- Each flow step must synthesize the main arguments from the chapter theses it covers, naming actors, mechanisms, and chronology explicitly.
-- Use page-cited evidence drawn from those chapters’ theses and flow steps.
-- Avoid generic summaries; every sentence should tie to concrete evidence.
+Use this pipeline for any new book.
 
-### Structure in `book-data.js`
-- Store the Book Synthesis Flow subtitle in `BOOK_DATA.coreArgument` (rendered into the `#coreArgument` element by `script.js`).
-- Extend each item in `BOOK_DATA.flow[]` with:
-  - `thesisLinks[]`: array of `{ chapter, point, evidence[] }`.
+### Stage -1: Confirm language mode with the user
+Input:
+- User preference.
 
-### Quality checks
-- Every chapter listed in a flow step’s `chapters` array must appear at least once in that step’s `thesisLinks[]`.
-- Each `thesisLinks[]` entry must include page citations in `evidence[]`.
-- Every chapter in the book must appear in at least one flow step’s `thesisLinks[]`.
-- Flow steps must remain non-overlapping and chronologically ordered.
+Output:
+- One of:
+  - `English only`
+  - `English + L2` (where L2 is user-selected)
 
-## Context handling
-- After a chapter summary is complete, write it into the appropriate `chapters/chapter-XX.js` file and do not paste the full summary into the response.
-- Do not keep intermediate notes or draft summaries in ongoing context; once written to the chapter file, avoid repeating the chapter summary in chat.
+Rules:
+- If `English only`, complete all stages in English data files only.
+- If `English + L2`, run each content stage in both languages and enforce parity checks in Stage F.
+
+### Stage 0: One-time PDF to chapter-text extraction
+Input:
+- Full book PDF.
+
+Output:
+- Raw per-chapter text files at `tmp/chapters/chap01.txt` ... `tmp/chapters/chapNN.txt`.
+
+Requirements:
+- Run this stage once per source book edition, then reuse the extracted chapter files for all later stages.
+- Keep page-number markers in chapter files so downstream evidence can cite exact pages.
+- Keep file naming stable (`chapNN.txt`) so every downstream script can be re-run without reconfiguration.
+- Regenerate extraction only when one of these changes:
+  - source PDF file/version
+  - chapter boundary decisions
+  - extraction quality fixes that affect text fidelity
+
+### Stage A: Normalize extracted chapter text
+Input:
+- `tmp/chapters/chapNN.txt` from Stage 0.
+
+Output:
+- Cleaned chapter corpus (artifact-filtered text) with page references preserved.
+
+Requirements:
+- Remove extraction artifacts (headers/footers/page counters/repeated boilerplate) using repeat-pattern detection across chapters.
+- Preserve page boundaries or page references so evidence citations can point to exact pages.
+
+### Stage B: Build chapter argument mindmaps
+Input:
+- Full chapter text.
+
+Output:
+- `chapters/chapter-XX.js` (and `.zh.js` if bilingual) using:
+  - `thesis`
+  - `flowSections[]` with `title`, `note`, `steps[]`, `evidence[]`
+
+Requirements:
+- Cover early/middle/late pages of each chapter.
+- Keep steps non-duplicative.
+- Use concrete actor + mechanism + setting + time + outcome language.
+- Keep evidence page-cited (`(p. X)`).
+- Add thesis superscript anchors to key sections.
+
+### Stage C: Discover keyword candidates
+Input:
+- Chapter corpus from Stage A.
+
+Output:
+- Candidate list with chapter coverage and rationale.
+
+Method requirements:
+- Use corpus statistics (n-gram recurrence, chapter spread, context diversity).
+- Canonicalize near duplicates (plural/singular, hyphen variants, alias merges).
+- No pre-curated book-specific candidate inventories.
+
+### Stage D: Curate final keyword cards
+Input:
+- Candidate list + chapter mindmaps.
+
+Output:
+- `BOOK_DATA.themes[]` entries in `book-data.js` (and mirrored in `book-data.zh.js` when bilingual).
+
+Required schema per theme:
+- `id`, `label`, `description`, `definition`, `group`, `aliases[]`, `applications[]`
+- `applications[]` item: `{ chapter, setting, time, point, evidence[] }`
+
+Rules:
+- Every chapter referenced by a theme must appear in at least one application.
+- Each application must be a distinct context.
+- Definition should use clause-local superscript citations to application anchors.
+
+### Stage E: Build synthesis flow
+Input:
+- Chapter theses + flow sections.
+
+Output:
+- `BOOK_DATA.coreArgument`
+- `BOOK_DATA.flow[]` with `thesisLinks[]`
+
+Rules:
+- Flow steps must be chronological and non-overlapping.
+- Every chapter must appear in at least one flow step.
+- Every chapter listed in a step must appear in that step's `thesisLinks[]`.
+
+### Stage F: Bilingual parity requirements (if enabled)
+- Keep IDs stable across languages:
+  - chapter section anchors: `chapter-{id}-section-{n}`
+  - theme application anchors: `theme-{themeId}-application-{n}`
+- Keep theme IDs and flow IDs aligned across `book-data.js` and the selected second-language book data file (Chinese in this repo: `book-data.zh.js`).
+- Keep chapter index ordering aligned across `chapters/index.js` and the selected second-language chapter index (Chinese in this repo: `chapters/index.zh.js`).
+
+## 4 Chapter renderer compatibility
+
+### Current renderer fallback
+
+`script.js` renders chapter body in this order:
+1. `flowSections` path (`thesis` + collapsible sections)
+2. legacy `flow` path
+3. legacy `argument` + `evidence` path
+
+Preferred schema is `thesis + flowSections[]`; preserve legacy compatibility unless explicitly migrating.
+
+## 5 Keyword renderer compatibility
+
+### 5.1 Theme schema (`BOOK_DATA.themes[]`)
+Each theme must include:
+- `id`
+- `label`
+- `description`
+- `definition`
+- `group`: one of `mechanisms`, `institutions-actors`, `places-regions`
+- `aliases[]`
+- `applications[]` with:
+  - `chapter` (integer)
+  - `setting`
+  - `time`
+  - `point`
+  - `evidence[]`
+
+### 5.2 Keyword UI contract
+- Group order:
+  1. Mechanisms
+  2. Institutions & Actors
+  3. Places & Regions
+- Groups are collapsible and collapsed by default.
+- Each group renders keyword tiles in two columns.
+- Clicking a keyword:
+  - auto-expands its group
+  - hides non-active keyword tiles
+  - renders one keyword detail card
+  - highlights relevant chapters and flow nodes
+- Applications render as independent collapsible sections.
+- Application header format is label + chapter superscript (for example `Application<sup>8</sup>`).
+
+### 5.3 Citation behavior
+- Preferred: embed citation anchors directly inside `definition` at the exact clause being evidenced.
+- Renderer fallback exists in `buildThemeDefinition`, but do not rely on fallback when authoring high-quality definitions.
+
+## 6 Validation gates
+
+### 6.1 Content/data gates
+- Full chapter coverage for each chapter summary.
+- Theme applications cover all chapter references for each theme.
+- Flow coverage includes all chapters.
+- Anchor links resolve 1:1 to existing sections/applications.
+
+### 6.2 Structural gates
+Run before finalizing:
+1. Confirm chapter extraction artifacts exist and are reusable: `tmp/chapters/chap01.txt` ... `tmp/chapters/chapNN.txt`
+2. `python3 scripts/keyword_candidates.py --tmp-dir tmp/chapters --min-chapters 3 --out keyword_candidates.md`
+3. `python3 scripts/build_keyword_cards.py --keyword-candidates keyword_candidates.md --chapters-dir tmp/chapters --chapter-key-lines tmp/chapter_key_lines.txt --book-data book-data.js`
+4. `python3 scripts/validate_keyword_cards.py --book-data book-data.js --keyword-candidates keyword_candidates.md`
+5. `python3 scripts/check_agents_sync.py --agents AGENTS.md --index index.html --script script.js --styles styles.css`
+
+For script-only sanity checks:
+- `python3 -m py_compile scripts/keyword_candidates.py scripts/build_keyword_cards.py scripts/validate_keyword_cards.py scripts/check_agents_sync.py`
+
+## 7 AGENTS maintenance rule
+
+When website structure changes, immediately update this file to match:
+- data file locations
+- renderer field usage
+- fallback behavior
+- UI interactions (toggles, grouping, language behavior)
+- validation commands and assumptions
+
+Do not leave AGENTS describing behavior that no longer exists in `script.js`.

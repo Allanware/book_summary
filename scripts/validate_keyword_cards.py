@@ -14,12 +14,6 @@ CANONICAL_LABEL = {
     "slave labor": "slavery",
 }
 
-CORE_EXPECTED = {
-    "labor-regimes": {1, 2, 3, 4, 5, 7, 9, 10, 12, 13, 14},
-    "state-power": {2, 3, 4, 6, 7, 8, 9, 10, 11, 12},
-    "market-infrastructure": {1, 5, 6, 8, 11, 13, 14},
-}
-
 VALID_GROUPS = {"mechanisms", "institutions-actors", "places-regions"}
 
 
@@ -136,24 +130,11 @@ def validate(data: Dict, candidate_hits: Dict[str, Set[int]]) -> List[str]:
                         )
 
         for chapter in chapters:
-            if chapter_counts.get(chapter, 0) != 1:
+            if chapter_counts.get(chapter, 0) < 1:
                 errors.append(
-                    f"Theme '{canonical_label}' expected exactly one application for chapter {chapter}; "
+                    f"Theme '{canonical_label}' expected at least one application for chapter {chapter}; "
                     f"found {chapter_counts.get(chapter, 0)}"
                 )
-
-    # Core coverage checks.
-    for core_id, expected in CORE_EXPECTED.items():
-        theme = next((item for item in themes if item.get("id") == core_id), None)
-        if not theme:
-            errors.append(f"Missing core theme id: {core_id}")
-            continue
-        apps = theme.get("applications", [])
-        got = {app.get("chapter") for app in apps if isinstance(app, dict)}
-        if got != expected:
-            errors.append(
-                f"Core theme '{core_id}' chapter coverage mismatch. expected={sorted(expected)} got={sorted(got)}"
-            )
 
     return errors
 

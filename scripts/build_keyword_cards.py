@@ -83,87 +83,6 @@ CANDIDATE_PATTERN_OVERRIDES = {
     "central asia": r"\bcentral\s+asia\b",
 }
 
-CORE_THEMES = [
-    {
-        "id": "labor-regimes",
-        "label": "labor-regimes",
-        "description": "How labor is organized, disciplined, and coerced across cotton production.",
-        "definition": "Labor regimes names how states, merchants, planters, and manufacturers organized work through household labor, slavery, wage labor, sharecropping, and migration across cotton regions from premodern economies to modern supply chains.",
-        "group": "mechanisms",
-        "chapters": [1, 2, 3, 4, 5, 7, 9, 10, 12, 13, 14],
-        "pattern": r"\blabor\w*|\blabour\w*|\bworker\w*|\bslave\w*|\benslav\w*|\bwage\w*|\bsharecrop\w*|\btenant\w*|\bdisciplin\w*|\bcoerc\w*",
-    },
-    {
-        "id": "state-power",
-        "label": "state-power",
-        "description": "How law, coercion, and policy structure cotton frontiers and markets.",
-        "definition": "State power tracks how empires, colonial administrations, and nation-states used law, policing, taxation, tariffs, military force, and infrastructure to secure labor, land, and market access in cotton economies.",
-        "group": "institutions-actors",
-        "chapters": [2, 3, 4, 6, 7, 8, 9, 10, 11, 12],
-        "pattern": r"\bstate\w*|\bgovernment\w*|\bcolonial\w*|\blaw\w*|\bact\b|\bempire\w*|\bimperial\w*|\btariff\w*|\bsubsid\w*|\bboard\s+of\s+trade\b",
-    },
-    {
-        "id": "market-infrastructure",
-        "label": "market-infrastructure",
-        "description": "How exchanges, standards, credit, and logistics coordinate cotton trade.",
-        "definition": "Market infrastructure identifies the merchant, exchange, finance, shipping, and information systems that made cotton prices, grades, and contracts comparable across regions and linked growers, mills, and retailers.",
-        "group": "mechanisms",
-        "chapters": [1, 5, 6, 8, 11, 13, 14],
-        "pattern": r"\bmarket\w*|\bexchange\w*|\bmerchant\w*|\bcredit\w*|\bprice\w*|\bfutures\b|\bbroker\w*|\bshipping\b|\bnetwork\w*|\bgrade\w*|\bstandard\w*",
-    },
-]
-
-CHAPTER_PAGE_RANGES = {
-    1: (23, 50),
-    2: (51, 81),
-    3: (82, 112),
-    4: (113, 130),
-    5: (131, 174),
-    6: (175, 222),
-    7: (223, 252),
-    8: (253, 303),
-    9: (304, 341),
-    10: (342, 384),
-    11: (385, 419),
-    12: (420, 465),
-    13: (466, 524),
-    14: (524, 544),
-}
-
-CHAPTER_PERIODS = {
-    1: "5000 BCE-1500s",
-    2: "late 1400s-1850s",
-    3: "late 1400s-1850s",
-    4: "late 1400s-1850s",
-    5: "late 1400s-1850s",
-    6: "1780s-1860s",
-    7: "1780s-1860s",
-    8: "1780s-1860s",
-    9: "1860s-1910s",
-    10: "1860s-1910s",
-    11: "1860s-1910s",
-    12: "1900s-1930s (into mid-century)",
-    13: "1900s-1930s (into mid-century)",
-    14: "1950s-2010s",
-}
-
-CHAPTER_SETTINGS = {
-    1: "premodern household cotton zones across Asia, Africa, and the Americas",
-    2: "chartered-company ports in India and Atlantic slave-trade circuits",
-    3: "British mill districts and Atlantic input chains",
-    4: "Caribbean and South American plantation frontiers",
-    5: "the U.S. Deep South cotton frontier",
-    6: "new industrial centers across Europe and the Americas",
-    7: "factory districts in Britain and continental Europe",
-    8: "Liverpool-centered merchant and exchange networks",
-    9: "wartime Atlantic and imperial supply rerouting",
-    10: "post-emancipation cotton districts in the U.S. South and empire",
-    11: "imperial exchanges and colonial market zones",
-    12: "colonial cotton projects in Africa, Korea, and Central Asia",
-    13: "industrial cotton centers in India, Japan, and China",
-    14: "retailer-led global supply chains and subsidized cotton regions",
-}
-
 SETTING_PATTERNS = [
     ("Liverpool exchange networks", r"\bliverpool\b"),
     ("Manchester mill districts", r"\bmanchester\b"),
@@ -224,12 +143,6 @@ def normalize_spaces(text: str) -> str:
 
 
 def title_case_label(label: str) -> str:
-    if label == "labor-regimes":
-        return "labor-regimes"
-    if label == "state-power":
-        return "state-power"
-    if label == "market-infrastructure":
-        return "market-infrastructure"
     if "/" in label:
         return "/".join(part.title() for part in label.split("/"))
     return label.title()
@@ -329,7 +242,6 @@ def load_chapter_pages(chapter: int, chapter_path: Path) -> Dict[int, str]:
     lines = chapter_path.read_text(errors="ignore").splitlines()
     page = None
     pages: Dict[int, List[str]] = {}
-    min_page, max_page = CHAPTER_PAGE_RANGES[chapter]
 
     for raw_line in lines:
         line = raw_line.strip()
@@ -337,9 +249,6 @@ def load_chapter_pages(chapter: int, chapter_path: Path) -> Dict[int, str]:
             continue
         if re.fullmatch(r"\d{1,3}", line):
             page = int(line)
-            if page < min_page or page > max_page:
-                page = None
-                continue
             pages.setdefault(page, [])
             continue
 
@@ -473,14 +382,7 @@ def extract_page_from_text(text: str) -> int | None:
 def choose_entry_evidence(entry: KeyLineEntry, pattern: re.Pattern[str], chapter: int) -> str:
     if not entry.evidence:
         return ""
-    min_page, max_page = CHAPTER_PAGE_RANGES[chapter]
-    valid_evidence: List[str] = []
-    for evidence in entry.evidence:
-        page = extract_page_from_text(evidence)
-        if page is None or (min_page <= page <= max_page):
-            valid_evidence.append(evidence)
-
-    pool = valid_evidence if valid_evidence else entry.evidence
+    pool = entry.evidence
     for evidence in pool:
         if pattern.search(evidence):
             return evidence
@@ -510,7 +412,7 @@ def infer_setting(theme_label: str, group: str, sentence: str, chapter: int) -> 
         if re.search(pattern, sentence, re.I):
             return setting
 
-    return CHAPTER_SETTINGS[chapter]
+    return f"chapter {chapter} context"
 
 
 def infer_time(sentence: str, chapter: int) -> str:
@@ -518,7 +420,7 @@ def infer_time(sentence: str, chapter: int) -> str:
         match = regex.search(sentence)
         if match:
             return normalize_spaces(match.group(0))
-    return CHAPTER_PERIODS[chapter]
+    return f"chapter {chapter}"
 
 
 def build_point(label: str, setting: str, time: str, sentence: str) -> str:
@@ -544,11 +446,9 @@ def build_evidence(support: str, page: int, preferred: str = "") -> List[str]:
 
 def scope_from_hits(chapters: Sequence[int]) -> str:
     ordered = sorted(chapters)
-    start = CHAPTER_PERIODS.get(ordered[0], "early modern era")
-    end = CHAPTER_PERIODS.get(ordered[-1], "modern era")
     if ordered[0] == ordered[-1]:
-        return f"chapter {ordered[0]} ({start})"
-    return f"chapters {ordered[0]}-{ordered[-1]} ({start} to {end})"
+        return f"chapter {ordered[0]}"
+    return f"chapters {ordered[0]}-{ordered[-1]}"
 
 
 def build_definition(label: str, group: str, rationale: str, chapters: Sequence[int]) -> str:
@@ -634,9 +534,8 @@ def build_theme_entry(
         if entry:
             evidence_text = choose_entry_evidence(entry, pattern, chapter)
             entry_page = extract_page_from_text(evidence_text)
-            min_page, max_page = CHAPTER_PAGE_RANGES[chapter]
             preferred_evidence = ""
-            if entry_page is not None and min_page <= entry_page <= max_page:
+            if entry_page is not None:
                 page = entry_page
                 preferred_evidence = evidence_text
 
@@ -676,36 +575,27 @@ def build_themes(keyword_candidates_path: Path, chapters_dir: Path, chapter_key_
     candidates = parse_keyword_candidates(keyword_candidates_path)
     merged_candidates, aliases_by_label = merge_candidates(candidates)
 
+    chapter_files = sorted(chapters_dir.glob("chap[0-9][0-9].txt"))
+    if not chapter_files:
+        raise FileNotFoundError(f"No chapter text files found in {chapters_dir}")
+
+    chapter_ids = [int(re.search(r"chap(\d+)\.txt$", path.name).group(1)) for path in chapter_files]
     chapter_pages: Dict[int, Dict[int, str]] = {}
-    for chapter in range(1, 15):
+    for chapter in chapter_ids:
         chapter_path = chapters_dir / f"chap{chapter:02d}.txt"
-        if not chapter_path.exists():
-            raise FileNotFoundError(f"Missing chapter text: {chapter_path}")
         chapter_pages[chapter] = load_chapter_pages(chapter, chapter_path)
 
     chapter_key_lines = parse_chapter_key_lines(chapter_key_lines_path)
 
     themes: List[Dict] = []
-
-    for core in CORE_THEMES:
-        entry = build_theme_entry(
-            theme_id=core["id"],
-            label=core["label"],
-            description=core["description"],
-            definition=core["definition"],
-            group=core["group"],
-            aliases=[],
-            chapters=core["chapters"],
-            pattern=re.compile(core["pattern"], re.I),
-            chapter_pages=chapter_pages,
-            chapter_key_lines=chapter_key_lines,
-        )
-        themes.append(entry)
+    available_chapters = set(chapter_pages.keys())
 
     for candidate in merged_candidates:
         label = candidate["label"]
         group = candidate["group"]
-        chapters = candidate["chapters"]
+        chapters = [chapter for chapter in candidate["chapters"] if chapter in available_chapters]
+        if not chapters:
+            continue
         rationale = candidate["rationale"]
         aliases = aliases_by_label.get(label, [])
 
@@ -723,11 +613,9 @@ def build_themes(keyword_candidates_path: Path, chapters_dir: Path, chapter_key_
         )
         themes.append(entry)
 
-    core_ids = {core["id"] for core in CORE_THEMES}
     themes.sort(
         key=lambda item: (
             GROUP_ORDER.index(item["group"]),
-            0 if item["id"] in core_ids else 1,
             item["label"],
         )
     )

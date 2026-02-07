@@ -227,9 +227,13 @@ Run before finalizing:
 3. `python3 scripts/build_keyword_cards.py --keyword-candidates keyword_candidates.md --chapters-dir tmp/chapters --chapter-key-lines tmp/chapter_key_lines.txt --book-data book-data.js`
 4. `python3 scripts/validate_keyword_cards.py --book-data book-data.js --keyword-candidates keyword_candidates.md`
 5. `python3 scripts/check_agents_sync.py --agents AGENTS.md --index index.html --script script.js --styles styles.css`
+6. JS quote-escape gate (required for bilingual updates):
+   - Parse check (English and Chinese): `node --input-type=module -e "await import('./chapters/index.js'); await import('./chapters/index.zh.js'); await import('./book-data.js'); await import('./book-data.zh.js'); console.log('ok')"`
+   - Fix pass if parse fails: for `.zh.js` files run `for f in chapters/chapter-*.zh.js book-data.zh.js; do python3 scripts/fix_zh_quotes.py "$f"; done`; for English `chapters/chapter-*.js` or `book-data.js`, fix unescaped double quotes (and apostrophes in single-quoted strings) in the reported file.
+   - Re-run parse check and require success before finalizing.
 
 For script-only sanity checks:
-- `python3 -m py_compile scripts/keyword_candidates.py scripts/build_keyword_cards.py scripts/validate_keyword_cards.py scripts/check_agents_sync.py`
+- `python3 -m py_compile scripts/keyword_candidates.py scripts/build_keyword_cards.py scripts/validate_keyword_cards.py scripts/check_agents_sync.py scripts/fix_zh_quotes.py`
 
 ## 7 AGENTS maintenance rule
 

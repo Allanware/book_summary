@@ -8,16 +8,20 @@
 </head>
 <body>
   <header class="hero">
+    <div class="language-switch" id="languageSwitch" role="group" aria-label="Language switch">
+      <button class="lang-btn is-active" id="langEn" type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button class="lang-btn" id="langZh" type="button" data-lang="zh" aria-pressed="false">中文</button>
+    </div>
     <div class="hero-content">
-      <h1>Empire of Cotton</h1>
+      <h1 id="bookTitle">Empire of Cotton</h1>
     </div>
   </header>
 
   <main>
     <section class="section" id="chapters">
       <div class="section-header">
-        <h2>Chapter Argument Mindmap</h2>
-        <p>
+        <h2 id="mindmapHeading">Chapter Argument Mindmap</h2>
+        <p id="mindmapIntro">
           Expand a chapter to reveal its main argument and the evidence that supports it.
           Use the keywords to spotlight themes across the book.
         </p>
@@ -31,8 +35,8 @@
       <div class="mindmap-layout">
         <div class="mindmap" id="chapterMindmap"></div>
         <aside class="side-panel">
-          <h3>Keywords</h3>
-          <p class="muted">
+          <h3 id="keywordsHeading">Keywords</h3>
+          <p class="muted" id="keywordsIntro">
             Click a keyword to highlight where it appears in both the chapter map and the book flow.
           </p>
           <div class="thread-grid" id="threadGrid"></div>
@@ -43,7 +47,7 @@
 
     <section class="section" id="synthesis">
       <div class="section-header">
-        <h2>Book Synthesis Flow</h2>
+        <h2 id="synthesisHeading">Book Synthesis Flow</h2>
         <p id="coreArgument"></p>
       </div>
 

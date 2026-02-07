@@ -1,57 +1,145 @@
-import chapter01 from "./chapters/chapter-01.js";
-import chapter02 from "./chapters/chapter-02.js";
-import chapter03 from "./chapters/chapter-03.js";
-import chapter04 from "./chapters/chapter-04.js";
-import chapter05 from "./chapters/chapter-05.js";
-import chapter06 from "./chapters/chapter-06.js";
-import chapter07 from "./chapters/chapter-07.js";
-import chapter08 from "./chapters/chapter-08.js";
-import chapter09 from "./chapters/chapter-09.js";
-import chapter10 from "./chapters/chapter-10.js";
-import chapter11 from "./chapters/chapter-11.js";
-import chapter12 from "./chapters/chapter-12.js";
-import chapter13 from "./chapters/chapter-13.js";
-import chapter14 from "./chapters/chapter-14.js";
-import bookData from "./book-data.js";
+import { chapters as chaptersEn } from "./chapters/index.js";
+import { chapters as chaptersZh } from "./chapters/index.zh.js";
+import bookDataEn from "./book-data.js";
+import bookDataZh from "./book-data.zh.js";
 
-const BOOK_DATA = {
-  title: bookData.title,
-  coreArgument: bookData.coreArgument,
-  themes: bookData.themes,
-  chapters: [
-    chapter01,
-    chapter02,
-    chapter03,
-    chapter04,
-    chapter05,
-    chapter06,
-    chapter07,
-    chapter08,
-    chapter09,
-    chapter10,
-    chapter11,
-    chapter12,
-    chapter13,
-    chapter14
-  ],
-  flow: bookData.flow
+const BOOK_DATA_BY_LANG = {
+  en: {
+    title: bookDataEn.title,
+    coreArgument: bookDataEn.coreArgument,
+    themes: bookDataEn.themes,
+    chapters: chaptersEn,
+    flow: bookDataEn.flow
+  },
+  zh: {
+    title: bookDataZh.title,
+    coreArgument: bookDataZh.coreArgument,
+    themes: bookDataZh.themes,
+    chapters: chaptersZh,
+    flow: bookDataZh.flow
+  }
 };
 
+const UI_TEXT = {
+  en: {
+    documentTitleSuffix: "Argument Atlas",
+    mindmapHeading: "Chapter Argument Mindmap",
+    mindmapIntro:
+      "Expand a chapter to reveal its main argument and the evidence that supports it. Use the keywords to spotlight themes across the book.",
+    expandAll: "Expand all",
+    collapseAll: "Collapse all",
+    clearHighlights: "Clear highlights",
+    keywordsHeading: "Keywords",
+    keywordsIntro:
+      "Click a keyword to highlight where it appears in both the chapter map and the book flow.",
+    synthesisHeading: "Book Synthesis Flow",
+    chapterMapRootLabel: "Chapter Argument Map",
+    thesisHeading: "Thesis",
+    argumentFlowHeading: "Argument Flow",
+    mainArgumentHeading: "Main Argument",
+    evidenceHeading: "Evidence",
+    noSummary: "No summary yet.",
+    pagesLabel: "Pages",
+    showDetails: "Show details",
+    hideDetails: "Hide details",
+    showKeywords: "Show keywords",
+    hideKeywords: "Hide keywords",
+    selectKeywordHint: "Select a keyword to see its definition and applications.",
+    noApplications: "No applications listed yet.",
+    applicationsHeading: "Applications",
+    applicationLabel: "Application",
+    chaptersLabel: "Chapters",
+    mechanismLabel: "Mechanism",
+    periodLabel: "Period",
+    chapterChipPrefix: "Ch"
+  },
+  zh: {
+    documentTitleSuffix: "论证图谱",
+    mindmapHeading: "章节论证思维导图",
+    mindmapIntro:
+      "展开章节可查看其核心论点及支撑证据。点击关键词可聚焦全书中的跨章节主题。",
+    expandAll: "展开全部",
+    collapseAll: "收起全部",
+    clearHighlights: "清除高亮",
+    keywordsHeading: "关键词",
+    keywordsIntro: "点击关键词，可在章节图谱与全书综合流程中高亮其出现位置。",
+    synthesisHeading: "全书综合流程",
+    chapterMapRootLabel: "章节论证图",
+    thesisHeading: "论题",
+    argumentFlowHeading: "论证流程",
+    mainArgumentHeading: "核心论点",
+    evidenceHeading: "证据",
+    noSummary: "暂无摘要。",
+    pagesLabel: "页码",
+    showDetails: "显示详情",
+    hideDetails: "隐藏详情",
+    showKeywords: "显示关键词",
+    hideKeywords: "隐藏关键词",
+    selectKeywordHint: "请选择一个关键词以查看其定义与应用。",
+    noApplications: "暂无应用条目。",
+    applicationsHeading: "应用",
+    applicationLabel: "应用",
+    chaptersLabel: "章节",
+    mechanismLabel: "机制",
+    periodLabel: "时期",
+    chapterChipPrefix: "第"
+  }
+};
+
+const THEME_GROUPS = [
+  { id: "mechanisms", labels: { en: "Mechanisms", zh: "机制" } },
+  {
+    id: "institutions-actors",
+    labels: { en: "Institutions & Actors", zh: "制度与行动者" }
+  },
+  { id: "places-regions", labels: { en: "Places & Regions", zh: "地点与区域" } }
+];
+
+function loadLanguagePreference() {
+  try {
+    const stored = localStorage.getItem("eoc-language");
+    if (stored === "en" || stored === "zh") {
+      return stored;
+    }
+  } catch {
+    // Ignore storage errors.
+  }
+  return "en";
+}
+
+function saveLanguagePreference(language) {
+  try {
+    localStorage.setItem("eoc-language", language);
+  } catch {
+    // Ignore storage errors.
+  }
+}
+
 const state = {
+  language: loadLanguagePreference(),
   activeTheme: null,
   activeFlow: null
 };
 
-const THEME_GROUPS = [
-  { id: "mechanisms", label: "Mechanisms" },
-  { id: "institutions-actors", label: "Institutions & Actors" },
-  { id: "places-regions", label: "Places & Regions" }
-];
+let chapterThemeIndex = new Map();
+let controlsBound = false;
+let languageBound = false;
 
 const chapterElements = new Map();
 const flowElements = new Map();
 const threadGrid = document.getElementById("threadGrid");
-const chapterThemeIndex = buildChapterThemeIndex();
+
+function getBookData() {
+  return BOOK_DATA_BY_LANG[state.language];
+}
+
+function getUI() {
+  return UI_TEXT[state.language];
+}
+
+function getGroupLabel(group) {
+  return group.labels[state.language] || group.labels.en;
+}
 
 function normalizeText(value) {
   return String(value || "").replace(/\s+/g, " ").trim();
@@ -62,7 +150,7 @@ function ensureSentence(value) {
   if (!text) {
     return "";
   }
-  return /[.!?]$/.test(text) ? text : `${text}.`;
+  return /[.!?。！？]$/.test(text) ? text : `${text}.`;
 }
 
 function compactApplicationPoint(point) {
@@ -71,8 +159,12 @@ function compactApplicationPoint(point) {
     return "";
   }
 
-  const marker = /\bis visible as\b/i;
-  const markerMatch = marker.exec(source);
+  const markers = state.language === "zh"
+    ? [/\bis visible as\b/i, /体现在[:：]/]
+    : [/\bis visible as\b/i];
+  const markerMatch = markers
+    .map((marker) => marker.exec(source))
+    .find((match) => Boolean(match));
   let compact = markerMatch
     ? source.slice(markerMatch.index + markerMatch[0].length).trim()
     : source;
@@ -102,6 +194,14 @@ function joinWithAnd(items) {
   if (items.length === 1) {
     return items[0];
   }
+
+  if (state.language === "zh") {
+    if (items.length === 2) {
+      return `${items[0]}和${items[1]}`;
+    }
+    return `${items.slice(0, -1).join("、")}以及${items[items.length - 1]}`;
+  }
+
   if (items.length === 2) {
     return `${items[0]} and ${items[1]}`;
   }
@@ -113,13 +213,16 @@ function buildThemeCitation(themeId, index) {
 }
 
 function buildDefinitionApplicationClause(themeId, application, index) {
-  const compactPoint = compactApplicationPoint(application.point).replace(/[.!?]$/, "");
+  const compactPoint = compactApplicationPoint(application.point).replace(/[.!?。！？]$/, "");
   const context = [normalizeText(application.setting), normalizeText(application.time)]
     .filter(Boolean)
-    .join(", ");
+    .join(state.language === "zh" ? "，" : ", ");
   const citation = buildThemeCitation(themeId, index);
 
   if (compactPoint && context) {
+    if (state.language === "zh") {
+      return `${compactPoint}（${context}）${citation}`;
+    }
     return `${compactPoint} (${context})${citation}`;
   }
   if (compactPoint) {
@@ -128,7 +231,9 @@ function buildDefinitionApplicationClause(themeId, application, index) {
   if (context) {
     return `${context}${citation}`;
   }
-  return `documented application${citation}`;
+  return state.language === "zh"
+    ? `已记录的应用${citation}`
+    : `documented application${citation}`;
 }
 
 function buildThemeDefinition(theme, applications) {
@@ -156,13 +261,18 @@ function buildThemeDefinition(theme, applications) {
   const supportSentences = [];
   for (let i = 0; i < clauses.length; i += chunkSize) {
     const chunk = clauses.slice(i, i + chunkSize);
-    const intro = i === 0 ? "It appears in" : "It also appears in";
-    supportSentences.push(`${intro} ${joinWithAnd(chunk)}.`);
+    if (state.language === "zh") {
+      const intro = i === 0 ? "其可见于" : "其还可见于";
+      supportSentences.push(`${intro}${joinWithAnd(chunk)}。`);
+    } else {
+      const intro = i === 0 ? "It appears in" : "It also appears in";
+      supportSentences.push(`${intro} ${joinWithAnd(chunk)}.`);
+    }
   }
 
-  const punctuatedBase = /[.!?](\s*<\/[^>]+>\s*)*$/.test(baseDefinition)
+  const punctuatedBase = /[.!?。！？](\s*<\/[^>]+>\s*)*$/.test(baseDefinition)
     ? baseDefinition
-    : `${baseDefinition}.`;
+    : `${baseDefinition}${state.language === "zh" ? "。" : "."}`;
 
   return `${punctuatedBase} ${supportSentences.join(" ")}`.trim();
 }
@@ -172,21 +282,29 @@ function bindSectionToggles(container) {
     return;
   }
 
+  const ui = getUI();
   container.querySelectorAll(".section-toggle").forEach((toggle) => {
+    const section = toggle.closest(".flow-section");
+    if (section) {
+      toggle.textContent = section.classList.contains("is-collapsed")
+        ? ui.showDetails
+        : ui.hideDetails;
+    }
+
     toggle.addEventListener("click", () => {
-      const section = toggle.closest(".flow-section");
-      if (!section) {
+      const sectionNode = toggle.closest(".flow-section");
+      if (!sectionNode) {
         return;
       }
-      const collapsed = section.classList.toggle("is-collapsed");
-      toggle.textContent = collapsed ? "Show details" : "Hide details";
+      const collapsed = sectionNode.classList.toggle("is-collapsed");
+      toggle.textContent = collapsed ? ui.showDetails : ui.hideDetails;
     });
   });
 }
 
-function buildChapterThemeIndex() {
+function buildChapterThemeIndex(bookData) {
   const index = new Map();
-  BOOK_DATA.themes.forEach((theme) => {
+  bookData.themes.forEach((theme) => {
     const applications = Array.isArray(theme.applications)
       ? theme.applications
       : [];
@@ -204,22 +322,49 @@ function buildChapterThemeIndex() {
   return index;
 }
 
+function chapterChipText(chapterId) {
+  const ui = getUI();
+  if (state.language === "zh") {
+    return `${ui.chapterChipPrefix}${chapterId}章`;
+  }
+  return `${ui.chapterChipPrefix} ${chapterId}`;
+}
+
+function formatChapterLabel(chapter) {
+  if (state.language === "zh") {
+    return `第${chapter.id}章：${chapter.title}`;
+  }
+  return `Ch ${chapter.id}: ${chapter.title}`;
+}
+
+function combineSectionTitle(section) {
+  if (!section.note) {
+    return section.title;
+  }
+  return state.language === "zh"
+    ? `${section.title}：${section.note}`
+    : `${section.title} - ${section.note}`;
+}
+
 function renderChapters() {
+  const bookData = getBookData();
+  const ui = getUI();
   const container = document.getElementById("chapterMindmap");
   container.innerHTML = "";
+  chapterElements.clear();
 
   const root = document.createElement("details");
   root.className = "node root";
   root.open = true;
 
   const summary = document.createElement("summary");
-  summary.textContent = `${BOOK_DATA.title}: Chapter Argument Map`;
+  summary.textContent = `${bookData.title}: ${ui.chapterMapRootLabel}`;
   root.appendChild(summary);
 
   const branch = document.createElement("div");
   branch.className = "branch";
 
-  BOOK_DATA.chapters.forEach((chapter) => {
+  bookData.chapters.forEach((chapter) => {
     const node = document.createElement("details");
     node.className = "node chapter";
     node.dataset.id = chapter.id;
@@ -229,23 +374,23 @@ function renderChapters() {
     node.dataset.themes = Array.from(allThemes).join(" ");
 
     const nodeSummary = document.createElement("summary");
-    nodeSummary.innerHTML = `<span class="chip">Ch ${chapter.id}</span><span>${chapter.title}</span>`;
+    nodeSummary.innerHTML = `<span class="chip">${chapterChipText(chapter.id)}</span><span>${chapter.title}</span>`;
 
     const body = document.createElement("div");
     body.className = "node-body";
 
     if (chapter.flowSections && chapter.flowSections.length) {
       body.innerHTML = `
-        ${chapter.thesis ? `<h4>Thesis</h4><p>${chapter.thesis}</p>` : ''}
-        <h4>Argument Flow</h4>
+        ${chapter.thesis ? `<h4>${ui.thesisHeading}</h4><p>${chapter.thesis}</p>` : ""}
+        <h4>${ui.argumentFlowHeading}</h4>
         <div class="flow-sections">
           ${chapter.flowSections
             .map(
               (section, sectionIndex) => `
             <div class="flow-section is-collapsed" id="chapter-${chapter.id}-section-${sectionIndex + 1}">
               <div class="flow-section-header">
-                <div class="flow-section-title">${section.note ? `${section.title} - ${section.note}` : section.title}</div>
-                <button class="section-toggle" type="button">Show details</button>
+                <div class="flow-section-title">${combineSectionTitle(section)}</div>
+                <button class="section-toggle" type="button">${ui.showDetails}</button>
               </div>
               <ol class="flow-list">
                 ${section.steps
@@ -266,12 +411,12 @@ function renderChapters() {
             )
             .join("")}
         </div>
-        <p class="muted">Pages: ${chapter.pages}</p>
+        <p class="muted">${ui.pagesLabel}: ${chapter.pages}</p>
       `;
     } else if (chapter.flow && chapter.flow.length) {
       body.innerHTML = `
-        ${chapter.thesis ? `<h4>Thesis</h4><p>${chapter.thesis}</p>` : ''}
-        <h4>Argument Flow</h4>
+        ${chapter.thesis ? `<h4>${ui.thesisHeading}</h4><p>${chapter.thesis}</p>` : ""}
+        <h4>${ui.argumentFlowHeading}</h4>
         <ol class="flow-list">
           ${chapter.flow
             .map(
@@ -286,23 +431,23 @@ function renderChapters() {
             )
             .join("")}
         </ol>
-        <p class="muted">Pages: ${chapter.pages}</p>
+        <p class="muted">${ui.pagesLabel}: ${chapter.pages}</p>
       `;
     } else {
       const hasArgument = Boolean(chapter.argument);
       const evidenceItems = Array.isArray(chapter.evidence) ? chapter.evidence : [];
       const hasEvidence = evidenceItems.length > 0;
       const argumentBlock = hasArgument
-        ? `<h4>Main Argument</h4><p>${chapter.argument}</p>`
-        : `<p class="muted">No summary yet.</p>`;
+        ? `<h4>${ui.mainArgumentHeading}</h4><p>${chapter.argument}</p>`
+        : `<p class="muted">${ui.noSummary}</p>`;
       const evidenceBlock = hasEvidence
-        ? `<h4>Evidence</h4><ul>${evidenceItems.map((item) => `<li>${item}</li>`).join("")}</ul>`
+        ? `<h4>${ui.evidenceHeading}</h4><ul>${evidenceItems.map((item) => `<li>${item}</li>`).join("")}</ul>`
         : "";
 
       body.innerHTML = `
         ${argumentBlock}
         ${evidenceBlock}
-        <p class="muted">Pages: ${chapter.pages}</p>
+        <p class="muted">${ui.pagesLabel}: ${chapter.pages}</p>
       `;
     }
 
@@ -328,7 +473,7 @@ function expandSectionById(sectionId) {
     section.classList.remove("is-collapsed");
     const toggle = section.querySelector(".section-toggle");
     if (toggle) {
-      toggle.textContent = "Hide details";
+      toggle.textContent = getUI().hideDetails;
     }
   }
 }
@@ -352,12 +497,14 @@ document.addEventListener("click", (event) => {
 });
 
 function renderThreads() {
+  const bookData = getBookData();
+  const ui = getUI();
   threadGrid.innerHTML = "";
   const groupedThemes = new Map(
     THEME_GROUPS.map((group) => [group.id, []])
   );
 
-  BOOK_DATA.themes.forEach((theme) => {
+  bookData.themes.forEach((theme) => {
     if (!groupedThemes.has(theme.group)) {
       groupedThemes.set(theme.group, []);
     }
@@ -378,8 +525,8 @@ function renderThreads() {
     heading.type = "button";
     heading.className = "thread-group-toggle";
     heading.innerHTML = `
-      <span class="thread-group-title">${group.label}</span>
-      <span class="thread-group-toggle-meta">Show keywords</span>
+      <span class="thread-group-title">${getGroupLabel(group)}</span>
+      <span class="thread-group-toggle-meta">${ui.showKeywords}</span>
     `;
     heading.addEventListener("click", () => {
       const collapsed = section.classList.contains("is-collapsed");
@@ -412,10 +559,12 @@ function renderThreads() {
 }
 
 function renderFlow() {
+  const bookData = getBookData();
   const flow = document.getElementById("bookFlow");
   flow.innerHTML = "";
+  flowElements.clear();
 
-  BOOK_DATA.flow.forEach((step, index) => {
+  bookData.flow.forEach((step, index) => {
     const item = document.createElement("div");
     item.className = "flow-item";
 
@@ -442,7 +591,7 @@ function renderFlow() {
 
     item.appendChild(node);
 
-    if (index < BOOK_DATA.flow.length - 1) {
+    if (index < bookData.flow.length - 1) {
       const arrow = document.createElement("div");
       arrow.className = "flow-arrow";
       item.appendChild(arrow);
@@ -454,24 +603,28 @@ function renderFlow() {
 }
 
 function updateFlowDetail(step) {
+  const ui = getUI();
+  const bookData = getBookData();
   const detail = document.getElementById("flowDetail");
   const chapterLabels = step.chapters
     .map((id) => {
-      const chapter = BOOK_DATA.chapters.find((c) => c.id === id);
-      return `Ch ${chapter.id}: ${chapter.title}`;
+      const chapter = bookData.chapters.find((c) => c.id === id);
+      return chapter ? formatChapterLabel(chapter) : "";
     })
-    .join(", ");
+    .filter(Boolean)
+    .join(state.language === "zh" ? "，" : ", ");
 
   detail.innerHTML = `
     <h3>${step.title}</h3>
     <p>${step.summary}</p>
-    <p class="muted"><strong>Chapters:</strong> ${chapterLabels}</p>
-    <p class="muted"><strong>Mechanism:</strong> ${step.mechanism}</p>
-    <p class="muted"><strong>Period:</strong> ${step.period}</p>
+    <p class="muted"><strong>${ui.chaptersLabel}:</strong> ${chapterLabels}</p>
+    <p class="muted"><strong>${ui.mechanismLabel}:</strong> ${step.mechanism}</p>
+    <p class="muted"><strong>${ui.periodLabel}:</strong> ${step.period}</p>
   `;
 }
 
 function updateThemeDetail(theme) {
+  const ui = getUI();
   const detail = document.getElementById("themeDetail");
   if (!detail) {
     return;
@@ -479,7 +632,7 @@ function updateThemeDetail(theme) {
   if (!theme) {
     detail.classList.remove("is-visible");
     detail.innerHTML = `
-      <p class="muted">Select a keyword to see its definition and applications.</p>
+      <p class="muted">${ui.selectKeywordHint}</p>
     `;
     return;
   }
@@ -501,8 +654,8 @@ function updateThemeDetail(theme) {
           return `
             <div class="flow-section is-collapsed" id="${appId}">
               <div class="flow-section-header">
-                <div class="flow-section-title">Application${chapterSup}</div>
-                <button class="section-toggle" type="button">Show details</button>
+                <div class="flow-section-title">${ui.applicationLabel}${chapterSup}</div>
+                <button class="section-toggle" type="button">${ui.showDetails}</button>
               </div>
               ${context ? `<div class="flow-section-note">${context}</div>` : ""}
               <ol class="flow-list">
@@ -514,13 +667,13 @@ function updateThemeDetail(theme) {
           `;
         })
         .join("")
-    : `<p class="muted">No applications listed yet.</p>`;
+    : `<p class="muted">${ui.noApplications}</p>`;
 
   detail.classList.add("is-visible");
   detail.innerHTML = `
     <div class="node-body">
       <p class="theme-definition">${definition}</p>
-      <h4>Applications</h4>
+      <h4>${ui.applicationsHeading}</h4>
       <div class="flow-sections">
         ${applicationBlocks}
       </div>
@@ -534,10 +687,10 @@ function setActiveFlow(flowId) {
   state.activeFlow = flowId;
 
   flowElements.forEach((node) => {
-    node.classList.toggle("active", node.dataset.id === flowId);
+    node.classList.toggle("active", node.dataset.id === String(flowId));
   });
 
-  const step = BOOK_DATA.flow.find((item) => item.id === flowId);
+  const step = getBookData().flow.find((item) => item.id === flowId);
   if (step) {
     updateFlowDetail(step);
   }
@@ -545,9 +698,7 @@ function setActiveFlow(flowId) {
   updateHighlights();
 }
 
-function toggleTheme(themeId) {
-  state.activeTheme = state.activeTheme === themeId ? null : themeId;
-
+function syncActiveThemeButtons() {
   document.querySelectorAll(".thread").forEach((thread) => {
     thread.classList.toggle("active", thread.dataset.theme === state.activeTheme);
   });
@@ -556,22 +707,32 @@ function toggleTheme(themeId) {
   updateThreadGroupVisibility();
 
   const theme = state.activeTheme
-    ? BOOK_DATA.themes.find((item) => item.id === state.activeTheme)
+    ? getBookData().themes.find((item) => item.id === state.activeTheme)
     : null;
-  updateThemeDetail(theme);
 
+  if (!theme && state.activeTheme) {
+    state.activeTheme = null;
+  }
+
+  updateThemeDetail(theme || null);
+}
+
+function toggleTheme(themeId) {
+  state.activeTheme = state.activeTheme === themeId ? null : themeId;
+  syncActiveThemeButtons();
   updateHighlights();
 }
 
 function updateHighlights() {
+  const bookData = getBookData();
   const hasTheme = Boolean(state.activeTheme);
   const flowStep = state.activeFlow
-    ? BOOK_DATA.flow.find((item) => item.id === state.activeFlow)
+    ? bookData.flow.find((item) => item.id === state.activeFlow)
     : null;
   const flowChapters = flowStep ? new Set(flowStep.chapters) : null;
 
   chapterElements.forEach((node, id) => {
-    const themes = node.dataset.themes.split(" ");
+    const themes = node.dataset.themes.split(" ").filter(Boolean);
     const matchesTheme = !hasTheme || themes.includes(state.activeTheme);
     const matchesFlow = !flowChapters || flowChapters.has(id);
     const highlight = (hasTheme || flowChapters) && matchesTheme && matchesFlow;
@@ -581,7 +742,7 @@ function updateHighlights() {
   });
 
   flowElements.forEach((node) => {
-    const themes = node.dataset.themes.split(" ");
+    const themes = node.dataset.themes.split(" ").filter(Boolean);
     const matchesTheme = !hasTheme || themes.includes(state.activeTheme);
     node.classList.toggle("is-dimmed", hasTheme && !matchesTheme);
   });
@@ -609,7 +770,7 @@ function setThreadGroupCollapsed(group, collapsed) {
   group.classList.toggle("is-collapsed", collapsed);
   const toggleMeta = group.querySelector(".thread-group-toggle-meta");
   if (toggleMeta) {
-    toggleMeta.textContent = collapsed ? "Show keywords" : "Hide keywords";
+    toggleMeta.textContent = collapsed ? getUI().showKeywords : getUI().hideKeywords;
   }
 }
 
@@ -619,21 +780,95 @@ function collapseAllThreadGroups() {
   });
 }
 
-function bindControls() {
+function updateLanguageSwitchButtons() {
+  const enBtn = document.getElementById("langEn");
+  const zhBtn = document.getElementById("langZh");
+  if (!enBtn || !zhBtn) {
+    return;
+  }
+
+  const isEn = state.language === "en";
+  enBtn.classList.toggle("is-active", isEn);
+  enBtn.setAttribute("aria-pressed", String(isEn));
+  zhBtn.classList.toggle("is-active", !isEn);
+  zhBtn.setAttribute("aria-pressed", String(!isEn));
+}
+
+function updateToggleAllLabel() {
   const toggleAllBtn = document.getElementById("toggleAll");
-  
+  if (!toggleAllBtn) {
+    return;
+  }
+  const chapterNodes = document.querySelectorAll(".node.chapter");
+  const allExpanded = chapterNodes.length > 0 && Array.from(chapterNodes).every((node) => node.open);
+  toggleAllBtn.textContent = allExpanded ? getUI().collapseAll : getUI().expandAll;
+}
+
+function updateStaticChrome() {
+  const ui = getUI();
+  const bookData = getBookData();
+
+  document.documentElement.lang = state.language === "zh" ? "zh-CN" : "en";
+  document.title = `${bookData.title} - ${ui.documentTitleSuffix}`;
+
+  const bookTitle = document.getElementById("bookTitle");
+  const mindmapHeading = document.getElementById("mindmapHeading");
+  const mindmapIntro = document.getElementById("mindmapIntro");
+  const keywordsHeading = document.getElementById("keywordsHeading");
+  const keywordsIntro = document.getElementById("keywordsIntro");
+  const synthesisHeading = document.getElementById("synthesisHeading");
+  const coreArgument = document.getElementById("coreArgument");
+  const clearFilters = document.getElementById("clearFilters");
+
+  if (bookTitle) {
+    bookTitle.textContent = bookData.title;
+  }
+  if (mindmapHeading) {
+    mindmapHeading.textContent = ui.mindmapHeading;
+  }
+  if (mindmapIntro) {
+    mindmapIntro.textContent = ui.mindmapIntro;
+  }
+  if (keywordsHeading) {
+    keywordsHeading.textContent = ui.keywordsHeading;
+  }
+  if (keywordsIntro) {
+    keywordsIntro.textContent = ui.keywordsIntro;
+  }
+  if (synthesisHeading) {
+    synthesisHeading.textContent = ui.synthesisHeading;
+  }
+  if (coreArgument) {
+    coreArgument.textContent = bookData.coreArgument;
+  }
+  if (clearFilters) {
+    clearFilters.textContent = ui.clearHighlights;
+  }
+
+  updateLanguageSwitchButtons();
+  updateToggleAllLabel();
+}
+
+function bindControls() {
+  if (controlsBound) {
+    return;
+  }
+
+  const toggleAllBtn = document.getElementById("toggleAll");
+  const clearBtn = document.getElementById("clearFilters");
+
   toggleAllBtn.addEventListener("click", () => {
     const chapterNodes = document.querySelectorAll(".node.chapter");
     const allExpanded = Array.from(chapterNodes).every((node) => node.open);
-    
+
     chapterNodes.forEach((node) => {
       node.open = !allExpanded;
     });
-    
-    toggleAllBtn.textContent = allExpanded ? "Expand all" : "Collapse all";
+
+    updateToggleAllLabel();
   });
 
-  document.getElementById("clearFilters").addEventListener("click", () => {
+  clearBtn.addEventListener("click", () => {
     state.activeTheme = null;
     state.activeFlow = null;
 
@@ -652,23 +887,73 @@ function bindControls() {
 
     updateHighlights();
   });
+
+  controlsBound = true;
 }
 
-function init() {
-  document.getElementById("coreArgument").textContent = BOOK_DATA.coreArgument;
+function setLanguage(language) {
+  if (language !== "en" && language !== "zh") {
+    return;
+  }
+  if (state.language === language) {
+    return;
+  }
+
+  state.language = language;
+  saveLanguagePreference(language);
+  renderAll();
+}
+
+function bindLanguageSwitch() {
+  if (languageBound) {
+    return;
+  }
+
+  const enBtn = document.getElementById("langEn");
+  const zhBtn = document.getElementById("langZh");
+
+  if (enBtn) {
+    enBtn.addEventListener("click", () => setLanguage("en"));
+  }
+  if (zhBtn) {
+    zhBtn.addEventListener("click", () => setLanguage("zh"));
+  }
+
+  languageBound = true;
+}
+
+function renderAll() {
+  const bookData = getBookData();
+  chapterThemeIndex = buildChapterThemeIndex(bookData);
 
   renderChapters();
   renderThreads();
   renderFlow();
-  bindControls();
-  updateThemeDetail(null);
+  updateStaticChrome();
 
-  const firstStep = BOOK_DATA.flow[0];
-  updateFlowDetail(firstStep);
-  const firstNode = flowElements.get(firstStep.id);
-  if (firstNode) {
-    firstNode.classList.add("active");
+  const flowIds = new Set(bookData.flow.map((step) => step.id));
+  if (!flowIds.has(state.activeFlow)) {
+    state.activeFlow = bookData.flow[0] ? bookData.flow[0].id : null;
   }
+
+  if (state.activeFlow !== null) {
+    setActiveFlow(state.activeFlow);
+  }
+
+  const themeIds = new Set(bookData.themes.map((theme) => theme.id));
+  if (!themeIds.has(state.activeTheme)) {
+    state.activeTheme = null;
+  }
+
+  syncActiveThemeButtons();
+  updateHighlights();
+  updateToggleAllLabel();
+}
+
+function init() {
+  bindControls();
+  bindLanguageSwitch();
+  renderAll();
 }
 
 init();

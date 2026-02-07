@@ -1,0 +1,31 @@
+import chapter01 from "./chapter-01.zh.js";
+import chapter02 from "./chapter-02.zh.js";
+import chapter03 from "./chapter-03.zh.js";
+import chapter04 from "./chapter-04.zh.js";
+import chapter05 from "./chapter-05.zh.js";
+import chapter06 from "./chapter-06.zh.js";
+import chapter07 from "./chapter-07.zh.js";
+import chapter08 from "./chapter-08.zh.js";
+import chapter09 from "./chapter-09.zh.js";
+import chapter10 from "./chapter-10.zh.js";
+import chapter11 from "./chapter-11.zh.js";
+import chapter12 from "./chapter-12.zh.js";
+import chapter13 from "./chapter-13.zh.js";
+import chapter14 from "./chapter-14.zh.js";
+
+export const chapters = [
+  chapter01,
+  chapter02,
+  chapter03,
+  chapter04,
+  chapter05,
+  chapter06,
+  chapter07,
+  chapter08,
+  chapter09,
+  chapter10,
+  chapter11,
+  chapter12,
+  chapter13,
+  chapter14
+];

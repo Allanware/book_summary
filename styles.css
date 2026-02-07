@@ -45,9 +45,47 @@ p {
 }
 
 .hero {
+  position: relative;
   padding: 60px 8vw 40px;
   background: linear-gradient(120deg, rgba(177, 84, 47, 0.1), rgba(47, 93, 80, 0.12));
   border-bottom: 1px solid var(--line);
+}
+
+.language-switch {
+  position: absolute;
+  top: 18px;
+  right: 8vw;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 249, 241, 0.9);
+  box-shadow: 0 6px 16px rgba(31, 27, 22, 0.1);
+}
+
+.lang-btn {
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.lang-btn.is-active {
+  background: var(--accent);
+  color: #fff;
+}
+
+.lang-btn:focus-visible {
+  outline: 2px solid var(--accent-dark);
+  outline-offset: 2px;
 }
 
 .hero-content {
@@ -620,6 +658,11 @@ main {
     padding: 40px 6vw;
   }
 
+  .language-switch {
+    right: 6vw;
+    top: 12px;
+  }
+
   main {
     padding: 30px 6vw 60px;
   }
@@ -660,6 +703,18 @@ main {
 
   .hero {
     padding: 32px 5vw;
+  }
+
+  .language-switch {
+    right: 5vw;
+    top: 10px;
+    gap: 4px;
+    padding: 4px;
+  }
+
+  .lang-btn {
+    padding: 5px 10px;
+    font-size: 11px;
   }
 
   .meta span {

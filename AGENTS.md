@@ -44,6 +44,12 @@ This spec is synced to the current implementation in `index.html`, `script.js`, 
 - Do not assume bilingual output by default for a new book.
 - For this current repo, the implemented second language is Chinese (`*.zh.*` files); for a different second language in a new project, use the same schema/parity rules with that language's file set.
 
+### 2.5 Parallel multi-agent execution rule (required)
+- After Stage A, run chapter summary extraction (Stage B) and keyword candidate discovery (Stage C) in parallel.
+- For chapter summaries, split work across multiple agents by chapter or chapter ranges, then merge through one coordinator pass for schema consistency.
+- For keyword extraction, allow separate agents for candidate mining, alias/canonicalization review, and evidence coverage checks.
+- Do not let parallelization change evidence quality requirements: all outputs must still pass the same citation, coverage, and schema gates.
+
 ## 3 Reusable book pipeline
 
 Use this pipeline for any new book.
@@ -100,6 +106,9 @@ Output:
 Requirements:
 - Cover early/middle/late pages of each chapter.
 - Keep steps non-duplicative.
+- Group subarguments semantically (mechanism/actor/process/theme), not by page adjacency.
+- It is valid and expected for one subargument to cite evidence from non-contiguous pages across the chapter.
+- Do not structure `flowSections` as a linear page walk; section boundaries should reflect argument logic.
 - Use concrete actor + mechanism + setting + time + outcome language.
 - Keep evidence page-cited (`(p. X)`).
 - Add thesis superscript anchors to key sections.
@@ -115,6 +124,7 @@ Method requirements:
 - Use corpus statistics (n-gram recurrence, chapter spread, context diversity).
 - Canonicalize near duplicates (plural/singular, hyphen variants, alias merges).
 - No pre-curated book-specific candidate inventories.
+- Run in parallel with Stage B once Stage A is complete.
 
 ### Stage D: Curate final keyword cards
 Input:
@@ -206,6 +216,7 @@ Each theme must include:
 - Theme applications cover all chapter references for each theme.
 - Flow coverage includes all chapters.
 - Anchor links resolve 1:1 to existing sections/applications.
+- Chapter subarguments are semantically grouped; evidence can span distant pages and is not constrained to page-order grouping.
 
 ### 6.2 Structural gates
 Run before finalizing:

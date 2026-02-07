@@ -644,9 +644,11 @@ function updateThemeDetail(theme) {
     ? applications
         .map((application, index) => {
           const appId = `theme-${theme.id}-application-${index + 1}`;
-          const chapterSup = Number.isInteger(application.chapter)
-            ? `<sup>${application.chapter}</sup>`
-            : "";
+          const chapterLabel = Number.isInteger(application.chapter)
+            ? state.language === "zh"
+              ? `第${application.chapter}章`
+              : `Chapter ${application.chapter}`
+            : ui.applicationLabel;
           const context = [normalizeText(application.setting), normalizeText(application.time)]
             .filter(Boolean)
             .join(" • ");
@@ -654,7 +656,7 @@ function updateThemeDetail(theme) {
           return `
             <div class="flow-section is-collapsed" id="${appId}">
               <div class="flow-section-header">
-                <div class="flow-section-title">${ui.applicationLabel}${chapterSup}</div>
+                <div class="flow-section-title">${chapterLabel}</div>
                 <button class="section-toggle" type="button">${ui.showDetails}</button>
               </div>
               ${context ? `<div class="flow-section-note">${context}</div>` : ""}

@@ -114,6 +114,9 @@ Requirements:
 - Use concrete actor + mechanism + setting + time + outcome language.
 - Keep evidence page-cited (`(p. X)`).
 - Add thesis superscript anchors to key sections.
+- The thesis must be a high-level conceptual summary of the chapter's argument arc (3–5 sentences, ~100–200 words); it must not repeat subarguments or their evidence verbatim.
+- The thesis must NOT contain specific numbers, percentages, dates, dollar amounts, population counts, or verbatim evidence quotes—all quantitative detail and direct quotes belong in flowSection steps and evidence.
+- Every flowSection must be referenced by at least one superscript anchor in the thesis; distribute anchors after the clause most closely associated with each section's argument.
 
 ### Stage C: Discover keyword candidates
 Input:

@@ -1,312 +1,7 @@
 const BOOK_DATA = {
   "title": "Empire of Cotton",
   "coreArgument": "From premodern household cotton worlds—often spun by women and traded as currency—to today’s retailer-led supply chains, the book argues cotton repeatedly reorganized labor, land, and state power to build modern capitalism. European “war capitalism” (chartered companies, armed trade, colonial seizure, and slavery) redirected cotton into Atlantic circuits and pushed plantation frontiers to supply mechanized mills. Industrial capitalism then scaled the system through factory discipline and merchant-finance hubs that standardized grades, prices, credit, and information; after the U.S. Civil War’s cotton famine, empires rebuilt supply through colonial law, infrastructure, and coercive rural credit regimes. In the twentieth and twenty-first centuries, production and manufacturing shifted toward Asia and other low-wage regions, while states still subsidize growers and police labor—so coercion persists alongside dramatic productivity gains.",
-  "themes": [
-    {
-      "id": "labor-regimes",
-      "label": "labor-regimes",
-      "description": "How labor is organized, disciplined, and coerced across cotton production.",
-      "definition": "Labor regimes names how states, merchants, planters, and manufacturers organized work through household labor, slavery, wage labor, sharecropping, and migration across cotton regions from premodern economies to modern supply chains.",
-      "group": "mechanisms",
-      "aliases": [],
-      "applications": [
-        {
-          "chapters": [
-            1
-          ],
-          "setting": "China",
-          "time": "1590s",
-          "point": "Workshops and putting-out networks expanded under merchant cash advances while production often remained rural and home-based.",
-          "evidence": [
-            "Urban loom houses in Ming China employed many thousands; Timbuktu had twenty-six workshops with fifty or more workers each in the 1590s. (p. 40)"
-          ]
-        },
-        {
-          "chapters": [
-            2
-          ],
-          "setting": "India",
-          "time": "1731",
-          "point": "African demand forced Europeans to order specific cloth types and colors from India.",
-          "evidence": [
-            "The French slave ship Diligent (1731) carried a carefully selected assortment of Indian textiles for Guinea. (p. 59)"
-          ]
-        },
-        {
-          "chapters": [
-            3
-          ],
-          "setting": "merchant credit networks",
-          "time": "101-102",
-          "point": "High profits and merchant credit financed growth and working capital.",
-          "evidence": [
-            "Profit rates were high and working capital for raw cotton and wages reached about 7.4 million pounds in 1834 against 14.8 million pounds in fixed capital. (p. 101-102)"
-          ]
-        },
-        {
-          "chapters": [
-            4
-          ],
-          "setting": "the United States",
-          "time": "1857",
-          "point": "In 1857 John T Danson argued that cotton supply outside the East Indies depended on slave labor and most British cotton that year came.",
-          "evidence": [
-            "Danson linked cotton supply to slave labor and noted that 68 percent of British cotton in 1857 came from the United States. (p. 113)"
-          ]
-        },
-        {
-          "chapters": [
-            5
-          ],
-          "setting": "the U.S. Deep South cotton frontier",
-          "time": "late 1400s-1850s",
-          "point": "Violence and discipline were integral to productivity and profitability on cotton plantations.",
-          "evidence": [
-            "Fugitive slaves John Brown and Henry Bibb described whippings, slave hunts, and public punishments; Brown noted harsher driving when cotton prices rose. (p. 145)"
-          ]
-        },
-        {
-          "chapters": [
-            7
-          ],
-          "setting": "factory districts in Britain and continental Europe",
-          "time": "780",
-          "point": "Holding workers in place was difficult even in early British mills.",
-          "evidence": [
-            "At one English mill, of 780 apprentices recruited after 1786, 119 ran away and 65 died. (p. 226)"
-          ]
-        },
-        {
-          "chapters": [
-            9
-          ],
-          "setting": "merchant credit networks",
-          "time": "1860s-1910s",
-          "point": "The British state rewrote rules to secure cotton crops and credit.",
-          "evidence": [
-            "Manufacturers demanded contract laws that penalized breach and created crop liens backed by hard-labor penalties. (p. 315)"
-          ]
-        },
-        {
-          "chapters": [
-            10
-          ],
-          "setting": "Liverpool exchange networks",
-          "time": "1860s-1910s",
-          "point": "Postwar observers treated emancipation as a labor shock that would slash U S output.",
-          "evidence": [
-            "Manchester manufacturer Edmund Ashworth and Liverpool broker Maurice Williams argued that free Black laborers would not match slave-era output for years. (p. 342)"
-          ]
-        },
-        {
-          "chapters": [
-            12
-          ],
-          "setting": "colonial cotton projects in Africa, Korea, and Central Asia",
-          "time": "422-423",
-          "point": "After emancipation cotton manufacturers pressed states to dominate territory and labor imperial governments tied sovereignty over labor to territorial control and used infrastructure and.",
-          "evidence": [
-            "The chapter links the post-1865 expansion of cotton to state domination of territory and to sovereignty over labor as a function of territorial control. (p. 422-423)"
-          ]
-        },
-        {
-          "chapters": [
-            13
-          ],
-          "setting": "industrial cotton centers in India, Japan, and China",
-          "time": "1861",
-          "point": "Ranchhodlal Chhotalal launched Ahmedabad's first steam-powered spinning in 1861 and quickly expanded Shapur Mill after it proved profitable.",
-          "evidence": [
-            "Shapur Mill began with 2,500 spindles and 65 workers and expanded by early 1865 to 10,000 spindles, 100 power looms, and 235 additional workers. (p. 466)"
-          ]
-        },
-        {
-          "chapters": [
-            14
-          ],
-          "setting": "Liverpool exchange networks",
-          "time": "1960s",
-          "point": "Europe s cotton command ended visibly in 1963 with the Liverpool Cotton Association s liquidation and in statistics that showed Britain s industry collapsing.",
-          "evidence": [
-            "By the late 1960s the U.K. held only 2.8 percent of global cotton cloth exports and employment had fallen from over 600,000 to about 30,000 workers; in 1958 the Manchester Chamber of Commerce called for protection. (p. 526)"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "market-infrastructure",
-      "label": "market-infrastructure",
-      "description": "How exchanges, standards, credit, and logistics coordinate cotton trade.",
-      "definition": "Market infrastructure identifies the merchant, exchange, finance, shipping, and information systems that made cotton prices, grades, and contracts comparable across regions and linked growers, mills, and retailers.",
-      "group": "mechanisms",
-      "aliases": [],
-      "applications": [
-        {
-          "chapters": [
-            1
-          ],
-          "setting": "China",
-          "time": "5000 BCE-1500s",
-          "point": "Workshops and putting-out networks expanded under merchant cash advances while production often remained rural and home-based.",
-          "evidence": [
-            "The chapter describes putting-out networks in which merchants advanced cotton or yarn and controlled production stages, especially in China and the Ottoman Empire. (p. 41)"
-          ]
-        },
-        {
-          "chapters": [
-            5
-          ],
-          "setting": "the United States",
-          "time": "1786",
-          "point": "Sea Island long-staple cotton introduced from Bahamas seed in 1786 matched British demand for fine yarns and quickly raised exports the Saint-Domingue revolt then.",
-          "evidence": [
-            "Sea Island cotton spread along the Georgia and South Carolina coast; South Carolina exports rose from under 10,000 pounds (1790) to 6.4 million (1800). (p. 135)"
-          ]
-        },
-        {
-          "chapters": [
-            6
-          ],
-          "setting": "new industrial centers across Europe and the Americas",
-          "time": "1850s",
-          "point": "States without colonies sought distant niche markets to survive protectionism.",
-          "evidence": [
-            "Swiss manufacturers sold batiks into Southeast Asia and head shawls into Islamic markets in the 1850s-1860s. (p. 208)"
-          ]
-        },
-        {
-          "chapters": [
-            8
-          ],
-          "setting": "Liverpool exchange networks",
-          "time": "1809",
-          "point": "The cotton exchange and Liverpool price quotations operated as the empire's signal system shaping decisions from Bombay to Mississippi and reinforcing Liverpool's dominance over.",
-          "evidence": [
-            "Merchants traded on the Liverpool exchange (first outdoors, then in an 1809 building) where large sales were made quickly, creating a focal marketplace. (p. 254)"
-          ]
-        },
-        {
-          "chapters": [
-            11
-          ],
-          "setting": "India",
-          "time": "1843",
-          "point": "Asia especially India became the primary target market for metropolitan textiles.",
-          "evidence": [
-            "India was British manufacturers’ most important customer by 1843, and by 1900 about 78 percent of British cotton output was exported, much to India. (p. 399)"
-          ]
-        },
-        {
-          "chapters": [
-            13
-          ],
-          "setting": "industrial cotton centers in India, Japan, and China",
-          "time": "1911",
-          "point": "State export promotion and imperial leverage opened foreign markets for Japanese cloth.",
-          "evidence": [
-            "Because tariffs were barred before 1911, the state instead supplied technology, export cartels, market intelligence, and debt guarantees for exporters. (p. 495)"
-          ]
-        },
-        {
-          "chapters": [
-            14
-          ],
-          "setting": "Liverpool exchange networks",
-          "time": "1963",
-          "point": "Europe s cotton command ended visibly in 1963 with the Liverpool Cotton Association s liquidation and in statistics that showed Britain s industry collapsing.",
-          "evidence": [
-            "Liverpool’s Cotton Exchange was sold and the association auctioned its furnishings in 1963, symbolizing the end of European rule. (p. 525)"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "capital-accumulation",
-      "label": "capital accumulation",
-      "description": "Reinvestment driving scale and infrastructure",
-      "definition": "As used in this book, capital accumulation refers to reinvestment driving scale and infrastructure. It operates through merchants, manufacturers, growers, workers, and states across chapters 3-13 (late 1400s-1850s to 1900s-1930s (into mid-century)).",
-      "group": "mechanisms",
-      "aliases": [],
-      "applications": [
-        {
-          "chapters": [
-            3
-          ],
-          "setting": "India",
-          "time": "1790",
-          "point": "Productivity leaps cut spinning time and prices.",
-          "evidence": [
-            "Spinning 100 pounds took 50,000 hours in India but 1,000 hours in Britain by 1790, falling to 135 hours after 1825, and yarn prices declined accordingly. (p. 94-95)"
-          ]
-        },
-        {
-          "chapters": [
-            5
-          ],
-          "setting": "the United States",
-          "time": "1786",
-          "point": "Sea Island long-staple cotton introduced from Bahamas seed in 1786 matched British demand for fine yarns and quickly raised exports the Saint-Domingue revolt then.",
-          "evidence": [
-            "Sea Island cotton spread along the Georgia and South Carolina coast; South Carolina exports rose from under 10,000 pounds (1790) to 6.4 million (1800). (p. 135)"
-          ]
-        },
-        {
-          "chapters": [
-            7
-          ],
-          "setting": "factory districts in Britain and continental Europe",
-          "time": "780",
-          "point": "Holding workers in place was difficult even in early British mills.",
-          "evidence": [
-            "At one English mill, of 780 apprentices recruited after 1786, 119 ran away and 65 died. (p. 226)"
-          ]
-        },
-        {
-          "chapters": [
-            8
-          ],
-          "setting": "Liverpool exchange networks",
-          "time": "253-254",
-          "point": "The port's docks warehouses and transport links moved bales quickly to Lancashire while relying on dangerous low-paid dock labor.",
-          "evidence": [
-            "By 1832 Liverpool's docks and harbor walls stretched about 2.5 miles with quays and warehouses, and bales moved by canal and, after 1830, rail to Lancashire mills 20-50 miles away. (p. 253-254)"
-          ]
-        },
-        {
-          "chapters": [
-            9
-          ],
-          "setting": "the United States",
-          "time": "1860s-1910s",
-          "point": "The United States became the dominant supplier making European mills dependent on American cotton.",
-          "evidence": [
-            "On the eve of the Civil War, raw cotton was 61 percent of U.S. export value. (p. 304)"
-          ]
-        },
-        {
-          "chapters": [
-            10
-          ],
-          "setting": "Liverpool exchange networks",
-          "time": "1860s-1910s",
-          "point": "Postwar observers treated emancipation as a labor shock that would slash U S output.",
-          "evidence": [
-            "Manchester manufacturer Edmund Ashworth and Liverpool broker Maurice Williams argued that free Black laborers would not match slave-era output for years. (p. 342)"
-          ]
-        },
-        {
-          "chapters": [
-            13
-          ],
-          "setting": "industrial cotton centers in India, Japan, and China",
-          "time": "1861",
-          "point": "Ranchhodlal Chhotalal launched Ahmedabad's first steam-powered spinning in 1861 and quickly expanded Shapur Mill after it proved profitable.",
-          "evidence": [
-            "Chhotalal started steam-powered spinning on May 30, 1861 with machinery ordered from Britain and British mechanics. (p. 466)"
-          ]
-        }
-      ]
-    },
+  "keywords": [
     {
       "id": "coercion",
       "label": "coercion",
@@ -319,8 +14,7 @@ const BOOK_DATA = {
           "chapters": [
             3
           ],
-          "setting": "India",
-          "time": "1790",
+          "setting": "India • 1790",
           "point": "Productivity leaps cut spinning time and prices.",
           "evidence": [
             "Spinning 100 pounds took 50,000 hours in India but 1,000 hours in Britain by 1790, falling to 135 hours after 1825, and yarn prices declined accordingly. (p. 94-95)"
@@ -330,8 +24,7 @@ const BOOK_DATA = {
           "chapters": [
             4
           ],
-          "setting": "the Atlantic economy",
-          "time": "1492-1888",
+          "setting": "the Atlantic economy • 1492-1888",
           "point": "British institutions offered targeted incentives and the Caribbean experiment produced second slavery land expropriation plus plantation coercion tightly linked to industrial capitalism.",
           "evidence": [
             "The chapter describes the \"re-creation of the countryside through bodily coercion\" (\"second slavery\") and reports that 46 percent of enslaved people sold to the Americas (1492-1888) arrived after 1780. (p. 123)"
@@ -342,8 +35,7 @@ const BOOK_DATA = {
             5,
             9
           ],
-          "setting": "Egypt",
-          "time": "170-171; 319-320",
+          "setting": "Egypt • 170-171; 319-320",
           "point": "Egypt's state-led boom converted land to cotton through coercion and infrastructure.",
           "evidence": [
             "Muhammad Ali forced peasants to plant cotton, used corvee labor, and monopolized purchases and sales through Alexandria, generating 10 to 25 percent of state revenue. (p. 170-171)",
@@ -354,8 +46,7 @@ const BOOK_DATA = {
           "chapters": [
             6
           ],
-          "setting": "Egypt",
-          "time": "214-215",
+          "setting": "Egypt • 214-215",
           "point": "Egypt s factories relied on coercion rather than stable wage labor.",
           "evidence": [
             "Workers in Cairo’s Khurunfish workshops included Sudanese slaves and coerced Egyptians supervised by the army and paid minimal wages. (p. 214-215)"
@@ -375,8 +66,7 @@ const BOOK_DATA = {
           "chapters": [
             6
           ],
-          "setting": "new industrial centers across Europe and the Americas",
-          "time": "205-206",
+          "setting": "new industrial centers across Europe and the Americas • 205-206",
           "point": "Access to colonial markets could make or break national industries.",
           "evidence": [
             "Catalan cottons flowed to the Americas while raw cotton entered Barcelona from the New World, enabling rapid growth. (p. 205-206)"
@@ -388,8 +78,7 @@ const BOOK_DATA = {
             11,
             13
           ],
-          "setting": "wartime Atlantic and imperial supply rerouting; India",
-          "time": "312-313; 1870s; 1913-14",
+          "setting": "wartime Atlantic and imperial supply rerouting; India • 312-313; 1870s; 1913-14",
           "point": "European merchants captured interior markets like Berar by sending agents to purchase cotton directly replacing local dealers with colonial-state backing.",
           "evidence": [
             "Cotton was debated in the British and French legislatures, and Palmerston argued England must have cotton to prevent mass suffering. (p. 312-313)",
@@ -401,8 +90,7 @@ const BOOK_DATA = {
           "chapters": [
             10
           ],
-          "setting": "India",
-          "time": "1860s-1910s",
+          "setting": "India • 1860s-1910s",
           "point": "In India surveys taxes and credit law tied peasants to moneylenders and cotton.",
           "evidence": [
             "Colonial policy also converted commons and forests into private cotton land, with deforestation and ecological disruption. (p. 369)"
@@ -412,8 +100,7 @@ const BOOK_DATA = {
           "chapters": [
             12
           ],
-          "setting": "colonial cotton projects in Africa, Korea, and Central Asia",
-          "time": "1910",
+          "setting": "colonial cotton projects in Africa, Korea, and Central Asia • 1910",
           "point": "Colonial rule scaled the program with state directives and foreign models rapidly expanding exports to Japan.",
           "evidence": [
             "After the 1910 occupation, the Governor-General ordered upland cotton planting and modeled policies on other empires' programs. (p. 421)"
@@ -433,8 +120,7 @@ const BOOK_DATA = {
           "chapters": [
             1
           ],
-          "setting": "merchant credit networks",
-          "time": "5000 BCE-1500s",
+          "setting": "merchant credit networks • 5000 BCE-1500s",
           "point": "Workshops and putting-out networks expanded under merchant cash advances while production often remained rural and home-based.",
           "evidence": [
             "Dhaka weavers produced muslins for the Mughal court under tight supervision, and multi-loom workshops are reported in fifteenth-century Andhra Pradesh. (p. 40)"
@@ -444,8 +130,7 @@ const BOOK_DATA = {
           "chapters": [
             3
           ],
-          "setting": "India",
-          "time": "1790",
+          "setting": "India • 1790",
           "point": "Productivity leaps cut spinning time and prices.",
           "evidence": [
             "Spinning 100 pounds took 50,000 hours in India but 1,000 hours in Britain by 1790, falling to 135 hours after 1825, and yarn prices declined accordingly. (p. 94-95)"
@@ -455,8 +140,7 @@ const BOOK_DATA = {
           "chapters": [
             8
           ],
-          "setting": "Liverpool exchange networks",
-          "time": "258-259",
+          "setting": "Liverpool exchange networks • 258-259",
           "point": "A single commodity chain could connect a Mississippi planter to Manchester spinners and then to Indian merchants and weavers showing how merchants built webs.",
           "evidence": [
             "The text traces a chain from Mississippi planters to New Orleans exporters, Liverpool shippers, Manchester manufacturers, Calcutta merchants, and Indian weavers and retailers. (p. 258-259)"
@@ -466,8 +150,7 @@ const BOOK_DATA = {
           "chapters": [
             9
           ],
-          "setting": "the United States",
-          "time": "1860s-1910s",
+          "setting": "the United States • 1860s-1910s",
           "point": "The United States became the dominant supplier making European mills dependent on American cotton.",
           "evidence": [
             "On the eve of the Civil War, raw cotton was 61 percent of U.S. export value. (p. 304)"
@@ -477,8 +160,7 @@ const BOOK_DATA = {
           "chapters": [
             11
           ],
-          "setting": "India",
-          "time": "1930s",
+          "setting": "India • 1930s",
           "point": "After 1865 cultivators in India Egypt the U S South Brazil and later West Africa and Central Asia were pulled into new cotton labor.",
           "evidence": [
             "Cotton and cotton goods remained the largest single trade in the Atlantic and Asia, and Toyo Menka Kaisha called cotton the prime commodity in the 1930s. (p. 385)"
@@ -498,8 +180,7 @@ const BOOK_DATA = {
           "chapters": [
             1
           ],
-          "setting": "merchant credit networks",
-          "time": "5000 BCE-1500s",
+          "setting": "merchant credit networks • 5000 BCE-1500s",
           "point": "Workshops and putting-out networks expanded under merchant cash advances while production often remained rural and home-based.",
           "evidence": [
             "Dhaka weavers produced muslins for the Mughal court under tight supervision, and multi-loom workshops are reported in fifteenth-century Andhra Pradesh. (p. 40)"
@@ -509,8 +190,7 @@ const BOOK_DATA = {
           "chapters": [
             2
           ],
-          "setting": "India",
-          "time": "1600",
+          "setting": "India • 1600",
           "point": "Europe's cotton output was small and technically behind Asia Europeans depended on imported fiber and mostly wore linen or wool in 1600.",
           "evidence": [
             "The chapter states world production centered on India and China, and European output did not match Asian technology or quality. (p. 51-52)"
@@ -520,8 +200,7 @@ const BOOK_DATA = {
           "chapters": [
             3
           ],
-          "setting": "merchant credit networks",
-          "time": "101-102",
+          "setting": "merchant credit networks • 101-102",
           "point": "High profits and merchant credit financed growth and working capital.",
           "evidence": [
             "Profit rates were high and working capital for raw cotton and wages reached about 7.4 million pounds in 1834 against 14.8 million pounds in fixed capital. (p. 101-102)"
@@ -531,8 +210,7 @@ const BOOK_DATA = {
           "chapters": [
             4
           ],
-          "setting": "the United States",
-          "time": "1857",
+          "setting": "the United States • 1857",
           "point": "In 1857 John T Danson argued that cotton supply outside the East Indies depended on slave labor and most British cotton that year came.",
           "evidence": [
             "Danson linked cotton supply to slave labor and noted that 68 percent of British cotton in 1857 came from the United States. (p. 113)"
@@ -542,8 +220,7 @@ const BOOK_DATA = {
           "chapters": [
             5
           ],
-          "setting": "Europe",
-          "time": "late 1400s-1850s",
+          "setting": "Europe • late 1400s-1850s",
           "point": "Slave-mortgage credit linked European capital to plantation expansion.",
           "evidence": [
             "In Louisiana 88 percent of loans and in South Carolina 82 percent used enslaved people as collateral, securing hundreds of millions of dollars. (p. 150)"
@@ -553,8 +230,7 @@ const BOOK_DATA = {
           "chapters": [
             6
           ],
-          "setting": "the United States",
-          "time": "201-202",
+          "setting": "the United States • 201-202",
           "point": "War disruptions in the United States played a similar protective role.",
           "evidence": [
             "The Embargo Act of 1807 removed British textiles and spindles rose from 8,000 in 1807 to 130,000 by 1815. (p. 201-202)"
@@ -564,8 +240,7 @@ const BOOK_DATA = {
           "chapters": [
             7
           ],
-          "setting": "factory districts in Britain and continental Europe",
-          "time": "780",
+          "setting": "factory districts in Britain and continental Europe • 780",
           "point": "Holding workers in place was difficult even in early British mills.",
           "evidence": [
             "At one English mill, of 780 apprentices recruited after 1786, 119 ran away and 65 died. (p. 226)"
@@ -575,8 +250,7 @@ const BOOK_DATA = {
           "chapters": [
             8
           ],
-          "setting": "Manchester mill districts",
-          "time": "1780s-1860s",
+          "setting": "Manchester mill districts • 1780s-1860s",
           "point": "A single commodity chain could connect a Mississippi planter to Manchester spinners and then to Indian merchants and weavers showing how merchants built webs.",
           "evidence": [
             "It emphasizes that these links formed a global web built on credit, trust, and information that only merchants could coordinate. (p. 259)"
@@ -587,8 +261,7 @@ const BOOK_DATA = {
             9,
             12
           ],
-          "setting": "merchant credit networks",
-          "time": "1860s-1910s; 1902",
+          "setting": "merchant credit networks • 1860s-1910s; 1902",
           "point": "Japanese officials and manufacturers organized experiments new seed strains gins and credit institutions to expand Korean cotton.",
           "evidence": [
             "Manufacturers demanded contract laws that penalized breach and created crop liens backed by hard-labor penalties. (p. 315)",
@@ -599,8 +272,7 @@ const BOOK_DATA = {
           "chapters": [
             10
           ],
-          "setting": "India",
-          "time": "370-371",
+          "setting": "India • 370-371",
           "point": "In India surveys taxes and credit law tied peasants to moneylenders and cotton.",
           "evidence": [
             "British surveys and privatization created landholders who mortgaged fields to moneylenders, while taxes were shifted to individual peasants and required cash payments. (p. 370-371)"
@@ -610,8 +282,7 @@ const BOOK_DATA = {
           "chapters": [
             11
           ],
-          "setting": "India",
-          "time": "1883",
+          "setting": "India • 1883",
           "point": "European and Japanese scale marginalized Indian merchants while moneylender credit remained essential.",
           "evidence": [
             "By 1883 Volkart had sixteen presses in Berar and by 1920 shipped over 180,000 bales (about one-quarter of exports), while Toyo Menka Kaisha ran 156 Indian subagencies by 1926. (p. 388)"
@@ -621,8 +292,7 @@ const BOOK_DATA = {
           "chapters": [
             13
           ],
-          "setting": "industrial cotton centers in India, Japan, and China",
-          "time": "1861",
+          "setting": "industrial cotton centers in India, Japan, and China • 1861",
           "point": "Ranchhodlal Chhotalal launched Ahmedabad's first steam-powered spinning in 1861 and quickly expanded Shapur Mill after it proved profitable.",
           "evidence": [
             "Chhotalal started steam-powered spinning on May 30, 1861 with machinery ordered from Britain and British mechanics. (p. 466)"
@@ -632,8 +302,7 @@ const BOOK_DATA = {
           "chapters": [
             14
           ],
-          "setting": "the United States",
-          "time": "526",
+          "setting": "the United States • 526",
           "point": "The empire persisted even as its European core vanished with global cotton output and consumption reaching new highs.",
           "evidence": [
             "The chapter notes that while Europe and the United States became marginal, the world creates and consumes more cotton than ever before. (p. 526)"
@@ -653,8 +322,7 @@ const BOOK_DATA = {
           "chapters": [
             5
           ],
-          "setting": "the U.S. Deep South cotton frontier",
-          "time": "late 1400s-1850s",
+          "setting": "the U.S. Deep South cotton frontier • late 1400s-1850s",
           "point": "Violence and discipline were integral to productivity and profitability on cotton plantations.",
           "evidence": [
             "Fugitive slaves John Brown and Henry Bibb described whippings, slave hunts, and public punishments; Brown noted harsher driving when cotton prices rose. (p. 145)"
@@ -664,8 +332,7 @@ const BOOK_DATA = {
           "chapters": [
             7
           ],
-          "setting": "factory districts in Britain and continental Europe",
-          "time": "1780s-1860s",
+          "setting": "factory districts in Britain and continental Europe • 1780s-1860s",
           "point": "Time discipline and close monitoring migrated from plantation practices into factories.",
           "evidence": [
             "Employers backed surveillance with beating, fines, and firing to enforce discipline. (p. 245)"
@@ -675,8 +342,7 @@ const BOOK_DATA = {
           "chapters": [
             8
           ],
-          "setting": "Liverpool exchange networks",
-          "time": "253-254",
+          "setting": "Liverpool exchange networks • 253-254",
           "point": "The port's docks warehouses and transport links moved bales quickly to Lancashire while relying on dangerous low-paid dock labor.",
           "evidence": [
             "By 1832 Liverpool's docks and harbor walls stretched about 2.5 miles with quays and warehouses, and bales moved by canal and, after 1830, rail to Lancashire mills 20-50 miles away. (p. 253-254)"
@@ -696,8 +362,7 @@ const BOOK_DATA = {
           "chapters": [
             2
           ],
-          "setting": "India",
-          "time": "1600",
+          "setting": "India • 1600",
           "point": "Europe's cotton output was small and technically behind Asia Europeans depended on imported fiber and mostly wore linen or wool in 1600.",
           "evidence": [
             "The chapter states world production centered on India and China, and European output did not match Asian technology or quality. (p. 51-52)"
@@ -707,8 +372,7 @@ const BOOK_DATA = {
           "chapters": [
             4
           ],
-          "setting": "the Atlantic economy",
-          "time": "1780",
+          "setting": "the Atlantic economy • 1780",
           "point": "British institutions offered targeted incentives and the Caribbean experiment produced second slavery land expropriation plus plantation coercion tightly linked to industrial capitalism.",
           "evidence": [
             "The Royal Society of Arts offered a gold medal (1768), Britain levied a tariff on cotton imported on foreign boats (1780), the Board of Trade sent Anton Pantaleon Hove to collect cottonseed, and colonial governors promised incentives including free land. (p. 122)"
@@ -718,8 +382,7 @@ const BOOK_DATA = {
           "chapters": [
             5
           ],
-          "setting": "Liverpool exchange networks",
-          "time": "131-132",
+          "setting": "Liverpool exchange networks • 131-132",
           "point": "Liverpool officials impounded U S cotton in 1785 because they assumed cotton came from the West Indies Brazil the Ottoman Empire or India underscoring.",
           "evidence": [
             "In 1785 Liverpool customs seized American cotton and the Board of Trade refused entry because it was not thought to be U.S. produce. (p. 131-132)"
@@ -729,8 +392,7 @@ const BOOK_DATA = {
           "chapters": [
             6
           ],
-          "setting": "the United States",
-          "time": "201-202",
+          "setting": "the United States • 201-202",
           "point": "War disruptions in the United States played a similar protective role.",
           "evidence": [
             "The Embargo Act of 1807 removed British textiles and spindles rose from 8,000 in 1807 to 130,000 by 1815. (p. 201-202)"
@@ -740,8 +402,7 @@ const BOOK_DATA = {
           "chapters": [
             12
           ],
-          "setting": "colonial cotton projects in Africa, Korea, and Central Asia",
-          "time": "433-434",
+          "setting": "colonial cotton projects in Africa, Korea, and Central Asia • 433-434",
           "point": "The U S cotton empire grew westward through infrastructure and Indigenous dispossession adding vast acreage and output.",
           "evidence": [
             "U.S. output rose from 5,386,897 bales (1860) to 13,429,000 (1920) while 22 million additional acres were plowed under, with Texas alone growing ten times more cotton. (p. 433-434)"
@@ -761,8 +422,7 @@ const BOOK_DATA = {
           "chapters": [
             8
           ],
-          "setting": "Liverpool exchange networks",
-          "time": "253-254",
+          "setting": "Liverpool exchange networks • 253-254",
           "point": "The port's docks warehouses and transport links moved bales quickly to Lancashire while relying on dangerous low-paid dock labor.",
           "evidence": [
             "By 1832 Liverpool's docks and harbor walls stretched about 2.5 miles with quays and warehouses, and bales moved by canal and, after 1830, rail to Lancashire mills 20-50 miles away. (p. 253-254)"
@@ -772,8 +432,7 @@ const BOOK_DATA = {
           "chapters": [
             9
           ],
-          "setting": "the United States",
-          "time": "1860s-1910s",
+          "setting": "the United States • 1860s-1910s",
           "point": "The United States became the dominant supplier making European mills dependent on American cotton.",
           "evidence": [
             "On the eve of the Civil War, raw cotton was 61 percent of U.S. export value. (p. 304)"
@@ -783,8 +442,7 @@ const BOOK_DATA = {
           "chapters": [
             11
           ],
-          "setting": "India",
-          "time": "1843",
+          "setting": "India • 1843",
           "point": "Asia especially India became the primary target market for metropolitan textiles.",
           "evidence": [
             "India was British manufacturers’ most important customer by 1843, and by 1900 about 78 percent of British cotton output was exported, much to India. (p. 399)"
@@ -794,8 +452,7 @@ const BOOK_DATA = {
           "chapters": [
             12
           ],
-          "setting": "merchant credit networks",
-          "time": "1902",
+          "setting": "merchant credit networks • 1902",
           "point": "Japanese officials and manufacturers organized experiments new seed strains gins and credit institutions to expand Korean cotton.",
           "evidence": [
             "After 1902 Wakamatsu tested cotton strains; the 1904 Association for the Cultivation of Cotton in Korea introduced American strains, built a gin, and coordinated expansion plans. (p. 420)"
@@ -815,8 +472,7 @@ const BOOK_DATA = {
           "chapters": [
             3
           ],
-          "setting": "India",
-          "time": "1790",
+          "setting": "India • 1790",
           "point": "Productivity leaps cut spinning time and prices.",
           "evidence": [
             "Spinning 100 pounds took 50,000 hours in India but 1,000 hours in Britain by 1790, falling to 135 hours after 1825, and yarn prices declined accordingly. (p. 94-95)"
@@ -826,8 +482,7 @@ const BOOK_DATA = {
           "chapters": [
             5
           ],
-          "setting": "the United States",
-          "time": "1786",
+          "setting": "the United States • 1786",
           "point": "Sea Island long-staple cotton introduced from Bahamas seed in 1786 matched British demand for fine yarns and quickly raised exports the Saint-Domingue revolt then.",
           "evidence": [
             "Sea Island cotton spread along the Georgia and South Carolina coast; South Carolina exports rose from under 10,000 pounds (1790) to 6.4 million (1800). (p. 135)"
@@ -837,8 +492,7 @@ const BOOK_DATA = {
           "chapters": [
             9
           ],
-          "setting": "Egypt",
-          "time": "1860s-1910s",
+          "setting": "Egypt • 1860s-1910s",
           "point": "Cotton became a state security issue driving official debates and colonial planning.",
           "evidence": [
             "The French Ministry of Colonies commissioned reports on cotton prospects in places like Guyana, Siam, Algeria, Egypt, and Senegal, signaling a new imperial turn. (p. 313)"
@@ -848,8 +502,7 @@ const BOOK_DATA = {
           "chapters": [
             11
           ],
-          "setting": "Africa",
-          "time": "1860s-1910s",
+          "setting": "Africa • 1860s-1910s",
           "point": "Despite resistance imperial expansion kept pushing cotton integration into new regions.",
           "evidence": [
             "After the Civil War, manufacturers and imperial states extended the cotton countryside into Korea, Central Asia, and Africa. (p. 418)"
@@ -859,8 +512,7 @@ const BOOK_DATA = {
           "chapters": [
             12
           ],
-          "setting": "colonial cotton projects in Africa, Korea, and Central Asia",
-          "time": "422-423",
+          "setting": "colonial cotton projects in Africa, Korea, and Central Asia • 422-423",
           "point": "After emancipation cotton manufacturers pressed states to dominate territory and labor imperial governments tied sovereignty over labor to territorial control and used infrastructure and.",
           "evidence": [
             "The chapter links the post-1865 expansion of cotton to state domination of territory and to sovereignty over labor as a function of territorial control. (p. 422-423)"
@@ -881,8 +533,7 @@ const BOOK_DATA = {
             3,
             6
           ],
-          "setting": "British mill districts and Atlantic input chains; new industrial centers across Europe and the Americas",
-          "time": "110-112; 219-220",
+          "setting": "British mill districts and Atlantic input chains; new industrial centers across Europe and the Americas • 110-112; 219-220",
           "point": "Britain's industrial base was still tiny globally but rising demand for raw cotton reinforced war capitalism abroad.",
           "evidence": [
             "In 1800 less than one-tenth of 1 percent of global cotton cloth came from British machines, and the chapter argues industrial capitalism reinforced war capitalism from about 1770 to 1860. (p. 110-112)",
@@ -894,8 +545,7 @@ const BOOK_DATA = {
             4,
             7
           ],
-          "setting": "the Atlantic economy; Europe",
-          "time": "1780; 1861",
+          "setting": "the Atlantic economy; Europe • 1780; 1861",
           "point": "British institutions offered targeted incentives and the Caribbean experiment produced second slavery land expropriation plus plantation coercion tightly linked to industrial capitalism.",
           "evidence": [
             "The Royal Society of Arts offered a gold medal (1768), Britain levied a tariff on cotton imported on foreign boats (1780), the Board of Trade sent Anton Pantaleon Hove to collect cottonseed, and colonial governors promised incentives including free land. (p. 122)",
@@ -906,8 +556,7 @@ const BOOK_DATA = {
           "chapters": [
             8
           ],
-          "setting": "Liverpool exchange networks",
-          "time": "1780s-1860s",
+          "setting": "Liverpool exchange networks • 1780s-1860s",
           "point": "Liverpool merchants became the world's cotton center by linking European manufacturing to an expanding often violent cotton hinterland and combining wage labor with slavery.",
           "evidence": [
             "Liverpool is described as the center for cotton lords where industrial capitalism met war capitalism and merchants fused wage labor with slavery, free trade with empire, and violence with contract. (p. 253)"
@@ -917,8 +566,7 @@ const BOOK_DATA = {
           "chapters": [
             10
           ],
-          "setting": "Liverpool exchange networks",
-          "time": "1860s-1910s",
+          "setting": "Liverpool exchange networks • 1860s-1910s",
           "point": "Postwar observers treated emancipation as a labor shock that would slash U S output.",
           "evidence": [
             "Manchester manufacturer Edmund Ashworth and Liverpool broker Maurice Williams argued that free Black laborers would not match slave-era output for years. (p. 342)"
@@ -928,8 +576,7 @@ const BOOK_DATA = {
           "chapters": [
             11
           ],
-          "setting": "India",
-          "time": "1843",
+          "setting": "India • 1843",
           "point": "Asia especially India became the primary target market for metropolitan textiles.",
           "evidence": [
             "India was British manufacturers’ most important customer by 1843, and by 1900 about 78 percent of British cotton output was exported, much to India. (p. 399)"
@@ -939,8 +586,7 @@ const BOOK_DATA = {
           "chapters": [
             12
           ],
-          "setting": "merchant credit networks",
-          "time": "1902",
+          "setting": "merchant credit networks • 1902",
           "point": "Japanese officials and manufacturers organized experiments new seed strains gins and credit institutions to expand Korean cotton.",
           "evidence": [
             "After 1902 Wakamatsu tested cotton strains; the 1904 Association for the Cultivation of Cotton in Korea introduced American strains, built a gin, and coordinated expansion plans. (p. 420)"
@@ -950,8 +596,7 @@ const BOOK_DATA = {
           "chapters": [
             13
           ],
-          "setting": "industrial cotton centers in India, Japan, and China",
-          "time": "522",
+          "setting": "industrial cotton centers in India, Japan, and China • 522",
           "point": "Postcolonial and revolutionary states built statist cotton industries and reshaped labor-capital relations.",
           "evidence": [
             "Latecomer states pursued rapid, state-centered industrialization, making industrial capitalism central to state survival. (p. 522)"
@@ -971,8 +616,7 @@ const BOOK_DATA = {
           "chapters": [
             5
           ],
-          "setting": "the United States",
-          "time": "1786",
+          "setting": "the United States • 1786",
           "point": "Sea Island long-staple cotton introduced from Bahamas seed in 1786 matched British demand for fine yarns and quickly raised exports the Saint-Domingue revolt then.",
           "evidence": [
             "Sea Island cotton spread along the Georgia and South Carolina coast; South Carolina exports rose from under 10,000 pounds (1790) to 6.4 million (1800). (p. 135)"
@@ -982,8 +626,7 @@ const BOOK_DATA = {
           "chapters": [
             6
           ],
-          "setting": "Brazil",
-          "time": "1844",
+          "setting": "Brazil • 1844",
           "point": "Brazil s slaveholding political economy resisted industrialization.",
           "evidence": [
             "Despite a brief tariff in 1844, Brazil had only nine cotton factories with 13,977 spindles by 1865. (p. 216)"
@@ -993,8 +636,7 @@ const BOOK_DATA = {
           "chapters": [
             8
           ],
-          "setting": "Liverpool exchange networks",
-          "time": "253-254",
+          "setting": "Liverpool exchange networks • 253-254",
           "point": "The port's docks warehouses and transport links moved bales quickly to Lancashire while relying on dangerous low-paid dock labor.",
           "evidence": [
             "By 1832 Liverpool's docks and harbor walls stretched about 2.5 miles with quays and warehouses, and bales moved by canal and, after 1830, rail to Lancashire mills 20-50 miles away. (p. 253-254)"
@@ -1004,8 +646,7 @@ const BOOK_DATA = {
           "chapters": [
             10
           ],
-          "setting": "Liverpool exchange networks",
-          "time": "1860s-1910s",
+          "setting": "Liverpool exchange networks • 1860s-1910s",
           "point": "Postwar observers treated emancipation as a labor shock that would slash U S output.",
           "evidence": [
             "Manchester manufacturer Edmund Ashworth and Liverpool broker Maurice Williams argued that free Black laborers would not match slave-era output for years. (p. 342)"
@@ -1015,8 +656,7 @@ const BOOK_DATA = {
           "chapters": [
             13
           ],
-          "setting": "industrial cotton centers in India, Japan, and China",
-          "time": "522",
+          "setting": "industrial cotton centers in India, Japan, and China • 522",
           "point": "Postcolonial and revolutionary states built statist cotton industries and reshaped labor-capital relations.",
           "evidence": [
             "Latecomer states pursued rapid, state-centered industrialization, making industrial capitalism central to state survival. (p. 522)"
@@ -1036,8 +676,7 @@ const BOOK_DATA = {
           "chapters": [
             2
           ],
-          "setting": "India",
-          "time": "1600",
+          "setting": "India • 1600",
           "point": "Europe's cotton output was small and technically behind Asia Europeans depended on imported fiber and mostly wore linen or wool in 1600.",
           "evidence": [
             "The chapter states world production centered on India and China, and European output did not match Asian technology or quality. (p. 51-52)"
@@ -1047,8 +686,7 @@ const BOOK_DATA = {
           "chapters": [
             5
           ],
-          "setting": "Europe",
-          "time": "late 1400s-1850s",
+          "setting": "Europe • late 1400s-1850s",
           "point": "Transatlantic merchant networks integrated the cotton trade and lowered transaction costs.",
           "evidence": [
             "European import merchants stationed agents in Charleston, Memphis, and New Orleans and built dense shipping connections. (p. 149)"
@@ -1058,8 +696,7 @@ const BOOK_DATA = {
           "chapters": [
             6
           ],
-          "setting": "new industrial centers across Europe and the Americas",
-          "time": "1780s-1860s",
+          "setting": "new industrial centers across Europe and the Americas • 1780s-1860s",
           "point": "States also created internal markets and infrastructure that reduced transaction costs.",
           "evidence": [
             "Roads, canals, and railways built by assertive states integrated markets and supported large-scale manufacturing. (p. 205)"
@@ -1069,8 +706,7 @@ const BOOK_DATA = {
           "chapters": [
             11
           ],
-          "setting": "Africa",
-          "time": "1860s-1910s",
+          "setting": "Africa • 1860s-1910s",
           "point": "Despite resistance imperial expansion kept pushing cotton integration into new regions.",
           "evidence": [
             "After the Civil War, manufacturers and imperial states extended the cotton countryside into Korea, Central Asia, and Africa. (p. 418)"
@@ -1080,8 +716,7 @@ const BOOK_DATA = {
           "chapters": [
             12
           ],
-          "setting": "merchant credit networks",
-          "time": "1902",
+          "setting": "merchant credit networks • 1902",
           "point": "Japanese officials and manufacturers organized experiments new seed strains gins and credit institutions to expand Korean cotton.",
           "evidence": [
             "After 1902 Wakamatsu tested cotton strains; the 1904 Association for the Cultivation of Cotton in Korea introduced American strains, built a gin, and coordinated expansion plans. (p. 420)"
@@ -1091,8 +726,7 @@ const BOOK_DATA = {
           "chapters": [
             13
           ],
-          "setting": "industrial cotton centers in India, Japan, and China",
-          "time": "1861",
+          "setting": "industrial cotton centers in India, Japan, and China • 1861",
           "point": "Ranchhodlal Chhotalal launched Ahmedabad's first steam-powered spinning in 1861 and quickly expanded Shapur Mill after it proved profitable.",
           "evidence": [
             "Chhotalal started steam-powered spinning on May 30, 1861 with machinery ordered from Britain and British mechanics. (p. 466)"
@@ -1112,8 +746,7 @@ const BOOK_DATA = {
           "chapters": [
             3
           ],
-          "setting": "British mill districts and Atlantic input chains",
-          "time": "1786",
+          "setting": "British mill districts and Atlantic input chains • 1786",
           "point": "Inventors were modest tinkerers and the state protected their advantage by banning machine exports after 1786.",
           "evidence": [
             "The chapter emphasizes inventors' modest backgrounds and notes the export ban on textile machinery. (p. 96)"
@@ -1123,8 +756,7 @@ const BOOK_DATA = {
           "chapters": [
             4
           ],
-          "setting": "Caribbean and South American plantation frontiers",
-          "time": "late 1400s-1850s",
+          "setting": "Caribbean and South American plantation frontiers • late 1400s-1850s",
           "point": "Mechanized mills created a gap between industrial demand and premodern agriculture making slavery central to the new cotton supply system.",
           "evidence": [
             "The text links the late-eighteenth-century cotton revolution to coercive expropriation of land and labor, with slavery at its core. (p. 114)"
@@ -1134,8 +766,7 @@ const BOOK_DATA = {
           "chapters": [
             5
           ],
-          "setting": "the United States",
-          "time": "1786",
+          "setting": "the United States • 1786",
           "point": "Sea Island long-staple cotton introduced from Bahamas seed in 1786 matched British demand for fine yarns and quickly raised exports the Saint-Domingue revolt then.",
           "evidence": [
             "Sea Island cotton spread along the Georgia and South Carolina coast; South Carolina exports rose from under 10,000 pounds (1790) to 6.4 million (1800). (p. 135)"
@@ -1145,8 +776,7 @@ const BOOK_DATA = {
           "chapters": [
             6
           ],
-          "setting": "Egypt",
-          "time": "211-212",
+          "setting": "Egypt • 211-212",
           "point": "Egypt briefly built a large mechanized industry under Muhammad Ali.",
           "evidence": [
             "Ali imposed an embargo on British textiles, opened a weaving workshop with monopoly in 1815, and started mechanized spinning in 1818. (p. 211-212)"
@@ -1156,8 +786,7 @@ const BOOK_DATA = {
           "chapters": [
             7
           ],
-          "setting": "factory districts in Britain and continental Europe",
-          "time": "1799-1800",
+          "setting": "factory districts in Britain and continental Europe • 1799-1800",
           "point": "States responded with harsh repression and anti-union laws.",
           "evidence": [
             "Britain made machine breaking a capital crime in 1812, executed Luddites, and used the 1795 Two Acts and 1799-1800 Combination Acts to suppress assemblies and unions. (p. 248)"
@@ -1167,8 +796,7 @@ const BOOK_DATA = {
           "chapters": [
             8
           ],
-          "setting": "Liverpool exchange networks",
-          "time": "264-265",
+          "setting": "Liverpool exchange networks • 264-265",
           "point": "Brokers introduced buying by sample and grading categories prime middling etc that distilled cotton's natural variety into standardized classes needed for machine production.",
           "evidence": [
             "Liverpool brokers shifted from inspecting each bale to buying by sample and built grade categories that spread across ports between the 1790s and 1820s. (p. 264-265)"
@@ -1178,8 +806,7 @@ const BOOK_DATA = {
           "chapters": [
             10
           ],
-          "setting": "Liverpool exchange networks",
-          "time": "1860s-1910s",
+          "setting": "Liverpool exchange networks • 1860s-1910s",
           "point": "Postwar observers treated emancipation as a labor shock that would slash U S output.",
           "evidence": [
             "Manchester manufacturer Edmund Ashworth and Liverpool broker Maurice Williams argued that free Black laborers would not match slave-era output for years. (p. 342)"
@@ -1189,8 +816,7 @@ const BOOK_DATA = {
           "chapters": [
             11
           ],
-          "setting": "India",
-          "time": "1860",
+          "setting": "India • 1860",
           "point": "Resistance met violent state repression.",
           "evidence": [
             "Spinners burned machinery in the Black Forest and rioted in Guangzhou in 1860, while Indian weavers reported torture by tax collectors to enforce payments. (p. 410)"
@@ -1200,8 +826,7 @@ const BOOK_DATA = {
           "chapters": [
             13
           ],
-          "setting": "industrial cotton centers in India, Japan, and China",
-          "time": "1861",
+          "setting": "industrial cotton centers in India, Japan, and China • 1861",
           "point": "Ranchhodlal Chhotalal launched Ahmedabad's first steam-powered spinning in 1861 and quickly expanded Shapur Mill after it proved profitable.",
           "evidence": [
             "Chhotalal started steam-powered spinning on May 30, 1861 with machinery ordered from Britain and British mechanics. (p. 466)"
@@ -1221,8 +846,7 @@ const BOOK_DATA = {
           "chapters": [
             2
           ],
-          "setting": "India",
-          "time": "1600",
+          "setting": "India • 1600",
           "point": "Europe's cotton output was small and technically behind Asia Europeans depended on imported fiber and mostly wore linen or wool in 1600.",
           "evidence": [
             "The chapter states world production centered on India and China, and European output did not match Asian technology or quality. (p. 51-52)"
@@ -1232,8 +856,7 @@ const BOOK_DATA = {
           "chapters": [
             4
           ],
-          "setting": "India",
-          "time": "late 1400s-1850s",
+          "setting": "India • late 1400s-1850s",
           "point": "Saint-Domingue's boom depended on mass slave imports that created an unusually elastic labor supply and violent supervision for an effort-intensive crop pushing repeated frontier.",
           "evidence": [
             "The chapter argues slavery enabled rapid labor mobilization and \"violent supervision\" for a crop economists called \"effort intensive,\" and notes that many enslaved workers were purchased with cotton cloth shipped to West Africa by European East India companies. (p. 121)"
@@ -1243,8 +866,7 @@ const BOOK_DATA = {
           "chapters": [
             6
           ],
-          "setting": "the United States",
-          "time": "201-202",
+          "setting": "the United States • 201-202",
           "point": "War disruptions in the United States played a similar protective role.",
           "evidence": [
             "The Embargo Act of 1807 removed British textiles and spindles rose from 8,000 in 1807 to 130,000 by 1815. (p. 201-202)"
@@ -1254,8 +876,7 @@ const BOOK_DATA = {
           "chapters": [
             7
           ],
-          "setting": "factory districts in Britain and continental Europe",
-          "time": "227-228",
+          "setting": "factory districts in Britain and continental Europe • 227-228",
           "point": "Factory production required persuading or forcing people to abandon older subsistence rhythms something only intensive states could accomplish.",
           "evidence": [
             "The chapter argues that mobilizing factory labor required legal, social, and political conditions that allowed statesmen and capitalists to dominate family life. (p. 227-228)"
@@ -1265,8 +886,7 @@ const BOOK_DATA = {
           "chapters": [
             8
           ],
-          "setting": "Liverpool exchange networks",
-          "time": "253-254",
+          "setting": "Liverpool exchange networks • 253-254",
           "point": "The port's docks warehouses and transport links moved bales quickly to Lancashire while relying on dangerous low-paid dock labor.",
           "evidence": [
             "By 1832 Liverpool's docks and harbor walls stretched about 2.5 miles with quays and warehouses, and bales moved by canal and, after 1830, rail to Lancashire mills 20-50 miles away. (p. 253-254)"
@@ -1276,8 +896,7 @@ const BOOK_DATA = {
           "chapters": [
             10
           ],
-          "setting": "post-emancipation cotton districts in the U.S. South and empire",
-          "time": "1867",
+          "setting": "post-emancipation cotton districts in the U.S. South and empire • 1867",
           "point": "Labor shortages and political mobilization forced a sharecropping compromise.",
           "evidence": [
             "By 1867 freedpeople walked off jobs and negotiated better contracts as labor shortages deepened. (p. 351)"
@@ -1287,8 +906,7 @@ const BOOK_DATA = {
           "chapters": [
             12
           ],
-          "setting": "cotton exchanges and futures markets",
-          "time": "460-461",
+          "setting": "cotton exchanges and futures markets • 460-461",
           "point": "Imperial states structured cotton markets with bureaucratic infrastructural and military power while elites exchanged expertise across borders.",
           "evidence": [
             "States used administrative, infrastructural, and military power plus policies like tariffs and preferences to mobilize cotton labor and shape global networks. (p. 460-461)"
@@ -1298,8 +916,7 @@ const BOOK_DATA = {
           "chapters": [
             13
           ],
-          "setting": "India",
-          "time": "518-519",
+          "setting": "India • 518-519",
           "point": "Postcolonial and revolutionary states built statist cotton industries and reshaped labor-capital relations.",
           "evidence": [
             "Decolonization depended on mass mobilization, and postwar planning culminated in India's five-year plans after the 1944 Bombay Plan. (p. 518-519)"
@@ -1319,8 +936,7 @@ const BOOK_DATA = {
           "chapters": [
             8
           ],
-          "setting": "Liverpool exchange networks",
-          "time": "253-254",
+          "setting": "Liverpool exchange networks • 253-254",
           "point": "The port's docks warehouses and transport links moved bales quickly to Lancashire while relying on dangerous low-paid dock labor.",
           "evidence": [
             "By 1832 Liverpool's docks and harbor walls stretched about 2.5 miles with quays and warehouses, and bales moved by canal and, after 1830, rail to Lancashire mills 20-50 miles away. (p. 253-254)"
@@ -1330,8 +946,7 @@ const BOOK_DATA = {
           "chapters": [
             10
           ],
-          "setting": "Liverpool exchange networks",
-          "time": "1860s-1910s",
+          "setting": "Liverpool exchange networks • 1860s-1910s",
           "point": "Postwar observers treated emancipation as a labor shock that would slash U S output.",
           "evidence": [
             "Manchester manufacturer Edmund Ashworth and Liverpool broker Maurice Williams argued that free Black laborers would not match slave-era output for years. (p. 342)"
@@ -1341,8 +956,7 @@ const BOOK_DATA = {
           "chapters": [
             12
           ],
-          "setting": "merchant credit networks",
-          "time": "1902",
+          "setting": "merchant credit networks • 1902",
           "point": "Japanese officials and manufacturers organized experiments new seed strains gins and credit institutions to expand Korean cotton.",
           "evidence": [
             "After 1902 Wakamatsu tested cotton strains; the 1904 Association for the Cultivation of Cotton in Korea introduced American strains, built a gin, and coordinated expansion plans. (p. 420)"
@@ -1352,8 +966,7 @@ const BOOK_DATA = {
           "chapters": [
             13
           ],
-          "setting": "industrial cotton centers in India, Japan, and China",
-          "time": "1861",
+          "setting": "industrial cotton centers in India, Japan, and China • 1861",
           "point": "Ranchhodlal Chhotalal launched Ahmedabad's first steam-powered spinning in 1861 and quickly expanded Shapur Mill after it proved profitable.",
           "evidence": [
             "Chhotalal started steam-powered spinning on May 30, 1861 with machinery ordered from Britain and British mechanics. (p. 466)"
@@ -1373,8 +986,7 @@ const BOOK_DATA = {
           "chapters": [
             2
           ],
-          "setting": "Europe",
-          "time": "late 1400s-1850s",
+          "setting": "Europe • late 1400s-1850s",
           "point": "European companies sought exclusive contracts to lower prices and territorial rule made this possible.",
           "evidence": [
             "Company officials complained that weavers sold to multiple buyers and argued profits required forcing exclusive supply. (p. 67)"
@@ -1384,8 +996,7 @@ const BOOK_DATA = {
           "chapters": [
             4
           ],
-          "setting": "Manchester mill districts",
-          "time": "1781",
+          "setting": "Manchester mill districts • 1781",
           "point": "Factory demand surged and prices jumped pushing manufacturers to lobby for new sources.",
           "evidence": [
             "Cotton prices in Britain were two to three times higher in 1781 than a decade earlier, and Manchester manufacturers pressed government and planters for supply. (p. 116)"
@@ -1395,8 +1006,7 @@ const BOOK_DATA = {
           "chapters": [
             5
           ],
-          "setting": "the United States",
-          "time": "1786",
+          "setting": "the United States • 1786",
           "point": "Sea Island long-staple cotton introduced from Bahamas seed in 1786 matched British demand for fine yarns and quickly raised exports the Saint-Domingue revolt then.",
           "evidence": [
             "Sea Island cotton spread along the Georgia and South Carolina coast; South Carolina exports rose from under 10,000 pounds (1790) to 6.4 million (1800). (p. 135)"
@@ -1406,8 +1016,7 @@ const BOOK_DATA = {
           "chapters": [
             8
           ],
-          "setting": "Liverpool exchange networks",
-          "time": "1780s-1860s",
+          "setting": "Liverpool exchange networks • 1780s-1860s",
           "point": "The cotton exchange and Liverpool price quotations operated as the empire's signal system shaping decisions from Bombay to Mississippi and reinforcing Liverpool's dominance over.",
           "evidence": [
             "News of \"Liverpool prices\" was tracked in Bombay and across the U.S. South and influenced land purchases, slave movement, and investment decisions. (p. 255)"
@@ -1417,8 +1026,7 @@ const BOOK_DATA = {
           "chapters": [
             9
           ],
-          "setting": "Brazil",
-          "time": "1860s-1910s",
+          "setting": "Brazil • 1860s-1910s",
           "point": "Brazilian smallholders shifted from subsistence to export cotton under wartime prices and British credit.",
           "evidence": [
             "Farmers in Pernambuco turned to cotton for cash as prices rose and British credit arrived. (p. 320)"
@@ -1428,8 +1036,7 @@ const BOOK_DATA = {
           "chapters": [
             10
           ],
-          "setting": "India",
-          "time": "371-372",
+          "setting": "India • 371-372",
           "point": "In India surveys taxes and credit law tied peasants to moneylenders and cotton.",
           "evidence": [
             "Interest rates around 30 percent and crop advances produced debt bondage, and cotton price declines contributed to famines in the 1890s. (p. 371-372)"
@@ -1439,8 +1046,7 @@ const BOOK_DATA = {
           "chapters": [
             11
           ],
-          "setting": "Manchester mill districts",
-          "time": "391-392",
+          "setting": "Manchester mill districts • 391-392",
           "point": "Similar penetration unfolded in Egypt Anatolia Mexico and the U S South where foreign capital and interior merchants displaced older factor systems.",
           "evidence": [
             "In the postwar U.S. South, merchants moved inland to places like Dallas, built gins and presses, used telegraph prices, and displaced factors; by the early 1870s Manchester spinners bought directly in Memphis. (p. 391-392)"
@@ -1450,8 +1056,7 @@ const BOOK_DATA = {
           "chapters": [
             13
           ],
-          "setting": "industrial cotton centers in India, Japan, and China",
-          "time": "1861",
+          "setting": "industrial cotton centers in India, Japan, and China • 1861",
           "point": "Ranchhodlal Chhotalal launched Ahmedabad's first steam-powered spinning in 1861 and quickly expanded Shapur Mill after it proved profitable.",
           "evidence": [
             "Chhotalal started steam-powered spinning on May 30, 1861 with machinery ordered from Britain and British mechanics. (p. 466)"
@@ -1471,8 +1076,7 @@ const BOOK_DATA = {
           "chapters": [
             3
           ],
-          "setting": "India",
-          "time": "1790",
+          "setting": "India • 1790",
           "point": "Productivity leaps cut spinning time and prices.",
           "evidence": [
             "Spinning 100 pounds took 50,000 hours in India but 1,000 hours in Britain by 1790, falling to 135 hours after 1825, and yarn prices declined accordingly. (p. 94-95)"
@@ -1482,8 +1086,7 @@ const BOOK_DATA = {
           "chapters": [
             5
           ],
-          "setting": "the U.S. Deep South cotton frontier",
-          "time": "1793",
+          "setting": "the U.S. Deep South cotton frontier • 1793",
           "point": "Whitney's 1793 gin solved upland cotton's seed-removal bottleneck multiplying ginning productivity and triggering a cotton rush into the interior by 1795.",
           "evidence": [
             "Whitney's gin increased ginning productivity about fiftyfold and drove land prices and planter incomes up. (p. 136)"
@@ -1493,8 +1096,7 @@ const BOOK_DATA = {
           "chapters": [
             7
           ],
-          "setting": "factory districts in Britain and continental Europe",
-          "time": "780",
+          "setting": "factory districts in Britain and continental Europe • 780",
           "point": "Holding workers in place was difficult even in early British mills.",
           "evidence": [
             "At one English mill, of 780 apprentices recruited after 1786, 119 ran away and 65 died. (p. 226)"
@@ -1504,8 +1106,7 @@ const BOOK_DATA = {
           "chapters": [
             9
           ],
-          "setting": "the United States",
-          "time": "1860s-1910s",
+          "setting": "the United States • 1860s-1910s",
           "point": "The United States became the dominant supplier making European mills dependent on American cotton.",
           "evidence": [
             "On the eve of the Civil War, raw cotton was 61 percent of U.S. export value. (p. 304)"
@@ -1516,8 +1117,7 @@ const BOOK_DATA = {
             13,
             14
           ],
-          "setting": "industrial cotton centers in India, Japan, and China; retailer-led global supply chains and subsidized cotton regions",
-          "time": "477-478; 543-544",
+          "setting": "industrial cotton centers in India, Japan, and China; retailer-led global supply chains and subsidized cotton regions • 477-478; 543-544",
           "point": "Despite persistent inequality productivity gains have been enormous and hold out the possibility of a more just cotton economy.",
           "evidence": [
             "German spinning profits hovered around 4-6 percent between 1900 and 1911, while Oldham/Rochdale returns stayed under 8 percent before 1910 and British profits fell in the 1920s. (p. 477-478)",
@@ -1538,8 +1138,7 @@ const BOOK_DATA = {
           "chapters": [
             1
           ],
-          "setting": "merchant credit networks",
-          "time": "5000 BCE-1500s",
+          "setting": "merchant credit networks • 5000 BCE-1500s",
           "point": "Workshops and putting-out networks expanded under merchant cash advances while production often remained rural and home-based.",
           "evidence": [
             "Dhaka weavers produced muslins for the Mughal court under tight supervision, and multi-loom workshops are reported in fifteenth-century Andhra Pradesh. (p. 40)"
@@ -1549,8 +1148,7 @@ const BOOK_DATA = {
           "chapters": [
             5
           ],
-          "setting": "the U.S. Deep South cotton frontier",
-          "time": "late 1400s-1850s",
+          "setting": "the U.S. Deep South cotton frontier • late 1400s-1850s",
           "point": "Slaveholders' political power protected and expanded the system.",
           "evidence": [
             "The three-fifths clause and slaveholding presidents, judges, and congressional strength secured national support for slavery. (p. 146)"
@@ -1560,8 +1158,7 @@ const BOOK_DATA = {
           "chapters": [
             9
           ],
-          "setting": "the United States",
-          "time": "1860s-1910s",
+          "setting": "the United States • 1860s-1910s",
           "point": "The United States became the dominant supplier making European mills dependent on American cotton.",
           "evidence": [
             "On the eve of the Civil War, raw cotton was 61 percent of U.S. export value. (p. 304)"
@@ -1571,8 +1168,7 @@ const BOOK_DATA = {
           "chapters": [
             13
           ],
-          "setting": "industrial cotton centers in India, Japan, and China",
-          "time": "499-500",
+          "setting": "industrial cotton centers in India, Japan, and China • 499-500",
           "point": "Japan's low-wage female labor system underpinned its export dominance.",
           "evidence": [
             "Factory protections were delayed until 1920, and by 1933 Japan exported more cloth than Britain, France, and Germany, reaching 37 percent of global cloth exports by 1937. (p. 499-500)"
@@ -1582,8 +1178,7 @@ const BOOK_DATA = {
           "chapters": [
             14
           ],
-          "setting": "Liverpool exchange networks",
-          "time": "1960s",
+          "setting": "Liverpool exchange networks • 1960s",
           "point": "Europe s cotton command ended visibly in 1963 with the Liverpool Cotton Association s liquidation and in statistics that showed Britain s industry collapsing.",
           "evidence": [
             "By the late 1960s the U.K. held only 2.8 percent of global cotton cloth exports and employment had fallen from over 600,000 to about 30,000 workers; in 1958 the Manchester Chamber of Commerce called for protection. (p. 526)"
@@ -1605,8 +1200,7 @@ const BOOK_DATA = {
           "chapters": [
             4
           ],
-          "setting": "India",
-          "time": "late 1400s-1850s",
+          "setting": "India • late 1400s-1850s",
           "point": "Saint-Domingue's boom depended on mass slave imports that created an unusually elastic labor supply and violent supervision for an effort-intensive crop pushing repeated frontier.",
           "evidence": [
             "The chapter argues slavery enabled rapid labor mobilization and \"violent supervision\" for a crop economists called \"effort intensive,\" and notes that many enslaved workers were purchased with cotton cloth shipped to West Africa by European East India companies. (p. 121)"
@@ -1616,8 +1210,7 @@ const BOOK_DATA = {
           "chapters": [
             5
           ],
-          "setting": "the U.S. Deep South cotton frontier",
-          "time": "late 1400s-1850s",
+          "setting": "the U.S. Deep South cotton frontier • late 1400s-1850s",
           "point": "Slaveholders' political power protected and expanded the system.",
           "evidence": [
             "The three-fifths clause and slaveholding presidents, judges, and congressional strength secured national support for slavery. (p. 146)"
@@ -1627,8 +1220,7 @@ const BOOK_DATA = {
           "chapters": [
             6
           ],
-          "setting": "Brazil",
-          "time": "216-217",
+          "setting": "Brazil • 216-217",
           "point": "Brazil s slaveholding political economy resisted industrialization.",
           "evidence": [
             "Planters and Bahian merchants opposed industrial support and tariffs, while capital and labor remained tied to slavery and agricultural exports. (p. 216-217)"
@@ -1638,8 +1230,7 @@ const BOOK_DATA = {
           "chapters": [
             7
           ],
-          "setting": "factory districts in Britain and continental Europe",
-          "time": "780",
+          "setting": "factory districts in Britain and continental Europe • 780",
           "point": "Holding workers in place was difficult even in early British mills.",
           "evidence": [
             "At one English mill, of 780 apprentices recruited after 1786, 119 ran away and 65 died. (p. 226)"
@@ -1649,8 +1240,7 @@ const BOOK_DATA = {
           "chapters": [
             8
           ],
-          "setting": "Liverpool exchange networks",
-          "time": "1780s-1860s",
+          "setting": "Liverpool exchange networks • 1780s-1860s",
           "point": "Liverpool merchants became the world's cotton center by linking European manufacturing to an expanding often violent cotton hinterland and combining wage labor with slavery.",
           "evidence": [
             "Liverpool is described as the center for cotton lords where industrial capitalism met war capitalism and merchants fused wage labor with slavery, free trade with empire, and violence with contract. (p. 253)"
@@ -1660,8 +1250,7 @@ const BOOK_DATA = {
           "chapters": [
             9
           ],
-          "setting": "Europe",
-          "time": "337-338",
+          "setting": "Europe • 337-338",
           "point": "Capitalists concluded labor not land was the constraint and advocated new systems to discipline workers.",
           "evidence": [
             "The Economist called for organized labor under European supervision to replace slavery's coercive order. (p. 337-338)"
@@ -1671,8 +1260,7 @@ const BOOK_DATA = {
           "chapters": [
             11
           ],
-          "setting": "India",
-          "time": "1843",
+          "setting": "India • 1843",
           "point": "Asia especially India became the primary target market for metropolitan textiles.",
           "evidence": [
             "India was British manufacturers’ most important customer by 1843, and by 1900 about 78 percent of British cotton output was exported, much to India. (p. 399)"
@@ -1682,8 +1270,7 @@ const BOOK_DATA = {
           "chapters": [
             14
           ],
-          "setting": "Africa",
-          "time": "nineteenth century",
+          "setting": "Africa • nineteenth century",
           "point": "Coercion and violence remain central to capitalism s history and a non-Eurocentric view reframes the nineteenth and twentieth centuries.",
           "evidence": [
             "The chapter argues slavery, colonialism, and forced labor were central to capitalism and that the nineteenth century was a global age of barbarity for much of Asia, Africa, and the Americas. (p. 542)"
@@ -1703,8 +1290,7 @@ const BOOK_DATA = {
           "chapters": [
             5
           ],
-          "setting": "India",
-          "time": "164-165",
+          "setting": "India • 164-165",
           "point": "Those Indian projects largely failed because of infrastructure limits labor resistance and peasant production priorities.",
           "evidence": [
             "American-run experimental farms collapsed due to rainfall patterns, infrastructure limits, capital intensity, and resistance to wage labor. (p. 164-165)"
@@ -1715,8 +1301,7 @@ const BOOK_DATA = {
             6,
             7
           ],
-          "setting": "Egypt; factory districts in Britain and continental Europe",
-          "time": "1780s-1860s; 1857-1875",
+          "setting": "Egypt; factory districts in Britain and continental Europe • 1780s-1860s; 1857-1875",
           "point": "States enforced wage labor through legal coercion that bound workers to contracts.",
           "evidence": [
             "Coercion was more extreme than in European factories and wage labor remained marginal. (p. 215)",
@@ -1727,8 +1312,7 @@ const BOOK_DATA = {
           "chapters": [
             8
           ],
-          "setting": "Liverpool exchange networks",
-          "time": "1780s-1860s",
+          "setting": "Liverpool exchange networks • 1780s-1860s",
           "point": "Liverpool merchants became the world's cotton center by linking European manufacturing to an expanding often violent cotton hinterland and combining wage labor with slavery.",
           "evidence": [
             "Liverpool is described as the center for cotton lords where industrial capitalism met war capitalism and merchants fused wage labor with slavery, free trade with empire, and violence with contract. (p. 253)"
@@ -1748,8 +1332,7 @@ const BOOK_DATA = {
           "chapters": [
             2
           ],
-          "setting": "India",
-          "time": "1600",
+          "setting": "India • 1600",
           "point": "Europe's cotton output was small and technically behind Asia Europeans depended on imported fiber and mostly wore linen or wool in 1600.",
           "evidence": [
             "The chapter states world production centered on India and China, and European output did not match Asian technology or quality. (p. 51-52)"
@@ -1761,8 +1344,7 @@ const BOOK_DATA = {
             4,
             6
           ],
-          "setting": "British mill districts and Atlantic input chains; Brazil; new industrial centers across Europe and the Americas",
-          "time": "110-112; 1789-1802; 219-220",
+          "setting": "British mill districts and Atlantic input chains; Brazil; new industrial centers across Europe and the Americas • 110-112; 1789-1802; 219-220",
           "point": "War capitalism proved portable Guyana and Brazil surged through slave imports and Brazil briefly became a major supplier to Britain with long-staple cotton suited.",
           "evidence": [
             "In 1800 less than one-tenth of 1 percent of global cotton cloth came from British machines, and the chapter argues industrial capitalism reinforced war capitalism from about 1770 to 1860. (p. 110-112)",
@@ -1774,8 +1356,7 @@ const BOOK_DATA = {
           "chapters": [
             5
           ],
-          "setting": "the United States",
-          "time": "1786",
+          "setting": "the United States • 1786",
           "point": "Sea Island long-staple cotton introduced from Bahamas seed in 1786 matched British demand for fine yarns and quickly raised exports the Saint-Domingue revolt then.",
           "evidence": [
             "Sea Island cotton spread along the Georgia and South Carolina coast; South Carolina exports rose from under 10,000 pounds (1790) to 6.4 million (1800). (p. 135)"
@@ -1785,8 +1366,7 @@ const BOOK_DATA = {
           "chapters": [
             7
           ],
-          "setting": "factory districts in Britain and continental Europe",
-          "time": "780",
+          "setting": "factory districts in Britain and continental Europe • 780",
           "point": "Holding workers in place was difficult even in early British mills.",
           "evidence": [
             "At one English mill, of 780 apprentices recruited after 1786, 119 ran away and 65 died. (p. 226)"
@@ -1796,8 +1376,7 @@ const BOOK_DATA = {
           "chapters": [
             8
           ],
-          "setting": "Liverpool exchange networks",
-          "time": "1780s-1860s",
+          "setting": "Liverpool exchange networks • 1780s-1860s",
           "point": "Liverpool merchants became the world's cotton center by linking European manufacturing to an expanding often violent cotton hinterland and combining wage labor with slavery.",
           "evidence": [
             "Liverpool is described as the center for cotton lords where industrial capitalism met war capitalism and merchants fused wage labor with slavery, free trade with empire, and violence with contract. (p. 253)"
@@ -1807,8 +1386,7 @@ const BOOK_DATA = {
           "chapters": [
             10
           ],
-          "setting": "Liverpool exchange networks",
-          "time": "1860s-1910s",
+          "setting": "Liverpool exchange networks • 1860s-1910s",
           "point": "Postwar observers treated emancipation as a labor shock that would slash U S output.",
           "evidence": [
             "Manchester manufacturer Edmund Ashworth and Liverpool broker Maurice Williams argued that free Black laborers would not match slave-era output for years. (p. 342)"
@@ -1818,8 +1396,7 @@ const BOOK_DATA = {
           "chapters": [
             12
           ],
-          "setting": "merchant credit networks",
-          "time": "1902",
+          "setting": "merchant credit networks • 1902",
           "point": "Japanese officials and manufacturers organized experiments new seed strains gins and credit institutions to expand Korean cotton.",
           "evidence": [
             "After 1902 Wakamatsu tested cotton strains; the 1904 Association for the Cultivation of Cotton in Korea introduced American strains, built a gin, and coordinated expansion plans. (p. 420)"
@@ -1839,8 +1416,7 @@ const BOOK_DATA = {
           "chapters": [
             2
           ],
-          "setting": "India",
-          "time": "1600",
+          "setting": "India • 1600",
           "point": "Europe's cotton output was small and technically behind Asia Europeans depended on imported fiber and mostly wore linen or wool in 1600.",
           "evidence": [
             "The chapter states world production centered on India and China, and European output did not match Asian technology or quality. (p. 51-52)"
@@ -1850,8 +1426,7 @@ const BOOK_DATA = {
           "chapters": [
             3
           ],
-          "setting": "British mill districts and Atlantic input chains",
-          "time": "1786",
+          "setting": "British mill districts and Atlantic input chains • 1786",
           "point": "Inventors were modest tinkerers and the state protected their advantage by banning machine exports after 1786.",
           "evidence": [
             "The chapter emphasizes inventors' modest backgrounds and notes the export ban on textile machinery. (p. 96)"
@@ -1861,8 +1436,7 @@ const BOOK_DATA = {
           "chapters": [
             4
           ],
-          "setting": "the United States",
-          "time": "1857",
+          "setting": "the United States • 1857",
           "point": "In 1857 John T Danson argued that cotton supply outside the East Indies depended on slave labor and most British cotton that year came.",
           "evidence": [
             "Danson linked cotton supply to slave labor and noted that 68 percent of British cotton in 1857 came from the United States. (p. 113)"
@@ -1874,8 +1448,7 @@ const BOOK_DATA = {
             9,
             11
           ],
-          "setting": "the United States",
-          "time": "201-202; 1860s-1910s; 397-398",
+          "setting": "the United States • 201-202; 1860s-1910s; 397-398",
           "point": "The United States became the dominant supplier making European mills dependent on American cotton.",
           "evidence": [
             "The Embargo Act of 1807 removed British textiles and spindles rose from 8,000 in 1807 to 130,000 by 1815. (p. 201-202)",
@@ -1887,8 +1460,7 @@ const BOOK_DATA = {
           "chapters": [
             7
           ],
-          "setting": "factory districts in Britain and continental Europe",
-          "time": "227-228",
+          "setting": "factory districts in Britain and continental Europe • 227-228",
           "point": "Factory production required persuading or forcing people to abandon older subsistence rhythms something only intensive states could accomplish.",
           "evidence": [
             "The chapter argues that mobilizing factory labor required legal, social, and political conditions that allowed statesmen and capitalists to dominate family life. (p. 227-228)"
@@ -1898,8 +1470,7 @@ const BOOK_DATA = {
           "chapters": [
             8
           ],
-          "setting": "Liverpool exchange networks",
-          "time": "1809",
+          "setting": "Liverpool exchange networks • 1809",
           "point": "The cotton exchange and Liverpool price quotations operated as the empire's signal system shaping decisions from Bombay to Mississippi and reinforcing Liverpool's dominance over.",
           "evidence": [
             "Merchants traded on the Liverpool exchange (first outdoors, then in an 1809 building) where large sales were made quickly, creating a focal marketplace. (p. 254)"
@@ -1909,8 +1480,7 @@ const BOOK_DATA = {
           "chapters": [
             10
           ],
-          "setting": "Egypt",
-          "time": "1882",
+          "setting": "Egypt • 1882",
           "point": "In Egypt state-backed property changes and debt concentrated land and enabled coercion.",
           "evidence": [
             "State borrowing for canals and railroads led to bankruptcy and British takeover in 1882. (p. 369)"
@@ -1920,8 +1490,7 @@ const BOOK_DATA = {
           "chapters": [
             12
           ],
-          "setting": "Central Asia",
-          "time": "1865",
+          "setting": "Central Asia • 1865",
           "point": "Russian manufacturers and the state pursued Central Asia to reduce dependence on American cotton using conquest and lobbying to deepen control.",
           "evidence": [
             "After Civil War price spikes, Russia captured Tashkent and the khanate of Khokand in 1865, and industrialists petitioned for deeper intervention in 1869. (p. 426)"
@@ -1941,8 +1510,7 @@ const BOOK_DATA = {
           "chapters": [
             1
           ],
-          "setting": "merchant credit networks",
-          "time": "5000 BCE-1500s",
+          "setting": "merchant credit networks • 5000 BCE-1500s",
           "point": "Workshops and putting-out networks expanded under merchant cash advances while production often remained rural and home-based.",
           "evidence": [
             "Dhaka weavers produced muslins for the Mughal court under tight supervision, and multi-loom workshops are reported in fifteenth-century Andhra Pradesh. (p. 40)"
@@ -1952,8 +1520,7 @@ const BOOK_DATA = {
           "chapters": [
             3
           ],
-          "setting": "British mill districts and Atlantic input chains",
-          "time": "1784",
+          "setting": "British mill districts and Atlantic input chains • 1784",
           "point": "In 1784 Samuel Greg built Quarry Bank Mill on the Bollin assembling water frames orphaned children and Caribbean cotton and powering the machines with.",
           "evidence": [
             "Greg gathered water frames, children from poorhouses, and nearby workers in a small factory and powered them with falling water in 1784. (p. 82-83)"
@@ -1963,8 +1530,7 @@ const BOOK_DATA = {
           "chapters": [
             8
           ],
-          "setting": "Liverpool-centered merchant and exchange networks",
-          "time": "666",
+          "setting": "Liverpool-centered merchant and exchange networks • 666",
           "point": "State-backed finance amplified plantation expansion in the U S South.",
           "evidence": [
             "Baring bought $1.666 million of Louisiana state bonds to fund the Planters' Bank, which loaned $1.6 million to planters by 1830 secured by $5 million in property. (p. 278)"
@@ -1974,8 +1540,7 @@ const BOOK_DATA = {
           "chapters": [
             9
           ],
-          "setting": "the United States",
-          "time": "1860s-1910s",
+          "setting": "the United States • 1860s-1910s",
           "point": "The United States became the dominant supplier making European mills dependent on American cotton.",
           "evidence": [
             "On the eve of the Civil War, raw cotton was 61 percent of U.S. export value. (p. 304)"
@@ -1985,8 +1550,7 @@ const BOOK_DATA = {
           "chapters": [
             13
           ],
-          "setting": "Egypt",
-          "time": "1930s",
+          "setting": "Egypt • 1930s",
           "point": "Colonial trade regimes undercut Egypt's early mills until nationalist tariff reforms enabled growth.",
           "evidence": [
             "After World War I, tariff reform in 1930 and Bank Misr's creation of Misr Spinning in the early 1930s enabled large-scale growth; by 1945 the mill employed 25,000 of Egypt's 117,272 textile workers. (p. 502)"
@@ -2006,8 +1570,7 @@ const BOOK_DATA = {
           "chapters": [
             2
           ],
-          "setting": "India",
-          "time": "1600",
+          "setting": "India • 1600",
           "point": "Europe's cotton output was small and technically behind Asia Europeans depended on imported fiber and mostly wore linen or wool in 1600.",
           "evidence": [
             "The chapter states world production centered on India and China, and European output did not match Asian technology or quality. (p. 51-52)"
@@ -2017,8 +1580,7 @@ const BOOK_DATA = {
           "chapters": [
             5
           ],
-          "setting": "the United States",
-          "time": "1786",
+          "setting": "the United States • 1786",
           "point": "Sea Island long-staple cotton introduced from Bahamas seed in 1786 matched British demand for fine yarns and quickly raised exports the Saint-Domingue revolt then.",
           "evidence": [
             "Sea Island cotton spread along the Georgia and South Carolina coast; South Carolina exports rose from under 10,000 pounds (1790) to 6.4 million (1800). (p. 135)"
@@ -2028,8 +1590,7 @@ const BOOK_DATA = {
           "chapters": [
             6
           ],
-          "setting": "new industrial centers across Europe and the Americas",
-          "time": "1780s-1860s",
+          "setting": "new industrial centers across Europe and the Americas • 1780s-1860s",
           "point": "Industrial capitalism tied economic activity to national territory and state power.",
           "evidence": [
             "Rulers saw manufacturing as a path to wealth and war capacity, while capitalists pushed governments to adopt the industrial project, shaping the great divergence. (p. 209)"
@@ -2039,8 +1600,7 @@ const BOOK_DATA = {
           "chapters": [
             8
           ],
-          "setting": "Liverpool exchange networks",
-          "time": "253-254",
+          "setting": "Liverpool exchange networks • 253-254",
           "point": "The port's docks warehouses and transport links moved bales quickly to Lancashire while relying on dangerous low-paid dock labor.",
           "evidence": [
             "By 1832 Liverpool's docks and harbor walls stretched about 2.5 miles with quays and warehouses, and bales moved by canal and, after 1830, rail to Lancashire mills 20-50 miles away. (p. 253-254)"
@@ -2050,8 +1610,7 @@ const BOOK_DATA = {
           "chapters": [
             9
           ],
-          "setting": "Manchester mill districts",
-          "time": "1860s-1910s",
+          "setting": "Manchester mill districts • 1860s-1910s",
           "point": "Capitalists concluded labor not land was the constraint and advocated new systems to discipline workers.",
           "evidence": [
             "The Manchester Cotton Supply Association argued that land and climate were abundant globally, but labor was the first requisite. (p. 336)"
@@ -2061,8 +1620,7 @@ const BOOK_DATA = {
           "chapters": [
             10
           ],
-          "setting": "Liverpool exchange networks",
-          "time": "1860s-1910s",
+          "setting": "Liverpool exchange networks • 1860s-1910s",
           "point": "Postwar observers treated emancipation as a labor shock that would slash U S output.",
           "evidence": [
             "Manchester manufacturer Edmund Ashworth and Liverpool broker Maurice Williams argued that free Black laborers would not match slave-era output for years. (p. 342)"
@@ -2072,8 +1630,7 @@ const BOOK_DATA = {
           "chapters": [
             11
           ],
-          "setting": "India",
-          "time": "1843",
+          "setting": "India • 1843",
           "point": "Asia especially India became the primary target market for metropolitan textiles.",
           "evidence": [
             "India was British manufacturers’ most important customer by 1843, and by 1900 about 78 percent of British cotton output was exported, much to India. (p. 399)"
@@ -2083,8 +1640,7 @@ const BOOK_DATA = {
           "chapters": [
             12
           ],
-          "setting": "merchant credit networks",
-          "time": "1902",
+          "setting": "merchant credit networks • 1902",
           "point": "Japanese officials and manufacturers organized experiments new seed strains gins and credit institutions to expand Korean cotton.",
           "evidence": [
             "After 1902 Wakamatsu tested cotton strains; the 1904 Association for the Cultivation of Cotton in Korea introduced American strains, built a gin, and coordinated expansion plans. (p. 420)"
@@ -2094,8 +1650,7 @@ const BOOK_DATA = {
           "chapters": [
             13
           ],
-          "setting": "industrial cotton centers in India, Japan, and China",
-          "time": "1861",
+          "setting": "industrial cotton centers in India, Japan, and China • 1861",
           "point": "Ranchhodlal Chhotalal launched Ahmedabad's first steam-powered spinning in 1861 and quickly expanded Shapur Mill after it proved profitable.",
           "evidence": [
             "Chhotalal started steam-powered spinning on May 30, 1861 with machinery ordered from Britain and British mechanics. (p. 466)"
@@ -2115,8 +1670,7 @@ const BOOK_DATA = {
           "chapters": [
             10
           ],
-          "setting": "Liverpool exchange networks",
-          "time": "1860s-1910s",
+          "setting": "Liverpool exchange networks • 1860s-1910s",
           "point": "Postwar observers treated emancipation as a labor shock that would slash U S output.",
           "evidence": [
             "Manchester manufacturer Edmund Ashworth and Liverpool broker Maurice Williams argued that free Black laborers would not match slave-era output for years. (p. 342)"
@@ -2126,8 +1680,7 @@ const BOOK_DATA = {
           "chapters": [
             11
           ],
-          "setting": "India",
-          "time": "1843",
+          "setting": "India • 1843",
           "point": "Asia especially India became the primary target market for metropolitan textiles.",
           "evidence": [
             "India was British manufacturers’ most important customer by 1843, and by 1900 about 78 percent of British cotton output was exported, much to India. (p. 399)"
@@ -2137,8 +1690,7 @@ const BOOK_DATA = {
           "chapters": [
             14
           ],
-          "setting": "Liverpool exchange networks",
-          "time": "1960s",
+          "setting": "Liverpool exchange networks • 1960s",
           "point": "Europe s cotton command ended visibly in 1963 with the Liverpool Cotton Association s liquidation and in statistics that showed Britain s industry collapsing.",
           "evidence": [
             "By the late 1960s the U.K. held only 2.8 percent of global cotton cloth exports and employment had fallen from over 600,000 to about 30,000 workers; in 1958 the Manchester Chamber of Commerce called for protection. (p. 526)"
@@ -2158,8 +1710,7 @@ const BOOK_DATA = {
           "chapters": [
             1
           ],
-          "setting": "China",
-          "time": "5000 BCE-1500s",
+          "setting": "China • 5000 BCE-1500s",
           "point": "Workshops and putting-out networks expanded under merchant cash advances while production often remained rural and home-based.",
           "evidence": [
             "The chapter describes putting-out networks in which merchants advanced cotton or yarn and controlled production stages, especially in China and the Ottoman Empire. (p. 41)"
@@ -2169,8 +1720,7 @@ const BOOK_DATA = {
           "chapters": [
             2
           ],
-          "setting": "India",
-          "time": "late 1400s-1850s",
+          "setting": "India • late 1400s-1850s",
           "point": "European naval power shifted long-distance trade away from Indian and Arab merchants.",
           "evidence": [
             "The chapter notes that larger, faster ships and superior firepower pushed older Indian-Levant routes aside, with the Ottoman Empire losing ground. (p. 58)"
@@ -2180,8 +1730,7 @@ const BOOK_DATA = {
           "chapters": [
             3
           ],
-          "setting": "India",
-          "time": "1790",
+          "setting": "India • 1790",
           "point": "Productivity leaps cut spinning time and prices.",
           "evidence": [
             "Spinning 100 pounds took 50,000 hours in India but 1,000 hours in Britain by 1790, falling to 135 hours after 1825, and yarn prices declined accordingly. (p. 94-95)"
@@ -2191,8 +1740,7 @@ const BOOK_DATA = {
           "chapters": [
             4
           ],
-          "setting": "Brazil",
-          "time": "1821-1830",
+          "setting": "Brazil • 1821-1830",
           "point": "War capitalism proved portable Guyana and Brazil surged through slave imports and Brazil briefly became a major supplier to Britain with long-staple cotton suited.",
           "evidence": [
             "Brazil's cotton share reached 11 percent of exports in 1800 and 20 percent in 1821-1830; between 1785 and 1792 Brazil overtook the Ottoman Empire in shipments to England and supplied long-staple varieties better suited to factory technology. (p. 125)"
@@ -2204,8 +1752,7 @@ const BOOK_DATA = {
             8,
             9
           ],
-          "setting": "Liverpool exchange networks",
-          "time": "1785; 1809; 1865",
+          "setting": "Liverpool exchange networks • 1785; 1809; 1865",
           "point": "The cotton exchange and Liverpool price quotations operated as the empire's signal system shaping decisions from Bombay to Mississippi and reinforcing Liverpool's dominance over.",
           "evidence": [
             "The chapter notes Europeans associated cotton with the West Indies, Brazil, the Ottoman Empire, and India, not North America. (p. 132)",
@@ -2217,8 +1764,7 @@ const BOOK_DATA = {
           "chapters": [
             7
           ],
-          "setting": "Europe",
-          "time": "1861",
+          "setting": "Europe • 1861",
           "point": "Industrial capitalism grew alongside slave plantation production linked by merchant capital.",
           "evidence": [
             "The chapter concludes that the cotton empire before 1861 rested on slave plantations in the Americas and wage-labor factories in Europe and New England, connected by merchants. (p. 251)"
@@ -2228,8 +1774,7 @@ const BOOK_DATA = {
           "chapters": [
             10
           ],
-          "setting": "Liverpool exchange networks",
-          "time": "1860s-1910s",
+          "setting": "Liverpool exchange networks • 1860s-1910s",
           "point": "Postwar observers treated emancipation as a labor shock that would slash U S output.",
           "evidence": [
             "Manchester manufacturer Edmund Ashworth and Liverpool broker Maurice Williams argued that free Black laborers would not match slave-era output for years. (p. 342)"
@@ -2239,8 +1784,7 @@ const BOOK_DATA = {
           "chapters": [
             11
           ],
-          "setting": "China",
-          "time": "1838",
+          "setting": "China • 1838",
           "point": "Free-trade impositions and treaty openings let imports dismantle local textile regimes across the Ottoman Empire China Africa and Mexico.",
           "evidence": [
             "The 1838 imposition of free trade on the Ottoman Empire and the 1842 Treaty of Nanking opened markets to European cloth with devastating effects on local spinners and weavers. (p. 400)"
@@ -2250,8 +1794,7 @@ const BOOK_DATA = {
           "chapters": [
             12
           ],
-          "setting": "colonial cotton projects in Africa, Korea, and Central Asia",
-          "time": "1908",
+          "setting": "colonial cotton projects in Africa, Korea, and Central Asia • 1908",
           "point": "New frontiers expanded in the Ottoman Empire and the Americas with state support and institution building.",
           "evidence": [
             "In the Ottoman Cukurova, land used by nomads shifted into cotton, reaching about a quarter of cultivatable land by 1908. (p. 432)"
@@ -2261,8 +1804,7 @@ const BOOK_DATA = {
           "chapters": [
             13
           ],
-          "setting": "India",
-          "time": "1900s-1930s (into mid-century)",
+          "setting": "India • 1900s-1930s (into mid-century)",
           "point": "European capital also sought low-wage peripheries through foreign investment (1900s-1930s (into mid-century)).",
           "evidence": [
             "British firms invested in India, the Ottoman Empire, Portugal, Russia, Egypt, and China; French capital moved into Mexican mills; and British, Belgian, and Dutch entrepreneurs opened mills in Brazil. (p. 484)"
@@ -2272,8 +1814,7 @@ const BOOK_DATA = {
           "chapters": [
             14
           ],
-          "setting": "the United States",
-          "time": "526",
+          "setting": "the United States • 526",
           "point": "The empire persisted even as its European core vanished with global cotton output and consumption reaching new highs.",
           "evidence": [
             "The chapter notes that while Europe and the United States became marginal, the world creates and consumes more cotton than ever before. (p. 526)"
@@ -2293,8 +1834,7 @@ const BOOK_DATA = {
           "chapters": [
             5
           ],
-          "setting": "the United States",
-          "time": "1786",
+          "setting": "the United States • 1786",
           "point": "Sea Island long-staple cotton introduced from Bahamas seed in 1786 matched British demand for fine yarns and quickly raised exports the Saint-Domingue revolt then.",
           "evidence": [
             "Sea Island cotton spread along the Georgia and South Carolina coast; South Carolina exports rose from under 10,000 pounds (1790) to 6.4 million (1800). (p. 135)"
@@ -2304,8 +1844,7 @@ const BOOK_DATA = {
           "chapters": [
             8
           ],
-          "setting": "Liverpool exchange networks",
-          "time": "1809",
+          "setting": "Liverpool exchange networks • 1809",
           "point": "The cotton exchange and Liverpool price quotations operated as the empire's signal system shaping decisions from Bombay to Mississippi and reinforcing Liverpool's dominance over.",
           "evidence": [
             "Merchants traded on the Liverpool exchange (first outdoors, then in an 1809 building) where large sales were made quickly, creating a focal marketplace. (p. 254)"
@@ -2315,8 +1854,7 @@ const BOOK_DATA = {
           "chapters": [
             12
           ],
-          "setting": "merchant credit networks",
-          "time": "1902",
+          "setting": "merchant credit networks • 1902",
           "point": "Japanese officials and manufacturers organized experiments new seed strains gins and credit institutions to expand Korean cotton.",
           "evidence": [
             "After 1902 Wakamatsu tested cotton strains; the 1904 Association for the Cultivation of Cotton in Korea introduced American strains, built a gin, and coordinated expansion plans. (p. 420)"
@@ -2326,8 +1864,7 @@ const BOOK_DATA = {
           "chapters": [
             14
           ],
-          "setting": "Liverpool exchange networks",
-          "time": "1963",
+          "setting": "Liverpool exchange networks • 1963",
           "point": "Europe s cotton command ended visibly in 1963 with the Liverpool Cotton Association s liquidation and in statistics that showed Britain s industry collapsing.",
           "evidence": [
             "Liverpool’s Cotton Exchange was sold and the association auctioned its furnishings in 1963, symbolizing the end of European rule. (p. 525)"
@@ -2347,8 +1884,7 @@ const BOOK_DATA = {
           "chapters": [
             1
           ],
-          "setting": "premodern household cotton zones across Asia, Africa, and the Americas",
-          "time": "5000 BCE-1500s",
+          "setting": "premodern household cotton zones across Asia, Africa, and the Americas • 5000 BCE-1500s",
           "point": "By roughly a millennium ago cotton textiles formed the world's largest manufacturing industry organized in household production with mostly local and some regional trade.",
           "evidence": [
             "It also notes trade networks that connected growers, spinners, weavers, and consumers, mostly local with some regional links. (p. 25)"
@@ -2358,8 +1894,7 @@ const BOOK_DATA = {
           "chapters": [
             2
           ],
-          "setting": "India",
-          "time": "1600",
+          "setting": "India • 1600",
           "point": "Europe's cotton output was small and technically behind Asia Europeans depended on imported fiber and mostly wore linen or wool in 1600.",
           "evidence": [
             "The chapter states world production centered on India and China, and European output did not match Asian technology or quality. (p. 51-52)"
@@ -2369,8 +1904,7 @@ const BOOK_DATA = {
           "chapters": [
             4
           ],
-          "setting": "the United States",
-          "time": "1857",
+          "setting": "the United States • 1857",
           "point": "In 1857 John T Danson argued that cotton supply outside the East Indies depended on slave labor and most British cotton that year came.",
           "evidence": [
             "Danson linked cotton supply to slave labor and noted that 68 percent of British cotton in 1857 came from the United States. (p. 113)"
@@ -2380,8 +1914,7 @@ const BOOK_DATA = {
           "chapters": [
             9
           ],
-          "setting": "the United States",
-          "time": "1860s-1910s",
+          "setting": "the United States • 1860s-1910s",
           "point": "The United States became the dominant supplier making European mills dependent on American cotton.",
           "evidence": [
             "On the eve of the Civil War, raw cotton was 61 percent of U.S. export value. (p. 304)"
@@ -2391,8 +1924,7 @@ const BOOK_DATA = {
           "chapters": [
             10
           ],
-          "setting": "merchant credit networks",
-          "time": "1860s-1910s",
+          "setting": "merchant credit networks • 1860s-1910s",
           "point": "Sharecropping tied growers to high-interest credit and falling prices.",
           "evidence": [
             "On Mississippi's Runnymede plantation, croppers paid 25 percent interest for food and 35 percent for clothing, forcing them to plant more cotton to repay debts. (p. 353)"
@@ -2402,8 +1934,7 @@ const BOOK_DATA = {
           "chapters": [
             11
           ],
-          "setting": "Liverpool exchange networks",
-          "time": "1873",
+          "setting": "Liverpool exchange networks • 1873",
           "point": "Global price declines and volatility after 1873 deepened debt and insecurity.",
           "evidence": [
             "Surat cotton prices in Liverpool fell 38 percent between 1873 and 1876, squeezing indebted growers in India, Egypt, Brazil, and the United States. (p. 412)"
@@ -2413,8 +1944,7 @@ const BOOK_DATA = {
           "chapters": [
             12
           ],
-          "setting": "Brazil",
-          "time": "1921-22",
+          "setting": "Brazil • 1921-22",
           "point": "New frontiers expanded in the Ottoman Empire and the Americas with state support and institution building.",
           "evidence": [
             "Brazil expanded to 1.4 million cotton acres by 1921-22 and became the world’s fourth-largest grower by the 1930s with state-backed institutions such as the Instituto Agronomico de Campinas; Peru’s exports jumped from 0.71 million pounds (1861-65) to 59 million (1916-20). (p. 432-433)"
@@ -2424,8 +1954,7 @@ const BOOK_DATA = {
           "chapters": [
             14
           ],
-          "setting": "the United States",
-          "time": "526",
+          "setting": "the United States • 526",
           "point": "The empire persisted even as its European core vanished with global cotton output and consumption reaching new highs.",
           "evidence": [
             "The chapter notes that while Europe and the United States became marginal, the world creates and consumes more cotton than ever before. (p. 526)"
@@ -2445,8 +1974,7 @@ const BOOK_DATA = {
           "chapters": [
             2
           ],
-          "setting": "India",
-          "time": "late 1400s-1850s",
+          "setting": "India • late 1400s-1850s",
           "point": "African demand forced Europeans to order specific cloth types and colors from India.",
           "evidence": [
             "Richard Miles gave detailed instructions on colors and manufacturers preferred by Gold Coast traders. (p. 59)"
@@ -2456,8 +1984,7 @@ const BOOK_DATA = {
           "chapters": [
             3
           ],
-          "setting": "British mill districts and Atlantic input chains",
-          "time": "106-107",
+          "setting": "British mill districts and Atlantic input chains • 106-107",
           "point": "Export growth depended on a state that protected trade routes enforced contracts and property rights and used protection and prohibition while manufacturers gained political.",
           "evidence": [
             "The chapter links export expansion to the navy, bills of lading, and contract enforcement, and notes legislative protections and the 1832 Reform Act. (p. 106-107, p. 109)"
@@ -2467,8 +1994,7 @@ const BOOK_DATA = {
           "chapters": [
             4
           ],
-          "setting": "Manchester mill districts",
-          "time": "1781",
+          "setting": "Manchester mill districts • 1781",
           "point": "Factory demand surged and prices jumped pushing manufacturers to lobby for new sources.",
           "evidence": [
             "Cotton prices in Britain were two to three times higher in 1781 than a decade earlier, and Manchester manufacturers pressed government and planters for supply. (p. 116)"
@@ -2478,8 +2004,7 @@ const BOOK_DATA = {
           "chapters": [
             5
           ],
-          "setting": "the U.S. Deep South cotton frontier",
-          "time": "157-159",
+          "setting": "the U.S. Deep South cotton frontier • 157-159",
           "point": "British manufacturers feared dependence on a single slave-based supplier and the risks of abolition or rebellion.",
           "evidence": [
             "British manufacturers in the 1810s-1840s warned of near-total dependence on U.S. cotton and the instability of slavery. (p. 157-159)"
@@ -2489,8 +2014,7 @@ const BOOK_DATA = {
           "chapters": [
             6
           ],
-          "setting": "new industrial centers across Europe and the Americas",
-          "time": "1850s",
+          "setting": "new industrial centers across Europe and the Americas • 1850s",
           "point": "States without colonies sought distant niche markets to survive protectionism.",
           "evidence": [
             "Swiss manufacturers sold batiks into Southeast Asia and head shawls into Islamic markets in the 1850s-1860s. (p. 208)"
@@ -2500,8 +2024,7 @@ const BOOK_DATA = {
           "chapters": [
             7
           ],
-          "setting": "factory districts in Britain and continental Europe",
-          "time": "1858",
+          "setting": "factory districts in Britain and continental Europe • 1858",
           "point": "Rural households combined factory wages with farming as hand spinning and weaving collapsed.",
           "evidence": [
             "As factory yarn undercut hand spinning, manufacturers pushed deeper into the countryside; at Wesserling, nearly all mill workers still owned land in 1858. (p. 232)"
@@ -2511,8 +2034,7 @@ const BOOK_DATA = {
           "chapters": [
             8
           ],
-          "setting": "Liverpool exchange networks",
-          "time": "258-259",
+          "setting": "Liverpool exchange networks • 258-259",
           "point": "A single commodity chain could connect a Mississippi planter to Manchester spinners and then to Indian merchants and weavers showing how merchants built webs.",
           "evidence": [
             "The text traces a chain from Mississippi planters to New Orleans exporters, Liverpool shippers, Manchester manufacturers, Calcutta merchants, and Indian weavers and retailers. (p. 258-259)"
@@ -2523,8 +2045,7 @@ const BOOK_DATA = {
             9,
             12
           ],
-          "setting": "merchant credit networks",
-          "time": "1860s-1910s; 1902",
+          "setting": "merchant credit networks • 1860s-1910s; 1902",
           "point": "Japanese officials and manufacturers organized experiments new seed strains gins and credit institutions to expand Korean cotton.",
           "evidence": [
             "Manufacturers demanded contract laws that penalized breach and created crop liens backed by hard-labor penalties. (p. 315)",
@@ -2535,8 +2056,7 @@ const BOOK_DATA = {
           "chapters": [
             10
           ],
-          "setting": "Liverpool exchange networks",
-          "time": "1860s-1910s",
+          "setting": "Liverpool exchange networks • 1860s-1910s",
           "point": "Postwar observers treated emancipation as a labor shock that would slash U S output.",
           "evidence": [
             "Manchester manufacturer Edmund Ashworth and Liverpool broker Maurice Williams argued that free Black laborers would not match slave-era output for years. (p. 342)"
@@ -2546,8 +2066,7 @@ const BOOK_DATA = {
           "chapters": [
             11
           ],
-          "setting": "India",
-          "time": "1843",
+          "setting": "India • 1843",
           "point": "Asia especially India became the primary target market for metropolitan textiles.",
           "evidence": [
             "India was British manufacturers’ most important customer by 1843, and by 1900 about 78 percent of British cotton output was exported, much to India. (p. 399)"
@@ -2557,8 +2076,7 @@ const BOOK_DATA = {
           "chapters": [
             13
           ],
-          "setting": "Manchester mill districts",
-          "time": "500",
+          "setting": "Manchester mill districts • 500",
           "point": "European capital also sought low-wage peripheries through foreign investment.",
           "evidence": [
             "German manufacturers invested heavily in Poland's Lodz, the \"Manchester of the East,\" where mills like Carl Scheibler's employed about 7,500 workers. (p. 485)"
@@ -2568,8 +2086,7 @@ const BOOK_DATA = {
           "chapters": [
             14
           ],
-          "setting": "retailer-led global supply chains and subsidized cotton regions",
-          "time": "1970s",
+          "setting": "retailer-led global supply chains and subsidized cotton regions • 1970s",
           "point": "Since the 1970s massive retailers and branded firms have replaced manufacturers as the key coordinators of cotton commodity chains.",
           "evidence": [
             "Retailers like Walmart, Metro, and Carrefour now ‘pull’ cotton products across oceans, pitting contractors and workers against each other for speed and low cost. (p. 532)"
@@ -2589,8 +2106,7 @@ const BOOK_DATA = {
           "chapters": [
             1
           ],
-          "setting": "China",
-          "time": "5000 BCE-1500s",
+          "setting": "China • 5000 BCE-1500s",
           "point": "Workshops and putting-out networks expanded under merchant cash advances while production often remained rural and home-based.",
           "evidence": [
             "The chapter describes putting-out networks in which merchants advanced cotton or yarn and controlled production stages, especially in China and the Ottoman Empire. (p. 41)"
@@ -2603,8 +2119,7 @@ const BOOK_DATA = {
             10,
             13
           ],
-          "setting": "Liverpool exchange networks; merchant credit networks",
-          "time": "late 1400s-1850s; 101-102; 357-358; 1818",
+          "setting": "Liverpool exchange networks; merchant credit networks • late 1400s-1850s; 101-102; 357-358; 1818",
           "point": "Profits from slavery and commerce financed manufacturing through merchant advances and cash for raw cotton and wages.",
           "evidence": [
             "Liverpool merchants, enriched by slavery, advanced funds to cotton manufacturers, and London merchants supplied cash for raw cotton and wages to Lancashire producers. (p. 78)",
@@ -2617,8 +2132,7 @@ const BOOK_DATA = {
           "chapters": [
             4
           ],
-          "setting": "India",
-          "time": "late 1400s-1850s",
+          "setting": "India • late 1400s-1850s",
           "point": "Attempts to redirect African and Indian cotton to European mills faltered Sierra Leone experiments failed and the East India Company resisted large raw-cotton exports.",
           "evidence": [
             "Cotton merchant William Rathbone and spinner Richard Arkwright tried to increase African supply via the Sierra Leone Company, but the effort failed. (p. 117)"
@@ -2628,8 +2142,7 @@ const BOOK_DATA = {
           "chapters": [
             5
           ],
-          "setting": "Liverpool exchange networks",
-          "time": "145-146",
+          "setting": "Liverpool exchange networks • 145-146",
           "point": "Violence and discipline were integral to productivity and profitability on cotton plantations.",
           "evidence": [
             "Liverpool merchants and newspapers warned emancipation would drive cotton cloth prices sharply higher. (p. 145-146)"
@@ -2639,8 +2152,7 @@ const BOOK_DATA = {
           "chapters": [
             6
           ],
-          "setting": "Brazil",
-          "time": "216-217",
+          "setting": "Brazil • 216-217",
           "point": "Brazil s slaveholding political economy resisted industrialization.",
           "evidence": [
             "Planters and Bahian merchants opposed industrial support and tariffs, while capital and labor remained tied to slavery and agricultural exports. (p. 216-217)"
@@ -2650,8 +2162,7 @@ const BOOK_DATA = {
           "chapters": [
             7
           ],
-          "setting": "Europe",
-          "time": "1861",
+          "setting": "Europe • 1861",
           "point": "Industrial capitalism grew alongside slave plantation production linked by merchant capital.",
           "evidence": [
             "The chapter concludes that the cotton empire before 1861 rested on slave plantations in the Americas and wage-labor factories in Europe and New England, connected by merchants. (p. 251)"
@@ -2661,8 +2172,7 @@ const BOOK_DATA = {
           "chapters": [
             8
           ],
-          "setting": "Liverpool exchange networks",
-          "time": "1809",
+          "setting": "Liverpool exchange networks • 1809",
           "point": "The cotton exchange and Liverpool price quotations operated as the empire's signal system shaping decisions from Bombay to Mississippi and reinforcing Liverpool's dominance over.",
           "evidence": [
             "Merchants traded on the Liverpool exchange (first outdoors, then in an 1809 building) where large sales were made quickly, creating a focal marketplace. (p. 254)"
@@ -2672,8 +2182,7 @@ const BOOK_DATA = {
           "chapters": [
             9
           ],
-          "setting": "cotton exchanges and futures markets",
-          "time": "1861",
+          "setting": "cotton exchanges and futures markets • 1861",
           "point": "Merchants and brokers profited from volatility and formalized futures trading.",
           "evidence": [
             "The value of cotton imports rose from 39.7 million pounds in 1861 to 84 million pounds in 1864 despite lower volumes. (p. 311)"
@@ -2683,8 +2192,7 @@ const BOOK_DATA = {
           "chapters": [
             11
           ],
-          "setting": "Manchester mill districts",
-          "time": "391-392",
+          "setting": "Manchester mill districts • 391-392",
           "point": "Similar penetration unfolded in Egypt Anatolia Mexico and the U S South where foreign capital and interior merchants displaced older factor systems.",
           "evidence": [
             "In the postwar U.S. South, merchants moved inland to places like Dallas, built gins and presses, used telegraph prices, and displaced factors; by the early 1870s Manchester spinners bought directly in Memphis. (p. 391-392)"
@@ -2694,8 +2202,7 @@ const BOOK_DATA = {
           "chapters": [
             12
           ],
-          "setting": "merchant credit networks",
-          "time": "1900s-1930s (into mid-century)",
+          "setting": "merchant credit networks • 1900s-1930s (into mid-century)",
           "point": "Credit dependency and land loss transformed class relations producing landless labor and famine vulnerability (1900s-1930s (into mid-century)).",
           "evidence": [
             "Merchants advanced credit at 40-60 percent interest (sometimes over 100 percent), pushing peasants into dependency and sharecropping. (p. 443)"
@@ -2705,8 +2212,7 @@ const BOOK_DATA = {
           "chapters": [
             14
           ],
-          "setting": "merchant credit networks",
-          "time": "537-538",
+          "setting": "merchant credit networks • 537-538",
           "point": "Since the 1970s massive retailers and branded firms have replaced manufacturers as the key coordinators of cotton commodity chains.",
           "evidence": [
             "The chapter argues that these new merchants gained power as capital became less tied to any one state, enabling them to play states against each other. (p. 537-538)"
@@ -2726,8 +2232,7 @@ const BOOK_DATA = {
           "chapters": [
             4
           ],
-          "setting": "the United States",
-          "time": "1857",
+          "setting": "the United States • 1857",
           "point": "In 1857 John T Danson argued that cotton supply outside the East Indies depended on slave labor and most British cotton that year came.",
           "evidence": [
             "Danson linked cotton supply to slave labor and noted that 68 percent of British cotton in 1857 came from the United States. (p. 113)"
@@ -2737,8 +2242,7 @@ const BOOK_DATA = {
           "chapters": [
             6
           ],
-          "setting": "the United States",
-          "time": "201-202",
+          "setting": "the United States • 201-202",
           "point": "War disruptions in the United States played a similar protective role.",
           "evidence": [
             "The Embargo Act of 1807 removed British textiles and spindles rose from 8,000 in 1807 to 130,000 by 1815. (p. 201-202)"
@@ -2748,8 +2252,7 @@ const BOOK_DATA = {
           "chapters": [
             9
           ],
-          "setting": "merchant credit networks",
-          "time": "1860s-1910s",
+          "setting": "merchant credit networks • 1860s-1910s",
           "point": "Merchants feared emancipation would collapse cotton as freedpeople and peasants preferred subsistence.",
           "evidence": [
             "The Economist warned emancipation could bring ruin to cotton territories, and the Cotton Supply Reporter predicted collapse if war became emancipation. (p. 331)"
@@ -2759,8 +2262,7 @@ const BOOK_DATA = {
           "chapters": [
             10
           ],
-          "setting": "Egypt",
-          "time": "1878",
+          "setting": "Egypt • 1878",
           "point": "In Egypt state-backed property changes and debt concentrated land and enabled coercion.",
           "evidence": [
             "Landowners could imprison or expel peasants, and debt chains ran up to Isma'il's estates, which he signed over to the Rothschilds in 1878. (p. 368)"
@@ -2770,8 +2272,7 @@ const BOOK_DATA = {
           "chapters": [
             12
           ],
-          "setting": "merchant credit networks",
-          "time": "1900s-1930s (into mid-century)",
+          "setting": "merchant credit networks • 1900s-1930s (into mid-century)",
           "point": "Credit dependency and land loss transformed class relations producing landless labor and famine vulnerability (1900s-1930s (into mid-century)).",
           "evidence": [
             "Merchants advanced credit at 40-60 percent interest (sometimes over 100 percent), pushing peasants into dependency and sharecropping. (p. 443)"
@@ -2791,8 +2292,7 @@ const BOOK_DATA = {
           "chapters": [
             3
           ],
-          "setting": "India",
-          "time": "1790",
+          "setting": "India • 1790",
           "point": "Productivity leaps cut spinning time and prices.",
           "evidence": [
             "Spinning 100 pounds took 50,000 hours in India but 1,000 hours in Britain by 1790, falling to 135 hours after 1825, and yarn prices declined accordingly. (p. 94-95)"
@@ -2802,8 +2302,7 @@ const BOOK_DATA = {
           "chapters": [
             4
           ],
-          "setting": "Manchester mill districts",
-          "time": "1781",
+          "setting": "Manchester mill districts • 1781",
           "point": "Factory demand surged and prices jumped pushing manufacturers to lobby for new sources.",
           "evidence": [
             "Cotton prices in Britain were two to three times higher in 1781 than a decade earlier, and Manchester manufacturers pressed government and planters for supply. (p. 116)"
@@ -2813,8 +2312,7 @@ const BOOK_DATA = {
           "chapters": [
             5
           ],
-          "setting": "the United States",
-          "time": "1786",
+          "setting": "the United States • 1786",
           "point": "Sea Island long-staple cotton introduced from Bahamas seed in 1786 matched British demand for fine yarns and quickly raised exports the Saint-Domingue revolt then.",
           "evidence": [
             "The 1791 Saint-Domingue revolt removed a major supplier and pushed planters into the United States, increasing incentives and expertise. (p. 136)"
@@ -2824,8 +2322,7 @@ const BOOK_DATA = {
           "chapters": [
             8
           ],
-          "setting": "Liverpool exchange networks",
-          "time": "258-259",
+          "setting": "Liverpool exchange networks • 258-259",
           "point": "A single commodity chain could connect a Mississippi planter to Manchester spinners and then to Indian merchants and weavers showing how merchants built webs.",
           "evidence": [
             "The text traces a chain from Mississippi planters to New Orleans exporters, Liverpool shippers, Manchester manufacturers, Calcutta merchants, and Indian weavers and retailers. (p. 258-259)"
@@ -2835,8 +2332,7 @@ const BOOK_DATA = {
           "chapters": [
             9
           ],
-          "setting": "the United States",
-          "time": "1860s-1910s",
+          "setting": "the United States • 1860s-1910s",
           "point": "The United States became the dominant supplier making European mills dependent on American cotton.",
           "evidence": [
             "On the eve of the Civil War, raw cotton was 61 percent of U.S. export value. (p. 304)"
@@ -2846,8 +2342,7 @@ const BOOK_DATA = {
           "chapters": [
             10
           ],
-          "setting": "post-emancipation cotton districts in the U.S. South and empire",
-          "time": "1860s-1910s",
+          "setting": "post-emancipation cotton districts in the U.S. South and empire • 1860s-1910s",
           "point": "Planters and northern investors tried to reimpose plantation discipline through wage contracts.",
           "evidence": [
             "On the Sea Islands, Union authorities compelled freedpeople to work for wages on plantations despite their desire for land and autonomy. (p. 348)"
@@ -2857,8 +2352,7 @@ const BOOK_DATA = {
           "chapters": [
             12
           ],
-          "setting": "merchant credit networks",
-          "time": "1902",
+          "setting": "merchant credit networks • 1902",
           "point": "Japanese officials and manufacturers organized experiments new seed strains gins and credit institutions to expand Korean cotton.",
           "evidence": [
             "After 1902 Wakamatsu tested cotton strains; the 1904 Association for the Cultivation of Cotton in Korea introduced American strains, built a gin, and coordinated expansion plans. (p. 420)"
@@ -2878,8 +2372,7 @@ const BOOK_DATA = {
           "chapters": [
             2
           ],
-          "setting": "India",
-          "time": "1731",
+          "setting": "India • 1731",
           "point": "African demand forced Europeans to order specific cloth types and colors from India.",
           "evidence": [
             "The French slave ship Diligent (1731) carried a carefully selected assortment of Indian textiles for Guinea. (p. 59)"
@@ -2889,8 +2382,7 @@ const BOOK_DATA = {
           "chapters": [
             3
           ],
-          "setting": "Africa",
-          "time": "eighteenth century",
+          "setting": "Africa • eighteenth century",
           "point": "British cloth captured Atlantic markets including Africa and slave economies.",
           "evidence": [
             "By the late eighteenth century more than two-thirds of British cotton exports went to Atlantic markets, and after 1806 British cottons dominated the African trade. (p. 105)"
@@ -2900,8 +2392,7 @@ const BOOK_DATA = {
           "chapters": [
             4
           ],
-          "setting": "the United States",
-          "time": "1857",
+          "setting": "the United States • 1857",
           "point": "In 1857 John T Danson argued that cotton supply outside the East Indies depended on slave labor and most British cotton that year came.",
           "evidence": [
             "Danson linked cotton supply to slave labor and noted that 68 percent of British cotton in 1857 came from the United States. (p. 113)"
@@ -2911,8 +2402,7 @@ const BOOK_DATA = {
           "chapters": [
             5
           ],
-          "setting": "the U.S. Deep South cotton frontier",
-          "time": "late 1400s-1850s",
+          "setting": "the U.S. Deep South cotton frontier • late 1400s-1850s",
           "point": "Violence and discipline were integral to productivity and profitability on cotton plantations.",
           "evidence": [
             "Fugitive slaves John Brown and Henry Bibb described whippings, slave hunts, and public punishments; Brown noted harsher driving when cotton prices rose. (p. 145)"
@@ -2922,8 +2412,7 @@ const BOOK_DATA = {
           "chapters": [
             6
           ],
-          "setting": "Egypt",
-          "time": "214-215",
+          "setting": "Egypt • 214-215",
           "point": "Egypt s factories relied on coercion rather than stable wage labor.",
           "evidence": [
             "Workers in Cairo’s Khurunfish workshops included Sudanese slaves and coerced Egyptians supervised by the army and paid minimal wages. (p. 214-215)"
@@ -2933,8 +2422,7 @@ const BOOK_DATA = {
           "chapters": [
             7
           ],
-          "setting": "Europe",
-          "time": "1861",
+          "setting": "Europe • 1861",
           "point": "Industrial capitalism grew alongside slave plantation production linked by merchant capital.",
           "evidence": [
             "The chapter concludes that the cotton empire before 1861 rested on slave plantations in the Americas and wage-labor factories in Europe and New England, connected by merchants. (p. 251)"
@@ -2944,8 +2432,7 @@ const BOOK_DATA = {
           "chapters": [
             8
           ],
-          "setting": "Liverpool exchange networks",
-          "time": "1780s-1860s",
+          "setting": "Liverpool exchange networks • 1780s-1860s",
           "point": "The cotton exchange and Liverpool price quotations operated as the empire's signal system shaping decisions from Bombay to Mississippi and reinforcing Liverpool's dominance over.",
           "evidence": [
             "News of \"Liverpool prices\" was tracked in Bombay and across the U.S. South and influenced land purchases, slave movement, and investment decisions. (p. 255)"
@@ -2955,8 +2442,7 @@ const BOOK_DATA = {
           "chapters": [
             10
           ],
-          "setting": "Liverpool exchange networks",
-          "time": "1860s-1910s",
+          "setting": "Liverpool exchange networks • 1860s-1910s",
           "point": "Postwar observers treated emancipation as a labor shock that would slash U S output.",
           "evidence": [
             "Manchester manufacturer Edmund Ashworth and Liverpool broker Maurice Williams argued that free Black laborers would not match slave-era output for years. (p. 342)"
@@ -2966,8 +2452,7 @@ const BOOK_DATA = {
           "chapters": [
             11
           ],
-          "setting": "India",
-          "time": "1843",
+          "setting": "India • 1843",
           "point": "Asia especially India became the primary target market for metropolitan textiles.",
           "evidence": [
             "India was British manufacturers’ most important customer by 1843, and by 1900 about 78 percent of British cotton output was exported, much to India. (p. 399)"
@@ -2977,8 +2462,7 @@ const BOOK_DATA = {
           "chapters": [
             12
           ],
-          "setting": "merchant credit networks",
-          "time": "1902",
+          "setting": "merchant credit networks • 1902",
           "point": "Japanese officials and manufacturers organized experiments new seed strains gins and credit institutions to expand Korean cotton.",
           "evidence": [
             "After 1902 Wakamatsu tested cotton strains; the 1904 Association for the Cultivation of Cotton in Korea introduced American strains, built a gin, and coordinated expansion plans. (p. 420)"
@@ -2988,8 +2472,7 @@ const BOOK_DATA = {
           "chapters": [
             14
           ],
-          "setting": "the United States",
-          "time": "526",
+          "setting": "the United States • 526",
           "point": "The empire persisted even as its European core vanished with global cotton output and consumption reaching new highs.",
           "evidence": [
             "The chapter notes that while Europe and the United States became marginal, the world creates and consumes more cotton than ever before. (p. 526)"
@@ -3009,8 +2492,7 @@ const BOOK_DATA = {
           "chapters": [
             1
           ],
-          "setting": "premodern household cotton zones across Asia, Africa, and the Americas",
-          "time": "5000 BCE-1500s",
+          "setting": "premodern household cotton zones across Asia, Africa, and the Americas • 5000 BCE-1500s",
           "point": "Premodern cultivation and manufacturing stayed tied to mixed farming households with gendered labor and slow productivity growth.",
           "evidence": [
             "A Southeast Asian spinner could take a month to spin a pound of cotton and another month to weave ten yards. (p. 36)"
@@ -3020,8 +2502,7 @@ const BOOK_DATA = {
           "chapters": [
             3
           ],
-          "setting": "India",
-          "time": "1790",
+          "setting": "India • 1790",
           "point": "Productivity leaps cut spinning time and prices.",
           "evidence": [
             "Spinning 100 pounds took 50,000 hours in India but 1,000 hours in Britain by 1790, falling to 135 hours after 1825, and yarn prices declined accordingly. (p. 94-95)"
@@ -3031,8 +2512,7 @@ const BOOK_DATA = {
           "chapters": [
             6
           ],
-          "setting": "merchant credit networks",
-          "time": "183-184",
+          "setting": "merchant credit networks • 183-184",
           "point": "Putting-out networks let merchants coordinate household labor before shifting workers into factories.",
           "evidence": [
             "In Switzerland, British yarn imports turned spinners into weavers, then merchants brought wage workers into factories; similar transitions occurred in Italy, Catalonia, Holland, and Mexico. (p. 183-184)"
@@ -3042,8 +2522,7 @@ const BOOK_DATA = {
           "chapters": [
             10
           ],
-          "setting": "Liverpool exchange networks",
-          "time": "1860s-1910s",
+          "setting": "Liverpool exchange networks • 1860s-1910s",
           "point": "Postwar observers treated emancipation as a labor shock that would slash U S output.",
           "evidence": [
             "Manchester manufacturer Edmund Ashworth and Liverpool broker Maurice Williams argued that free Black laborers would not match slave-era output for years. (p. 342)"
@@ -3053,8 +2532,7 @@ const BOOK_DATA = {
           "chapters": [
             12
           ],
-          "setting": "merchant credit networks",
-          "time": "1906",
+          "setting": "merchant credit networks • 1906",
           "point": "Japanese officials and manufacturers organized experiments new seed strains gins and credit institutions to expand Korean cotton.",
           "evidence": [
             "In 1906 Japanese spinners formed the Korean Cotton Corporation to loan against mortgaged crops and purchase cotton in the southern belt. (p. 420)"
@@ -3064,8 +2542,7 @@ const BOOK_DATA = {
           "chapters": [
             13
           ],
-          "setting": "industrial cotton centers in India, Japan, and China",
-          "time": "471-472",
+          "setting": "industrial cotton centers in India, Japan, and China • 471-472",
           "point": "Unions and strikes won shorter hours and wage-setting power in core cotton districts.",
           "evidence": [
             "Fall River saw 13 major strikes between 1848 and 1904; the mule spinners won a ten-hour day in 1866 and sliding-scale wage agreements in 1886 and 1904. (p. 471-472)"
@@ -3075,8 +2552,7 @@ const BOOK_DATA = {
           "chapters": [
             14
           ],
-          "setting": "the United States",
-          "time": "526",
+          "setting": "the United States • 526",
           "point": "The empire persisted even as its European core vanished with global cotton output and consumption reaching new highs.",
           "evidence": [
             "The chapter notes that while Europe and the United States became marginal, the world creates and consumes more cotton than ever before. (p. 526)"
@@ -3097,8 +2573,7 @@ const BOOK_DATA = {
             1,
             8
           ],
-          "setting": "the Atlantic economy; Liverpool-centered merchant and exchange networks",
-          "time": "5000 BCE-1500s; 666",
+          "setting": "the Atlantic economy; Liverpool-centered merchant and exchange networks • 5000 BCE-1500s; 666",
           "point": "Ottoman control of Mediterranean trade and rising Atlantic power weakened early European cotton centers and pushed a turn toward state-backed expansion.",
           "evidence": [
             "The chapter concludes that early European producers failed in part because they did not subjugate suppliers, and a new Atlantic-focused industry assumed state power was required. (p. 50)",
@@ -3109,8 +2584,7 @@ const BOOK_DATA = {
           "chapters": [
             2
           ],
-          "setting": "India",
-          "time": "1600",
+          "setting": "India • 1600",
           "point": "Europe's cotton output was small and technically behind Asia Europeans depended on imported fiber and mostly wore linen or wool in 1600.",
           "evidence": [
             "The chapter states world production centered on India and China, and European output did not match Asian technology or quality. (p. 51-52)"
@@ -3120,8 +2594,7 @@ const BOOK_DATA = {
           "chapters": [
             3
           ],
-          "setting": "British mill districts and Atlantic input chains",
-          "time": "1786",
+          "setting": "British mill districts and Atlantic input chains • 1786",
           "point": "Inventors were modest tinkerers and the state protected their advantage by banning machine exports after 1786.",
           "evidence": [
             "The chapter emphasizes inventors' modest backgrounds and notes the export ban on textile machinery. (p. 96)"
@@ -3131,8 +2604,7 @@ const BOOK_DATA = {
           "chapters": [
             4
           ],
-          "setting": "the United States",
-          "time": "1857",
+          "setting": "the United States • 1857",
           "point": "In 1857 John T Danson argued that cotton supply outside the East Indies depended on slave labor and most British cotton that year came.",
           "evidence": [
             "Danson linked cotton supply to slave labor and noted that 68 percent of British cotton in 1857 came from the United States. (p. 113)"
@@ -3142,8 +2614,7 @@ const BOOK_DATA = {
           "chapters": [
             5
           ],
-          "setting": "the United States",
-          "time": "1786",
+          "setting": "the United States • 1786",
           "point": "Sea Island long-staple cotton introduced from Bahamas seed in 1786 matched British demand for fine yarns and quickly raised exports the Saint-Domingue revolt then.",
           "evidence": [
             "The 1791 Saint-Domingue revolt removed a major supplier and pushed planters into the United States, increasing incentives and expertise. (p. 136)"
@@ -3155,8 +2626,7 @@ const BOOK_DATA = {
             9,
             11
           ],
-          "setting": "the United States",
-          "time": "201-202; 1860s-1910s; 397-398",
+          "setting": "the United States • 201-202; 1860s-1910s; 397-398",
           "point": "The United States became the dominant supplier making European mills dependent on American cotton.",
           "evidence": [
             "The Embargo Act of 1807 removed British textiles and spindles rose from 8,000 in 1807 to 130,000 by 1815. (p. 201-202)",
@@ -3168,8 +2638,7 @@ const BOOK_DATA = {
           "chapters": [
             7
           ],
-          "setting": "factory districts in Britain and continental Europe",
-          "time": "227-228",
+          "setting": "factory districts in Britain and continental Europe • 227-228",
           "point": "Factory production required persuading or forcing people to abandon older subsistence rhythms something only intensive states could accomplish.",
           "evidence": [
             "The chapter argues that mobilizing factory labor required legal, social, and political conditions that allowed statesmen and capitalists to dominate family life. (p. 227-228)"
@@ -3179,8 +2648,7 @@ const BOOK_DATA = {
           "chapters": [
             10
           ],
-          "setting": "Egypt",
-          "time": "1882",
+          "setting": "Egypt • 1882",
           "point": "In Egypt state-backed property changes and debt concentrated land and enabled coercion.",
           "evidence": [
             "State borrowing for canals and railroads led to bankruptcy and British takeover in 1882. (p. 369)"
@@ -3190,8 +2658,7 @@ const BOOK_DATA = {
           "chapters": [
             12
           ],
-          "setting": "Central Asia",
-          "time": "1865",
+          "setting": "Central Asia • 1865",
           "point": "Russian manufacturers and the state pursued Central Asia to reduce dependence on American cotton using conquest and lobbying to deepen control.",
           "evidence": [
             "After Civil War price spikes, Russia captured Tashkent and the khanate of Khokand in 1865, and industrialists petitioned for deeper intervention in 1869. (p. 426)"
@@ -3201,8 +2668,7 @@ const BOOK_DATA = {
           "chapters": [
             13
           ],
-          "setting": "industrial cotton centers in India, Japan, and China",
-          "time": "1911",
+          "setting": "industrial cotton centers in India, Japan, and China • 1911",
           "point": "State export promotion and imperial leverage opened foreign markets for Japanese cloth.",
           "evidence": [
             "Because tariffs were barred before 1911, the state instead supplied technology, export cartels, market intelligence, and debt guarantees for exporters. (p. 495)"
@@ -3212,8 +2678,7 @@ const BOOK_DATA = {
           "chapters": [
             14
           ],
-          "setting": "the United States",
-          "time": "526",
+          "setting": "the United States • 526",
           "point": "The empire persisted even as its European core vanished with global cotton output and consumption reaching new highs.",
           "evidence": [
             "The chapter notes that while Europe and the United States became marginal, the world creates and consumes more cotton than ever before. (p. 526)"
@@ -3234,8 +2699,7 @@ const BOOK_DATA = {
             1,
             6
           ],
-          "setting": "merchant credit networks",
-          "time": "5000 BCE-1500s; 183-184",
+          "setting": "merchant credit networks • 5000 BCE-1500s; 183-184",
           "point": "Workshops and putting-out networks expanded under merchant cash advances while production often remained rural and home-based.",
           "evidence": [
             "Dhaka weavers produced muslins for the Mughal court under tight supervision, and multi-loom workshops are reported in fifteenth-century Andhra Pradesh. (p. 40)",
@@ -3246,8 +2710,7 @@ const BOOK_DATA = {
           "chapters": [
             2
           ],
-          "setting": "Europe",
-          "time": "late 1400s-1850s",
+          "setting": "Europe • late 1400s-1850s",
           "point": "European companies sought exclusive contracts to lower prices and territorial rule made this possible.",
           "evidence": [
             "Company officials complained that weavers sold to multiple buyers and argued profits required forcing exclusive supply. (p. 67)"
@@ -3257,8 +2720,7 @@ const BOOK_DATA = {
           "chapters": [
             3
           ],
-          "setting": "India",
-          "time": "1800-01",
+          "setting": "India • 1800-01",
           "point": "Indian producers collapsed as British cloth replaced them.",
           "evidence": [
             "Bengal exports to Britain fell from 1.4 million pounds in 1800-01 to just over 330,000 by 1809-10, and Dhaka weavers faced sharp decline and poverty. (p. 104-105)"
@@ -3268,8 +2730,7 @@ const BOOK_DATA = {
           "chapters": [
             7
           ],
-          "setting": "factory districts in Britain and continental Europe",
-          "time": "1832",
+          "setting": "factory districts in Britain and continental Europe • 1832",
           "point": "Machine breaking and riots erupted across cotton regions as workers resisted mechanization.",
           "evidence": [
             "Weavers and guilds opposed machines in Puebla, Veracruz, and Switzerland, including the burning of a factory in Oberuster in 1832. (p. 247)"
@@ -3279,8 +2740,7 @@ const BOOK_DATA = {
           "chapters": [
             14
           ],
-          "setting": "the United States",
-          "time": "526",
+          "setting": "the United States • 526",
           "point": "The empire persisted even as its European core vanished with global cotton output and consumption reaching new highs.",
           "evidence": [
             "The chapter notes that while Europe and the United States became marginal, the world creates and consumes more cotton than ever before. (p. 526)"
@@ -3300,8 +2760,7 @@ const BOOK_DATA = {
           "chapters": [
             1
           ],
-          "setting": "China",
-          "time": "1590s",
+          "setting": "China • 1590s",
           "point": "Workshops and putting-out networks expanded under merchant cash advances while production often remained rural and home-based.",
           "evidence": [
             "Urban loom houses in Ming China employed many thousands; Timbuktu had twenty-six workshops with fifty or more workers each in the 1590s. (p. 40)"
@@ -3311,8 +2770,7 @@ const BOOK_DATA = {
           "chapters": [
             3
           ],
-          "setting": "British mill districts and Atlantic input chains",
-          "time": "1799-1804",
+          "setting": "British mill districts and Atlantic input chains • 1799-1804",
           "point": "McConnel and Kennedy illustrate rapid growth funded by retained profits.",
           "evidence": [
             "The firm rose from 7,464 spindles in 1797 to 78,972 by 1810 and from 312 workers in 1802 to 1,020 in 1816, with profits averaging 26.5 percent (1799-1804). (p. 102)"
@@ -3322,8 +2780,7 @@ const BOOK_DATA = {
           "chapters": [
             5
           ],
-          "setting": "India",
-          "time": "1775",
+          "setting": "India • 1775",
           "point": "Planters expanded cotton using West Indian and Mediterranean knowledge and repurposed tobacco-era experience wartime shortages pushed them to plant cotton for slave clothing and.",
           "evidence": [
             "Ralph Izard ordered cotton planted in 1775 to clothe enslaved workers. (p. 134)"
@@ -3333,8 +2790,7 @@ const BOOK_DATA = {
           "chapters": [
             6
           ],
-          "setting": "India",
-          "time": "000-20",
+          "setting": "India • 000-20",
           "point": "Egypt briefly built a large mechanized industry under Muhammad Ali.",
           "evidence": [
             "By the mid-1830s, Egypt had about thirty cotton factories with 15,000-20,000 workers and roughly 400,000 spindles, exporting within the Middle East and to India. (p. 212)"
@@ -3344,8 +2800,7 @@ const BOOK_DATA = {
           "chapters": [
             7
           ],
-          "setting": "factory districts in Britain and continental Europe",
-          "time": "780",
+          "setting": "factory districts in Britain and continental Europe • 780",
           "point": "Holding workers in place was difficult even in early British mills.",
           "evidence": [
             "At one English mill, of 780 apprentices recruited after 1786, 119 ran away and 65 died. (p. 226)"
@@ -3355,8 +2810,7 @@ const BOOK_DATA = {
           "chapters": [
             8
           ],
-          "setting": "Lancashire factory region",
-          "time": "253-254",
+          "setting": "Lancashire factory region • 253-254",
           "point": "The port's docks warehouses and transport links moved bales quickly to Lancashire while relying on dangerous low-paid dock labor.",
           "evidence": [
             "Thousands of workers, many Irish immigrants, gathered daily for hazardous, low-paid work unloading bales. (p. 253-254)"
@@ -3366,8 +2820,7 @@ const BOOK_DATA = {
           "chapters": [
             9
           ],
-          "setting": "Manchester mill districts",
-          "time": "1860s-1910s",
+          "setting": "Manchester mill districts • 1860s-1910s",
           "point": "Capitalists concluded labor not land was the constraint and advocated new systems to discipline workers.",
           "evidence": [
             "The Manchester Cotton Supply Association argued that land and climate were abundant globally, but labor was the first requisite. (p. 336)"
@@ -3377,8 +2830,7 @@ const BOOK_DATA = {
           "chapters": [
             10
           ],
-          "setting": "Liverpool exchange networks",
-          "time": "1860s-1910s",
+          "setting": "Liverpool exchange networks • 1860s-1910s",
           "point": "Postwar observers treated emancipation as a labor shock that would slash U S output.",
           "evidence": [
             "Manchester manufacturer Edmund Ashworth and Liverpool broker Maurice Williams argued that free Black laborers would not match slave-era output for years. (p. 342)"
@@ -3388,8 +2840,7 @@ const BOOK_DATA = {
           "chapters": [
             11
           ],
-          "setting": "imperial exchanges and colonial market zones",
-          "time": "1874",
+          "setting": "imperial exchanges and colonial market zones • 1874",
           "point": "Price shocks like the American Civil War accelerated deindustrialization and pushed artisans into agriculture.",
           "evidence": [
             "In Berar, officials noted in 1874 that home-made cloth production was undermined and weavers became ordinary laborers. (p. 406)"
@@ -3399,8 +2850,7 @@ const BOOK_DATA = {
           "chapters": [
             12
           ],
-          "setting": "merchant credit networks",
-          "time": "444-445",
+          "setting": "merchant credit networks • 444-445",
           "point": "Credit dependency and land loss transformed class relations producing landless labor and famine vulnerability.",
           "evidence": [
             "By 1910 Fergana had about 200,000 landless workers and 25-30 percent of its population was landless by 1914; wartime food deficits helped cut Turkestan’s population by 1.3 million between 1914 and 1921. (p. 444-445)"
@@ -3410,8 +2860,7 @@ const BOOK_DATA = {
           "chapters": [
             13
           ],
-          "setting": "industrial cotton centers in India, Japan, and China",
-          "time": "1861",
+          "setting": "industrial cotton centers in India, Japan, and China • 1861",
           "point": "Ranchhodlal Chhotalal launched Ahmedabad's first steam-powered spinning in 1861 and quickly expanded Shapur Mill after it proved profitable.",
           "evidence": [
             "Shapur Mill began with 2,500 spindles and 65 workers and expanded by early 1865 to 10,000 spindles, 100 power looms, and 235 additional workers. (p. 466)"
@@ -3421,8 +2870,7 @@ const BOOK_DATA = {
           "chapters": [
             14
           ],
-          "setting": "Liverpool exchange networks",
-          "time": "1960s",
+          "setting": "Liverpool exchange networks • 1960s",
           "point": "Europe s cotton command ended visibly in 1963 with the Liverpool Cotton Association s liquidation and in statistics that showed Britain s industry collapsing.",
           "evidence": [
             "By the late 1960s the U.K. held only 2.8 percent of global cotton cloth exports and employment had fallen from over 600,000 to about 30,000 workers; in 1958 the Manchester Chamber of Commerce called for protection. (p. 526)"
@@ -3444,8 +2892,7 @@ const BOOK_DATA = {
             4,
             11
           ],
-          "setting": "Africa",
-          "time": "1600-1500; 1791; 1860s-1910s",
+          "setting": "Africa • 1600-1500; 1791; 1860s-1910s",
           "point": "This dependence was new because in 1791 most cotton for manufacturing still came from small farmers in Asia Africa and Latin America for local.",
           "evidence": [
             "Peru yields cotton nets dated to 2400 BCE and textiles from 1600-1500 BCE; eastern Africa developed spinning and weaving a few thousand years later. (p. 29, p. 26)",
@@ -3457,8 +2904,7 @@ const BOOK_DATA = {
           "chapters": [
             2
           ],
-          "setting": "Africa",
-          "time": "1731",
+          "setting": "Africa • 1731",
           "point": "African demand forced Europeans to order specific cloth types and colors from India.",
           "evidence": [
             "The French slave ship Diligent (1731) carried a carefully selected assortment of Indian textiles for Guinea. (p. 59)"
@@ -3468,8 +2914,7 @@ const BOOK_DATA = {
           "chapters": [
             3
           ],
-          "setting": "Africa",
-          "time": "eighteenth century",
+          "setting": "Africa • eighteenth century",
           "point": "British cloth captured Atlantic markets including Africa and slave economies.",
           "evidence": [
             "By the late eighteenth century more than two-thirds of British cotton exports went to Atlantic markets, and after 1806 British cottons dominated the African trade. (p. 105)"
@@ -3479,8 +2924,7 @@ const BOOK_DATA = {
           "chapters": [
             6
           ],
-          "setting": "Africa",
-          "time": "201-202",
+          "setting": "Africa • 201-202",
           "point": "War disruptions in the United States played a similar protective role.",
           "evidence": [
             "The Embargo Act of 1807 removed British textiles and spindles rose from 8,000 in 1807 to 130,000 by 1815. (p. 201-202)"
@@ -3490,8 +2934,7 @@ const BOOK_DATA = {
           "chapters": [
             12
           ],
-          "setting": "Africa",
-          "time": "1902",
+          "setting": "Africa • 1902",
           "point": "European industrial dependence and price shocks drove African cotton campaigns especially in Germany.",
           "evidence": [
             "Germany imported about 1 billion pounds of raw cotton in 1902 and industrialists formed the Colonial Economic Committee in 1896 to secure colonial supplies. (p. 437)"
@@ -3501,8 +2944,7 @@ const BOOK_DATA = {
           "chapters": [
             14
           ],
-          "setting": "Africa",
-          "time": "nineteenth century",
+          "setting": "Africa • nineteenth century",
           "point": "Coercion and violence remain central to capitalism s history and a non-Eurocentric view reframes the nineteenth and twentieth centuries.",
           "evidence": [
             "The chapter argues slavery, colonialism, and forced labor were central to capitalism and that the nineteenth century was a global age of barbarity for much of Asia, Africa, and the Americas. (p. 542)"
@@ -3522,8 +2964,7 @@ const BOOK_DATA = {
           "chapters": [
             1
           ],
-          "setting": "American South",
-          "time": "5000 BCE-1500s",
+          "setting": "American South • 5000 BCE-1500s",
           "point": "Workshops and putting-out networks expanded under merchant cash advances while production often remained rural and home-based.",
           "evidence": [
             "Dhaka weavers produced muslins for the Mughal court under tight supervision, and multi-loom workshops are reported in fifteenth-century Andhra Pradesh. (p. 40)"
@@ -3533,8 +2974,7 @@ const BOOK_DATA = {
           "chapters": [
             5
           ],
-          "setting": "American South",
-          "time": "1786",
+          "setting": "American South • 1786",
           "point": "Sea Island long-staple cotton introduced from Bahamas seed in 1786 matched British demand for fine yarns and quickly raised exports the Saint-Domingue revolt then.",
           "evidence": [
             "Sea Island cotton spread along the Georgia and South Carolina coast; South Carolina exports rose from under 10,000 pounds (1790) to 6.4 million (1800). (p. 135)"
@@ -3544,8 +2984,7 @@ const BOOK_DATA = {
           "chapters": [
             8
           ],
-          "setting": "American South",
-          "time": "253-254",
+          "setting": "American South • 253-254",
           "point": "The port's docks warehouses and transport links moved bales quickly to Lancashire while relying on dangerous low-paid dock labor.",
           "evidence": [
             "By 1832 Liverpool's docks and harbor walls stretched about 2.5 miles with quays and warehouses, and bales moved by canal and, after 1830, rail to Lancashire mills 20-50 miles away. (p. 253-254)"
@@ -3556,8 +2995,7 @@ const BOOK_DATA = {
             9,
             13
           ],
-          "setting": "American South",
-          "time": "1860s-1910s; 482-483",
+          "setting": "American South • 1860s-1910s; 482-483",
           "point": "The United States became the dominant supplier making European mills dependent on American cotton.",
           "evidence": [
             "On the eve of the Civil War, raw cotton was 61 percent of U.S. export value. (p. 304)",
@@ -3568,8 +3006,7 @@ const BOOK_DATA = {
           "chapters": [
             10
           ],
-          "setting": "American South",
-          "time": "1860s-1910s",
+          "setting": "American South • 1860s-1910s",
           "point": "Postwar observers treated emancipation as a labor shock that would slash U S output.",
           "evidence": [
             "Manchester manufacturer Edmund Ashworth and Liverpool broker Maurice Williams argued that free Black laborers would not match slave-era output for years. (p. 342)"
@@ -3579,8 +3016,7 @@ const BOOK_DATA = {
           "chapters": [
             11
           ],
-          "setting": "American South",
-          "time": "1865",
+          "setting": "American South • 1865",
           "point": "After 1865 cultivators in India Egypt the U S South Brazil and later West Africa and Central Asia were pulled into new cotton labor.",
           "evidence": [
             "The chapter lists India, Egypt, the American South, Brazil, and later West Africa and Central Asia as new cotton labor systems after abolition. (p. 385)"
@@ -3590,8 +3026,7 @@ const BOOK_DATA = {
           "chapters": [
             12
           ],
-          "setting": "American South",
-          "time": "1902",
+          "setting": "American South • 1902",
           "point": "Japanese officials and manufacturers organized experiments new seed strains gins and credit institutions to expand Korean cotton.",
           "evidence": [
             "After 1902 Wakamatsu tested cotton strains; the 1904 Association for the Cultivation of Cotton in Korea introduced American strains, built a gin, and coordinated expansion plans. (p. 420)"
@@ -3601,8 +3036,7 @@ const BOOK_DATA = {
           "chapters": [
             14
           ],
-          "setting": "American South",
-          "time": "526",
+          "setting": "American South • 526",
           "point": "The empire persisted even as its European core vanished with global cotton output and consumption reaching new highs.",
           "evidence": [
             "The chapter notes that while Europe and the United States became marginal, the world creates and consumes more cotton than ever before. (p. 526)"
@@ -3627,8 +3061,7 @@ const BOOK_DATA = {
             9,
             11
           ],
-          "setting": "Americas",
-          "time": "3250-2750; 1700s; 1791; 162-164; 1860s-1910s; 1865",
+          "setting": "Americas • 3250-2750; 1700s; 1791; 162-164; 1860s-1910s; 1865",
           "point": "This dependence was new because in 1791 most cotton for manufacturing still came from small farmers in Asia Africa and Latin America for local.",
           "evidence": [
             "Indus Valley sites show cotton textiles dated 3250-2750 BCE and cottonseeds at Mehrgarh dated to 5000 BCE. (p. 28)",
@@ -3643,8 +3076,7 @@ const BOOK_DATA = {
           "chapters": [
             3
           ],
-          "setting": "Americas",
-          "time": "1790",
+          "setting": "Americas • 1790",
           "point": "Productivity leaps cut spinning time and prices.",
           "evidence": [
             "Spinning 100 pounds took 50,000 hours in India but 1,000 hours in Britain by 1790, falling to 135 hours after 1825, and yarn prices declined accordingly. (p. 94-95)"
@@ -3654,8 +3086,7 @@ const BOOK_DATA = {
           "chapters": [
             6
           ],
-          "setting": "Americas",
-          "time": "1780s-1860s",
+          "setting": "Americas • 1780s-1860s",
           "point": "Britain preserved dominance by upgrading products and targeting weaker markets.",
           "evidence": [
             "More than half of British cotton output was exported, increasingly to Asia and Latin America where states could not resist British trade pressure. (p. 210)"
@@ -3665,8 +3096,7 @@ const BOOK_DATA = {
           "chapters": [
             8
           ],
-          "setting": "Americas",
-          "time": "1780s-1860s",
+          "setting": "Americas • 1780s-1860s",
           "point": "Chambers of commerce and kinship or diaspora ties institutionalized trust across ports.",
           "evidence": [
             "Merchant chambers formed across Europe, the Americas, and India to gather market information and lobby states. (p. 290)"
@@ -3676,8 +3106,7 @@ const BOOK_DATA = {
           "chapters": [
             10
           ],
-          "setting": "Americas",
-          "time": "374-375",
+          "setting": "Americas • 374-375",
           "point": "Peasant resistance and labor scarcity limited state projects.",
           "evidence": [
             "Dhawar peasants in western India resisted American cotton varieties in favor of local strains, and officials in Sudan, Iraq, and Burma reported reluctance to grow cotton. (p. 374-375)"
@@ -3687,8 +3116,7 @@ const BOOK_DATA = {
           "chapters": [
             12
           ],
-          "setting": "Americas",
-          "time": "1902",
+          "setting": "Americas • 1902",
           "point": "Japanese officials and manufacturers organized experiments new seed strains gins and credit institutions to expand Korean cotton.",
           "evidence": [
             "After 1902 Wakamatsu tested cotton strains; the 1904 Association for the Cultivation of Cotton in Korea introduced American strains, built a gin, and coordinated expansion plans. (p. 420)"
@@ -3698,8 +3126,7 @@ const BOOK_DATA = {
           "chapters": [
             13
           ],
-          "setting": "Americas",
-          "time": "1861",
+          "setting": "Americas • 1861",
           "point": "Ranchhodlal Chhotalal launched Ahmedabad's first steam-powered spinning in 1861 and quickly expanded Shapur Mill after it proved profitable.",
           "evidence": [
             "Chhotalal started steam-powered spinning on May 30, 1861 with machinery ordered from Britain and British mechanics. (p. 466)"
@@ -3709,8 +3136,7 @@ const BOOK_DATA = {
           "chapters": [
             14
           ],
-          "setting": "Americas",
-          "time": "nineteenth century",
+          "setting": "Americas • nineteenth century",
           "point": "Coercion and violence remain central to capitalism s history and a non-Eurocentric view reframes the nineteenth and twentieth centuries.",
           "evidence": [
             "The chapter argues slavery, colonialism, and forced labor were central to capitalism and that the nineteenth century was a global age of barbarity for much of Asia, Africa, and the Americas. (p. 542)"
@@ -3730,8 +3156,7 @@ const BOOK_DATA = {
           "chapters": [
             1
           ],
-          "setting": "Atlantic",
-          "time": "5000 BCE-1500s",
+          "setting": "Atlantic • 5000 BCE-1500s",
           "point": "Ottoman control of Mediterranean trade and rising Atlantic power weakened early European cotton centers and pushed a turn toward state-backed expansion.",
           "evidence": [
             "The chapter concludes that early European producers failed in part because they did not subjugate suppliers, and a new Atlantic-focused industry assumed state power was required. (p. 50)"
@@ -3742,8 +3167,7 @@ const BOOK_DATA = {
             6,
             9
           ],
-          "setting": "Atlantic",
-          "time": "201-202; 1860s-1910s",
+          "setting": "Atlantic • 201-202; 1860s-1910s",
           "point": "The United States became the dominant supplier making European mills dependent on American cotton.",
           "evidence": [
             "The Embargo Act of 1807 removed British textiles and spindles rose from 8,000 in 1807 to 130,000 by 1815. (p. 201-202)",
@@ -3754,8 +3178,7 @@ const BOOK_DATA = {
           "chapters": [
             7
           ],
-          "setting": "Atlantic",
-          "time": "780",
+          "setting": "Atlantic • 780",
           "point": "Holding workers in place was difficult even in early British mills.",
           "evidence": [
             "At one English mill, of 780 apprentices recruited after 1786, 119 ran away and 65 died. (p. 226)"
@@ -3765,8 +3188,7 @@ const BOOK_DATA = {
           "chapters": [
             8
           ],
-          "setting": "Atlantic",
-          "time": "253-254",
+          "setting": "Atlantic • 253-254",
           "point": "The port's docks warehouses and transport links moved bales quickly to Lancashire while relying on dangerous low-paid dock labor.",
           "evidence": [
             "By 1832 Liverpool's docks and harbor walls stretched about 2.5 miles with quays and warehouses, and bales moved by canal and, after 1830, rail to Lancashire mills 20-50 miles away. (p. 253-254)"
@@ -3776,8 +3198,7 @@ const BOOK_DATA = {
           "chapters": [
             11
           ],
-          "setting": "Atlantic",
-          "time": "1930s",
+          "setting": "Atlantic • 1930s",
           "point": "After 1865 cultivators in India Egypt the U S South Brazil and later West Africa and Central Asia were pulled into new cotton labor.",
           "evidence": [
             "Cotton and cotton goods remained the largest single trade in the Atlantic and Asia, and Toyo Menka Kaisha called cotton the prime commodity in the 1930s. (p. 385)"
@@ -3797,8 +3218,7 @@ const BOOK_DATA = {
           "chapters": [
             2
           ],
-          "setting": "Brazil",
-          "time": "1600",
+          "setting": "Brazil • 1600",
           "point": "Europe's cotton output was small and technically behind Asia Europeans depended on imported fiber and mostly wore linen or wool in 1600.",
           "evidence": [
             "The chapter states world production centered on India and China, and European output did not match Asian technology or quality. (p. 51-52)"
@@ -3808,8 +3228,7 @@ const BOOK_DATA = {
           "chapters": [
             3
           ],
-          "setting": "Brazil",
-          "time": "late 1400s-1850s",
+          "setting": "Brazil • late 1400s-1850s",
           "point": "The mill depended on global trade circuits for inputs and outlets.",
           "evidence": [
             "Liverpool merchants supplied cotton from places like Jamaica and Brazil. (p. 83-84)"
@@ -3819,8 +3238,7 @@ const BOOK_DATA = {
           "chapters": [
             4
           ],
-          "setting": "Brazil",
-          "time": "124-125",
+          "setting": "Brazil • 124-125",
           "point": "War capitalism proved portable Guyana and Brazil surged through slave imports and Brazil briefly became a major supplier to Britain with long-staple cotton suited.",
           "evidence": [
             "Brazilian cotton arrived in England in 1781; Portugal encouraged planting in Pernambuco and Maranhão, and observers remarked that \"white cotton turned Maranhão black.\" (p. 124-125)"
@@ -3830,8 +3248,7 @@ const BOOK_DATA = {
           "chapters": [
             5
           ],
-          "setting": "Brazil",
-          "time": "1785",
+          "setting": "Brazil • 1785",
           "point": "Liverpool officials impounded U S cotton in 1785 because they assumed cotton came from the West Indies Brazil the Ottoman Empire or India underscoring.",
           "evidence": [
             "The chapter notes Europeans associated cotton with the West Indies, Brazil, the Ottoman Empire, and India, not North America. (p. 132)"
@@ -3841,8 +3258,7 @@ const BOOK_DATA = {
           "chapters": [
             8
           ],
-          "setting": "Brazil",
-          "time": "253-254",
+          "setting": "Brazil • 253-254",
           "point": "The port's docks warehouses and transport links moved bales quickly to Lancashire while relying on dangerous low-paid dock labor.",
           "evidence": [
             "By 1832 Liverpool's docks and harbor walls stretched about 2.5 miles with quays and warehouses, and bales moved by canal and, after 1830, rail to Lancashire mills 20-50 miles away. (p. 253-254)"
@@ -3852,8 +3268,7 @@ const BOOK_DATA = {
           "chapters": [
             9
           ],
-          "setting": "Brazil",
-          "time": "1860",
+          "setting": "Brazil • 1860",
           "point": "Brazilian smallholders shifted from subsistence to export cotton under wartime prices and British credit.",
           "evidence": [
             "Brazilian cotton exports more than doubled between 1860 and 1865. (p. 320)"
@@ -3863,8 +3278,7 @@ const BOOK_DATA = {
           "chapters": [
             10
           ],
-          "setting": "Brazil",
-          "time": "376-377",
+          "setting": "Brazil • 376-377",
           "point": "Sharecropping tenant farming and wage labor spread under creditor control and coercion.",
           "evidence": [
             "Sharecropping and tenant systems dominated in Berar, Egypt, Brazil, Peru, and the Cukurova, with credit costs often 12-24 percent and sometimes as high as 150 percent. (p. 376-377)"
@@ -3874,8 +3288,7 @@ const BOOK_DATA = {
           "chapters": [
             11
           ],
-          "setting": "Brazil",
-          "time": "1873",
+          "setting": "Brazil • 1873",
           "point": "Global price declines and volatility after 1873 deepened debt and insecurity.",
           "evidence": [
             "Surat cotton prices in Liverpool fell 38 percent between 1873 and 1876, squeezing indebted growers in India, Egypt, Brazil, and the United States. (p. 412)"
@@ -3885,8 +3298,7 @@ const BOOK_DATA = {
           "chapters": [
             13
           ],
-          "setting": "Brazil",
-          "time": "1900s-1930s (into mid-century)",
+          "setting": "Brazil • 1900s-1930s (into mid-century)",
           "point": "European capital also sought low-wage peripheries through foreign investment (1900s-1930s (into mid-century)).",
           "evidence": [
             "British firms invested in India, the Ottoman Empire, Portugal, Russia, Egypt, and China; French capital moved into Mexican mills; and British, Belgian, and Dutch entrepreneurs opened mills in Brazil. (p. 484)"
@@ -3909,8 +3321,7 @@ const BOOK_DATA = {
             8,
             9
           ],
-          "setting": "Britain/England",
-          "time": "1589; 1700s; 1800; 304-305",
+          "setting": "Britain/England • 1589; 1700s; 1800; 304-305",
           "point": "Ottoman control of Mediterranean trade and rising Atlantic power weakened early European cotton centers and pushed a turn toward state-backed expansion.",
           "evidence": [
             "Ottoman control of Mediterranean trade and restrictions on raw cotton exports weakened Italian and German industries; British privileges in Izmir in 1589 signaled shifting power. (p. 50)",
@@ -3923,8 +3334,7 @@ const BOOK_DATA = {
           "chapters": [
             3
           ],
-          "setting": "Britain/England",
-          "time": "1790",
+          "setting": "Britain/England • 1790",
           "point": "Productivity leaps cut spinning time and prices.",
           "evidence": [
             "Spinning 100 pounds took 50,000 hours in India but 1,000 hours in Britain by 1790, falling to 135 hours after 1825, and yarn prices declined accordingly. (p. 94-95)"
@@ -3934,8 +3344,7 @@ const BOOK_DATA = {
           "chapters": [
             4
           ],
-          "setting": "Britain/England",
-          "time": "1857",
+          "setting": "Britain/England • 1857",
           "point": "In 1857 John T Danson argued that cotton supply outside the East Indies depended on slave labor and most British cotton that year came.",
           "evidence": [
             "Danson linked cotton supply to slave labor and noted that 68 percent of British cotton in 1857 came from the United States. (p. 113)"
@@ -3945,8 +3354,7 @@ const BOOK_DATA = {
           "chapters": [
             5
           ],
-          "setting": "Britain/England",
-          "time": "1786",
+          "setting": "Britain/England • 1786",
           "point": "Sea Island long-staple cotton introduced from Bahamas seed in 1786 matched British demand for fine yarns and quickly raised exports the Saint-Domingue revolt then.",
           "evidence": [
             "Sea Island cotton spread along the Georgia and South Carolina coast; South Carolina exports rose from under 10,000 pounds (1790) to 6.4 million (1800). (p. 135)"
@@ -3956,8 +3364,7 @@ const BOOK_DATA = {
           "chapters": [
             6
           ],
-          "setting": "Britain/England",
-          "time": "201-202",
+          "setting": "Britain/England • 201-202",
           "point": "War disruptions in the United States played a similar protective role.",
           "evidence": [
             "The Embargo Act of 1807 removed British textiles and spindles rose from 8,000 in 1807 to 130,000 by 1815. (p. 201-202)"
@@ -3967,8 +3374,7 @@ const BOOK_DATA = {
           "chapters": [
             7
           ],
-          "setting": "Britain/England",
-          "time": "780",
+          "setting": "Britain/England • 780",
           "point": "Holding workers in place was difficult even in early British mills.",
           "evidence": [
             "At one English mill, of 780 apprentices recruited after 1786, 119 ran away and 65 died. (p. 226)"
@@ -3978,8 +3384,7 @@ const BOOK_DATA = {
           "chapters": [
             10
           ],
-          "setting": "Britain/England",
-          "time": "1860s-1910s",
+          "setting": "Britain/England • 1860s-1910s",
           "point": "Postwar observers treated emancipation as a labor shock that would slash U S output.",
           "evidence": [
             "Manchester manufacturer Edmund Ashworth and Liverpool broker Maurice Williams argued that free Black laborers would not match slave-era output for years. (p. 342)"
@@ -3989,8 +3394,7 @@ const BOOK_DATA = {
           "chapters": [
             11
           ],
-          "setting": "Britain/England",
-          "time": "1843",
+          "setting": "Britain/England • 1843",
           "point": "Asia especially India became the primary target market for metropolitan textiles.",
           "evidence": [
             "India was British manufacturers’ most important customer by 1843, and by 1900 about 78 percent of British cotton output was exported, much to India. (p. 399)"
@@ -4000,8 +3404,7 @@ const BOOK_DATA = {
           "chapters": [
             12
           ],
-          "setting": "Britain/England",
-          "time": "431-432",
+          "setting": "Britain/England • 431-432",
           "point": "Imperial control reinforced older cotton zones like India and Egypt through land retention railways and irrigation.",
           "evidence": [
             "Britain refused to return Berar in 1876 to keep cotton expansion under colonial control, and after Egypt became a British colony in 1882 cotton acreage rose from 259,513 (1861) to 1,767,678 fifty years later. (p. 431-432)"
@@ -4011,8 +3414,7 @@ const BOOK_DATA = {
           "chapters": [
             13
           ],
-          "setting": "Britain/England",
-          "time": "1861",
+          "setting": "Britain/England • 1861",
           "point": "Ranchhodlal Chhotalal launched Ahmedabad's first steam-powered spinning in 1861 and quickly expanded Shapur Mill after it proved profitable.",
           "evidence": [
             "Chhotalal started steam-powered spinning on May 30, 1861 with machinery ordered from Britain and British mechanics. (p. 466)"
@@ -4022,8 +3424,7 @@ const BOOK_DATA = {
           "chapters": [
             14
           ],
-          "setting": "Britain/England",
-          "time": "1963",
+          "setting": "Britain/England • 1963",
           "point": "Europe s cotton command ended visibly in 1963 with the Liverpool Cotton Association s liquidation and in statistics that showed Britain s industry collapsing.",
           "evidence": [
             "Liverpool’s Cotton Exchange was sold and the association auctioned its furnishings in 1963, symbolizing the end of European rule. (p. 525)"
@@ -4043,8 +3444,7 @@ const BOOK_DATA = {
           "chapters": [
             10
           ],
-          "setting": "Central Asia",
-          "time": "1860s-1910s",
+          "setting": "Central Asia • 1860s-1910s",
           "point": "Postwar observers treated emancipation as a labor shock that would slash U S output.",
           "evidence": [
             "Manchester manufacturer Edmund Ashworth and Liverpool broker Maurice Williams argued that free Black laborers would not match slave-era output for years. (p. 342)"
@@ -4054,8 +3454,7 @@ const BOOK_DATA = {
           "chapters": [
             11
           ],
-          "setting": "Central Asia",
-          "time": "1860s-1910s",
+          "setting": "Central Asia • 1860s-1910s",
           "point": "Despite resistance imperial expansion kept pushing cotton integration into new regions.",
           "evidence": [
             "After the Civil War, manufacturers and imperial states extended the cotton countryside into Korea, Central Asia, and Africa. (p. 418)"
@@ -4065,8 +3464,7 @@ const BOOK_DATA = {
           "chapters": [
             12
           ],
-          "setting": "Central Asia",
-          "time": "1865",
+          "setting": "Central Asia • 1865",
           "point": "Russian manufacturers and the state pursued Central Asia to reduce dependence on American cotton using conquest and lobbying to deepen control.",
           "evidence": [
             "After Civil War price spikes, Russia captured Tashkent and the khanate of Khokand in 1865, and industrialists petitioned for deeper intervention in 1869. (p. 426)"
@@ -4086,8 +3484,7 @@ const BOOK_DATA = {
           "chapters": [
             1
           ],
-          "setting": "China",
-          "time": "1590s",
+          "setting": "China • 1590s",
           "point": "Workshops and putting-out networks expanded under merchant cash advances while production often remained rural and home-based.",
           "evidence": [
             "Urban loom houses in Ming China employed many thousands; Timbuktu had twenty-six workshops with fifty or more workers each in the 1590s. (p. 40)"
@@ -4097,8 +3494,7 @@ const BOOK_DATA = {
           "chapters": [
             2
           ],
-          "setting": "China",
-          "time": "1600",
+          "setting": "China • 1600",
           "point": "Europe's cotton output was small and technically behind Asia Europeans depended on imported fiber and mostly wore linen or wool in 1600.",
           "evidence": [
             "The chapter states world production centered on India and China, and European output did not match Asian technology or quality. (p. 51-52)"
@@ -4108,8 +3504,7 @@ const BOOK_DATA = {
           "chapters": [
             5
           ],
-          "setting": "China",
-          "time": "138-139",
+          "setting": "China • 138-139",
           "point": "U S production and exports surged making the United States the key supplier for British mills and reshaping world cotton markets.",
           "evidence": [
             "By 1802 the United States was the most important supplier to Britain, and by 1857 it produced about as much cotton as China. (p. 138-139)"
@@ -4120,8 +3515,7 @@ const BOOK_DATA = {
             9,
             12
           ],
-          "setting": "China",
-          "time": "1860s-1910s; 1902",
+          "setting": "China • 1860s-1910s; 1902",
           "point": "Japanese officials and manufacturers organized experiments new seed strains gins and credit institutions to expand Korean cotton.",
           "evidence": [
             "Rouen's Chamber of Commerce demanded new production fields, and Senones manufacturers appealed to Napoleon III to bring Chinese workers to Algeria. (p. 312)",
@@ -4132,8 +3526,7 @@ const BOOK_DATA = {
           "chapters": [
             10
           ],
-          "setting": "China",
-          "time": "1860s-1910s",
+          "setting": "China • 1860s-1910s",
           "point": "Postwar observers treated emancipation as a labor shock that would slash U S output.",
           "evidence": [
             "Manchester manufacturer Edmund Ashworth and Liverpool broker Maurice Williams argued that free Black laborers would not match slave-era output for years. (p. 342)"
@@ -4143,8 +3536,7 @@ const BOOK_DATA = {
           "chapters": [
             11
           ],
-          "setting": "China",
-          "time": "1838",
+          "setting": "China • 1838",
           "point": "Free-trade impositions and treaty openings let imports dismantle local textile regimes across the Ottoman Empire China Africa and Mexico.",
           "evidence": [
             "The 1838 imposition of free trade on the Ottoman Empire and the 1842 Treaty of Nanking opened markets to European cloth with devastating effects on local spinners and weavers. (p. 400)"
@@ -4154,8 +3546,7 @@ const BOOK_DATA = {
           "chapters": [
             13
           ],
-          "setting": "China",
-          "time": "1860",
+          "setting": "China • 1860",
           "point": "Britain's mechanical spinning dominance collapsed after 1860 with exports and capacity shrinking sharply after World War I.",
           "evidence": [
             "Exports to India, the Dutch East Indies, and China fell 46, 55, and 59 percent after World War I; between 1919 and 1939 Britain lost 43 percent of looms, 41 percent of mule spindles, and 45 percent of cotton workers. (p. 468)"
@@ -4165,8 +3556,7 @@ const BOOK_DATA = {
           "chapters": [
             14
           ],
-          "setting": "China",
-          "time": "526-527",
+          "setting": "China • 526-527",
           "point": "Today s clothing supply chain spans multiple continents with cotton grown spun and sewn in different Global South locations for Northern consumers.",
           "evidence": [
             "The chapter describes a typical shirt made from cotton grown in China, India, Uzbekistan, or Senegal, spun in China, Turkey, or Pakistan, and sewn in Bangladesh or Vietnam. (p. 526-527)"
@@ -4186,8 +3576,7 @@ const BOOK_DATA = {
           "chapters": [
             9
           ],
-          "setting": "Egypt",
-          "time": "1860s-1910s",
+          "setting": "Egypt • 1860s-1910s",
           "point": "Cotton became a state security issue driving official debates and colonial planning.",
           "evidence": [
             "The French Ministry of Colonies commissioned reports on cotton prospects in places like Guyana, Siam, Algeria, Egypt, and Senegal, signaling a new imperial turn. (p. 313)"
@@ -4198,8 +3587,7 @@ const BOOK_DATA = {
             10,
             12
           ],
-          "setting": "Egypt",
-          "time": "1863; 431-432",
+          "setting": "Egypt • 1863; 431-432",
           "point": "Imperial control reinforced older cotton zones like India and Egypt through land retention railways and irrigation.",
           "evidence": [
             "By redefining property rights, Egypt shifted land into large estates; estate owners controlled one-seventh of cultivated land in 1863 and about half by 1901. (p. 368)",
@@ -4211,8 +3599,7 @@ const BOOK_DATA = {
             11,
             13
           ],
-          "setting": "Egypt",
-          "time": "1906; 1900s-1930s (into mid-century)",
+          "setting": "Egypt • 1906; 1900s-1930s (into mid-century)",
           "point": "Similar penetration unfolded in Egypt Anatolia Mexico and the U S South where foreign capital and interior merchants displaced older factor systems.",
           "evidence": [
             "Foreign banks entered Çukurova (German Cotton Society 1906, Deutsche Orient Bank 1909, Deutsche Bank irrigation 1910) and foreign investors owned plantations in La Laguna and Mississippi. (p. 390)",
@@ -4233,8 +3620,7 @@ const BOOK_DATA = {
           "chapters": [
             1
           ],
-          "setting": "Europe",
-          "time": "5000 BCE-1500s",
+          "setting": "Europe • 5000 BCE-1500s",
           "point": "Ottoman control of Mediterranean trade and rising Atlantic power weakened early European cotton centers and pushed a turn toward state-backed expansion.",
           "evidence": [
             "The chapter concludes that early European producers failed in part because they did not subjugate suppliers, and a new Atlantic-focused industry assumed state power was required. (p. 50)"
@@ -4244,8 +3630,7 @@ const BOOK_DATA = {
           "chapters": [
             2
           ],
-          "setting": "Europe",
-          "time": "1600",
+          "setting": "Europe • 1600",
           "point": "Europe's cotton output was small and technically behind Asia Europeans depended on imported fiber and mostly wore linen or wool in 1600.",
           "evidence": [
             "The chapter states world production centered on India and China, and European output did not match Asian technology or quality. (p. 51-52)"
@@ -4255,8 +3640,7 @@ const BOOK_DATA = {
           "chapters": [
             3
           ],
-          "setting": "Europe",
-          "time": "late 1400s-1850s",
+          "setting": "Europe • late 1400s-1850s",
           "point": "The mill depended on global trade circuits for inputs and outlets.",
           "evidence": [
             "Greg relied on Indian finishing knowledge and sold cloth into Africa, Dominica, and continental Europe. (p. 84)"
@@ -4271,8 +3655,7 @@ const BOOK_DATA = {
             12,
             14
           ],
-          "setting": "Europe",
-          "time": "late 1400s-1850s; 155-156; 1860s-1910s; 361-362; 1902; 526",
+          "setting": "Europe • late 1400s-1850s; 155-156; 1860s-1910s; 361-362; 1902; 526",
           "point": "Attempts to redirect African and Indian cotton to European mills faltered Sierra Leone experiments failed and the East India Company resisted large raw-cotton exports.",
           "evidence": [
             "Cotton merchant William Rathbone and spinner Richard Arkwright tried to increase African supply via the Sierra Leone Company, but the effort failed. (p. 117)",
@@ -4287,8 +3670,7 @@ const BOOK_DATA = {
           "chapters": [
             6
           ],
-          "setting": "Europe",
-          "time": "1815",
+          "setting": "Europe • 1815",
           "point": "After 1815 tariffs became permanent tools of industrial policy.",
           "evidence": [
             "The United States (1816) and European states from Prussia to Italy imposed cotton tariffs, and France banned cotton goods imports in 1842. (p. 202)"
@@ -4298,8 +3680,7 @@ const BOOK_DATA = {
           "chapters": [
             7
           ],
-          "setting": "Europe",
-          "time": "1820s",
+          "setting": "Europe • 1820s",
           "point": "Women dominated the cotton workforce and were paid substantially less than men.",
           "evidence": [
             "Women made up 89 percent of Dover's workers in the mid-1820s and up to 70 percent in Catalonia, making cotton the most female-dominated industry in Europe and the United States. (p. 242)"
@@ -4309,8 +3690,7 @@ const BOOK_DATA = {
           "chapters": [
             8
           ],
-          "setting": "Europe",
-          "time": "1780s-1860s",
+          "setting": "Europe • 1780s-1860s",
           "point": "Chambers of commerce and kinship or diaspora ties institutionalized trust across ports.",
           "evidence": [
             "Merchant chambers formed across Europe, the Americas, and India to gather market information and lobby states. (p. 290)"
@@ -4320,8 +3700,7 @@ const BOOK_DATA = {
           "chapters": [
             11
           ],
-          "setting": "Europe",
-          "time": "1870s",
+          "setting": "Europe • 1870s",
           "point": "European merchants captured interior markets like Berar by sending agents to purchase cotton directly replacing local dealers with colonial-state backing.",
           "evidence": [
             "By the 1870s Khamgaon hosted European merchants who used Indian agents to buy, clean, and press cotton for Bombay, replacing local dealers. (p. 386)"
@@ -4331,8 +3710,7 @@ const BOOK_DATA = {
           "chapters": [
             13
           ],
-          "setting": "Europe",
-          "time": "1900s-1930s (into mid-century)",
+          "setting": "Europe • 1900s-1930s (into mid-century)",
           "point": "European capital also sought low-wage peripheries through foreign investment (1900s-1930s (into mid-century)).",
           "evidence": [
             "British firms invested in India, the Ottoman Empire, Portugal, Russia, Egypt, and China; French capital moved into Mexican mills; and British, Belgian, and Dutch entrepreneurs opened mills in Brazil. (p. 484)"
@@ -4352,8 +3730,7 @@ const BOOK_DATA = {
           "chapters": [
             1
           ],
-          "setting": "India",
-          "time": "nineteenth century",
+          "setting": "India • nineteenth century",
           "point": "The Indian subcontinent became the longest-running center of cotton manufacturing with detailed processing techniques and globally recognized cloth quality.",
           "evidence": [
             "The chapter states that the Indian subcontinent led global cotton manufacturing from the earliest period until well into the nineteenth century. (p. 28)"
@@ -4363,8 +3740,7 @@ const BOOK_DATA = {
           "chapters": [
             2
           ],
-          "setting": "India",
-          "time": "1600",
+          "setting": "India • 1600",
           "point": "Europe's cotton output was small and technically behind Asia Europeans depended on imported fiber and mostly wore linen or wool in 1600.",
           "evidence": [
             "The chapter states world production centered on India and China, and European output did not match Asian technology or quality. (p. 51-52)"
@@ -4374,8 +3750,7 @@ const BOOK_DATA = {
           "chapters": [
             3
           ],
-          "setting": "India",
-          "time": "1790",
+          "setting": "India • 1790",
           "point": "Productivity leaps cut spinning time and prices.",
           "evidence": [
             "Spinning 100 pounds took 50,000 hours in India but 1,000 hours in Britain by 1790, falling to 135 hours after 1825, and yarn prices declined accordingly. (p. 94-95)"
@@ -4388,8 +3763,7 @@ const BOOK_DATA = {
             10,
             12
           ],
-          "setting": "India",
-          "time": "117-118; 1864; 370-371; 431-432",
+          "setting": "India • 117-118; 1864; 370-371; 431-432",
           "point": "Attempts to redirect African and Indian cotton to European mills faltered Sierra Leone experiments failed and the East India Company resisted large raw-cotton exports.",
           "evidence": [
             "In 1793 the East India Company warned that raw-cotton exports would harm Indian manufacturing and revenues, and the chapter adds that transport costs, short fiber, labor constraints, and Company priorities kept Indian exports insufficient. (p. 117-118)",
@@ -4403,8 +3777,7 @@ const BOOK_DATA = {
             5,
             11
           ],
-          "setting": "India",
-          "time": "160-161; 1843",
+          "setting": "India • 160-161; 1843",
           "point": "India became the main alternative target backed by state and merchant campaigns to reshape production.",
           "evidence": [
             "Manchester bodies petitioned the East India Company and Parliament in the 1830s-1840s to expand Indian cotton. (p. 160-161)",
@@ -4415,8 +3788,7 @@ const BOOK_DATA = {
           "chapters": [
             6
           ],
-          "setting": "India",
-          "time": "1815",
+          "setting": "India • 1815",
           "point": "After 1815 tariffs became permanent tools of industrial policy.",
           "evidence": [
             "Industrialists organized for protection, including the Mulhouse committee (1846) and Zollverein-era tariff coalitions, while U.S. duties on coarse Indian goods ran 60-84 percent until 1846. (p. 203)"
@@ -4426,8 +3798,7 @@ const BOOK_DATA = {
           "chapters": [
             8
           ],
-          "setting": "India",
-          "time": "258-259",
+          "setting": "India • 258-259",
           "point": "A single commodity chain could connect a Mississippi planter to Manchester spinners and then to Indian merchants and weavers showing how merchants built webs.",
           "evidence": [
             "The text traces a chain from Mississippi planters to New Orleans exporters, Liverpool shippers, Manchester manufacturers, Calcutta merchants, and Indian weavers and retailers. (p. 258-259)"
@@ -4437,8 +3808,7 @@ const BOOK_DATA = {
           "chapters": [
             13
           ],
-          "setting": "India",
-          "time": "1860",
+          "setting": "India • 1860",
           "point": "Britain's mechanical spinning dominance collapsed after 1860 with exports and capacity shrinking sharply after World War I.",
           "evidence": [
             "Exports to India, the Dutch East Indies, and China fell 46, 55, and 59 percent after World War I; between 1919 and 1939 Britain lost 43 percent of looms, 41 percent of mule spindles, and 45 percent of cotton workers. (p. 468)"
@@ -4448,8 +3818,7 @@ const BOOK_DATA = {
           "chapters": [
             14
           ],
-          "setting": "India",
-          "time": "526-527",
+          "setting": "India • 526-527",
           "point": "Today s clothing supply chain spans multiple continents with cotton grown spun and sewn in different Global South locations for Northern consumers.",
           "evidence": [
             "The chapter describes a typical shirt made from cotton grown in China, India, Uzbekistan, or Senegal, spun in China, Turkey, or Pakistan, and sewn in Bangladesh or Vietnam. (p. 526-527)"
@@ -4469,8 +3838,7 @@ const BOOK_DATA = {
           "chapters": [
             3
           ],
-          "setting": "Lancashire",
-          "time": "1790",
+          "setting": "Lancashire • 1790",
           "point": "Productivity leaps cut spinning time and prices.",
           "evidence": [
             "Spinning 100 pounds took 50,000 hours in India but 1,000 hours in Britain by 1790, falling to 135 hours after 1825, and yarn prices declined accordingly. (p. 94-95)"
@@ -4480,8 +3848,7 @@ const BOOK_DATA = {
           "chapters": [
             4
           ],
-          "setting": "Lancashire",
-          "time": "1857",
+          "setting": "Lancashire • 1857",
           "point": "In 1857 John T Danson argued that cotton supply outside the East Indies depended on slave labor and most British cotton that year came.",
           "evidence": [
             "Danson linked cotton supply to slave labor and noted that 68 percent of British cotton in 1857 came from the United States. (p. 113)"
@@ -4491,8 +3858,7 @@ const BOOK_DATA = {
           "chapters": [
             5
           ],
-          "setting": "Lancashire",
-          "time": "1786",
+          "setting": "Lancashire • 1786",
           "point": "Sea Island long-staple cotton introduced from Bahamas seed in 1786 matched British demand for fine yarns and quickly raised exports the Saint-Domingue revolt then.",
           "evidence": [
             "Sea Island cotton spread along the Georgia and South Carolina coast; South Carolina exports rose from under 10,000 pounds (1790) to 6.4 million (1800). (p. 135)"
@@ -4502,8 +3868,7 @@ const BOOK_DATA = {
           "chapters": [
             6
           ],
-          "setting": "Lancashire",
-          "time": "201-202",
+          "setting": "Lancashire • 201-202",
           "point": "War disruptions in the United States played a similar protective role.",
           "evidence": [
             "The Embargo Act of 1807 removed British textiles and spindles rose from 8,000 in 1807 to 130,000 by 1815. (p. 201-202)"
@@ -4513,8 +3878,7 @@ const BOOK_DATA = {
           "chapters": [
             8
           ],
-          "setting": "Lancashire",
-          "time": "253-254",
+          "setting": "Lancashire • 253-254",
           "point": "The port's docks warehouses and transport links moved bales quickly to Lancashire while relying on dangerous low-paid dock labor.",
           "evidence": [
             "By 1832 Liverpool's docks and harbor walls stretched about 2.5 miles with quays and warehouses, and bales moved by canal and, after 1830, rail to Lancashire mills 20-50 miles away. (p. 253-254)"
@@ -4524,8 +3888,7 @@ const BOOK_DATA = {
           "chapters": [
             14
           ],
-          "setting": "Lancashire",
-          "time": "540-541",
+          "setting": "Lancashire • 540-541",
           "point": "The empire of cotton s core innovation is linking labor across space and its geography keeps shifting as capital hunts for cheaper labor.",
           "evidence": [
             "Lancashire and other old nodes were marginalized while China became the core, and capitalists continually recombine labor and land across space. (p. 540-541)"
@@ -4545,8 +3908,7 @@ const BOOK_DATA = {
           "chapters": [
             3
           ],
-          "setting": "Liverpool",
-          "time": "late 1400s-1850s",
+          "setting": "Liverpool • late 1400s-1850s",
           "point": "The mill depended on global trade circuits for inputs and outlets.",
           "evidence": [
             "Liverpool merchants supplied cotton from places like Jamaica and Brazil. (p. 83-84)"
@@ -4556,8 +3918,7 @@ const BOOK_DATA = {
           "chapters": [
             4
           ],
-          "setting": "Liverpool",
-          "time": "1770",
+          "setting": "Liverpool • 1770",
           "point": "War capitalism proved portable Guyana and Brazil surged through slave imports and Brazil briefly became a major supplier to Britain with long-staple cotton suited.",
           "evidence": [
             "Liverpool merchant and slave trader John Tarleton wrote that the slave trade, plantation exports, and British shipping were \"mutually blended & connected\" and calculated his fortune had tripled between 1770 and 1800. (p. 125)"
@@ -4567,8 +3928,7 @@ const BOOK_DATA = {
           "chapters": [
             5
           ],
-          "setting": "Liverpool",
-          "time": "136-137",
+          "setting": "Liverpool • 136-137",
           "point": "Whitney's 1793 gin solved upland cotton's seed-removal bottleneck multiplying ginning productivity and triggering a cotton rush into the interior by 1795.",
           "evidence": [
             "After 1793 upland cotton spread into the interior, and significant U.S. cotton reached Liverpool by 1795. (p. 136-137)"
@@ -4578,8 +3938,7 @@ const BOOK_DATA = {
           "chapters": [
             8
           ],
-          "setting": "Liverpool",
-          "time": "253-254",
+          "setting": "Liverpool • 253-254",
           "point": "The port's docks warehouses and transport links moved bales quickly to Lancashire while relying on dangerous low-paid dock labor.",
           "evidence": [
             "By 1832 Liverpool's docks and harbor walls stretched about 2.5 miles with quays and warehouses, and bales moved by canal and, after 1830, rail to Lancashire mills 20-50 miles away. (p. 253-254)"
@@ -4589,8 +3948,7 @@ const BOOK_DATA = {
           "chapters": [
             9
           ],
-          "setting": "Liverpool",
-          "time": "1863",
+          "setting": "Liverpool • 1863",
           "point": "Merchants and brokers profited from volatility and formalized futures trading.",
           "evidence": [
             "Liverpool brokers standardized forward contracts in 1863 and time bargains appeared in Bombay. (p. 311)"
@@ -4600,8 +3958,7 @@ const BOOK_DATA = {
           "chapters": [
             10
           ],
-          "setting": "Liverpool",
-          "time": "1860s-1910s",
+          "setting": "Liverpool • 1860s-1910s",
           "point": "Postwar observers treated emancipation as a labor shock that would slash U S output.",
           "evidence": [
             "Manchester manufacturer Edmund Ashworth and Liverpool broker Maurice Williams argued that free Black laborers would not match slave-era output for years. (p. 342)"
@@ -4611,8 +3968,7 @@ const BOOK_DATA = {
           "chapters": [
             14
           ],
-          "setting": "Liverpool",
-          "time": "1963",
+          "setting": "Liverpool • 1963",
           "point": "Europe s cotton command ended visibly in 1963 with the Liverpool Cotton Association s liquidation and in statistics that showed Britain s industry collapsing.",
           "evidence": [
             "Liverpool’s Cotton Exchange was sold and the association auctioned its furnishings in 1963, symbolizing the end of European rule. (p. 525)"
@@ -4632,8 +3988,7 @@ const BOOK_DATA = {
           "chapters": [
             3
           ],
-          "setting": "Manchester",
-          "time": "1790",
+          "setting": "Manchester • 1790",
           "point": "Productivity leaps cut spinning time and prices.",
           "evidence": [
             "Spinning 100 pounds took 50,000 hours in India but 1,000 hours in Britain by 1790, falling to 135 hours after 1825, and yarn prices declined accordingly. (p. 94-95)"
@@ -4643,8 +3998,7 @@ const BOOK_DATA = {
           "chapters": [
             5
           ],
-          "setting": "Manchester",
-          "time": "1786",
+          "setting": "Manchester • 1786",
           "point": "Sea Island long-staple cotton introduced from Bahamas seed in 1786 matched British demand for fine yarns and quickly raised exports the Saint-Domingue revolt then.",
           "evidence": [
             "The fiber length of Sea Island cotton made it desirable for Manchester's fine yarns. (p. 135)"
@@ -4654,8 +4008,7 @@ const BOOK_DATA = {
           "chapters": [
             7
           ],
-          "setting": "Manchester",
-          "time": "780",
+          "setting": "Manchester • 780",
           "point": "Holding workers in place was difficult even in early British mills.",
           "evidence": [
             "At one English mill, of 780 apprentices recruited after 1786, 119 ran away and 65 died. (p. 226)"
@@ -4665,8 +4018,7 @@ const BOOK_DATA = {
           "chapters": [
             9
           ],
-          "setting": "Manchester",
-          "time": "1860s-1910s",
+          "setting": "Manchester • 1860s-1910s",
           "point": "Capitalists concluded labor not land was the constraint and advocated new systems to discipline workers.",
           "evidence": [
             "The Manchester Cotton Supply Association argued that land and climate were abundant globally, but labor was the first requisite. (p. 336)"
@@ -4676,8 +4028,7 @@ const BOOK_DATA = {
           "chapters": [
             10
           ],
-          "setting": "Manchester",
-          "time": "1860s-1910s",
+          "setting": "Manchester • 1860s-1910s",
           "point": "Postwar observers treated emancipation as a labor shock that would slash U S output.",
           "evidence": [
             "Manchester manufacturer Edmund Ashworth and Liverpool broker Maurice Williams argued that free Black laborers would not match slave-era output for years. (p. 342)"
@@ -4687,8 +4038,7 @@ const BOOK_DATA = {
           "chapters": [
             11
           ],
-          "setting": "Manchester",
-          "time": "391-392",
+          "setting": "Manchester • 391-392",
           "point": "Similar penetration unfolded in Egypt Anatolia Mexico and the U S South where foreign capital and interior merchants displaced older factor systems.",
           "evidence": [
             "In the postwar U.S. South, merchants moved inland to places like Dallas, built gins and presses, used telegraph prices, and displaced factors; by the early 1870s Manchester spinners bought directly in Memphis. (p. 391-392)"
@@ -4698,8 +4048,7 @@ const BOOK_DATA = {
           "chapters": [
             14
           ],
-          "setting": "Manchester",
-          "time": "1960s",
+          "setting": "Manchester • 1960s",
           "point": "Europe s cotton command ended visibly in 1963 with the Liverpool Cotton Association s liquidation and in statistics that showed Britain s industry collapsing.",
           "evidence": [
             "By the late 1960s the U.K. held only 2.8 percent of global cotton cloth exports and employment had fallen from over 600,000 to about 30,000 workers; in 1958 the Manchester Chamber of Commerce called for protection. (p. 526)"
@@ -4719,8 +4068,7 @@ const BOOK_DATA = {
           "chapters": [
             6
           ],
-          "setting": "New York",
-          "time": "1835",
+          "setting": "New York • 1835",
           "point": "Entrepreneurs built mechanized mills even in remote locations showing the pull of cotton profits.",
           "evidence": [
             "In 1835 the Aurora Yucateca mill in Valladolid imported machinery and engineers from New York and, with 117 local workers and Mayan families supplying fuel and cotton, produced 395,000 yards of cloth before 1844. (p. 175)"
@@ -4730,8 +4078,7 @@ const BOOK_DATA = {
           "chapters": [
             8
           ],
-          "setting": "New York",
-          "time": "275-276",
+          "setting": "New York • 275-276",
           "point": "American firms such as Brown Brothers built Liverpool-New York networks that offered advances shipping insurance and commission sales at scale.",
           "evidence": [
             "Brown Brothers created Liverpool and New York houses, arranged shipping and insurance, and handled 178,000 bales in 1838. (p. 275-276)"
@@ -4741,8 +4088,7 @@ const BOOK_DATA = {
           "chapters": [
             9
           ],
-          "setting": "New York",
-          "time": "1860s-1910s",
+          "setting": "New York • 1860s-1910s",
           "point": "The United States became the dominant supplier making European mills dependent on American cotton.",
           "evidence": [
             "On the eve of the Civil War, raw cotton was 61 percent of U.S. export value. (p. 304)"
@@ -4752,8 +4098,7 @@ const BOOK_DATA = {
           "chapters": [
             14
           ],
-          "setting": "New York",
-          "time": "526",
+          "setting": "New York • 526",
           "point": "The empire persisted even as its European core vanished with global cotton output and consumption reaching new highs.",
           "evidence": [
             "The chapter notes that while Europe and the United States became marginal, the world creates and consumes more cotton than ever before. (p. 526)"
@@ -4773,8 +4118,7 @@ const BOOK_DATA = {
           "chapters": [
             5
           ],
-          "setting": "North America",
-          "time": "1785",
+          "setting": "North America • 1785",
           "point": "Liverpool officials impounded U S cotton in 1785 because they assumed cotton came from the West Indies Brazil the Ottoman Empire or India underscoring.",
           "evidence": [
             "The chapter notes Europeans associated cotton with the West Indies, Brazil, the Ottoman Empire, and India, not North America. (p. 132)"
@@ -4784,8 +4128,7 @@ const BOOK_DATA = {
           "chapters": [
             9
           ],
-          "setting": "North America",
-          "time": "1860s-1910s",
+          "setting": "North America • 1860s-1910s",
           "point": "The United States became the dominant supplier making European mills dependent on American cotton.",
           "evidence": [
             "On the eve of the Civil War, raw cotton was 61 percent of U.S. export value. (p. 304)"
@@ -4795,8 +4138,7 @@ const BOOK_DATA = {
           "chapters": [
             10
           ],
-          "setting": "North America",
-          "time": "1860s-1910s",
+          "setting": "North America • 1860s-1910s",
           "point": "Postwar observers treated emancipation as a labor shock that would slash U S output.",
           "evidence": [
             "Manchester manufacturer Edmund Ashworth and Liverpool broker Maurice Williams argued that free Black laborers would not match slave-era output for years. (p. 342)"
@@ -4806,8 +4148,7 @@ const BOOK_DATA = {
           "chapters": [
             11
           ],
-          "setting": "North America",
-          "time": "1843",
+          "setting": "North America • 1843",
           "point": "Asia especially India became the primary target market for metropolitan textiles.",
           "evidence": [
             "India was British manufacturers’ most important customer by 1843, and by 1900 about 78 percent of British cotton output was exported, much to India. (p. 399)"
@@ -4817,8 +4158,7 @@ const BOOK_DATA = {
           "chapters": [
             12
           ],
-          "setting": "North America",
-          "time": "1902",
+          "setting": "North America • 1902",
           "point": "Japanese officials and manufacturers organized experiments new seed strains gins and credit institutions to expand Korean cotton.",
           "evidence": [
             "After 1902 Wakamatsu tested cotton strains; the 1904 Association for the Cultivation of Cotton in Korea introduced American strains, built a gin, and coordinated expansion plans. (p. 420)"
@@ -4828,8 +4168,7 @@ const BOOK_DATA = {
           "chapters": [
             13
           ],
-          "setting": "North America",
-          "time": "1861",
+          "setting": "North America • 1861",
           "point": "Ranchhodlal Chhotalal launched Ahmedabad's first steam-powered spinning in 1861 and quickly expanded Shapur Mill after it proved profitable.",
           "evidence": [
             "Chhotalal started steam-powered spinning on May 30, 1861 with machinery ordered from Britain and British mechanics. (p. 466)"
@@ -4849,8 +4188,7 @@ const BOOK_DATA = {
           "chapters": [
             2
           ],
-          "setting": "United States",
-          "time": "1600",
+          "setting": "United States • 1600",
           "point": "Europe's cotton output was small and technically behind Asia Europeans depended on imported fiber and mostly wore linen or wool in 1600.",
           "evidence": [
             "The chapter states world production centered on India and China, and European output did not match Asian technology or quality. (p. 51-52)"
@@ -4860,8 +4198,7 @@ const BOOK_DATA = {
           "chapters": [
             3
           ],
-          "setting": "United States",
-          "time": "1790",
+          "setting": "United States • 1790",
           "point": "Productivity leaps cut spinning time and prices.",
           "evidence": [
             "Spinning 100 pounds took 50,000 hours in India but 1,000 hours in Britain by 1790, falling to 135 hours after 1825, and yarn prices declined accordingly. (p. 94-95)"
@@ -4871,8 +4208,7 @@ const BOOK_DATA = {
           "chapters": [
             4
           ],
-          "setting": "United States",
-          "time": "1857",
+          "setting": "United States • 1857",
           "point": "In 1857 John T Danson argued that cotton supply outside the East Indies depended on slave labor and most British cotton that year came.",
           "evidence": [
             "Danson linked cotton supply to slave labor and noted that 68 percent of British cotton in 1857 came from the United States. (p. 113)"
@@ -4882,8 +4218,7 @@ const BOOK_DATA = {
           "chapters": [
             5
           ],
-          "setting": "United States",
-          "time": "1786",
+          "setting": "United States • 1786",
           "point": "Sea Island long-staple cotton introduced from Bahamas seed in 1786 matched British demand for fine yarns and quickly raised exports the Saint-Domingue revolt then.",
           "evidence": [
             "The 1791 Saint-Domingue revolt removed a major supplier and pushed planters into the United States, increasing incentives and expertise. (p. 136)"
@@ -4895,8 +4230,7 @@ const BOOK_DATA = {
             9,
             11
           ],
-          "setting": "United States",
-          "time": "201-202; 1860s-1910s; 397-398",
+          "setting": "United States • 201-202; 1860s-1910s; 397-398",
           "point": "The United States became the dominant supplier making European mills dependent on American cotton.",
           "evidence": [
             "The Embargo Act of 1807 removed British textiles and spindles rose from 8,000 in 1807 to 130,000 by 1815. (p. 201-202)",
@@ -4908,8 +4242,7 @@ const BOOK_DATA = {
           "chapters": [
             8
           ],
-          "setting": "United States",
-          "time": "301-302",
+          "setting": "United States • 301-302",
           "point": "As state capacity expanded merchant dominance waned and political coalitions shifted toward industrial capital.",
           "evidence": [
             "In the United States, industrialists aligned with a stronger national government while slaveholders sought control of the state, a split that erupted in 1861. (p. 301-302)"
@@ -4919,8 +4252,7 @@ const BOOK_DATA = {
           "chapters": [
             10
           ],
-          "setting": "United States",
-          "time": "1860s-1910s",
+          "setting": "United States • 1860s-1910s",
           "point": "Postwar observers treated emancipation as a labor shock that would slash U S output.",
           "evidence": [
             "Manchester manufacturer Edmund Ashworth and Liverpool broker Maurice Williams argued that free Black laborers would not match slave-era output for years. (p. 342)"
@@ -4930,8 +4262,7 @@ const BOOK_DATA = {
           "chapters": [
             12
           ],
-          "setting": "United States",
-          "time": "1902",
+          "setting": "United States • 1902",
           "point": "Japanese officials and manufacturers organized experiments new seed strains gins and credit institutions to expand Korean cotton.",
           "evidence": [
             "After 1902 Wakamatsu tested cotton strains; the 1904 Association for the Cultivation of Cotton in Korea introduced American strains, built a gin, and coordinated expansion plans. (p. 420)"
@@ -4941,8 +4272,7 @@ const BOOK_DATA = {
           "chapters": [
             14
           ],
-          "setting": "United States",
-          "time": "526",
+          "setting": "United States • 526",
           "point": "The empire persisted even as its European core vanished with global cotton output and consumption reaching new highs.",
           "evidence": [
             "The chapter notes that while Europe and the United States became marginal, the world creates and consumes more cotton than ever before. (p. 526)"
@@ -4962,8 +4292,7 @@ const BOOK_DATA = {
           "chapters": [
             1
           ],
-          "setting": "West Africa",
-          "time": "eighteenth century",
+          "setting": "West Africa • eighteenth century",
           "point": "Premodern cultivation and manufacturing stayed tied to mixed farming households with gendered labor and slow productivity growth.",
           "evidence": [
             "Examples from Veracruz, Yucatan, West Africa, Gujarat, Central Asia, and Korea show cotton interplanted with food crops; the chapter says no significant monoculture appeared before the eighteenth century. (p. 35)"
@@ -4973,8 +4302,7 @@ const BOOK_DATA = {
           "chapters": [
             11
           ],
-          "setting": "West Africa",
-          "time": "1865",
+          "setting": "West Africa • 1865",
           "point": "After 1865 cultivators in India Egypt the U S South Brazil and later West Africa and Central Asia were pulled into new cotton labor.",
           "evidence": [
             "The chapter lists India, Egypt, the American South, Brazil, and later West Africa and Central Asia as new cotton labor systems after abolition. (p. 385)"
@@ -4984,8 +4312,7 @@ const BOOK_DATA = {
           "chapters": [
             12
           ],
-          "setting": "West Africa",
-          "time": "1902",
+          "setting": "West Africa • 1902",
           "point": "Japanese officials and manufacturers organized experiments new seed strains gins and credit institutions to expand Korean cotton.",
           "evidence": [
             "After 1902 Wakamatsu tested cotton strains; the 1904 Association for the Cultivation of Cotton in Korea introduced American strains, built a gin, and coordinated expansion plans. (p. 420)"

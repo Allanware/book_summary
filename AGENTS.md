@@ -11,12 +11,12 @@ This spec is synced to the current implementation in `index.html`, `script.js`, 
 - `styles.css`: layout and interaction styling (including keyword group collapse behavior and section toggles).
 
 ### 1.2 Data files
-- English book data: `book-data.js`
-- Current second-language book data (Chinese in this repo): `book-data.zh.js`
-- English chapter modules: `chapters/chapter-XX.js`
-- Current second-language chapter modules (Chinese in this repo): `chapters/chapter-XX.zh.js`
-- English chapter index: `chapters/index.js`
-- Current second-language chapter index (Chinese in this repo): `chapters/index.zh.js`
+- Primary (L1) book data: `book-data.js`
+- Secondary (L2) book data (e.g. Chinese: `book-data.zh.js`)
+- Primary (L1) chapter modules: `chapters/chapter-XX.js`
+- Secondary (L2) chapter modules (e.g. Chinese: `chapters/chapter-XX.zh.js`)
+- Primary (L1) chapter index: `chapters/index.js`
+- Secondary (L2) chapter index (e.g. Chinese: `chapters/index.zh.js`)
 
 ## 2 Operating principles
 
@@ -27,7 +27,7 @@ This spec is synced to the current implementation in `index.html`, `script.js`, 
 4. Concise, concrete argument writing.
 
 ### 2.2 Cross-book portability rule (hard requirement)
-- Do not hardcode book-specific theme lists, actor lists, place lists, or chapter-name lists in workflow logic.
+- Do not hardcode book-specific keyword lists, actor lists, place lists, or chapter-name lists in workflow logic.
 - Use corpus-derived discovery first (frequency, spread across chapters, context diversity), then human review/merge.
 - If any script contains lexical heuristics, keep them language-level and generic (for example, tokenization, stopwords, suffix patterns), not title/book dependent.
 - Manual reviewer decisions must be captured in data outputs (`book-data*.js`), not buried as hidden constants in scripts.
@@ -39,10 +39,11 @@ This spec is synced to the current implementation in `index.html`, `script.js`, 
 
 ### 2.4 Language-scope decision (required)
 - Before running the pipeline, explicitly ask the user which language mode they want:
-  - `English only`
-  - `English + one second language` (user-selected; not required to be Chinese)
+  - `Primary Language (L1) only`
+  - `Primary (L1) + Secondary (L2)` (where L2 is user-selected)
+- If the book's original language is not English, treat the original language as Primary (L1).
 - Do not assume bilingual output by default for a new book.
-- For this current repo, the implemented second language is Chinese (`*.zh.*` files); for a different second language in a new project, use the same schema/parity rules with that language's file set.
+- For example, if the L2 is Chinese, use `*.zh.*` files; for a different L2, use the same schema/parity rules with that language's ISO code.
 - When producing translations, use the latest ChatGPT/Claude model for the translation pass.
 - When writing chapter summaries, use a model with high reasoning capability.
 
@@ -56,18 +57,18 @@ This spec is synced to the current implementation in `index.html`, `script.js`, 
 
 Use this pipeline for any new book.
 
-### Stage -1: Confirm language mode with the user
+### Stage -1: Confirm language
 Input:
-- User preference.
+- User preference for Language Mode.
 
 Output:
 - One of:
-  - `English only`
-  - `English + L2` (where L2 is user-selected)
+  - `L1 only`
+  - `L1 + L2` (where L2 is user-selected)
 
 Rules:
-- If `English only`, complete all stages in English data files only.
-- If `English + L2`, run each content stage in both languages and enforce parity checks in Stage F.
+- If `L1 only`, complete all stages in Primary language data files only.
+- If `L1 + L2`, run each content stage in both languages and enforce parity checks in Stage F.
 
 ### Stage 0: One-time PDF to chapter-text extraction
 Input:
@@ -101,20 +102,20 @@ Input:
 - Full chapter text.
 
 Output:
-- `chapters/chapter-XX.js` (and `.zh.js` if bilingual) using:
+- `chapters/chapter-XX.js` (and `.zh.js` if the L2 language is Chinese) using:
   - `thesis`
   - `flowSections[]` with `title`, `note`, `steps[]`, `evidence[]`
 
 Requirements:
 - Cover early/middle/late pages of each chapter.
 - Keep steps non-duplicative.
-- Group subarguments semantically (mechanism/actor/process/theme), not by page adjacency.
+- Group subarguments semantically (mechanism/actor/process/context), not by page adjacency.
 - It is valid and expected for one subargument to cite evidence from non-contiguous pages across the chapter.
 - Do not structure `flowSections` as a linear page walk; section boundaries should reflect argument logic.
-- Use concrete actor + mechanism + setting + time + outcome language.
+- Use concrete actor + mechanism + setting + time/context + outcome language.
 - Keep evidence page-cited (`(p. X)`).
 - Add thesis superscript anchors to key sections.
-- The thesis must be a high-level conceptual summary of the chapter's argument arc (3–5 sentences, ~100–200 words); it must not repeat subarguments or their evidence verbatim.
+- The thesis must be a high-level conceptual summary of the chapter's argument arc; it must not repeat subarguments or their evidence verbatim.
 - The thesis must NOT contain specific numbers, percentages, dates, dollar amounts, population counts, or verbatim evidence quotes—all quantitative detail and direct quotes belong in flowSection steps and evidence.
 - Every flowSection must be referenced by at least one superscript anchor in the thesis; distribute anchors after the clause most closely associated with each section's argument.
 
@@ -136,15 +137,29 @@ Input:
 - Candidate list + chapter mindmaps.
 
 Output:
-- `BOOK_DATA.themes[]` entries in `book-data.js` (and mirrored in `book-data.zh.js` when bilingual).
+- `BOOK_DATA.keywords[]` entries in `book-data.js` (and mirrored in the L2 data file when bilingual, e.g. `book-data.zh.js` if the L2 language is Chinese).
 
-Required schema per theme:
-- `id`, `label`, `description`, `definition`, `group`, `aliases[]`, `applications[]`
-- `applications[]` item: `{ chapter, setting, time, point, evidence[] }`
+#### Keyword card fields
 
-Rules:
-- Every chapter referenced by a theme must appear in at least one application.
-- Each application must be a distinct context.
+- `id` (string): URL-safe identifier. Lowercase, hyphenated (e.g., `"colonial-rule"`).
+- `label` (string): Display name. Human-readable, may include spaces (e.g., `"colonial rule"`).
+- `description` (string): One-line summary capturing the keyword's essence.
+- `definition` (string): 1-2 sentences explaining how the book uses this term; include superscript citations to applications.
+- `group` (string): Category. One of: `"mechanisms"`, `"actors"`, `"concepts"`, or other domain-specific groups.
+- `aliases[]` (array): Alternative names the author uses. Empty array `[]` if none.
+- `applications[]` (array): Chapter appearances. See application fields below.
+
+#### Application fields (each `applications[]` item)
+
+- `chapters[]` (array): Chapter numbers where this application appears (e.g., `[5, 9]`).
+- `setting` (string): Combined context, separated by ` • `. Use relevant context (place, time, etc.).
+- `point` (string): One sentence summarizing what this application demonstrates about the keyword.
+- `evidence[]` (array): Direct textual evidence with page citations (e.g., `"Quote text here. (p. 170-171)"`).
+
+#### Rules
+
+- Every chapter referenced by a keyword must appear in at least one application.
+- Each application must be a distinct context; merge applications sharing the same setting.
 - Definition should use clause-local superscript citations to application anchors.
 
 ### Stage E: Build synthesis flow
@@ -156,32 +171,25 @@ Output:
 - `BOOK_DATA.flow[]` with `thesisLinks[]`
 
 Rules:
-- Flow steps must be chronological and non-overlapping.
+- Flow steps must follow the book's primary structure and be non-overlapping.
 - Every chapter must appear in at least one flow step.
 - Every chapter listed in a step must appear in that step's `thesisLinks[]`.
 
 ### Stage F: Bilingual parity requirements (if enabled)
 - Keep IDs stable across languages:
   - chapter section anchors: `chapter-{id}-section-{n}`
-  - theme application anchors: `theme-{themeId}-application-{n}`
-- Keep theme IDs and flow IDs aligned across `book-data.js` and the selected second-language book data file (Chinese in this repo: `book-data.zh.js`).
-- Keep chapter index ordering aligned across `chapters/index.js` and the selected second-language chapter index (Chinese in this repo: `chapters/index.zh.js`).
+  - keyword application anchors: `keyword-{keywordId}-application-{n}`
+- Keep keyword IDs and flow IDs aligned across `book-data.js` (L1) and the selected L2 book data file (e.g. `book-data.zh.js`).
+- Keep chapter index ordering aligned across `chapters/index.js` (L1) and the selected L2 chapter index (e.g. `chapters/index.zh.js`).
 
 ## 4 Chapter renderer compatibility
 
-### Current renderer fallback
-
-`script.js` renders chapter body in this order:
-1. `flowSections` path (`thesis` + collapsible sections)
-2. legacy `flow` path
-3. legacy `argument` + `evidence` path
-
-Preferred schema is `thesis + flowSections[]`; preserve legacy compatibility unless explicitly migrating.
+`script.js` renders chapter body using the `thesis + flowSections[]` schema.
 
 ## 5 Keyword renderer compatibility
 
-### 5.1 Theme schema (`BOOK_DATA.themes[]`)
-Each theme must include:
+### 5.1 Keyword schema (`BOOK_DATA.keywords[]`)
+Each keyword must include:
 - `id`
 - `label`
 - `description`
@@ -191,7 +199,7 @@ Each theme must include:
 - `applications[]` with:
   - `chapter` (integer)
   - `setting`
-  - `time`
+  - `time_context`
   - `point`
   - `evidence[]`
 
@@ -212,31 +220,32 @@ Each theme must include:
 
 ### 5.3 Citation behavior
 - Preferred: embed citation anchors directly inside `definition` at the exact clause being evidenced.
-- Renderer fallback exists in `buildThemeDefinition`, but do not rely on fallback when authoring high-quality definitions.
+- Renderer fallback exists in `buildKeywordDefinition`, but do not rely on fallback when authoring high-quality definitions.
 
 ## 6 Validation gates
 
 ### 6.1 Content/data gates
 - Full chapter coverage for each chapter summary.
-- Theme applications cover all chapter references for each theme.
+- Keyword applications cover all chapter references for each keyword.
 - Flow coverage includes all chapters.
 - Anchor links resolve 1:1 to existing sections/applications.
 - Chapter subarguments are semantically grouped; evidence can span distant pages and is not constrained to page-order grouping.
 
 ### 6.2 Structural gates
 Run before finalizing:
-1. Confirm chapter extraction artifacts exist and are reusable: `tmp/chapters/chap01.txt` ... `tmp/chapters/chapNN.txt`
-2. `python3 scripts/keyword_candidates.py --tmp-dir tmp/chapters --min-chapters 3 --out keyword_candidates.md`
-3. `python3 scripts/build_keyword_cards.py --keyword-candidates keyword_candidates.md --chapters-dir tmp/chapters --chapter-key-lines tmp/chapter_key_lines.txt --book-data book-data.js`
-4. `python3 scripts/validate_keyword_cards.py --book-data book-data.js --keyword-candidates keyword_candidates.md`
-5. `python3 scripts/check_agents_sync.py --agents AGENTS.md --index index.html --script script.js --styles styles.css`
-6. JS quote-escape gate (required for bilingual updates):
-   - Parse check (English and Chinese): `node --input-type=module -e "await import('./chapters/index.js'); await import('./chapters/index.zh.js'); await import('./book-data.js'); await import('./book-data.zh.js'); console.log('ok')"`
-   - Fix pass if parse fails: for `.zh.js` files run `for f in chapters/chapter-*.zh.js book-data.zh.js; do python3 scripts/fix_zh_quotes.py "$f"; done`; for English `chapters/chapter-*.js` or `book-data.js`, fix unescaped double quotes (and apostrophes in single-quoted strings) in the reported file.
-   - Re-run parse check and require success before finalizing.
-
-For script-only sanity checks:
-- `python3 -m py_compile scripts/keyword_candidates.py scripts/build_keyword_cards.py scripts/validate_keyword_cards.py scripts/check_agents_sync.py scripts/fix_zh_quotes.py`
+1. Confirm chapter extraction artifacts exist and are reusable (e.g., standard chapter text files).
+2. Validate keyword candidates:
+   - Ensure candidates appear in a minimum number of chapters (e.g., 3+).
+   - Filter for meaningful distribution and context.
+3. Validate keyword cards against book data:
+   - Ensure all keywords found in candidates are represented or deliberately excluded.
+   - Verify citation integrity and schema compliance.
+4. Verify synchronization between documentation and implementation:
+   - Ensure `AGENTS.md` rules match the current codebase behavior.
+   - Check that `index.html`, `script.js`, and `styles.css` create the UI described in specs.
+5. Quote-escape validation:
+   - Ensure all string content in data files is properly escaped for valid JavaScript parsing in all target languages.
+   - Verify that data modules import correctly in a Node.js environment without syntax errors.
 
 ## 7 AGENTS maintenance rule
 
@@ -245,6 +254,6 @@ When website structure changes, immediately update this file to match:
 - renderer field usage
 - fallback behavior
 - UI interactions (toggles, grouping, language behavior)
-- validation commands and assumptions
+- validation logic and assumptions
 
-Do not leave AGENTS describing behavior that no longer exists in `script.js`.
+Do not leave AGENTS describing behavior that no longer exists in the runtime code.

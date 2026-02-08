@@ -216,5 +216,4 @@ export default {
       ]
     }
   ],
-  themes: ["labor-regimes“, ”state-power"]
 };

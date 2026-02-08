@@ -169,5 +169,4 @@ export default {
       ]
     }
   ],
-  themes: ["labor-regimes", "market-infrastructure"]
 };

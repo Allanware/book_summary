@@ -7,14 +7,14 @@ const BOOK_DATA_BY_LANG = {
   en: {
     title: bookDataEn.title,
     coreArgument: bookDataEn.coreArgument,
-    themes: bookDataEn.themes,
+    keywords: bookDataEn.keywords,
     chapters: chaptersEn,
     flow: bookDataEn.flow
   },
   zh: {
     title: bookDataZh.title,
     coreArgument: bookDataZh.coreArgument,
-    themes: bookDataZh.themes,
+    keywords: bookDataZh.keywords,
     chapters: chaptersZh,
     flow: bookDataZh.flow
   }
@@ -86,7 +86,7 @@ const UI_TEXT = {
   }
 };
 
-const THEME_GROUPS = [
+const KEYWORD_GROUPS = [
   { id: "mechanisms", labels: { en: "Mechanisms", zh: "机制" } },
   {
     id: "institutions-actors",
@@ -117,11 +117,11 @@ function saveLanguagePreference(language) {
 
 const state = {
   language: loadLanguagePreference(),
-  activeTheme: null,
+  activeKeyword: null,
   activeFlow: null
 };
 
-let chapterThemeIndex = new Map();
+let chapterKeywordIndex = new Map();
 let controlsBound = false;
 let languageBound = false;
 
@@ -208,16 +208,14 @@ function joinWithAnd(items) {
   return `${items.slice(0, -1).join(", ")}, and ${items[items.length - 1]}`;
 }
 
-function buildThemeCitation(themeId, index) {
-  return `<sup><a href="#theme-${themeId}-application-${index + 1}">${index + 1}</a></sup>`;
+function buildKeywordCitation(keywordId, index) {
+  return `<sup><a href="#keyword-${keywordId}-application-${index + 1}">${index + 1}</a></sup>`;
 }
 
-function buildDefinitionApplicationClause(themeId, application, index) {
+function buildDefinitionApplicationClause(keywordId, application, index) {
   const compactPoint = compactApplicationPoint(application.point).replace(/[.!?。！？]$/, "");
-  const context = [normalizeText(application.setting), normalizeText(application.time)]
-    .filter(Boolean)
-    .join(state.language === "zh" ? "，" : ", ");
-  const citation = buildThemeCitation(themeId, index);
+  const context = normalizeText(application.setting);
+  const citation = buildKeywordCitation(keywordId, index);
 
   if (compactPoint && context) {
     if (state.language === "zh") {
@@ -236,20 +234,20 @@ function buildDefinitionApplicationClause(themeId, application, index) {
     : `documented application${citation}`;
 }
 
-function buildThemeDefinition(theme, applications) {
-  const baseDefinition = String(theme.definition || "").trim();
+function buildKeywordDefinition(keyword, applications) {
+  const baseDefinition = String(keyword.definition || "").trim();
   if (!baseDefinition) {
     return "";
   }
 
-  const hasEmbeddedLinks = /href=["']#theme-[^"']+-application-\d+["']/.test(baseDefinition);
+  const hasEmbeddedLinks = /href=["']#keyword-[^"']+-application-\d+["']/.test(baseDefinition);
   if (hasEmbeddedLinks || !applications.length) {
     return baseDefinition;
   }
 
   const clauses = applications
     .map((application, index) =>
-      buildDefinitionApplicationClause(theme.id, application, index)
+      buildDefinitionApplicationClause(keyword.id, application, index)
     )
     .filter(Boolean);
 
@@ -302,11 +300,11 @@ function bindSectionToggles(container) {
   });
 }
 
-function buildChapterThemeIndex(bookData) {
+function buildChapterKeywordIndex(bookData) {
   const index = new Map();
-  bookData.themes.forEach((theme) => {
-    const applications = Array.isArray(theme.applications)
-      ? theme.applications
+  bookData.keywords.forEach((keyword) => {
+    const applications = Array.isArray(keyword.applications)
+      ? keyword.applications
       : [];
     applications.forEach((application) => {
       const chapters = Array.isArray(application.chapters)
@@ -319,7 +317,7 @@ function buildChapterThemeIndex(bookData) {
         if (!index.has(chapterId)) {
           index.set(chapterId, new Set());
         }
-        index.get(chapterId).add(theme.id);
+        index.get(chapterId).add(keyword.id);
       });
     });
   });
@@ -372,10 +370,8 @@ function renderChapters() {
     const node = document.createElement("details");
     node.className = "node chapter";
     node.dataset.id = chapter.id;
-    const baseThemes = Array.isArray(chapter.themes) ? chapter.themes : [];
-    const extraThemes = chapterThemeIndex.get(chapter.id) || new Set();
-    const allThemes = new Set([...baseThemes, ...extraThemes]);
-    node.dataset.themes = Array.from(allThemes).join(" ");
+    const chapterKeywords = chapterKeywordIndex.get(chapter.id) || new Set();
+    node.dataset.keywords = Array.from(chapterKeywords).join(" ");
 
     const nodeSummary = document.createElement("summary");
     nodeSummary.innerHTML = `<span class="chip">${chapterChipText(chapter.id)}</span><span>${chapter.title}</span>`;
@@ -389,8 +385,8 @@ function renderChapters() {
         <h4>${ui.argumentFlowHeading}</h4>
         <div class="flow-sections">
           ${chapter.flowSections
-            .map(
-              (section, sectionIndex) => `
+          .map(
+            (section, sectionIndex) => `
             <div class="flow-section is-collapsed" id="chapter-${chapter.id}-section-${sectionIndex + 1}">
               <div class="flow-section-header">
                 <div class="flow-section-title">${combineSectionTitle(section)}</div>
@@ -398,8 +394,8 @@ function renderChapters() {
               </div>
               <ol class="flow-list">
                 ${section.steps
-                  .map(
-                    (step) => `
+                .map(
+                  (step) => `
                   <li>
                     <div class="flow-point">${step.point}</div>
                     <ul class="evidence-list">
@@ -407,13 +403,13 @@ function renderChapters() {
                     </ul>
                   </li>
                 `
-                  )
-                  .join("")}
+                )
+                .join("")}
               </ol>
             </div>
           `
-            )
-            .join("")}
+          )
+          .join("")}
         </div>
         <p class="muted">${ui.pagesLabel}: ${chapter.pages}</p>
       `;
@@ -423,8 +419,8 @@ function renderChapters() {
         <h4>${ui.argumentFlowHeading}</h4>
         <ol class="flow-list">
           ${chapter.flow
-            .map(
-              (step) => `
+          .map(
+            (step) => `
             <li>
               <div class="flow-point">${step.point}</div>
               <ul class="evidence-list">
@@ -432,8 +428,8 @@ function renderChapters() {
               </ul>
             </li>
           `
-            )
-            .join("")}
+          )
+          .join("")}
         </ol>
         <p class="muted">${ui.pagesLabel}: ${chapter.pages}</p>
       `;
@@ -494,7 +490,7 @@ document.addEventListener("click", (event) => {
   const sectionId = href.slice(1);
   if (
     /^chapter-\d+-section-\d+$/.test(sectionId) ||
-    /^theme-[a-z0-9-]+-application-\d+$/.test(sectionId)
+    /^keyword-[a-z0-9-]+-application-\d+$/.test(sectionId)
   ) {
     expandSectionById(sectionId);
   }
@@ -504,20 +500,20 @@ function renderThreads() {
   const bookData = getBookData();
   const ui = getUI();
   threadGrid.innerHTML = "";
-  const groupedThemes = new Map(
-    THEME_GROUPS.map((group) => [group.id, []])
+  const groupedKeywords = new Map(
+    KEYWORD_GROUPS.map((group) => [group.id, []])
   );
 
-  bookData.themes.forEach((theme) => {
-    if (!groupedThemes.has(theme.group)) {
-      groupedThemes.set(theme.group, []);
+  bookData.keywords.forEach((keyword) => {
+    if (!groupedKeywords.has(keyword.group)) {
+      groupedKeywords.set(keyword.group, []);
     }
-    groupedThemes.get(theme.group).push(theme);
+    groupedKeywords.get(keyword.group).push(keyword);
   });
 
-  THEME_GROUPS.forEach((group) => {
-    const themes = groupedThemes.get(group.id) || [];
-    if (!themes.length) {
+  KEYWORD_GROUPS.forEach((group) => {
+    const keywords = groupedKeywords.get(group.id) || [];
+    if (!keywords.length) {
       return;
     }
 
@@ -541,16 +537,16 @@ function renderThreads() {
     const list = document.createElement("div");
     list.className = "thread-group-list";
 
-    themes.forEach((theme) => {
+    keywords.forEach((keyword) => {
       const button = document.createElement("button");
       button.type = "button";
       button.className = "thread";
-      button.dataset.theme = theme.id;
+      button.dataset.keyword = keyword.id;
       button.innerHTML = `
-        <div class="label">${theme.label}</div>
-        <div class="desc">${theme.description}</div>
+        <div class="label">${keyword.label}</div>
+        <div class="desc">${keyword.description}</div>
       `;
-      button.addEventListener("click", () => toggleTheme(theme.id));
+      button.addEventListener("click", () => toggleKeyword(keyword.id));
       list.appendChild(button);
     });
 
@@ -577,15 +573,15 @@ function renderFlow() {
     node.className = "flow-node";
     node.dataset.id = step.id;
     node.dataset.chapters = step.chapters.join(",");
-    const baseThemes = Array.isArray(step.themes) ? step.themes : [];
-    const flowThemes = new Set(baseThemes);
+    const baseKeywords = Array.isArray(step.keywords) ? step.keywords : [];
+    const flowKeywords = new Set(baseKeywords);
     step.chapters.forEach((chapterId) => {
-      const extraThemes = chapterThemeIndex.get(chapterId);
-      if (extraThemes) {
-        extraThemes.forEach((themeId) => flowThemes.add(themeId));
+      const extraKeywords = chapterKeywordIndex.get(chapterId);
+      if (extraKeywords) {
+        extraKeywords.forEach((keywordId) => flowKeywords.add(keywordId));
       }
     });
-    node.dataset.themes = Array.from(flowThemes).join(" ");
+    node.dataset.keywords = Array.from(flowKeywords).join(" ");
     node.innerHTML = `
       <div>${step.title}</div>
       <div class="muted" style="font-size:12px; margin-top:6px;">${step.mechanism}</div>
@@ -627,13 +623,13 @@ function updateFlowDetail(step) {
   `;
 }
 
-function updateThemeDetail(theme) {
+function updateKeywordDetail(keyword) {
   const ui = getUI();
-  const detail = document.getElementById("themeDetail");
+  const detail = document.getElementById("keywordDetail");
   if (!detail) {
     return;
   }
-  if (!theme) {
+  if (!keyword) {
     detail.classList.remove("is-visible");
     detail.innerHTML = `
       <p class="muted">${ui.selectKeywordHint}</p>
@@ -641,28 +637,29 @@ function updateThemeDetail(theme) {
     return;
   }
 
-  const applications = Array.isArray(theme.applications) ? theme.applications : [];
-  const definition = buildThemeDefinition(theme, applications);
+  const applications = Array.isArray(keyword.applications) ? keyword.applications : [];
+  const definition = buildKeywordDefinition(keyword, applications);
 
   const applicationBlocks = applications.length
     ? applications
-        .map((application, index) => {
-          const appId = `theme-${theme.id}-application-${index + 1}`;
-          const chapters = Array.isArray(application.chapters)
-            ? application.chapters
-            : [];
-          const chapterLabel = chapters.length
-            ? state.language === "zh"
-              ? chapters.map((c) => `第${c}章`).join("、")
-              : chapters.length === 1
-                ? `Chapter ${chapters[0]}`
-                : `Chapters ${chapters.join(", ")}`
-            : ui.applicationLabel;
-          const context = [normalizeText(application.setting), normalizeText(application.time)]
-            .filter(Boolean)
-            .join(" • ");
-          const summary = summarizeApplication(application);
-          return `
+      .map((application, index) => {
+        const appId = `keyword-${keyword.id}-application-${index + 1}`;
+        const chapters = Array.isArray(application.chapters)
+          ? application.chapters
+          : [];
+        const chapterLabel = chapters.length
+          ? state.language === "zh"
+            ? chapters.map((c) => `第${c}章`).join("、")
+            : chapters.length === 1
+              ? `Chapter ${chapters[0]}`
+              : `Chapters ${chapters.join(", ")}`
+          : ui.applicationLabel;
+        const context = normalizeText(application.setting);
+        const evidenceItems = Array.isArray(application.evidence) && application.evidence.length
+          ? application.evidence.map((e) => `<li>${e}</li>`).join("")
+          : "";
+        const point = compactApplicationPoint(application.point);
+        return `
             <div class="flow-section is-collapsed" id="${appId}">
               <div class="flow-section-header">
                 <div class="flow-section-title">${chapterLabel}</div>
@@ -671,19 +668,20 @@ function updateThemeDetail(theme) {
               ${context ? `<div class="flow-section-note">${context}</div>` : ""}
               <ol class="flow-list">
                 <li>
-                  <div class="flow-point">${summary}</div>
+                  <div class="flow-point">${point}</div>
+                  ${evidenceItems ? `<ul class="evidence-list">${evidenceItems}</ul>` : ""}
                 </li>
               </ol>
             </div>
           `;
-        })
-        .join("")
+      })
+      .join("")
     : `<p class="muted">${ui.noApplications}</p>`;
 
   detail.classList.add("is-visible");
   detail.innerHTML = `
     <div class="node-body">
-      <p class="theme-definition">${definition}</p>
+      <p class="keyword-definition">${definition}</p>
       <h4>${ui.applicationsHeading}</h4>
       <div class="flow-sections">
         ${applicationBlocks}
@@ -709,60 +707,60 @@ function setActiveFlow(flowId) {
   updateHighlights();
 }
 
-function syncActiveThemeButtons() {
+function syncActiveKeywordButtons() {
   document.querySelectorAll(".thread").forEach((thread) => {
-    thread.classList.toggle("active", thread.dataset.theme === state.activeTheme);
+    thread.classList.toggle("active", thread.dataset.keyword === state.activeKeyword);
   });
 
-  threadGrid.classList.toggle("has-active-theme", Boolean(state.activeTheme));
+  threadGrid.classList.toggle("has-active-keyword", Boolean(state.activeKeyword));
   updateThreadGroupVisibility();
 
-  const theme = state.activeTheme
-    ? getBookData().themes.find((item) => item.id === state.activeTheme)
+  const keyword = state.activeKeyword
+    ? getBookData().keywords.find((item) => item.id === state.activeKeyword)
     : null;
 
-  if (!theme && state.activeTheme) {
-    state.activeTheme = null;
+  if (!keyword && state.activeKeyword) {
+    state.activeKeyword = null;
   }
 
-  updateThemeDetail(theme || null);
+  updateKeywordDetail(keyword || null);
 }
 
-function toggleTheme(themeId) {
-  state.activeTheme = state.activeTheme === themeId ? null : themeId;
-  syncActiveThemeButtons();
+function toggleKeyword(keywordId) {
+  state.activeKeyword = state.activeKeyword === keywordId ? null : keywordId;
+  syncActiveKeywordButtons();
   updateHighlights();
 }
 
 function updateHighlights() {
   const bookData = getBookData();
-  const hasTheme = Boolean(state.activeTheme);
+  const hasKeyword = Boolean(state.activeKeyword);
   const flowStep = state.activeFlow
     ? bookData.flow.find((item) => item.id === state.activeFlow)
     : null;
   const flowChapters = flowStep ? new Set(flowStep.chapters) : null;
 
   chapterElements.forEach((node, id) => {
-    const themes = node.dataset.themes.split(" ").filter(Boolean);
-    const matchesTheme = !hasTheme || themes.includes(state.activeTheme);
+    const keywords = node.dataset.keywords.split(" ").filter(Boolean);
+    const matchesKeyword = !hasKeyword || keywords.includes(state.activeKeyword);
     const matchesFlow = !flowChapters || flowChapters.has(id);
-    const highlight = (hasTheme || flowChapters) && matchesTheme && matchesFlow;
+    const highlight = (hasKeyword || flowChapters) && matchesKeyword && matchesFlow;
 
     node.classList.toggle("is-highlighted", highlight);
-    node.classList.toggle("is-dimmed", (hasTheme || flowChapters) && !highlight);
+    node.classList.toggle("is-dimmed", (hasKeyword || flowChapters) && !highlight);
   });
 
   flowElements.forEach((node) => {
-    const themes = node.dataset.themes.split(" ").filter(Boolean);
-    const matchesTheme = !hasTheme || themes.includes(state.activeTheme);
-    node.classList.toggle("is-dimmed", hasTheme && !matchesTheme);
+    const keywords = node.dataset.keywords.split(" ").filter(Boolean);
+    const matchesKeyword = !hasKeyword || keywords.includes(state.activeKeyword);
+    node.classList.toggle("is-dimmed", hasKeyword && !matchesKeyword);
   });
 }
 
 function updateThreadGroupVisibility() {
-  const hasActiveTheme = Boolean(state.activeTheme);
+  const hasActiveKeyword = Boolean(state.activeKeyword);
   document.querySelectorAll(".thread-group").forEach((group) => {
-    if (!hasActiveTheme) {
+    if (!hasActiveKeyword) {
       group.classList.remove("is-hidden");
       return;
     }
@@ -880,17 +878,17 @@ function bindControls() {
   });
 
   clearBtn.addEventListener("click", () => {
-    state.activeTheme = null;
+    state.activeKeyword = null;
     state.activeFlow = null;
 
     document.querySelectorAll(".thread").forEach((thread) => {
       thread.classList.remove("active");
     });
 
-    threadGrid.classList.remove("has-active-theme");
+    threadGrid.classList.remove("has-active-keyword");
     collapseAllThreadGroups();
     updateThreadGroupVisibility();
-    updateThemeDetail(null);
+    updateKeywordDetail(null);
 
     flowElements.forEach((node) => {
       node.classList.remove("active", "is-dimmed");
@@ -935,7 +933,7 @@ function bindLanguageSwitch() {
 
 function renderAll() {
   const bookData = getBookData();
-  chapterThemeIndex = buildChapterThemeIndex(bookData);
+  chapterKeywordIndex = buildChapterKeywordIndex(bookData);
 
   renderChapters();
   renderThreads();
@@ -951,12 +949,12 @@ function renderAll() {
     setActiveFlow(state.activeFlow);
   }
 
-  const themeIds = new Set(bookData.themes.map((theme) => theme.id));
-  if (!themeIds.has(state.activeTheme)) {
-    state.activeTheme = null;
+  const keywordIds = new Set(bookData.keywords.map((keyword) => keyword.id));
+  if (!keywordIds.has(state.activeKeyword)) {
+    state.activeKeyword = null;
   }
 
-  syncActiveThemeButtons();
+  syncActiveKeywordButtons();
   updateHighlights();
   updateToggleAllLabel();
 }

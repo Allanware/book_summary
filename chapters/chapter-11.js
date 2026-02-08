@@ -295,5 +295,4 @@ export default {
       ]
     }
   ],
-  themes: ["state-power", "market-infrastructure"]
 };

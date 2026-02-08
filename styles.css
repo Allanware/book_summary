@@ -407,7 +407,7 @@ main {
   display: none;
 }
 
-.thread-grid.has-active-theme .thread:not(.active) {
+.thread-grid.has-active-keyword .thread:not(.active) {
   display: none;
 }
 
@@ -441,37 +441,37 @@ main {
   color: var(--muted);
 }
 
-.theme-detail {
+.keyword-detail {
   display: none;
 }
 
-.theme-detail.is-visible {
+.keyword-detail.is-visible {
   display: block;
 }
 
-.theme-detail .node-body {
+.keyword-detail .node-body {
   margin: 0;
 }
 
-.theme-definition {
+.keyword-definition {
   color: var(--ink);
 }
 
-.theme-definition sup + sup {
+.keyword-definition sup + sup {
   margin-left: 0.25em;
 }
 
-.theme-definition sup a {
+.keyword-definition sup a {
   color: var(--accent-dark);
   text-decoration: none;
   font-weight: 700;
 }
 
-.theme-definition sup a:hover {
+.keyword-definition sup a:hover {
   text-decoration: underline;
 }
 
-.theme-detail .flow-point {
+.keyword-detail .flow-point {
   font-weight: 500;
 }
 

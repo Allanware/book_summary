@@ -141,7 +141,7 @@ Output:
 
 #### Keyword card fields
 
-- `id` (string): URL-safe identifier. Lowercase, hyphenated (e.g., `"colonial-rule"`).
+- `id` (string): URL-safe identifier. Lowercase, hyphenated if it is not a single word (e.g., `"colonial-rule"`).
 - `label` (string): Display name. Human-readable, may include spaces (e.g., `"colonial rule"`).
 - `description` (string): One-line summary capturing the keyword's essence.
 - `definition` (string): 1-2 sentences explaining how the book uses this term; include superscript citations to applications.
@@ -152,7 +152,7 @@ Output:
 #### Application fields (each `applications[]` item)
 
 - `chapters[]` (array): Chapter numbers where this application appears (e.g., `[5, 9]`).
-- `setting` (string): Combined context, separated by ` • `. Use relevant context (place, time, etc.).
+- `setting` (string): Use relevant context (place, time, etc.), separated by ` • `.
 - `point` (string): One sentence summarizing what this application demonstrates about the keyword.
 - `evidence[]` (array): Direct textual evidence with page citations (e.g., `"Quote text here. (p. 170-171)"`).
 

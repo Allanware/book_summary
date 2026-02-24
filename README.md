@@ -10,7 +10,7 @@ A collection-based website for interactive book argument maps, keyword cards, an
 book_summary/
 ├── input/{collection}/{book}/       ← raw source files (PDF/EPUB); gitignored
 ├── extracted/{collection}/{book}/   ← per-chapter markdown; gitignored
-├── site/                            ← output website
+├── docs/                            ← output website
 │   ├── index.html                   ← landing page (lists collections)
 │   ├── renderer.js                  ← shared rendering module
 │   ├── styles.css                   ← shared styles
@@ -26,14 +26,14 @@ book_summary/
 ## 1) What is versioned vs generated
 
 Versioned source of truth:
-- `site/{collection}/{book}/book-data.js`
-- `site/{collection}/{book}/book-data.zh.js` (or your selected L2 equivalent file)
-- `site/{collection}/{book}/chapters/chapter-XX.js`
-- `site/{collection}/{book}/chapters/chapter-XX.zh.js` (or your selected L2 equivalent files)
-- `site/{collection}/{book}/chapters/index.js`
-- `site/{collection}/{book}/chapters/index.zh.js` (or your selected L2 equivalent index)
-- `site/{collection}/{book}/index.html`
-- `site/renderer.js`, `site/styles.css`, `site/index.html`
+- `docs/{collection}/{book}/book-data.js`
+- `docs/{collection}/{book}/book-data.zh.js` (or your selected L2 equivalent file)
+- `docs/{collection}/{book}/chapters/chapter-XX.js`
+- `docs/{collection}/{book}/chapters/chapter-XX.zh.js` (or your selected L2 equivalent files)
+- `docs/{collection}/{book}/chapters/index.js`
+- `docs/{collection}/{book}/chapters/index.zh.js` (or your selected L2 equivalent index)
+- `docs/{collection}/{book}/index.html`
+- `docs/renderer.js`, `docs/styles.css`, `docs/index.html`
 - `AGENTS.md`
 
 Generated/intermediate artifacts (do not track):
@@ -49,15 +49,15 @@ Run LLM agents with the specifications in `AGENTS.md`.
 ## 3) Serving locally
 
 ```bash
-python3 -m http.server -d site
+python3 -m http.server -d docs
 # Open http://localhost:8000/
 ```
 
 ## 4) Notes for adapting to another book
 
 - Create a new `input/{collection}/{book}/` directory with the source PDF/EPUB.
-- Run the pipeline (see `AGENTS.md`) to populate `extracted/` and `site/`.
+- Run the pipeline (see `AGENTS.md`) to populate `extracted/` and `docs/`.
 - Keep pipeline logic corpus-driven; do not hardcode book-specific theme/actor/place lists in scripts.
-- Keep chapter file naming stable (`chapNN.txt`) so scripts rerun without reconfiguration.
+- Keep chapter file naming stable (`chapter-XX.md`) so scripts rerun without reconfiguration.
 - Keep IDs and ordering aligned across languages when bilingual mode is enabled.
 - If helper-script output conflicts with chapter evidence, chapter evidence wins.

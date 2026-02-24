@@ -1,24 +1,4 @@
-import { chapters as chaptersEn } from "./chapters/index.js?v=4";
-import { chapters as chaptersZh } from "./chapters/index.zh.js?v=4";
-import bookDataEn from "./book-data.js";
-import bookDataZh from "./book-data.zh.js";
-
-const BOOK_DATA_BY_LANG = {
-  en: {
-    title: bookDataEn.title,
-    coreArgument: bookDataEn.coreArgument,
-    keywords: bookDataEn.keywords,
-    chapters: chaptersEn,
-    flow: bookDataEn.flow
-  },
-  zh: {
-    title: bookDataZh.title,
-    coreArgument: bookDataZh.coreArgument,
-    keywords: bookDataZh.keywords,
-    chapters: chaptersZh,
-    flow: bookDataZh.flow
-  }
-};
+let BOOK_DATA_BY_LANG;
 
 const UI_TEXT = {
   en: {
@@ -97,7 +77,7 @@ const KEYWORD_GROUPS = [
 
 function loadLanguagePreference() {
   try {
-    const stored = localStorage.getItem("eoc-language");
+    const stored = localStorage.getItem("atlas-language");
     if (stored === "en" || stored === "zh") {
       return stored;
     }
@@ -109,7 +89,7 @@ function loadLanguagePreference() {
 
 function saveLanguagePreference(language) {
   try {
-    localStorage.setItem("eoc-language", language);
+    localStorage.setItem("atlas-language", language);
   } catch {
     // Ignore storage errors.
   }
@@ -965,4 +945,7 @@ function init() {
   renderAll();
 }
 
-init();
+export function initBook(data) {
+  BOOK_DATA_BY_LANG = data;
+  init();
+}

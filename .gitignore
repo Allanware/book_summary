@@ -1,5 +1,7 @@
-*.pdf
+input/
+extracted/
 tmp/
 .codex/
 .DS_Store
-keyword_candidates.md
+.claude/
+.playwright-mcp/

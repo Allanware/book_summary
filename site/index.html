@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Collection List</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .landing { max-width: 720px; margin: 0 auto; padding: 0 8vw; }
+    .collection { margin-bottom: 48px; }
+    .collection h2 { font-size: 1.4rem; margin-bottom: 8px; }
+    .book-list { list-style: none; padding: 0; margin: 0; }
+    .book-list li { margin-bottom: 12px; }
+    .book-list a {
+      display: block;
+      padding: 16px 20px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      text-decoration: none;
+      color: var(--ink);
+      transition: box-shadow 0.15s ease, border-color 0.15s ease;
+    }
+    .book-list a:hover {
+      border-color: var(--accent);
+      box-shadow: var(--shadow);
+    }
+    .book-list .book-title {
+      font-family: 'Fraunces', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    .book-list .book-author {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Collection List</h1>
+    </div>
+  </header>
+
+  <main class="landing" id="landing"></main>
+
+  <script type="module">
+    import collections from "./collections.js";
+
+    const SMALL_WORDS = new Set([
+      "a","an","and","as","at","but","by","for","in",
+      "nor","of","on","or","so","the","to","up","yet"
+    ]);
+
+    function titleCase(slug) {
+      return slug.split("-").map((word, i) =>
+        i === 0 || !SMALL_WORDS.has(word)
+          ? word.charAt(0).toUpperCase() + word.slice(1)
+          : word
+      ).join(" ");
+    }
+
+    const landing = document.getElementById("landing");
+
+    for (const [collectionId, books] of Object.entries(collections)) {
+      const section = document.createElement("section");
+      section.className = "collection";
+
+      if (books.length > 1) {
+        const heading = document.createElement("h2");
+        heading.textContent = titleCase(collectionId);
+        section.appendChild(heading);
+      }
+
+      const list = document.createElement("ul");
+      list.className = "book-list";
+
+      for (const book of books) {
+        const li = document.createElement("li");
+        const a = document.createElement("a");
+        a.href = `${collectionId}/${book.id}/`;
+
+        const title = document.createElement("div");
+        title.className = "book-title";
+        title.textContent = titleCase(book.id);
+        a.appendChild(title);
+
+        if (book.author) {
+          const author = document.createElement("div");
+          author.className = "book-author";
+          author.textContent = book.author;
+          a.appendChild(author);
+        }
+
+        li.appendChild(a);
+        list.appendChild(li);
+      }
+
+      section.appendChild(list);
+      landing.appendChild(section);
+    }
+  </script>
+</body>
+</html>

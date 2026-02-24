@@ -1,22 +1,48 @@
 # Book Website Spec (Current Structure + Reusable Pipeline)
 
 Use this file when updating chapter content, keyword data, or synthesis flow for this site.
-This spec is synced to the current implementation in `index.html`, `script.js`, `styles.css`, chapter modules, and book data modules.
+This spec is synced to the current implementation in `site/`, chapter modules, and book data modules.
+
+## 0 Directory layout
+
+```
+book_summary/
+├── input/{collection}/{book}/       ← raw source files (PDF/EPUB); gitignored
+├── extracted/{collection}/{book}/   ← per-chapter markdown; gitignored
+│   └── chapter-XX.md
+├── site/                            ← output website
+│   ├── index.html                   ← site landing (lists collections)
+│   ├── renderer.js                  ← shared rendering module
+│   ├── styles.css                   ← shared styles
+│   └── {collection}/{book}/         ← one book site
+│       ├── index.html               ← book page (imports renderer.js)
+│       ├── book-data.js             ← L1 book data
+│       ├── book-data.zh.js          ← L2 book data
+│       └── chapters/                ← chapter JS modules
+├── scripts/                         ← helper scripts
+├── tmp/                             ← throwaway extraction artifacts
+└── AGENTS.md
+```
 
 ## 1 Source of truth
 
 ### 1.1 UI and rendering files
-- `index.html`: page structure and language switch controls.
-- `script.js`: all runtime rendering, interactions, filtering, and language switching.
-- `styles.css`: layout and interaction styling (including keyword group collapse behavior and section toggles).
+- `site/{collection}/{book}/index.html`: book page structure and language switch controls.
+- `site/renderer.js`: shared rendering module (UI text, interactions, filtering, language switching). Exports `initBook(data)`.
+- `site/styles.css`: layout and interaction styling (including keyword group collapse behavior and section toggles).
+- `site/index.html`: site landing page listing collections and books.
 
-### 1.2 Data files
+### 1.2 Data files (per book, under `site/{collection}/{book}/`)
 - Primary (L1) book data: `book-data.js`
 - Secondary (L2) book data (e.g. Chinese: `book-data.zh.js`)
 - Primary (L1) chapter modules: `chapters/chapter-XX.js`
 - Secondary (L2) chapter modules (e.g. Chinese: `chapters/chapter-XX.zh.js`)
 - Primary (L1) chapter index: `chapters/index.js`
 - Secondary (L2) chapter index (e.g. Chinese: `chapters/index.zh.js`)
+
+### 1.3 Raw inputs and extracted text (gitignored)
+- `input/{collection}/{book}/`: source PDF/EPUB files. Never committed.
+- `extracted/{collection}/{book}/chapter-XX.md`: per-chapter markdown extracted from source. Never committed. Stable paths for scripts.
 
 ## 2 Operating principles
 
@@ -34,7 +60,7 @@ This spec is synced to the current implementation in `index.html`, `script.js`, 
 
 ### 2.3 Script role
 - Scripts are helpers, not the source of truth.
-- Final source of truth is the data modules consumed by `script.js`.
+- Final source of truth is the data modules consumed by `site/renderer.js`.
 - If helper-script output conflicts with chapter evidence, chapter evidence wins.
 
 ### 2.4 Language-scope decision (required)
@@ -72,10 +98,11 @@ Rules:
 
 ### Stage 0: One-time PDF to chapter-text extraction
 Input:
-- Full book PDF.
+- Full book PDF at `input/{collection}/{book}/`.
 
 Output:
 - Raw per-chapter text files at `tmp/chapters/chap01.txt` ... `tmp/chapters/chapNN.txt`.
+- Stable extracted markdown at `extracted/{collection}/{book}/chapter-XX.md` (copied from tmp after extraction).
 
 Requirements:
 - Run this stage once per source book edition, then reuse the extracted chapter files for all later stages.
@@ -102,7 +129,7 @@ Input:
 - Full chapter text.
 
 Output:
-- `chapters/chapter-XX.js` (and `.zh.js` if the L2 language is Chinese) using:
+- `site/{collection}/{book}/chapters/chapter-XX.js` (and `.zh.js` if the L2 language is Chinese) using:
   - `thesis`
   - `flowSections[]` with `title`, `note`, `steps[]`, `evidence[]`
 
@@ -137,7 +164,7 @@ Input:
 - Candidate list + chapter mindmaps.
 
 Output:
-- `BOOK_DATA.keywords[]` entries in `book-data.js` (and mirrored in the L2 data file when bilingual, e.g. `book-data.zh.js` if the L2 language is Chinese).
+- `BOOK_DATA.keywords[]` entries in `site/{collection}/{book}/book-data.js` (and mirrored in the L2 data file when bilingual, e.g. `book-data.zh.js` if the L2 language is Chinese).
 
 #### Keyword card fields
 
@@ -179,12 +206,12 @@ Rules:
 - Keep IDs stable across languages:
   - chapter section anchors: `chapter-{id}-section-{n}`
   - keyword application anchors: `keyword-{keywordId}-application-{n}`
-- Keep keyword IDs and flow IDs aligned across `book-data.js` (L1) and the selected L2 book data file (e.g. `book-data.zh.js`).
-- Keep chapter index ordering aligned across `chapters/index.js` (L1) and the selected L2 chapter index (e.g. `chapters/index.zh.js`).
+- Keep keyword IDs and flow IDs aligned across `site/{collection}/{book}/book-data.js` (L1) and the selected L2 book data file (e.g. `book-data.zh.js`).
+- Keep chapter index ordering aligned across `site/{collection}/{book}/chapters/index.js` (L1) and the selected L2 chapter index (e.g. `chapters/index.zh.js`).
 
 ## 4 Chapter renderer compatibility
 
-`script.js` renders chapter body using the `thesis + flowSections[]` schema.
+`site/renderer.js` renders chapter body using the `thesis + flowSections[]` schema.
 
 ## 5 Keyword renderer compatibility
 
@@ -242,7 +269,7 @@ Run before finalizing:
    - Verify citation integrity and schema compliance.
 4. Verify synchronization between documentation and implementation:
    - Ensure `AGENTS.md` rules match the current codebase behavior.
-   - Check that `index.html`, `script.js`, and `styles.css` create the UI described in specs.
+   - Check that `site/renderer.js`, `site/styles.css`, and book `index.html` files create the UI described in specs.
 5. Quote-escape validation:
    - Ensure all string content in data files is properly escaped for valid JavaScript parsing in all target languages.
    - Verify that data modules import correctly in a Node.js environment without syntax errors.
